@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:markets/src/elements/Cuisines.dart';
 import 'package:markets/src/elements/Dietarysort.dart';
 import 'package:markets/src/elements/sort.dart';
+import 'package:selectable_circle_list/selectable_circle_item.dart';
+import 'package:selectable_circle_list/selectable_circle_list.dart';
 import '../../generated/l10n.dart';
 import '../models/filter.dart';
 import '../controllers/filter_controller.dart';
@@ -22,9 +24,9 @@ class _FilterpagState extends State<Filterpage> {
         Text(
           'price range',
           style: TextStyle(fontSize: 20.0),
-        )
+        ),
 
-        /*Expanded(
+        Expanded(
           child: ListView(
             primary: true,
             shrinkWrap: true,
@@ -50,15 +52,16 @@ class _FilterpagState extends State<Filterpage> {
                 style: TextStyle(fontSize: 20.0),
               ),
               Cuisines(),
-              FlatButton(onPressed: () {}),
+              
             ],
           ),
-          )*/
+        
+          )
       ],
     ));
   }
 
-  /*List<SelectableCircleItem> _buildItems() {
+  List<SelectableCircleItem> _buildItems() {
     return <SelectableCircleItem>[
       SelectableCircleItem(
         Text("100"),
@@ -85,7 +88,7 @@ class _FilterpagState extends State<Filterpage> {
         Colors.pink,
       ),
     ];
-  }*/
+  }
 
   _onTapCircle(String value, String subvalue) {
     print("tapped $value $subvalue");
