@@ -182,7 +182,10 @@ class _DetailsWidgetState extends StateMVC<DetailsWidget> {
                                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                                 child: Helper.applyHtml(context, _con.market.description),
                               ),
+
+                             // 
                               ImageThumbCarouselWidget(galleriesList: _con.galleries),
+                              
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 20),
                                 child: ListTile(
