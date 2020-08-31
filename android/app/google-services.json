@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "509137739015",
+    "firebase_url": "https://maps-demo-758b9.firebaseio.com",
+    "project_id": "maps-demo-758b9",
+    "storage_bucket": "maps-demo-758b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509137739015:android:1381a72ed009b391a3b9a2",
+        "android_client_info": {
+          "package_name": "com.smartersvision.markets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509137739015-2cudgb660hn717k4brl58b1gsmhjegct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2BJdgXKTrTeEBAgB-tzMFrGcUWytBW2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509137739015-2cudgb660hn717k4brl58b1gsmhjegct.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509137739015:android:1db4e7262d6d3f8fa3b9a2",
+        "android_client_info": {
+          "package_name": "com.smartersvision.markets_deliveryboy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509137739015-2cudgb660hn717k4brl58b1gsmhjegct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2BJdgXKTrTeEBAgB-tzMFrGcUWytBW2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509137739015-2cudgb660hn717k4brl58b1gsmhjegct.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
