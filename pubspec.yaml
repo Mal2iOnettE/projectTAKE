@@ -48,7 +48,7 @@ dependencies:
   bottom_indicator_bar: ^1.0.0
   selectable_circle_list: ^0.1.5+1
   group_radio_button: ^1.0.1
-  chips_choice: ^1.2.0
+  chips_choice: 1.2.0
 
   
 

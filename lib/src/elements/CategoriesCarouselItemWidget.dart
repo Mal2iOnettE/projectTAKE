@@ -58,11 +58,13 @@ class CategoriesCarouselItemWidget extends StatelessWidget {
           ),
           SizedBox(height: 5),
           Container(
+            width: 80.0,
             margin: EdgeInsetsDirectional.only(start: this.marginLeft, end: 20),
             child: Text(
               category.name,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodyText2,
+              textAlign: TextAlign.center,
             ),
           ),
         ],

@@ -4,24 +4,16 @@ import 'package:markets/src/elements/Cuisines.dart';
 import 'package:markets/src/elements/Dietarysort.dart';
 import 'package:markets/src/elements/sort.dart';
 import '../../generated/l10n.dart';
-import 'package:selectable_circle_list/selectable_circle_item.dart';
-import 'package:selectable_circle_list/selectable_circle_list.dart';
 import '../models/filter.dart';
 import '../controllers/filter_controller.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
-
-
 class Filterpage extends StatefulWidget {
-
-  
   @override
   _FilterpagState createState() => _FilterpagState();
 }
 
 class _FilterpagState extends State<Filterpage> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,89 +22,72 @@ class _FilterpagState extends State<Filterpage> {
         Text(
           'price range',
           style: TextStyle(fontSize: 20.0),
-        ),
-         Expanded(
-           child: ListView(
-             primary: true,
-                shrinkWrap: true,
+        )
+
+        /*Expanded(
+          child: ListView(
+            primary: true,
+            shrinkWrap: true,
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: SelectableCircleList(
                   children: _buildItems(),
-                   subDescription: Padding(
+                  subDescription: Padding(
                     padding: const EdgeInsets.all(10.0),
                   ),
                   onTap: _onTapCircle,
                   //initialValue: "4|subsecond",
                 ),
               ),
-             Text(
-            'Dietary',
-             style: TextStyle(fontSize: 20.0),
-        ),
-           
-        Dietary(),
-
-        Text(
-            'Cuisines',
-             style: TextStyle(fontSize: 20.0),
-        ),
-
-        Cuisines(),
-
-         
-                          
-             FlatButton(
-              onPressed: () {
-                
-                }
-                ),
-              
-             
-            
-            
-
-        
-             
+              Text(
+                'Dietary',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              Dietary(),
+              Text(
+                'Cuisines',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              Cuisines(),
+              FlatButton(onPressed: () {}),
             ],
-            
-         ),
-         )
-         ],
-
-
-    )
-    
-    
-    
-    
-    
-    );
+          ),
+          )*/
+      ],
+    ));
   }
 
-  List<SelectableCircleItem> _buildItems() {
+  /*List<SelectableCircleItem> _buildItems() {
     return <SelectableCircleItem>[
       SelectableCircleItem(
-        Text("100"), "", "100", Colors.pink,
-          ),
+        Text("100"),
+        "",
+        "100",
+        Colors.pink,
+      ),
       SelectableCircleItem(
-        Text("300"), "", "300", Colors.pink,
-        ),
+        Text("300"),
+        "",
+        "300",
+        Colors.pink,
+      ),
       SelectableCircleItem(
-        Text("500"), "", "500", Colors.pink,
-        ),
+        Text("500"),
+        "",
+        "500",
+        Colors.pink,
+      ),
       SelectableCircleItem(
-        Text("1000"),"","1000", Colors.pink,
-        
-        
-        
-        
+        Text("1000"),
+        "",
+        "1000",
+        Colors.pink,
       ),
     ];
-  }
+  }*/
 
-   _onTapCircle(String value, String subvalue) {
+  _onTapCircle(String value, String subvalue) {
     print("tapped $value $subvalue");
   }
 

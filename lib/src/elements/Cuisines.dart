@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:chips_choice/chips_choice.dart';
 import 'package:async/async.dart';
-
+//import 'package:chips_choice/chips_choice.dart';
 
 
 class Cuisines extends StatefulWidget {
@@ -21,7 +20,7 @@ class _CuisinesState extends State<Cuisines> {
   ];
 
   String user;
-  final usersMemoizer = AsyncMemoizer<List<ChipsChoiceOption<String>>>();
+  //final usersMemoizer = AsyncMemoizer<List<ChipsChoiceOption<String>>>();
 
 Color values = Colors.black38;
 
@@ -41,7 +40,7 @@ Color values = Colors.black38;
                 builder: (state) {
                   return Column(
                     children: <Widget>[
-                      Container(
+                     /* Container(
                         alignment: Alignment.centerLeft,
                         child: ChipsChoice<String>.multiple(
                           value: state.value,
@@ -64,8 +63,9 @@ Color values = Colors.black38;
                             )
                           ),
                           isWrapped: true,
-                        ),
+                        ), 
                       ),
+                      */
                      
                     ],
                   );
