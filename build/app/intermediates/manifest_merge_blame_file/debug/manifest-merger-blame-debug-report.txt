@@ -1,0 +1,292 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.smartersvision.markets"
+4    android:versionCode="2"
+5    android:versionName="1.6.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+9        android:targetSdkVersion="29" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:4:5-66
+14-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:4:22-64
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:5:5-78
+15-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:5:22-76
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:6:5-80
+16-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:6:22-78
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:22:5-79
+17-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:22:22-76
+18    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+18-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:24:5-68
+18-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:24:22-65
+19    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+19-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:26:5-82
+19-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:26:22-79
+20
+21    <uses-feature
+21-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+22        android:glEsVersion="0x00020000"
+22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+23        android:required="true" />
+23-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+24    <!--
+25 io.flutter.app.FlutterApplication is an android.app.Application that
+26         calls FlutterMain.startInitialization(this); in its onCreate method.
+27         In most cases you can leave this as-is, but you if you want to provide
+28         additional functionality it is fine to subclass or reimplement
+29         FlutterApplication and put your custom class here.
+30    -->
+31    <application
+31-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:13:5-46:19
+32        android:name="com.smartersvision.markets.Application"
+32-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:14:9-36
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\28c364c6a977dc65d48a7ff1b3b0ddde\core-1.2.0\AndroidManifest.xml:24:18-86
+34        android:debuggable="true"
+35        android:icon="@mipmap/ic_launcher"
+35-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:16:9-43
+36        android:label="Markets" >
+36-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:15:9-32
+37        <meta-data
+37-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:18:9-19:77
+38            android:name="com.google.android.geo.API_KEY"
+38-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:18:20-65
+39            android:value="AIzaSyAjs4xKXYfxLJV1Ln7yCLfVrkJOEjj3CyY" />
+39-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:19:20-75
+40        <meta-data
+40-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:20:9-22:62
+41            android:name="com.google.firebase.messaging.default_notification_icon"
+41-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:21:17-87
+42            android:resource="@mipmap/ic_notification" />
+42-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:22:17-59
+43
+44        <activity
+44-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:23:9-45:20
+45            android:name="com.smartersvision.markets.MainActivity"
+45-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:24:13-41
+46            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+46-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:27:13-144
+47            android:hardwareAccelerated="true"
+47-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:28:13-47
+48            android:launchMode="singleTop"
+48-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:25:13-43
+49            android:theme="@style/LaunchTheme"
+49-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:26:13-47
+50            android:windowSoftInputMode="adjustResize" >
+50-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:29:13-55
+51
+52            <!--
+53                 This keeps the window background of the activity showing
+54                 until Flutter renders its first frame. It can be removed if
+55                 there is no splash screen (such as the default splash screen
+56                 defined in @style/LaunchTheme).
+57            -->
+58            <meta-data
+58-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:34:13-36:40
+59                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+59-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:35:17-82
+60                android:value="true" />
+60-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:36:17-37
+61
+62            <intent-filter>
+62-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:37:13-40:29
+63                <action android:name="android.intent.action.MAIN" />
+63-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:38:17-68
+63-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:38:25-66
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:39:17-76
+65-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:39:27-74
+66            </intent-filter>
+67            <intent-filter>
+67-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:41:13-44:29
+68                <action android:name="FLUTTER_NOTIFICATION_CLICK" />
+68-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:42:17-69
+68-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:42:25-66
+69
+70                <category android:name="android.intent.category.DEFAULT" />
+70-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:43:17-76
+70-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:43:27-73
+71            </intent-filter>
+72        </activity>
+73
+74        <service android:name="io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService" >
+74-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+74-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-101
+75            <intent-filter>
+75-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:29
+76                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+76-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-78
+76-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:25-75
+77            </intent-filter>
+78        </service>
+79        <service
+79-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-17:19
+80            android:name="com.google.firebase.components.ComponentDiscoveryService"
+80-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:18-89
+81            android:directBootAware="true"
+81-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+82            android:exported="false" >
+82-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:37:13-37
+83            <meta-data
+83-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-16:85
+84                android:name="com.google.firebase.components:io.flutter.plugins.firebasemessaging.FlutterFirebaseAppRegistrar"
+84-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-127
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-82
+86            <meta-data
+86-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:38:13-40:85
+87                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+87-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:39:17-119
+88                android:value="com.google.firebase.components.ComponentRegistrar" />
+88-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:40:17-82
+89            <meta-data
+89-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:32:13-34:85
+90                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+90-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:33:17-96
+91                android:value="com.google.firebase.components.ComponentRegistrar" />
+91-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:34:17-82
+92            <meta-data
+92-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\1970b917a35c4014be626bd75788cb9a\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:28:13-30:85
+93                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+93-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\1970b917a35c4014be626bd75788cb9a\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:29:17-115
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\1970b917a35c4014be626bd75788cb9a\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:30:17-82
+95            <meta-data
+95-->[com.google.firebase:firebase-installations:16.1.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\94cbdcdb5e762395733fbeaeb6d9f603\jetified-firebase-installations-16.1.0\AndroidManifest.xml:17:13-19:85
+96                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+96-->[com.google.firebase:firebase-installations:16.1.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\94cbdcdb5e762395733fbeaeb6d9f603\jetified-firebase-installations-16.1.0\AndroidManifest.xml:18:17-127
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.firebase:firebase-installations:16.1.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\94cbdcdb5e762395733fbeaeb6d9f603\jetified-firebase-installations-16.1.0\AndroidManifest.xml:19:17-82
+98        </service>
+99
+100        <activity
+100-->[:url_launcher] D:\TAKE_TOWN\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+101            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+101-->[:url_launcher] D:\TAKE_TOWN\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+102            android:exported="false"
+102-->[:url_launcher] D:\TAKE_TOWN\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+103            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+103-->[:url_launcher] D:\TAKE_TOWN\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+104        <activity
+104-->[:flutter_inappbrowser] D:\TAKE_TOWN\build\flutter_inappbrowser\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:47
+105            android:name="com.pichillilorenzo.flutter_inappbrowser.InAppBrowserActivity"
+105-->[:flutter_inappbrowser] D:\TAKE_TOWN\build\flutter_inappbrowser\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-89
+106            android:configChanges="orientation|screenSize"
+106-->[:flutter_inappbrowser] D:\TAKE_TOWN\build\flutter_inappbrowser\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-59
+107            android:theme="@style/AppTheme" />
+107-->[:flutter_inappbrowser] D:\TAKE_TOWN\build\flutter_inappbrowser\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-44
+108        <activity
+108-->[:flutter_inappbrowser] D:\TAKE_TOWN\build\flutter_inappbrowser\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-15:55
+109            android:name="com.pichillilorenzo.flutter_inappbrowser.ChromeCustomTabs.ChromeCustomTabsActivity"
+109-->[:flutter_inappbrowser] D:\TAKE_TOWN\build\flutter_inappbrowser\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-110
+110            android:configChanges="orientation|screenSize"
+110-->[:flutter_inappbrowser] D:\TAKE_TOWN\build\flutter_inappbrowser\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-59
+111            android:theme="@style/ThemeTransparent" />
+111-->[:flutter_inappbrowser] D:\TAKE_TOWN\build\flutter_inappbrowser\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-52
+112        <!--
+113             FirebaseMessagingService performs security checks at runtime,
+114             but set to not exported to explicitly avoid allowing another app to call it.
+115        -->
+116        <service
+116-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:28:9-34:19
+117            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+117-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:29:13-82
+118            android:exported="false" >
+118-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:30:13-37
+119            <intent-filter android:priority="-500" >
+119-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:29
+120                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+120-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-78
+120-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:25-75
+121            </intent-filter>
+122        </service>
+123
+124        <receiver
+124-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:37:9-44:20
+125            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+125-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:38:13-78
+126            android:exported="true"
+126-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:39:13-36
+127            android:permission="com.google.android.c2dm.permission.SEND" >
+127-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:40:13-73
+128            <intent-filter>
+128-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:41:13-43:29
+129                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+129-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:42:17-81
+129-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:42:25-78
+130            </intent-filter>
+131        </receiver> <!-- Needs to be explicitly declared on P+ -->
+132        <uses-library
+132-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+133            android:name="org.apache.http.legacy"
+133-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+134            android:required="false" />
+134-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+135
+136        <activity
+136-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\00c69f4b2be489f249119ecfc3c42615\jetified-play-services-base-17.2.1\AndroidManifest.xml:23:9-26:75
+137            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+137-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\00c69f4b2be489f249119ecfc3c42615\jetified-play-services-base-17.2.1\AndroidManifest.xml:24:13-79
+138            android:exported="false"
+138-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\00c69f4b2be489f249119ecfc3c42615\jetified-play-services-base-17.2.1\AndroidManifest.xml:25:13-37
+139            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+139-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\00c69f4b2be489f249119ecfc3c42615\jetified-play-services-base-17.2.1\AndroidManifest.xml:26:13-72
+140
+141        <provider
+141-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+142            android:name="com.google.firebase.provider.FirebaseInitProvider"
+142-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+143            android:authorities="com.smartersvision.markets.firebaseinitprovider"
+143-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+144            android:exported="false"
+144-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+145            android:initOrder="100" />
+145-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+146
+147        <meta-data
+147-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e358e6a5d5ffdf173637a4a374dbcaeb\jetified-play-services-basement-17.2.1\AndroidManifest.xml:23:9-25:69
+148            android:name="com.google.android.gms.version"
+148-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e358e6a5d5ffdf173637a4a374dbcaeb\jetified-play-services-basement-17.2.1\AndroidManifest.xml:24:13-58
+149            android:value="@integer/google_play_services_version" />
+149-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e358e6a5d5ffdf173637a4a374dbcaeb\jetified-play-services-basement-17.2.1\AndroidManifest.xml:25:13-66
+150
+151        <service
+151-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:29:9-35:19
+152            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+152-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:30:13-103
+153            android:exported="false" >
+153-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:31:13-37
+154            <meta-data
+154-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:32:13-34:39
+155                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+155-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:33:17-94
+156                android:value="cct" />
+156-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:34:17-36
+157        </service>
+158        <service
+158-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:26:9-30:19
+159            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+159-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:27:13-117
+160            android:exported="false"
+160-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:28:13-37
+161            android:permission="android.permission.BIND_JOB_SERVICE" >
+161-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:29:13-69
+162        </service>
+163
+164        <receiver
+164-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:32:9-34:40
+165            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+165-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:33:13-132
+166            android:exported="false" />
+166-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:34:13-37
+167    </application>
+168
+169</manifest>

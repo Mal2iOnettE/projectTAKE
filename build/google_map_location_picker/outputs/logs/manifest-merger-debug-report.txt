@@ -1,0 +1,19 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml:1:1-62
+INJECTED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml:1:1-62
+INJECTED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml:1:1-62
+	package
+		ADDED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml:1:11-59
+		INJECTED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml
+		INJECTED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml:1:1-62
+uses-sdk
+INJECTED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml
+INJECTED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml
+		ADDED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml
+		INJECTED from C:\flutter\.pub-cache\hosted\pub.dartlang.org\google_map_location_picker-3.3.3\android\src\main\AndroidManifest.xml

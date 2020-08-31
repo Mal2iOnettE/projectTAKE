@@ -1,0 +1,4 @@
+#Mon Aug 31 10:59:49 ICT 2020
+base.0=D\:\\TAKE_TOWN\\build\\app\\intermediates\\dex\\debug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
