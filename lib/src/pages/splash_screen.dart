@@ -47,7 +47,7 @@ class MainSplashScreenState extends StateMVC<MainSplashScreen> {
     return SplashScreen(
       seconds: 3,
       navigateAfterSeconds: new OnBoardingPage2(),
-      image: Image.asset('assets/img/TAKE_SHOPPING_04.png'),
+      image: Image.asset('assets/takelogo/take_logo04.png'),
       backgroundColor: Colors.white,
       photoSize: 100.0,
       loaderColor: Theme.of(context).accentColor,

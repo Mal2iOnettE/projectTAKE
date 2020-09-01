@@ -54,7 +54,7 @@ dependencies:
   flare_splash_screen: any
 
 flutter_icons:
-  image_path: "assets/icons/TAKE_LOGO/TAKE_SHOPPING_03.png" 
+  image_path: "assets/takelogo/take_logo07.png" 
   android: true
   ios: true
 

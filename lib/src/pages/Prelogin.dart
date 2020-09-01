@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -26,13 +25,11 @@ class _Prelogin2State extends State<Prelogin2> {
         children: [
           //Container(child: Image.asset('assets/images/BG.png')),
           Padding(
-              padding: const EdgeInsets.only(top: 100.0,bottom:20.0 ),
+              padding: const EdgeInsets.only(top: 100.0, bottom: 20.0),
               child: Container(
                 height: 200,
                 width: 200,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/takelogo/take_logo03.png'))),
+                decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/takelogo/take_logo03.png'))),
               )),
           Text(
             "Discover the best foods from over 2,000 restaurants",
@@ -50,14 +47,12 @@ class _Prelogin2State extends State<Prelogin2> {
             height: 50,
             child: RaisedButton.icon(
               onPressed: () {},
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               icon: Container(
                 height: 30,
                 width: 30,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/img/googlelogo.png')),
+                  image: DecorationImage(image: AssetImage('assets/img/facebook.png')),
                 ),
               ),
               label: Text('Connect with facebook'),
@@ -73,14 +68,12 @@ class _Prelogin2State extends State<Prelogin2> {
               onPressed: () {
                 //Navigator.push(context,MaterialPageRoute(builder: (context) => Account()));
               },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               icon: Container(
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/img/googlelogo.png')),
+                  image: DecorationImage(image: AssetImage('assets/img/googlelogo.png')),
                 ),
               ),
               label: Text('Connect with google'),
@@ -93,23 +86,22 @@ class _Prelogin2State extends State<Prelogin2> {
             width: 280,
             height: 50,
             child: OutlineButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/Login');
+              },
               borderSide: BorderSide(
                 color: Colors.white, //Color of the border
                 style: BorderStyle.solid, //Style of the border
                 width: 0.8, //width of the border
               ),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               icon: Container(
                 height: 0,
                 width: 0,
               ),
               label: Text(
                 'Sign up with Email',
-                style: TextStyle(
-                    color: Colors.white.withOpacity(0.8),
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(color: Colors.white.withOpacity(0.8), fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
             ),

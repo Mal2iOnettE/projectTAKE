@@ -359,6 +359,15 @@ class S {
     );
   }
 
+    String get dont_have_account {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dont_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get maps_explorer {
     return Intl.message(
       'Maps Explorer',
@@ -1302,6 +1311,15 @@ class S {
     return Intl.message(
       'Guest',
       name: 'guest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get signup {
+    return Intl.message(
+      'Sign Up',
+      name: 'signup',
       desc: '',
       args: [],
     );
