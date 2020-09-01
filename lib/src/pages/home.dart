@@ -121,14 +121,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               ),
 
               /// Markets
-<<<<<<< HEAD
               CardsCarouselWidget(
                 marketsList: _con.topMarkets, 
                 heroTag: 'home_top_markets'
               ),
-=======
-              CardsCarouselWidget(marketsList: _con.topMarkets, heroTag: 'home_top_markets'),
->>>>>>> a1fd8c4cc9db7a459dc807c3b21d3f603390eba2
 
               //Trending this week
               ListTile(
@@ -167,17 +163,11 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                 ),
               ),
               //Most Popular
-<<<<<<< HEAD
              /* CategoriesCarouselWidget(
                 categories: _con.categories,
               ),*/
 
 
-=======
-              /*CategoriesCarouselWidget(
-                categories: _con.categories,
-              ),*/
->>>>>>> a1fd8c4cc9db7a459dc807c3b21d3f603390eba2
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 20),
                 child: ListTile(
