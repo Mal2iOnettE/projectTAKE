@@ -52,7 +52,7 @@ dependencies:
   chips_choice: 1.2.0
 
 flutter_icons:
-  image_path: "assets/icons/TAKE_LOGO/TA-KE SHOPPING-03.png" 
+  image_path: "assets/icons/TAKE_LOGO/TAKE_SHOPPING_03.png" 
   android: true
   ios: true
 
