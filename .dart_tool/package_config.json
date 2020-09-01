@@ -608,6 +608,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "splashscreen",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/splashscreen-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "sqflite",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.1",
       "packageUri": "lib/",
@@ -770,7 +776,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-09-01T03:23:02.997596Z",
+  "generated": "2020-09-01T04:07:07.355901Z",
   "generator": "pub",
   "generatorVersion": "2.10.0-45.0.dev"
 }

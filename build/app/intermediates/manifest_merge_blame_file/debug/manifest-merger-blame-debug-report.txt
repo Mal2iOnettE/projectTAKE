@@ -52,8 +52,8 @@
 34        android:debuggable="true"
 35        android:icon="@mipmap/ic_launcher"
 35-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:16:9-43
-36        android:label="Markets" >
-36-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:15:9-32
+36        android:label="TAKE TOWN" >
+36-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:15:9-34
 37        <meta-data
 37-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:18:9-19:77
 38            android:name="com.google.android.geo.API_KEY"

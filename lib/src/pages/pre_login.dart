@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:markets/src/pages/login.dart';
-import 'package:markets/src/pages/signup.dart';
-import 'package:markets/src/pages/singup2.dart';
+
+import 'login.dart';
+import 'singup2.dart';
 
 class Prelogin extends StatefulWidget {
   @override

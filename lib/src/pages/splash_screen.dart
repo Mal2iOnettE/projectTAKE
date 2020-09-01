@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
-import 'package:markets/src/pages/Intro.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
+import 'package:splashscreen/splashscreen.dart';
 import '../controllers/splash_screen_controller.dart';
+import 'info.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -21,7 +23,7 @@ class SplashScreenState extends StateMVC<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    loadData();
+    //loadData();
   }
 
   void loadData() {
@@ -54,7 +56,7 @@ class SplashScreenState extends StateMVC<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'assets/icons/TAKE_LOGO/TAKE_SHOPPING_03.png',
+                'assets/icons/TAKE_LOGO/TAKE_SHOPPING_08.png',
                 width: 500,
                 fit: BoxFit.cover,
               ),

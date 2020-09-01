@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:markets/src/pages/singup2.dart';
 
 import 'src/models/route_argument.dart';
 import 'src/pages/cart.dart';
@@ -24,6 +23,7 @@ import 'src/pages/razorpay_payment.dart';
 import 'src/pages/reviews.dart';
 import 'src/pages/settings.dart';
 import 'src/pages/signup.dart';
+import 'src/pages/singup2.dart';
 import 'src/pages/splash_screen.dart';
 import 'src/pages/tracking.dart';
 import 'src/pages/info.dart';

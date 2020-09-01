@@ -34,7 +34,7 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Markets" >
+        android:label="TAKE TOWN" >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAjs4xKXYfxLJV1Ln7yCLfVrkJOEjj3CyY" />

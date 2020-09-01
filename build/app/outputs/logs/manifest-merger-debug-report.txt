@@ -177,7 +177,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\At
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\28c364c6a977dc65d48a7ff1b3b0ddde\core-1.2.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:15:9-32
+		ADDED from D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:15:9-34
 	android:icon
 		ADDED from D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:16:9-43
 	android:name
