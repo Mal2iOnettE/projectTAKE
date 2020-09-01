@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:markets/src/pages/Intro.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:splashscreen/splashscreen.dart';
 //import 'package:splashscreen/splashscreen.dart';
@@ -45,7 +46,7 @@ class MainSplashScreenState extends StateMVC<MainSplashScreen> {
   Widget build(BuildContext context) {
     return SplashScreen(
       seconds: 3,
-      navigateAfterSeconds: new OnBoardingPage(),
+      navigateAfterSeconds: new OnBoardingPage2(),
       image: Image.asset('assets/img/TAKE_SHOPPING_04.png'),
       backgroundColor: Colors.white,
       photoSize: 100.0,

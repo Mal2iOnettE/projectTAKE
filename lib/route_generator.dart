@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:markets/src/pages/Intro.dart';
 
 import 'src/models/route_argument.dart';
+import 'src/pages/Prelogin.dart';
 import 'src/pages/cart.dart';
 import 'src/pages/category.dart';
 import 'src/pages/checkout.dart';
@@ -99,12 +101,14 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => HelpWidget());
       case '/Settings':
         return MaterialPageRoute(builder: (_) => SettingsWidget());
-      case '/info':
-        return MaterialPageRoute(builder: (_) => OnBoardingPage());
+      /*case '/info':
+        return MaterialPageRoute(builder: (_) => OnBoardingPage());*/
       case '/Intro':
-        return MaterialPageRoute(builder: (_) => OnBoardingPage());
-      case '/prelogin':
-        return MaterialPageRoute(builder: (_) => Prelogin());
+        return MaterialPageRoute(builder: (_) => OnBoardingPage2());
+      /*case '/prelogin':
+        return MaterialPageRoute(builder: (_) => Prelogin());*/
+      case '/Prelogin':
+        return MaterialPageRoute(builder: (_) => Prelogin2());
       case '/filter':
         return MaterialPageRoute(builder: (_) => FilterWidget());
       case '/filterpag':
