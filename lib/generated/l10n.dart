@@ -343,7 +343,17 @@ class S {
 
   String get i_forgot_password {
     return Intl.message(
-      'I forgot password ?',
+      'I Forgot Password ?',
+      name: 'i_forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  
+  String get forgot_password {
+    return Intl.message(
+      'Forgot Password ?',
       name: 'i_forgot_password',
       desc: '',
       args: [],

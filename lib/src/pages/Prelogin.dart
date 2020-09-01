@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:markets/src/pages/login.dart';
 
 class Prelogin2 extends StatefulWidget {
   @override
@@ -76,7 +77,7 @@ class _Prelogin2State extends State<Prelogin2> {
             height: 50,
             child: RaisedButton.icon(
               onPressed: () {
-                //Navigator.push(context,MaterialPageRoute(builder: (context) => Account()));
+                Navigator.push(context,MaterialPageRoute(builder: (context) => LoginWidget()));
               },
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               icon: Container(
@@ -92,12 +93,13 @@ class _Prelogin2State extends State<Prelogin2> {
           ),
           Padding(padding: EdgeInsets.only(top: 20)),
 
+        ///SignUp
           Container(
             width: 280,
             height: 50,
             child: OutlineButton.icon(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/Login');
+                Navigator.pushReplacementNamed(context, '/SignUp');
               },
               borderSide: BorderSide(
                 color: Colors.white, //Color of the border

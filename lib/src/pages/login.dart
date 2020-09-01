@@ -122,6 +122,10 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                         child: Container(
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(16.0)),
                           child: RaisedButton(
+                            
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0)
+                            ),
                               padding: EdgeInsets.all(12),
                               child: Text(
                                 S.of(context).login,
@@ -161,7 +165,7 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                         },
                         textColor: Theme.of(context).hintColor,
                         child: Text(
-                          S.of(context).i_forgot_password,
+                          S.of(context).forgot_password,
                           style: TextStyle(fontSize: 17.0, color: Theme.of(context).accentColor),
                         ),
                       ),
