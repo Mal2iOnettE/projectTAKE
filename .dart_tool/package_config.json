@@ -212,6 +212,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.7.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "flutter_localizations",
       "rootUri": "file:///C:/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
@@ -318,6 +324,12 @@
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.3"
+    },
+    {
+      "name": "image",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/image-2.1.14",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "intl",
@@ -758,7 +770,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-09-01T02:43:55.523890Z",
+  "generated": "2020-09-01T03:12:51.414948Z",
   "generator": "pub",
   "generatorVersion": "2.10.0-45.0.dev"
 }
