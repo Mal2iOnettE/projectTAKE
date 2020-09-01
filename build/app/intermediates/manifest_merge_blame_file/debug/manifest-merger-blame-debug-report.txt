@@ -21,21 +21,21 @@
 16-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:6:5-80
 16-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:6:22-78
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-17-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:22:5-79
-17-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:22:22-76
+17-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:22:5-79
+17-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:22:22-76
 18    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-18-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:24:5-68
-18-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:24:22-65
+18-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:24:5-68
+18-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:24:22-65
 19    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-19-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:26:5-82
-19-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:26:22-79
+19-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:26:5-82
+19-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:26:22-79
 20
 21    <uses-feature
-21-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+21-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c0ac5501f1a6d453d3caa9407beabe5c\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
 22        android:glEsVersion="0x00020000"
-22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c0ac5501f1a6d453d3caa9407beabe5c\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
 23        android:required="true" />
-23-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+23-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c0ac5501f1a6d453d3caa9407beabe5c\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
 24    <!--
 25 io.flutter.app.FlutterApplication is an android.app.Application that
 26         calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -48,7 +48,7 @@
 32        android:name="com.smartersvision.markets.Application"
 32-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:14:9-36
 33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-33-->[androidx.core:core:1.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\28c364c6a977dc65d48a7ff1b3b0ddde\core-1.2.0\AndroidManifest.xml:24:18-86
+33-->[androidx.core:core:1.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\695abac1559fa7c194284555d1931e62\core-1.2.0\AndroidManifest.xml:24:18-86
 34        android:debuggable="true"
 35        android:icon="@mipmap/ic_launcher"
 35-->D:\TAKE_TOWN\android\app\src\main\AndroidManifest.xml:16:9-43
@@ -132,9 +132,9 @@
 80            android:name="com.google.firebase.components.ComponentDiscoveryService"
 80-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:18-89
 81            android:directBootAware="true"
-81-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+81-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e906d9a56743ff9fbb0d065b4fd9606b\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 82            android:exported="false" >
-82-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:37:13-37
+82-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2fb1db4ce3ee2a4da242972054df5db0\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:37:13-37
 83            <meta-data
 83-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-16:85
 84                android:name="com.google.firebase.components:io.flutter.plugins.firebasemessaging.FlutterFirebaseAppRegistrar"
@@ -142,29 +142,29 @@
 85                android:value="com.google.firebase.components.ComponentRegistrar" />
 85-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-82
 86            <meta-data
-86-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:38:13-40:85
+86-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2fb1db4ce3ee2a4da242972054df5db0\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:38:13-40:85
 87                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-87-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:39:17-119
+87-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2fb1db4ce3ee2a4da242972054df5db0\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:39:17-119
 88                android:value="com.google.firebase.components.ComponentRegistrar" />
-88-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:40:17-82
+88-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2fb1db4ce3ee2a4da242972054df5db0\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:40:17-82
 89            <meta-data
-89-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:32:13-34:85
+89-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:32:13-34:85
 90                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-90-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:33:17-96
+90-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:33:17-96
 91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:34:17-82
+91-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:34:17-82
 92            <meta-data
-92-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\1970b917a35c4014be626bd75788cb9a\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:28:13-30:85
+92-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\fc218aeed432862874595ae81fa3b1f3\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:28:13-30:85
 93                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-93-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\1970b917a35c4014be626bd75788cb9a\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:29:17-115
+93-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\fc218aeed432862874595ae81fa3b1f3\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:29:17-115
 94                android:value="com.google.firebase.components.ComponentRegistrar" />
-94-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\1970b917a35c4014be626bd75788cb9a\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:30:17-82
+94-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\fc218aeed432862874595ae81fa3b1f3\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:30:17-82
 95            <meta-data
-95-->[com.google.firebase:firebase-installations:16.1.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\94cbdcdb5e762395733fbeaeb6d9f603\jetified-firebase-installations-16.1.0\AndroidManifest.xml:17:13-19:85
+95-->[com.google.firebase:firebase-installations:16.1.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\1e14cd40684eee6a70c05353406e88ee\jetified-firebase-installations-16.1.0\AndroidManifest.xml:17:13-19:85
 96                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-96-->[com.google.firebase:firebase-installations:16.1.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\94cbdcdb5e762395733fbeaeb6d9f603\jetified-firebase-installations-16.1.0\AndroidManifest.xml:18:17-127
+96-->[com.google.firebase:firebase-installations:16.1.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\1e14cd40684eee6a70c05353406e88ee\jetified-firebase-installations-16.1.0\AndroidManifest.xml:18:17-127
 97                android:value="com.google.firebase.components.ComponentRegistrar" />
-97-->[com.google.firebase:firebase-installations:16.1.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\94cbdcdb5e762395733fbeaeb6d9f603\jetified-firebase-installations-16.1.0\AndroidManifest.xml:19:17-82
+97-->[com.google.firebase:firebase-installations:16.1.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\1e14cd40684eee6a70c05353406e88ee\jetified-firebase-installations-16.1.0\AndroidManifest.xml:19:17-82
 98        </service>
 99
 100        <activity
@@ -196,11 +196,11 @@
 114             but set to not exported to explicitly avoid allowing another app to call it.
 115        -->
 116        <service
-116-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:28:9-34:19
+116-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2fb1db4ce3ee2a4da242972054df5db0\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:28:9-34:19
 117            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-117-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:29:13-82
+117-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2fb1db4ce3ee2a4da242972054df5db0\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:29:13-82
 118            android:exported="false" >
-118-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\33978432e84771c07e8345ff98484c34\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:30:13-37
+118-->[com.google.firebase:firebase-messaging:20.1.3] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2fb1db4ce3ee2a4da242972054df5db0\jetified-firebase-messaging-20.1.3\AndroidManifest.xml:30:13-37
 119            <intent-filter android:priority="-500" >
 119-->[:firebase_messaging] D:\TAKE_TOWN\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:29
 120                <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -210,83 +210,83 @@
 122        </service>
 123
 124        <receiver
-124-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:37:9-44:20
+124-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:37:9-44:20
 125            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-125-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:38:13-78
+125-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:38:13-78
 126            android:exported="true"
-126-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:39:13-36
+126-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:39:13-36
 127            android:permission="com.google.android.c2dm.permission.SEND" >
-127-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:40:13-73
+127-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:40:13-73
 128            <intent-filter>
-128-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:41:13-43:29
+128-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:41:13-43:29
 129                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-129-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:42:17-81
-129-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c98a0091323b3f548454ecf4a2693285\jetified-firebase-iid-20.1.2\AndroidManifest.xml:42:25-78
+129-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:42:17-81
+129-->[com.google.firebase:firebase-iid:20.1.2] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\9a7e29b2eaab37c6c398b15de9cac01c\jetified-firebase-iid-20.1.2\AndroidManifest.xml:42:25-78
 130            </intent-filter>
 131        </receiver> <!-- Needs to be explicitly declared on P+ -->
 132        <uses-library
-132-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+132-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c0ac5501f1a6d453d3caa9407beabe5c\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
 133            android:name="org.apache.http.legacy"
-133-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+133-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c0ac5501f1a6d453d3caa9407beabe5c\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
 134            android:required="false" />
-134-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\2c2819a55a9c4b78ebbc2d00750e51eb\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+134-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\c0ac5501f1a6d453d3caa9407beabe5c\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
 135
 136        <activity
-136-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\00c69f4b2be489f249119ecfc3c42615\jetified-play-services-base-17.2.1\AndroidManifest.xml:23:9-26:75
+136-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\27293cbc75e5668a50aafe3c6066b92e\jetified-play-services-base-17.2.1\AndroidManifest.xml:23:9-26:75
 137            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-137-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\00c69f4b2be489f249119ecfc3c42615\jetified-play-services-base-17.2.1\AndroidManifest.xml:24:13-79
+137-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\27293cbc75e5668a50aafe3c6066b92e\jetified-play-services-base-17.2.1\AndroidManifest.xml:24:13-79
 138            android:exported="false"
-138-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\00c69f4b2be489f249119ecfc3c42615\jetified-play-services-base-17.2.1\AndroidManifest.xml:25:13-37
+138-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\27293cbc75e5668a50aafe3c6066b92e\jetified-play-services-base-17.2.1\AndroidManifest.xml:25:13-37
 139            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-139-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\00c69f4b2be489f249119ecfc3c42615\jetified-play-services-base-17.2.1\AndroidManifest.xml:26:13-72
+139-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\27293cbc75e5668a50aafe3c6066b92e\jetified-play-services-base-17.2.1\AndroidManifest.xml:26:13-72
 140
 141        <provider
-141-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+141-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e906d9a56743ff9fbb0d065b4fd9606b\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
 142            android:name="com.google.firebase.provider.FirebaseInitProvider"
-142-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+142-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e906d9a56743ff9fbb0d065b4fd9606b\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
 143            android:authorities="com.smartersvision.markets.firebaseinitprovider"
-143-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+143-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e906d9a56743ff9fbb0d065b4fd9606b\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
 144            android:exported="false"
-144-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+144-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e906d9a56743ff9fbb0d065b4fd9606b\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
 145            android:initOrder="100" />
-145-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\bbf7540012ce1ee5c2bc77fbcaa6783e\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+145-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e906d9a56743ff9fbb0d065b4fd9606b\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
 146
 147        <meta-data
-147-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e358e6a5d5ffdf173637a4a374dbcaeb\jetified-play-services-basement-17.2.1\AndroidManifest.xml:23:9-25:69
+147-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\736ea31b0bb3f2c8b7d05b6a2951d310\jetified-play-services-basement-17.2.1\AndroidManifest.xml:23:9-25:69
 148            android:name="com.google.android.gms.version"
-148-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e358e6a5d5ffdf173637a4a374dbcaeb\jetified-play-services-basement-17.2.1\AndroidManifest.xml:24:13-58
+148-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\736ea31b0bb3f2c8b7d05b6a2951d310\jetified-play-services-basement-17.2.1\AndroidManifest.xml:24:13-58
 149            android:value="@integer/google_play_services_version" />
-149-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\e358e6a5d5ffdf173637a4a374dbcaeb\jetified-play-services-basement-17.2.1\AndroidManifest.xml:25:13-66
+149-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\736ea31b0bb3f2c8b7d05b6a2951d310\jetified-play-services-basement-17.2.1\AndroidManifest.xml:25:13-66
 150
 151        <service
-151-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:29:9-35:19
+151-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\d5c4ed339a2cd49556839e28acd5c849\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:29:9-35:19
 152            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-152-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:30:13-103
+152-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\d5c4ed339a2cd49556839e28acd5c849\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:30:13-103
 153            android:exported="false" >
-153-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:31:13-37
+153-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\d5c4ed339a2cd49556839e28acd5c849\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:31:13-37
 154            <meta-data
-154-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:32:13-34:39
+154-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\d5c4ed339a2cd49556839e28acd5c849\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:32:13-34:39
 155                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-155-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:33:17-94
+155-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\d5c4ed339a2cd49556839e28acd5c849\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:33:17-94
 156                android:value="cct" />
-156-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5558f413d2a7162becc6f59c328d6282\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:34:17-36
+156-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\d5c4ed339a2cd49556839e28acd5c849\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:34:17-36
 157        </service>
 158        <service
-158-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:26:9-30:19
+158-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5c90795046b27cea1fe321bb41f7612f\jetified-transport-runtime-2.2.0\AndroidManifest.xml:26:9-30:19
 159            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-159-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:27:13-117
+159-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5c90795046b27cea1fe321bb41f7612f\jetified-transport-runtime-2.2.0\AndroidManifest.xml:27:13-117
 160            android:exported="false"
-160-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:28:13-37
+160-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5c90795046b27cea1fe321bb41f7612f\jetified-transport-runtime-2.2.0\AndroidManifest.xml:28:13-37
 161            android:permission="android.permission.BIND_JOB_SERVICE" >
-161-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:29:13-69
+161-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5c90795046b27cea1fe321bb41f7612f\jetified-transport-runtime-2.2.0\AndroidManifest.xml:29:13-69
 162        </service>
 163
 164        <receiver
-164-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:32:9-34:40
+164-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5c90795046b27cea1fe321bb41f7612f\jetified-transport-runtime-2.2.0\AndroidManifest.xml:32:9-34:40
 165            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-165-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:33:13-132
+165-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5c90795046b27cea1fe321bb41f7612f\jetified-transport-runtime-2.2.0\AndroidManifest.xml:33:13-132
 166            android:exported="false" />
-166-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\76ace01a579a1c417e7f33de2f1faa09\jetified-transport-runtime-2.2.0\AndroidManifest.xml:34:13-37
+166-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\Attachai khum-ai\.gradle\caches\transforms-2\files-2.1\5c90795046b27cea1fe321bb41f7612f\jetified-transport-runtime-2.2.0\AndroidManifest.xml:34:13-37
 167    </application>
 168
 169</manifest>
