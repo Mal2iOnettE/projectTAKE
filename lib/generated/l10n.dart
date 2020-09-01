@@ -529,6 +529,15 @@ class S {
       args: [],
     );
   }
+
+  String get enter_email {
+    return Intl.message(
+      'Enter Email',
+      name: 'enter_email',
+      desc: '',
+      args: [],
+    );
+  }
   
   String get phone {
     return Intl.message(
@@ -661,6 +670,16 @@ class S {
     return Intl.message(
       'Password',
       name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  
+  String get enter_password {
+    return Intl.message(
+      'Enter Password',
+      name: 'enter_password',
       desc: '',
       args: [],
     );

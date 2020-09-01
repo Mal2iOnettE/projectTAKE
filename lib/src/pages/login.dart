@@ -1,8 +1,6 @@
-import 'dart:html';
-
+//import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
-
 import '../../generated/l10n.dart';
 import '../controllers/user_controller.dart';
 import '../helpers/app_config.dart' as config;
@@ -38,15 +36,20 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
         body: Center(
           child: Container(
             width: 400.0,
+            decoration: BoxDecoration(
+              image:  DecorationImage(
+                image: AssetImage('assets/img/BG-1.png')
+              )
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 SizedBox(
-                  height: 100,
+                  height: 110,
                 ),
                 Container(
                   width: config.App(context).appWidth(84),
-                  height: config.App(context).appHeight(20),
+                  height: config.App(context).appHeight(10),
                   child: Text(
                     S.of(context).login_,
                     style: Theme.of(context).textTheme.headline2.merge(TextStyle(color: Colors.black)),
@@ -59,6 +62,8 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+
+                      ///Email
                       Padding(
                         padding: EdgeInsets.only(right: 27.0, left: 27.0),
                         child: TextFormField(
@@ -66,12 +71,12 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                           onSaved: (input) => _con.user.email = input,
                           validator: (input) => !input.contains('@') ? S.of(context).should_be_a_valid_email : null,
                           decoration: InputDecoration(
-                            labelText: S.of(context).email,
+                            labelText: S.of(context).enter_email,
                             labelStyle: TextStyle(color: Theme.of(context).accentColor),
                             contentPadding: EdgeInsets.all(12),
                             hintText: 'johndoe@gmail.com',
                             hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                            prefixIcon: Icon(Icons.alternate_email, color: Theme.of(context).accentColor),
+                            //prefixIcon: Icon(Icons.alternate_email, color: Theme.of(context).accentColor),
                             border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
                             focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
                             enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
@@ -79,6 +84,8 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                         ),
                       ),
                       SizedBox(height: 30),
+
+                      ///Password
                       Padding(
                         padding: EdgeInsets.only(right: 27.0, left: 27.0),
                         child: TextFormField(
@@ -87,12 +94,12 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                           validator: (input) => input.length < 3 ? S.of(context).should_be_more_than_3_characters : null,
                           obscureText: _con.hidePassword,
                           decoration: InputDecoration(
-                            labelText: S.of(context).password,
+                            labelText: S.of(context).enter_password,
                             labelStyle: TextStyle(color: Theme.of(context).accentColor),
                             contentPadding: EdgeInsets.all(12),
                             hintText: '••••••••••••',
                             hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                            prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
+                            //prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
@@ -108,21 +115,23 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: 50),
                       //Login
-
                       Padding(
                         padding: const EdgeInsets.only(left: 28.0, right: 28.0),
-                        child: RaisedButton(
-                          padding: EdgeInsets.all(15),
-                            child: Text(
-                              S.of(context).login,
-                              style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 20.0),
-                            ),
-                            color: Theme.of(context).accentColor,
-                            onPressed: () {
-                              _con.login();
-                            }),
+                        child: Container(
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(16.0)),
+                          child: RaisedButton(
+                              padding: EdgeInsets.all(12),
+                              child: Text(
+                                S.of(context).login,
+                                style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 20.0),
+                              ),
+                              color: Theme.of(context).accentColor,
+                              onPressed: () {
+                                _con.login();
+                              }),
+                        ),
                       ),
 
                       SizedBox(height: 15),
@@ -142,7 +151,7 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                   ),
                 ),
                 Positioned(
-                  bottom: 10,
+                  bottom: 50,
                   child: Column(
                     children: <Widget>[
                       //forgot password
@@ -151,25 +160,38 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                           Navigator.of(context).pushReplacementNamed('/ForgetPassword');
                         },
                         textColor: Theme.of(context).hintColor,
-                        child: Text(S.of(context).i_forgot_password),
+                        child: Text(
+                          S.of(context).i_forgot_password,
+                          style: TextStyle(fontSize: 17.0, color: Theme.of(context).accentColor),
+                        ),
                       ),
 
                       //Don't have account?
-                       Text(S.of(context).dont_have_account),
-                      FlatButton(
-                        onPressed: () {
-                          Navigator.of(context).pushReplacementNamed('/Register');
-                        },
-                        textColor: Theme.of(context).hintColor,
-                        child: Text(S.of(context).signup),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(S.of(context).dont_have_account),
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).pushReplacementNamed('/Register');
+                            },
+                            textColor: Theme.of(context).hintColor,
+                            child: Text(S.of(context).signup),
+                          ),
+                        ],
                       ),
 
-                      Text("By signing up you agree to our Terms of Use and Privacy Policy",
-                      style: TextStyle(
-                        color: Colors.black38,
-                        fontSize: 15.0
+                    //term and policy
+                      Text(
+                        "By signing up you agree to our Terms of Use and Privacy Policy",
+                        style: TextStyle(color: Colors.black38, fontSize: 15.0),
+                        textAlign: TextAlign.center,
                       ),
-                      )
+                      Container(
+                        height: 260.0,
+                        child: Image.asset('assets/img/sub_bg01.png')
+                        )
                     ],
                   ),
                 )

@@ -41,7 +41,17 @@ class _Prelogin2State extends State<Prelogin2> {
             textAlign: TextAlign.center,
           ),
           Padding(padding: EdgeInsets.only(top: 180)),
-
+          Container(
+            width: 280,
+            height: 50,
+            child: RaisedButton(
+              onPressed: () {},
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+              child: Text("Log In"),
+              color: Colors.white,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(top: 20)),
           Container(
             width: 280,
             height: 50,
@@ -70,10 +80,10 @@ class _Prelogin2State extends State<Prelogin2> {
               },
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               icon: Container(
-                height: 40,
-                width: 40,
+                height: 30,
+                width: 30,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage('assets/img/googlelogo.png')),
+                  image: DecorationImage(image: AssetImage('assets/img/google.png')),
                 ),
               ),
               label: Text('Connect with google'),
