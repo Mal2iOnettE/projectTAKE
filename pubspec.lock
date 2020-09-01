@@ -712,6 +712,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety"
+<<<<<<< HEAD
   splashscreen:
     dependency: "direct main"
     description:
@@ -719,6 +720,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+=======
+>>>>>>> 64a5a1a913296569c9ad4163d8fe2ca4bc031f5f
   sqflite:
     dependency: transitive
     description:
