@@ -100,12 +100,12 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                               widget.increment();
                             });
                           },
-                          iconSize: 30,
+                          iconSize: 40,
                           padding: EdgeInsets.symmetric(horizontal: 5),
                           icon: Icon(Icons.add_circle_outline),
                           color: Theme.of(context).hintColor,
                         ),
-                        Text(widget.cart.quantity.toString(), style: Theme.of(context).textTheme.subtitle1),
+                        //Text(widget.cart.quantity.toString(), style: Theme.of(context).textTheme.subtitle1),
                         IconButton(
                           onPressed: () {
                             setState(() {
@@ -115,7 +115,8 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                           iconSize: 30,
                           padding: EdgeInsets.symmetric(horizontal: 5),
                           icon: Icon(Icons.remove_circle_outline),
-                          color: Theme.of(context).hintColor,
+                          color: Theme.of(context).accentColor,
+                          //color: Theme.of(context).hintColor,
                         ),
                       ],
                     ),
