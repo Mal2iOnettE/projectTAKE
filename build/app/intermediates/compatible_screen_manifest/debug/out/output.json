@@ -1,1 +1,6 @@
-[]
+{
+  "version": 1,
+  "applicationId": "com.smartersvision.markets",
+  "variantType": "BASE_APK",
+  "elements": []
+}

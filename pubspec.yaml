@@ -51,6 +51,7 @@ dependencies:
   group_radio_button: ^1.0.1
   chips_choice: 1.2.0
   splashscreen: ^1.2.0
+  flare_splash_screen: any
 
 flutter_icons:
   image_path: "assets/icons/TAKE_LOGO/TAKE_SHOPPING_03.png" 

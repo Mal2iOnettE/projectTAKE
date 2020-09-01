@@ -18,9 +18,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  Widget _buildImage(String assetName) {
+  Widget _buildImage() {
     return Container(
       width: MediaQuery.of(context).size.width,
+      height: 250.0,
       child: Image.network("https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&auto=format&fit=crop&w=653&q=80",
           fit: BoxFit.cover),
       //child: Image.asset('assets/img/loading_card.png', width: 1500,height: 2000.0,
@@ -41,6 +42,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     return IntroductionScreen(
       key: introKey,
       pages: [
+
+
         //1
         PageViewModel(
           titleWidget: Padding(
@@ -70,7 +73,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ],
             ),
           ),
-          image: _buildImage('info1'),
+          image: _buildImage(),
           footer: Padding(
             padding: const EdgeInsets.only(top: 70.0),
             child: RaisedButton(
@@ -125,7 +128,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ],
             ),
           ),
-          image: _buildImage('info1'),
+          image: _buildImage(),
           footer: Padding(
             padding: const EdgeInsets.only(top: 83.0),
             child: RaisedButton(
@@ -180,7 +183,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ],
             ),
           ),
-          image: _buildImage('info1'),
+          image: _buildImage(),
           footer: Padding(
             padding: const EdgeInsets.only(top: 83.0),
             child: RaisedButton(

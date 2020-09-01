@@ -44,7 +44,7 @@ class RouteGenerator {
       case '/Debug':
         return MaterialPageRoute(builder: (_) => DebugWidget(routeArgument: args as RouteArgument));
       case '/Splash':
-        return MaterialPageRoute(builder: (_) => SplashScreen());
+        return MaterialPageRoute(builder: (_) => MainSplashScreen());
       case '/SignUp':
         return MaterialPageRoute(builder: (_) => SignUpWidget());
       case '/MobileVerification':
@@ -101,18 +101,20 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => SettingsWidget());
       case '/info':
         return MaterialPageRoute(builder: (_) => OnBoardingPage());
+      case '/Intro':
+        return MaterialPageRoute(builder: (_) => OnBoardingPage());
       case '/prelogin':
         return MaterialPageRoute(builder: (_) => Prelogin());
       case '/filter':
         return MaterialPageRoute(builder: (_) => FilterWidget());
-        case '/filterpag':
-      return MaterialPageRoute(builder: (_) => Filterpage());
+      case '/filterpag':
+        return MaterialPageRoute(builder: (_) => Filterpage());
       case '/sort':
-    return MaterialPageRoute(builder: (_) => Sort());
-       case '/dietary':
-    return MaterialPageRoute(builder: (_) => Dietary());
-       case '/cuisines':
-    return MaterialPageRoute(builder: (_) => Cuisines());
+        return MaterialPageRoute(builder: (_) => Sort());
+      case '/dietary':
+        return MaterialPageRoute(builder: (_) => Dietary());
+      case '/cuisines':
+        return MaterialPageRoute(builder: (_) => Cuisines());
   
         default:
       
