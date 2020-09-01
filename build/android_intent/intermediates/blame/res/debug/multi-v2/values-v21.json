@@ -4,7 +4,7 @@
             "outputFile": "D:\\TAKE_TOWN\\build\\android_intent\\intermediates\\res\\merged\\debug\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Attachai khum-ai\\.gradle\\caches\\transforms-2\\files-2.1\\7b4c54b05abfe32c04b6fb9596cf35c8\\core-1.1.0\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Attachai khum-ai\\.gradle\\caches\\transforms-2\\files-2.1\\21d060a0f862e7e3fbc997c0da844fbd\\core-1.1.0\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -20,7 +20,7 @@
             "outputFile": "D:\\TAKE_TOWN\\build\\android_intent\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Attachai khum-ai\\.gradle\\caches\\transforms-2\\files-2.1\\7b4c54b05abfe32c04b6fb9596cf35c8\\core-1.1.0\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Attachai khum-ai\\.gradle\\caches\\transforms-2\\files-2.1\\21d060a0f862e7e3fbc997c0da844fbd\\core-1.1.0\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

@@ -343,7 +343,17 @@ class S {
 
   String get i_forgot_password {
     return Intl.message(
-      'I forgot password ?',
+      'I Forgot Password ?',
+      name: 'i_forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  
+  String get forgot_password {
+    return Intl.message(
+      'Forgot Password ?',
       name: 'i_forgot_password',
       desc: '',
       args: [],
@@ -354,6 +364,15 @@ class S {
     return Intl.message(
       'I don\'t have an account?',
       name: 'i_dont_have_an_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+    String get dont_have_account {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dont_have_account',
       desc: '',
       args: [],
     );
@@ -520,6 +539,15 @@ class S {
       args: [],
     );
   }
+
+  String get enter_email {
+    return Intl.message(
+      'Enter Email',
+      name: 'enter_email',
+      desc: '',
+      args: [],
+    );
+  }
   
   String get phone {
     return Intl.message(
@@ -652,6 +680,16 @@ class S {
     return Intl.message(
       'Password',
       name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  
+  String get enter_password {
+    return Intl.message(
+      'Enter Password',
+      name: 'enter_password',
       desc: '',
       args: [],
     );
@@ -1302,6 +1340,15 @@ class S {
     return Intl.message(
       'Guest',
       name: 'guest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get signup {
+    return Intl.message(
+      'Sign Up',
+      name: 'signup',
       desc: '',
       args: [],
     );

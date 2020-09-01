@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:markets/src/pages/singup2.dart';
+import 'package:markets/src/pages/Intro.dart';
 
 import 'src/models/route_argument.dart';
+import 'src/pages/Prelogin.dart';
 import 'src/pages/cart.dart';
 import 'src/pages/category.dart';
 import 'src/pages/checkout.dart';
@@ -24,6 +25,7 @@ import 'src/pages/razorpay_payment.dart';
 import 'src/pages/reviews.dart';
 import 'src/pages/settings.dart';
 import 'src/pages/signup.dart';
+import 'src/pages/singup2.dart';
 import 'src/pages/splash_screen.dart';
 import 'src/pages/tracking.dart';
 import 'src/pages/info.dart';
@@ -44,7 +46,7 @@ class RouteGenerator {
       case '/Debug':
         return MaterialPageRoute(builder: (_) => DebugWidget(routeArgument: args as RouteArgument));
       case '/Splash':
-        return MaterialPageRoute(builder: (_) => SplashScreen());
+        return MaterialPageRoute(builder: (_) => MainSplashScreen());
       case '/SignUp':
         return MaterialPageRoute(builder: (_) => SignUpWidget());
       case '/MobileVerification':
@@ -99,20 +101,24 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => HelpWidget());
       case '/Settings':
         return MaterialPageRoute(builder: (_) => SettingsWidget());
-      case '/info':
-        return MaterialPageRoute(builder: (_) => OnBoardingPage());
-      case '/prelogin':
-        return MaterialPageRoute(builder: (_) => Prelogin());
+      /*case '/info':
+        return MaterialPageRoute(builder: (_) => OnBoardingPage());*/
+      case '/Intro':
+        return MaterialPageRoute(builder: (_) => OnBoardingPage2());
+      /*case '/prelogin':
+        return MaterialPageRoute(builder: (_) => Prelogin());*/
+      case '/Prelogin':
+        return MaterialPageRoute(builder: (_) => Prelogin2());
       case '/filter':
         return MaterialPageRoute(builder: (_) => FilterWidget());
-        case '/filterpag':
-      return MaterialPageRoute(builder: (_) => Filterpage());
+      case '/filterpag':
+        return MaterialPageRoute(builder: (_) => Filterpage());
       case '/sort':
-    return MaterialPageRoute(builder: (_) => Sort());
-       case '/dietary':
-    return MaterialPageRoute(builder: (_) => Dietary());
-       case '/cuisines':
-    return MaterialPageRoute(builder: (_) => Cuisines());
+        return MaterialPageRoute(builder: (_) => Sort());
+      case '/dietary':
+        return MaterialPageRoute(builder: (_) => Dietary());
+      case '/cuisines':
+        return MaterialPageRoute(builder: (_) => Cuisines());
   
         default:
       
