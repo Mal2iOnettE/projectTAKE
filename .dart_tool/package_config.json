@@ -788,7 +788,19 @@
       "languageVersion": "2.2"
     }
   ],
+<<<<<<< HEAD
   "generated": "2020-09-01T10:44:24.422610Z",
+=======
+<<<<<<< HEAD
+  "generated": "2020-09-02T02:31:51.371399Z",
+=======
+<<<<<<< HEAD
+  "generated": "2020-09-01T08:27:05.982351Z",
+=======
+  "generated": "2020-09-01T10:26:50.065525Z",
+>>>>>>> 64a5a1a913296569c9ad4163d8fe2ca4bc031f5f
+>>>>>>> 78ab6275490ae43db397ef1eb9f70cfc494e5b97
+>>>>>>> d8006e1ab843d547ec149c030c7780f11642c437
   "generator": "pub",
   "generatorVersion": "2.9.0"
 }
