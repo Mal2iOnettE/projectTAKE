@@ -112,6 +112,7 @@ class _OtherPageState extends StateMVC<OtherPage> {
                 Navigator.of(context).pushNamed('/Login');
               }
             },
+            trailing: Icon(Icons.arrow_right),
             leading: Icon(
               Icons.exit_to_app,
               color: Theme.of(context).focusColor.withOpacity(1),
