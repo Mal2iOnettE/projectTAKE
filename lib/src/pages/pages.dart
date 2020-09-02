@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:markets/src/pages/OtherPage.dart';
 
 import '../elements/DrawerWidget.dart';
 import '../elements/FilterWidget.dart';
@@ -10,6 +9,7 @@ import '../pages/home.dart';
 import '../pages/map.dart';
 import '../pages/notifications.dart';
 import '../pages/orders.dart';
+import 'OtherPage.dart';
 
 // ignore: must_be_immutable
 class PagesWidget extends StatefulWidget {

@@ -1,30 +1,33 @@
+
 import 'package:flutter/material.dart';
 import 'package:markets/src/pages/Intro.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:splashscreen/splashscreen.dart';
+//import 'package:splashscreen/splashscreen.dart';
+//import '../controllers/splash_screen_controller.dart';
+import 'info.dart';
 
-import '../controllers/splash_screen_controller.dart';
-
-class SplashScreen extends StatefulWidget {
+class MainSplashScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return SplashScreenState();
+    return MainSplashScreenState();
   }
 }
 
-class SplashScreenState extends StateMVC<SplashScreen> {
-  SplashScreenController _con;
+class MainSplashScreenState extends StateMVC<MainSplashScreen> {
+  //SplashScreenController _con;
 
-  SplashScreenState() : super(SplashScreenController()) {
+  /*MainSplashScreenState() : super(SplashScreenController()) {
     _con = controller;
-  }
-
+  }*/
+/*
   @override
   void initState() {
     super.initState();
-    loadData();
-  }
+    //loadData();
+  }*/
 
-  void loadData() {
+  /*void loadData() {
     _con.progress.addListener(() {
       double progress = 0;
       _con.progress.value.values.forEach((_progress) {
@@ -32,16 +35,27 @@ class SplashScreenState extends StateMVC<SplashScreen> {
       });
       if (progress == 100) {
         try {
-          //Navigator.of(context).pushReplacementNamed('/Intro', arguments: 0);
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => OnBoardingPage()));
+          Navigator.of(context).pushReplacementNamed('/Intro');
+         // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => OnBoardingPage()));
         } catch (e) {}
       }
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SplashScreen(
+      seconds: 3,
+      navigateAfterSeconds: new OnBoardingPage2(),
+      image: Image.asset('assets/takelogo/take_logo04.png'),
+      backgroundColor: Colors.white,
+      photoSize: 100.0,
+      loaderColor: Theme.of(context).accentColor,
+      loadingText: Text("Loading..."),
+    );
+
+
+    /*Scaffold(
       key: _con.scaffoldKey,
       body: Container(
         decoration: BoxDecoration(
@@ -54,8 +68,9 @@ class SplashScreenState extends StateMVC<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'assets/img/take_town.png',
-                width: 500,
+               //'icons/TAKE_LOGO/TAKE_SHOPPING_07.png',
+                'assets/img/TAKE_SHOPPING_04.png',
+                width: 200,
                 fit: BoxFit.cover,
               ),
               SizedBox(height: 50),
@@ -66,6 +81,6 @@ class SplashScreenState extends StateMVC<SplashScreen> {
           ),
         ),
       ),
-    );
+    );*/
   }
 }

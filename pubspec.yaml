@@ -25,6 +25,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  flutter_launcher_icons: ^0.7.5
   cupertino_icons: 0.1.2
   google_maps_flutter: 0.5.29
   google_map_location_picker: 3.3.3
@@ -49,8 +50,13 @@ dependencies:
   selectable_circle_list: ^0.1.5+1
   group_radio_button: ^1.0.1
   chips_choice: 1.2.0
+  splashscreen: ^1.2.0
+  flare_splash_screen: any
 
-  
+flutter_icons:
+  image_path: "assets/takelogo/take_logo07.png" 
+  android: true
+  ios: true
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +77,7 @@ flutter:
   assets:
     - assets/cfg/
     - assets/img/
+    - assets/takelogo/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

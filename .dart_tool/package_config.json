@@ -188,6 +188,18 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "flare_loading",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flare_loading-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "flare_splash_screen",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flare_splash_screen-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -210,6 +222,12 @@
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_inappbrowser-2.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.7.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
     },
     {
       "name": "flutter_localizations",
@@ -318,6 +336,12 @@
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.3"
+    },
+    {
+      "name": "image",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/image-2.1.14",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "intl",
@@ -594,6 +618,15 @@
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.0-nullsafety",
       "packageUri": "lib/",
       "languageVersion": "2.10"
+<<<<<<< HEAD
+    },
+    {
+      "name": "splashscreen",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/splashscreen-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+=======
+>>>>>>> 64a5a1a913296569c9ad4163d8fe2ca4bc031f5f
     },
     {
       "name": "sqflite",
@@ -758,7 +791,15 @@
       "languageVersion": "2.2"
     }
   ],
+<<<<<<< HEAD
   "generated": "2020-09-02T02:31:51.371399Z",
+=======
+<<<<<<< HEAD
+  "generated": "2020-09-01T08:27:05.982351Z",
+=======
+  "generated": "2020-09-01T10:26:50.065525Z",
+>>>>>>> 64a5a1a913296569c9ad4163d8fe2ca4bc031f5f
+>>>>>>> 78ab6275490ae43db397ef1eb9f70cfc494e5b97
   "generator": "pub",
   "generatorVersion": "2.10.0-45.0.dev"
 }

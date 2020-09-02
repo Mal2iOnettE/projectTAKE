@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:markets/src/pages/mobile_verification.dart';
-import 'package:markets/src/pages/mobile_verification_2.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 import '../../generated/l10n.dart';
@@ -8,6 +6,7 @@ import '../controllers/user_controller.dart';
 import '../elements/BlockButtonWidget.dart';
 import '../helpers/app_config.dart' as config;
 import '../helpers/helper.dart';
+import 'mobile_verification_2.dart';
 
 class SignUpWidget2 extends StatefulWidget {
   @override

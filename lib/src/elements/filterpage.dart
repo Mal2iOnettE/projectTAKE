@@ -52,10 +52,9 @@ class _FilterpagState extends State<Filterpage> {
                 style: TextStyle(fontSize: 20.0),
               ),
               Cuisines(),
-              
+              FlatButton(onPressed: () {}),
             ],
           ),
-        
           )
       ],
     ));

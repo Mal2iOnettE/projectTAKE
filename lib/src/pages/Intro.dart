@@ -4,12 +4,12 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:markets/src/pages/home.dart';
 import 'package:markets/src/pages/pages.dart';
 
-class OnBoardingPage extends StatefulWidget {
+class OnBoardingPage2 extends StatefulWidget {
   @override
-  _OnBoardingPageState createState() => _OnBoardingPageState();
+  _OnBoardingPage2State createState() => _OnBoardingPage2State();
 }
 
-class _OnBoardingPageState extends State<OnBoardingPage> {
+class _OnBoardingPage2State extends State<OnBoardingPage2> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
@@ -18,10 +18,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  Widget _buildImage(String assetName) {
+  Widget buildImage() {
     return Container(
       width: MediaQuery.of(context).size.width,
-      child: Image.network("https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&auto=format&fit=crop&w=653&q=80",
+      height: 250.0,
+      child: Image.network("https://cdn.shopify.com/s/files/1/2727/4674/products/thai_cookery_class_eastbourne_1920x.jpg?v=1594513808",
           fit: BoxFit.cover),
       //child: Image.asset('assets/img/loading_card.png', width: 1500,height: 2000.0,
     );
@@ -70,12 +71,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ],
             ),
           ),
-          image: _buildImage('info1'),
+          image: buildImage(),
           footer: Padding(
             padding: const EdgeInsets.only(top: 70.0),
             child: RaisedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/PreLogin');
+                Navigator.pushReplacementNamed(context, '/Prelogin');
               },
               child: Container(
                 width: 300,
@@ -125,12 +126,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ],
             ),
           ),
-          image: _buildImage('info1'),
+          image: buildImage(),
           footer: Padding(
             padding: const EdgeInsets.only(top: 83.0),
             child: RaisedButton(
               onPressed: () {
-                 Navigator.pushReplacementNamed(context, '/PreLogin');
+                //Navigator.pushReplacementNamed(context, '/PreLogin');
+                Navigator.pushReplacementNamed(context, '/Prelogin');
               },
               child: Container(
                 width: 300,
@@ -180,12 +182,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ],
             ),
           ),
-          image: _buildImage('info1'),
+          image: buildImage(),
           footer: Padding(
             padding: const EdgeInsets.only(top: 83.0),
             child: RaisedButton(
               onPressed: () {
-                 Navigator.pushReplacementNamed(context, '/PreLogin');
+                
+                Navigator.pushReplacementNamed(context, '/Prelogin');
               },
               child: Container(
                 width: 300,
