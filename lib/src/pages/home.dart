@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:markets/src/elements/CardWidget.dart';
 import 'package:markets/src/elements/GalleryCarouselWidget.dart';
+import 'package:markets/src/elements/ListMarket.dart';
 import 'package:markets/src/elements/promotionsCarouselWidget.dart';
 import 'package:markets/src/models/market.dart';
 import 'package:markets/src/models/media.dart';
@@ -34,7 +35,8 @@ class HomeWidget extends StatefulWidget {
 class _HomeWidgetState extends StateMVC<HomeWidget> {
   HomeController _con;
 
-  _HomeWidgetState() : super(HomeController()) {
+  _HomeWidgetState() : super(
+    HomeController()) {
     _con = controller;
   }
 
@@ -107,7 +109,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     "See all",
                     style: Theme.of(context).textTheme.caption,
                   ),
-                 // onTap: () => Navigator.pushNamed(context, '/-------'),
+                 onTap: () => Navigator.pushNamed(context, '/-------'),
                  
                   title: Text(
                     S.of(context).nearby_restaurant,
@@ -119,6 +121,11 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                   ),
                 ),
               ),
+
+             /* ListMarkets(
+                marketList: _con.topMarkets,
+                heroTag: 'home_top_markets',
+              ),*/
 
               /// Markets
               CardsCarouselWidget(
