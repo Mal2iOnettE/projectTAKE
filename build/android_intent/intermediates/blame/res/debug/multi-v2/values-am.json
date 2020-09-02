@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\TAKE_TOWN\\build\\android_intent\\intermediates\\res\\merged\\debug\\values-am\\values-am.xml",
+            "outputFile": "C:\\Users\\Admin\\Desktop\\Eca\\TAKE_APP_DELIVERY\\build\\android_intent\\intermediates\\res\\merged\\debug\\values-am\\values-am.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Attachai khum-ai\\.gradle\\caches\\transforms-2\\files-2.1\\21d060a0f862e7e3fbc997c0da844fbd\\core-1.1.0\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\21d060a0f862e7e3fbc997c0da844fbd\\core-1.1.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "D:\\TAKE_TOWN\\build\\android_intent\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
+            "outputFile": "C:\\Users\\Admin\\Desktop\\Eca\\TAKE_APP_DELIVERY\\build\\android_intent\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Attachai khum-ai\\.gradle\\caches\\transforms-2\\files-2.1\\21d060a0f862e7e3fbc997c0da844fbd\\core-1.1.0\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\21d060a0f862e7e3fbc997c0da844fbd\\core-1.1.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:markets/generated/l10n.dart';
+import 'package:markets/generated/l10n.dart';
+import 'package:markets/generated/l10n.dart';
 import 'package:markets/src/controllers/profile_controller.dart';
 import 'package:markets/src/repository/user_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
@@ -67,6 +69,82 @@ class _OtherPageState extends StateMVC<OtherPage> {
                   ),
           ),
       
+       
+        //Profile
+          ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/Profile');
+            },
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text(
+              S.of(context).profile,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+          ), 
+          divider(),
+      
+       
+       
+       
+        //Payments
+          ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/PaymentMethod');
+            },
+           trailing:Icon(Icons.arrow_forward_ios), 
+            title: Text(
+              S.of(context).payment,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+          ), 
+         divider(),
+
+
+
+        //Orderhistory
+          ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/orders');
+            },   
+         trailing:Icon(Icons.arrow_forward_ios),
+            title: Text(
+              S.of(context).order_history,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+          ), 
+         divider(),
+
+
+        //Deliveryaddress
+          ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/DeliveryAddresses');
+            },
+            trailing:Icon(Icons.arrow_forward_ios),
+            title: Text(
+              S.of(context).delivery_addresses,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+          ), 
+         divider(),
+
+
+
+
+       //openstore
+          ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/Languages');
+            },
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text(
+              S.of(context).open_store,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+          ), 
+          divider(),
+
+
       ///Setting
            ListTile(
             onTap: () {
@@ -76,51 +154,65 @@ class _OtherPageState extends StateMVC<OtherPage> {
                 Navigator.of(context).pushReplacementNamed('/Login');
               }
             },
-            leading: Icon(
-              Icons.settings,
-              color: Theme.of(context).focusColor.withOpacity(1),
-            ),
+            trailing: Icon(Icons.arrow_forward_ios),
             title: Text(
               S.of(context).settings,
               style: Theme.of(context).textTheme.subtitle1,
             ),
-          ),
+          ), 
+          divider(),
 
          ///Change Languages 
           ListTile(
             onTap: () {
               Navigator.of(context).pushNamed('/Languages');
             },
-            leading: Icon(
-              Icons.translate,
-              color: Theme.of(context).focusColor.withOpacity(1),
-            ),
+            trailing: Icon(Icons.arrow_forward_ios),
             title: Text(
               S.of(context).languages,
               style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
-          
-         //Logout 
+           divider(),
+
+          //about
           ListTile(
             onTap: () {
-              if (currentUser.value.apiToken != null) {
-                logout().then((value) {
-                  Navigator.of(context).pushNamedAndRemoveUntil('/Pages', (Route<dynamic> route) => false, arguments: 2);
-                });
-              } else {
-                Navigator.of(context).pushNamed('/Login');
-              }
+              Navigator.of(context).pushNamed('/Languages');
             },
-            leading: Icon(
-              Icons.exit_to_app,
-              color: Theme.of(context).focusColor.withOpacity(1),
-            ),
+            trailing: Icon(Icons.arrow_forward_ios),
             title: Text(
-              currentUser.value.apiToken != null ? S.of(context).log_out : S.of(context).login,
+              S.of(context).aboutus,
               style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
+           divider(),
+           
+
+
+         //Support center 
+        ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/Languages');
+            },
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text(
+              S.of(context).support_center,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+          ),
+          
+          divider()
+
         ]);
+  }
+
+  Widget divider(){
+    return  Divider(
+             indent: 20,
+             endIndent: 20,
+             height: 25,
+             color: Colors.black26,
+           );
   }
 }

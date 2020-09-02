@@ -2199,7 +2199,35 @@ class S {
       args: [],
     );
   }
-}
+
+ String get open_store {
+    return Intl.message(
+      'Open store',
+      name: 'open_store',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get aboutus {
+    return Intl.message(
+      ' About us',
+      name: 'aboutus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  
+  String get support_center {
+    return Intl.message(
+      'Support center',
+      name: 'support_center',
+      desc: '',
+      args: [],
+    );
+  }
+
 
 String get cuisines {
     return Intl.message(
@@ -2207,7 +2235,32 @@ String get cuisines {
       name: 'cuisines',
       desc: '',
       args: [],
+
     );
+}
+
+String get order_history {
+    return Intl.message(
+      'Order history',
+      name: 'order_history',
+      desc: '',
+      args: [],
+
+    );
+}
+
+String get payment {
+    return Intl.message(
+      'Payment',
+      name: 'payment',
+      desc: '',
+      args: [],
+
+    );
+}
+ 
+
+
   }
 
 

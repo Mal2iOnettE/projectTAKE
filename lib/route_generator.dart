@@ -35,6 +35,7 @@ import 'src/elements/filterpage.dart';
 import 'src/elements/sort.dart';
 import 'src/elements/Dietarysort.dart';
 import 'src/elements/Cuisines.dart';
+import 'src/pages/orders.dart';
 
 
 
@@ -119,6 +120,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Dietary());
       case '/cuisines':
         return MaterialPageRoute(builder: (_) => Cuisines());
+         case '/orders':
+        return MaterialPageRoute(builder: (_) => OrdersWidget());
   
         default:
       
