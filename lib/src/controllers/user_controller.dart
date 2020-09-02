@@ -1,6 +1,8 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:markets/src/elements/AlertDialogWidget.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../../generated/l10n.dart';
 import '../helpers/helper.dart';
@@ -35,17 +37,26 @@ class UserController extends ControllerMVC {
       Overlay.of(context).insert(loader);
       repository.login(user).then((value) {
         if (value != null && value.apiToken != null) {
-          Navigator.of(scaffoldKey.currentContext).pushReplacementNamed('/Pages', arguments: 2);
+          Navigator.of(scaffoldKey.currentContext).pushReplacementNamed('/Pages', arguments: 0);
         } else {
-          scaffoldKey?.currentState?.showSnackBar(SnackBar(
+          scaffoldKey?.currentState?.build(context);
+          Alert(
+            context: context,
+            title: "Alert",
+            desc: "ssssss",
+          ).show();
+          /*scaffoldKey?.currentState?.showSnackBar(
+            SnackBar(
             content: Text(S.of(context).wrong_email_or_password),
-          ));
+          )
+        );*/
         }
       }).catchError((e) {
         loader.remove();
-        scaffoldKey?.currentState?.showSnackBar(SnackBar(
+        PopupDialog();
+        /*scaffoldKey?.currentState?.showSnackBar(SnackBar(
           content: Text(S.of(context).this_account_not_exist),
-        ));
+        ));*/
       }).whenComplete(() {
         Helper.hideLoader(loader);
       });
