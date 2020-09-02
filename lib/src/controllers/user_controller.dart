@@ -39,24 +39,18 @@ class UserController extends ControllerMVC {
         if (value != null && value.apiToken != null) {
           Navigator.of(scaffoldKey.currentContext).pushReplacementNamed('/Pages', arguments: 0);
         } else {
-          scaffoldKey?.currentState?.build(context);
-          Alert(
-            context: context,
-            title: "Alert",
-            desc: "ssssss",
-          ).show();
-          /*scaffoldKey?.currentState?.showSnackBar(
+         scaffoldKey?.currentState?.showSnackBar(
             SnackBar(
             content: Text(S.of(context).wrong_email_or_password),
           )
-        );*/
+        );
         }
       }).catchError((e) {
         loader.remove();
         PopupDialog();
-        /*scaffoldKey?.currentState?.showSnackBar(SnackBar(
+        scaffoldKey?.currentState?.showSnackBar(SnackBar(
           content: Text(S.of(context).this_account_not_exist),
-        ));*/
+        ));
       }).whenComplete(() {
         Helper.hideLoader(loader);
       });
