@@ -21,7 +21,10 @@ class NotificationItemWidget extends StatelessWidget {
               height: 75,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient: LinearGradient(begin: Alignment.bottomLeft, end: Alignment.topRight, colors: [
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomLeft, 
+                    end: Alignment.topRight, 
+                    colors: [
                     Theme.of(context).focusColor.withOpacity(0.7),
                     Theme.of(context).focusColor.withOpacity(0.05),
                   ])),
