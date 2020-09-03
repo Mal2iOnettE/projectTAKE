@@ -2,7 +2,6 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:markets/src/elements/AlertDialogWidget.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../../generated/l10n.dart';
 import '../helpers/helper.dart';

@@ -667,6 +667,15 @@ class S {
     );
   }
 
+  String get pls_use_valid_email {
+    return Intl.message(
+      'Please use a valid email',
+      name: 'pls_use_valid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get should_be_more_than_6_letters {
     return Intl.message(
       'Should be more than 6 letters',

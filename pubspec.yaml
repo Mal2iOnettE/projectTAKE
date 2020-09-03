@@ -52,7 +52,7 @@ dependencies:
   chips_choice: 1.2.0
   splashscreen: ^1.2.0
   flare_splash_screen: any
-  rflutter_alert: 1.0.3
+  rflutter_alert: ^1.0.3
 
 flutter_icons:
   image_path: "assets/takelogo/take_logo07.png" 
