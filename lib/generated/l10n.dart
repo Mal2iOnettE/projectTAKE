@@ -658,10 +658,19 @@ class S {
     );
   }
 
-  String get should_be_a_valid_email {
+  String get use_valid_email {
     return Intl.message(
-      'Should be a valid email',
-      name: 'should_be_a_valid_email',
+      'Please use a valid email',
+      name: 'use_valid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get pls_use_valid_email {
+    return Intl.message(
+      'Please use a valid email',
+      name: 'pls_use_valid_email',
       desc: '',
       args: [],
     );

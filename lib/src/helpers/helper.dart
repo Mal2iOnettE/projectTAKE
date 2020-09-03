@@ -92,12 +92,18 @@ class Helper {
       return Icon(Icons.star, size: size, color: Color(0xFFFFB24D));
     });
     if (rate - rate.floor() > 0) {
-      list.add(Icon(Icons.star_half, size: size, color: Color(0xFFFFB24D)));
+      list.add(Icon(Icons.star_half, 
+      size: size, 
+      color: Color(0xFFFFB24D)));
     }
     list.addAll(List.generate(5 - rate.floor() - (rate - rate.floor()).ceil(), (index) {
       return Icon(Icons.star_border, size: size, color: Color(0xFFFFB24D));
     }));
     return list;
+  }
+
+  static String getRate(double rate) {
+    return rate.toString();
   }
 
   static Widget getPrice(double myPrice, BuildContext context, {TextStyle style}) {
@@ -117,7 +123,9 @@ class Helper {
                 text: setting.value?.defaultCurrency,
                 style: style ?? Theme.of(context).textTheme.subtitle1,
                 children: <TextSpan>[
-                  TextSpan(text: myPrice.toStringAsFixed(setting.value?.currencyDecimalDigits) ?? '', style: style ?? Theme.of(context).textTheme.subtitle1),
+                  TextSpan(
+                      text: myPrice.toStringAsFixed(setting.value?.currencyDecimalDigits) ?? '',
+                      style: style ?? Theme.of(context).textTheme.subtitle1),
                 ],
               )
             : TextSpan(
@@ -127,7 +135,8 @@ class Helper {
                   TextSpan(
                       text: setting.value?.defaultCurrency,
                       style: TextStyle(
-                          fontWeight: FontWeight.w400, fontSize: style != null ? style.fontSize - 4 : Theme.of(context).textTheme.subtitle1.fontSize - 4)),
+                          fontWeight: FontWeight.w400,
+                          fontSize: style != null ? style.fontSize - 4 : Theme.of(context).textTheme.subtitle1.fontSize - 4)),
                 ],
               ),
       );

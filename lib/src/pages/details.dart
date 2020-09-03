@@ -134,7 +134,7 @@ class _DetailsWidgetState extends StateMVC<DetailsWidget> {
                                   ],
                                 ),
                               ),
-                              Row(
+                              /*Row(
                                 children: <Widget>[
                                   SizedBox(width: 20),
                                   Container(
@@ -177,7 +177,7 @@ class _DetailsWidgetState extends StateMVC<DetailsWidget> {
                                   ),
                                   SizedBox(width: 20),
                                 ],
-                              ),
+                              ),*/
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                                 child: Helper.applyHtml(context, _con.market.description),
@@ -347,14 +347,24 @@ class _DetailsWidgetState extends StateMVC<DetailsWidget> {
                       ],
                     ),
                     Positioned(
+<<<<<<< HEAD
                       bottom: 10,
                       left: 250,  
+=======
+                      bottom: 16,
+                      left: 5,  
+>>>>>>> be1692daf5c39e5c5ac5cdcb969dc7cbc09cd10d
                       child: ShoppingCartFloatButtonWidget(
                         iconColor: Theme.of(context).primaryColor,
                         labelColor: Theme.of(context).hintColor,
                         routeArgument: RouteArgument(param: '/Details', id: widget.routeArgument.id),
                       ),
                     ),
+                    Positioned(
+                      top: 32,
+                      right: 12,
+                      child: Icon(Icons.favorite_border)
+                      )
                   ],
                 ),
         ));

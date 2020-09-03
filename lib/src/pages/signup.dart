@@ -88,7 +88,7 @@ class _SignUpWidgetState extends StateMVC<SignUpWidget> {
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         onSaved: (input) => _con.user.email = input,
-                        validator: (input) => !input.contains('@') ? S.of(context).should_be_a_valid_email : null,
+                        validator: (input) => !input.contains('@') ? S.of(context).use_valid_email : null,
                         decoration: InputDecoration(
                           labelText: S.of(context).email,
                           labelStyle: TextStyle(color: Theme.of(context).accentColor),

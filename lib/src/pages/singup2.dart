@@ -73,7 +73,7 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                       keyboardType: TextInputType.emailAddress,
                       onSaved: (input) => _con.user.email = input,
                       validator: (input) => !input.contains('@')
-                          ? S.of(context).should_be_a_valid_email
+                          ? S.of(context).use_valid_email
                           : null,
                       decoration: InputDecoration(
                         labelText: S.of(context).email,
@@ -161,7 +161,7 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                       keyboardType: TextInputType.number,
                       onSaved: (input) => _con.user.email = input,
                       validator: (input) => !input.contains('@')
-                          ? S.of(context).should_be_a_valid_email
+                          ? S.of(context).use_valid_email
                           : null,
                       decoration: InputDecoration(
                         labelText: S.of(context).phone,

@@ -40,10 +40,12 @@ class _CardsCarouselWidgetState extends State<CardsCarouselWidget> {
                           heroTag: widget.heroTag,
                         ));
                   },
-                  child: CardWidget(
+                  child: 
+                  CardWidget(
                     market: widget.marketsList.elementAt(index), 
                     heroTag: widget.heroTag
                     ),
+
                 );
               },
             ),

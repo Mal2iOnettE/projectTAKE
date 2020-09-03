@@ -32,10 +32,10 @@ class _ProfileWidgetState extends StateMVC<ProfileWidget> {
       key: _con.scaffoldKey,
       drawer: DrawerWidget(),
       appBar: AppBar(
-        leading: new IconButton(
+        /*leading: new IconButton(
           icon: new Icon(Icons.sort, color: Theme.of(context).primaryColor),
           onPressed: () => _con.scaffoldKey?.currentState?.openDrawer(),
-        ),
+        ),*/
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).accentColor,
         elevation: 0,
