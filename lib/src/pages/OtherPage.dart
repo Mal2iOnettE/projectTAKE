@@ -82,6 +82,19 @@ class _OtherPageState extends StateMVC<OtherPage> {
             ),
           ), 
           divider(),
+
+          //Favorites
+          ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/favorites');
+            },
+           trailing:Icon(Icons.arrow_forward_ios), 
+            title: Text(
+              S.of(context).favorites,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+          ), 
+         divider(),
       
        
        
