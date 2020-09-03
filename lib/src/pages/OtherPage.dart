@@ -32,6 +32,7 @@ class _OtherPageState extends StateMVC<OtherPage> {
                     accountName: Text(
                       currentUser.value.name,
                       style: Theme.of(context).textTheme.headline6,
+                      textAlign:TextAlign.center
                     ),
                     accountEmail: Text(
                       currentUser.value.email,
