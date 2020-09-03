@@ -38,8 +38,6 @@ import 'src/elements/Cuisines.dart';
 import 'src/pages/orders.dart';
 import 'src/pages/favorites.dart';
 
-
-
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // Getting arguments passed in while calling Navigator.pushNamed
@@ -121,13 +119,13 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Dietary());
       case '/cuisines':
         return MaterialPageRoute(builder: (_) => Cuisines());
-         case '/orders':
+      case '/orders':
         return MaterialPageRoute(builder: (_) => OrdersWidget());
-        case '/favorites':
+      case '/favorites':
         return MaterialPageRoute(builder: (_) => FavoritesWidget());
-  
-        default:
-      
+
+      default:
+
         // If there is no such named route in the switch statement, e.g. /third
         return MaterialPageRoute(builder: (_) => Scaffold(body: SafeArea(child: Text('Route Error'))));
     }

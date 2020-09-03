@@ -52,6 +52,13 @@ class Colors {
       return Color(0xFFCCCCCC).withOpacity(opacity);
     }
   }
+  Color colorDarkNavy(double opacity) {
+    try {
+      return Color(int.parse(settingRepo.setting.value.secondColor.replaceAll("#", "0xFFd01f44"))).withOpacity(opacity);
+    } catch (e) {
+      return Color(0xFF252529).withOpacity(opacity);
+    }
+  }
 
   Color accentColor(double opacity) {
     try {

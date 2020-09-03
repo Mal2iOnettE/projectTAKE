@@ -267,9 +267,9 @@
     },
     {
       "name": "fluttertoast",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-4.0.1",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-7.0.4",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.7"
     },
     {
       "name": "geolocator",
@@ -554,6 +554,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "rflutter_alert",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "rxdart",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.24.1",
       "packageUri": "lib/",
@@ -788,7 +794,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-09-03T08:22:02.979881Z",
+  "generated": "2020-09-03T08:23:08.256687Z",
   "generator": "pub",
   "generatorVersion": "2.10.0-45.0.dev"
 }

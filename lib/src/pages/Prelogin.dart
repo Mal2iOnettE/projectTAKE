@@ -41,17 +41,23 @@ class _Prelogin2State extends State<Prelogin2> {
             ),
             textAlign: TextAlign.center,
           ),
+
+          ///Log in button
           Padding(padding: EdgeInsets.only(top: 180)),
           Container(
             width: 280,
             height: 50,
             child: RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginWidget()));
+              },
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               child: Text("Log In"),
               color: Colors.white,
             ),
           ),
+
+          ///Connect with facebook
           Padding(padding: EdgeInsets.only(top: 20)),
           Container(
             width: 280,
@@ -72,12 +78,13 @@ class _Prelogin2State extends State<Prelogin2> {
           ),
           Padding(padding: EdgeInsets.only(top: 20)),
 
+//connect with google
           Container(
             width: 280,
             height: 50,
             child: RaisedButton.icon(
               onPressed: () {
-                Navigator.push(context,MaterialPageRoute(builder: (context) => LoginWidget()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginWidget()));
               },
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               icon: Container(
@@ -93,7 +100,7 @@ class _Prelogin2State extends State<Prelogin2> {
           ),
           Padding(padding: EdgeInsets.only(top: 20)),
 
-        ///SignUp
+          ///SignUp
           Container(
             width: 280,
             height: 50,

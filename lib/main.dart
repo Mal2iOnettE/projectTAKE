@@ -75,10 +75,11 @@ class _MyAppState extends State<MyApp> {
                       focusColor: config.Colors().accentColor(1),
                       hintColor: config.Colors().secondColor(1),
                       textSelectionHandleColor: config.Colors().accentColor(1),
+                      textSelectionColor: config.Colors().colorDarkNavy(1),
                       textTheme: TextTheme(
                         headline5: TextStyle(fontSize: 22.0, color: config.Colors().secondColor(1), height: 1.3),
                         headline4: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700, color: Color(0xFFD01F44), height: 1.3),
-                        headline3: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w700, color: config.Colors().secondColor(1), height: 1.3),
+                        headline3: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w700, color: config.Colors().colorDarkNavy(1), height: 1.3),
                         headline2: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w700, color: config.Colors().mainColor(1), height: 1.4),
                         headline1: TextStyle(fontSize: 26.0, fontWeight: FontWeight.w300, color: config.Colors().secondColor(1), height: 1.4),
                         subtitle1: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500, color: config.Colors().secondColor(1), height: 1.3),
@@ -86,6 +87,7 @@ class _MyAppState extends State<MyApp> {
                         bodyText2: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400, color: config.Colors().secondColor(1), height: 1.2),
                         bodyText1: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w400, color: config.Colors().secondColor(1), height: 1.3),
                         caption: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w300, color: config.Colors().accentColor(1), height: 1.2),
+                       
                       ),
                     )
                   : ThemeData(
