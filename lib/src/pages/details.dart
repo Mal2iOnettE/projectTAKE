@@ -134,7 +134,7 @@ class _DetailsWidgetState extends StateMVC<DetailsWidget> {
                                   ],
                                 ),
                               ),
-                              Row(
+                              /*Row(
                                 children: <Widget>[
                                   SizedBox(width: 20),
                                   Container(
@@ -177,7 +177,7 @@ class _DetailsWidgetState extends StateMVC<DetailsWidget> {
                                   ),
                                   SizedBox(width: 20),
                                 ],
-                              ),
+                              ),*/
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                                 child: Helper.applyHtml(context, _con.market.description),

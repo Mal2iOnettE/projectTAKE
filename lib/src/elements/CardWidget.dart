@@ -51,11 +51,11 @@ class CardWidget extends StatelessWidget {
                       width: double.infinity,
                       height: 150,
                     ),
-                    errorWidget: (context, url, error) => Icon(Icons.error), 
+                    errorWidget: (context, url, error) => Icon(Icons.error),
                   ),
                 ),
               ),
-              Row(
+              /*Row(
                 children: <Widget>[
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -87,7 +87,7 @@ class CardWidget extends StatelessWidget {
                           ),
                   ),
                 ],
-              ),
+              ),*/
             ],
           ),
           Padding(
@@ -115,25 +115,37 @@ class CardWidget extends StatelessWidget {
                         style: Theme.of(context).textTheme.caption,
                       ),
                       SizedBox(height: 10),
-                      Row(
-                        children: Helper.getStarsList(double.parse(market.rate)),
-                      ),
+                      Row(children: [
+                        Icon(Icons.star,color: Theme.of(context).accentColor,),
+                        Padding(padding: EdgeInsets.all(3.0)),
+                        Text(
+                          market.rate.toString(),
+                          style: Theme.of(context).textTheme.headline6.merge(  TextStyle(color: Theme.of(context).textSelectionColor),)
+                          
+                        
+                        )
+                      ]
+
+                          //Helper.getStarsList(double.parse(market.rate)),
+                          ),
                     ],
                   ),
                 ),
                 SizedBox(width: 20.0),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 15.0, 0.0),
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
                   child: Container(
                       height: 40.0,
                       width: 40.0,
                       child: IconButton(
-                          icon: Icon(Icons.favorite,  color: Colors.red ,),
+                          icon: Icon(
+                            Icons.favorite,
+                            color: Theme.of(context).accentColor,
+                          ),
                           onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => FavoritesWidget()));
                           })),
                 )
-           
               ],
             ),
           )
