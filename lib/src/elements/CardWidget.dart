@@ -116,14 +116,15 @@ class CardWidget extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Row(children: [
-                        Icon(Icons.star,color: Theme.of(context).accentColor,),
+                        Icon(
+                          Icons.star,
+                          color: Theme.of(context).accentColor,
+                        ),
                         Padding(padding: EdgeInsets.all(3.0)),
-                        Text(
-                          market.rate.toString(),
-                          style: Theme.of(context).textTheme.headline6.merge(  TextStyle(color: Theme.of(context).textSelectionColor),)
-                          
-                        
-                        )
+                        Text(market.rate.toString(),
+                            style: Theme.of(context).textTheme.headline6.merge(
+                                  TextStyle(color: Theme.of(context).textSelectionColor),
+                                ))
                       ]
 
                           //Helper.getStarsList(double.parse(market.rate)),
