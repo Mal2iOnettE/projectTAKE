@@ -51,7 +51,7 @@ class CardWidget extends StatelessWidget {
                       width: double.infinity,
                       height: 150,
                     ),
-                    errorWidget: (context, url, error) => Icon(Icons.error),
+                    errorWidget: (context, url, error) => Icon(Icons.error), 
                   ),
                 ),
               ),
