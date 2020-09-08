@@ -37,8 +37,8 @@ class _ShoppingCartFloatButtonWidgetState extends StateMVC<ShoppingCartFloatButt
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 200,
-      height: 60,
+      width: 250,
+      height: 50,
       child: RaisedButton(
         padding: EdgeInsets.all(0),
         color: Theme.of(context).accentColor,
@@ -53,17 +53,13 @@ class _ShoppingCartFloatButtonWidgetState extends StateMVC<ShoppingCartFloatButt
         child: Stack(
           alignment: AlignmentDirectional.bottomEnd,
           children: <Widget>[
-            Icon(
-              Icons.shopping_cart,
-              color: this.widget.iconColor,
-              size: 28,
-            ),
+            Text ('Go to cart'),
             Container(
               child: Text(
                 _con.cartCount.toString(),
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.caption.merge(
-                      TextStyle(color: Theme.of(context).primaryColor, fontSize: 10),
+                      TextStyle(color: Theme.of(context).primaryColor, fontSize: 15),
                     ),
               ),
               padding: EdgeInsets.all(0),

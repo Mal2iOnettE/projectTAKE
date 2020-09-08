@@ -347,13 +347,8 @@ class _DetailsWidgetState extends StateMVC<DetailsWidget> {
                       ],
                     ),
                     Positioned(
-<<<<<<< HEAD
-                      bottom: 10,
-                      left: 250,  
-=======
                       bottom: 16,
-                      left: 5,  
->>>>>>> be1692daf5c39e5c5ac5cdcb969dc7cbc09cd10d
+                      left: 30,  
                       child: ShoppingCartFloatButtonWidget(
                         iconColor: Theme.of(context).primaryColor,
                         labelColor: Theme.of(context).hintColor,
