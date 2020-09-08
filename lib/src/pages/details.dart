@@ -356,10 +356,11 @@ class _DetailsWidgetState extends StateMVC<DetailsWidget> {
                       ),
                     ),
                     Positioned(
-                      top: 32,
-                      right: 12,
+                      top: 50,
+                      right: 30,
                       child: Icon(Icons.favorite_border)
-                      )
+                    ),
+                    
                   ],
                 ),
         ));

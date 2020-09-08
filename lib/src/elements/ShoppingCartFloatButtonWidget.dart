@@ -38,7 +38,7 @@ class _ShoppingCartFloatButtonWidgetState extends StateMVC<ShoppingCartFloatButt
   Widget build(BuildContext context) {
     return SizedBox(
       width: 200,
-      height: 60,
+      height: 50,
       child: RaisedButton(
         padding: EdgeInsets.all(0),
         color: Theme.of(context).accentColor,
