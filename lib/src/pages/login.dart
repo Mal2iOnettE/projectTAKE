@@ -65,10 +65,14 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                       Padding(
                         padding: EdgeInsets.only(right: 27.0, left: 27.0),
                         child: TextFormField(
+                          //cursorColor: Colors.black,
+
                           keyboardType: TextInputType.emailAddress,
                           onSaved: (input) => _con.user.email = input,
                           validator: (input) => !input.contains('@') ? S.of(context).use_valid_email : null,
                           decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white70,
                             labelText: S.of(context).enter_email,
                             labelStyle: TextStyle(color: Theme.of(context).accentColor),
                             contentPadding: EdgeInsets.all(12),
@@ -92,6 +96,8 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                           validator: (input) => input.length < 3 ? S.of(context).should_be_more_than_3_characters : null,
                           obscureText: _con.hidePassword,
                           decoration: InputDecoration(
+                             filled: true,
+                            fillColor: Colors.white70,
                             labelText: S.of(context).enter_password,
                             labelStyle: TextStyle(color: Theme.of(context).accentColor),
                             contentPadding: EdgeInsets.all(12),
@@ -155,7 +161,7 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
                     //forgot password
                     FlatButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacementNamed('/ForgetPassword');
+                        Navigator.of(context).pushNamed('/ForgetPassword');
                       },
                       textColor: Theme.of(context).hintColor,
                       child: Text(
