@@ -109,7 +109,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     "See all",
                     style: Theme.of(context).textTheme.caption,
                   ),
-                 onTap: () => Navigator.pushNamed(context, '/-------'),
+                 onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
                  
                   title: Text(
                     S.of(context).nearby_restaurant,

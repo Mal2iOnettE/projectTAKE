@@ -396,6 +396,16 @@ class S {
     );
   }
 
+  
+  String get go_to_cart {
+    return Intl.message(
+      'Go to Cart',
+      name: 'go_to_cart',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get notifications {
     return Intl.message(
       'Notifications',
@@ -1318,6 +1328,15 @@ class S {
     );
   }
 
+
+String get send_password_reset {
+    return Intl.message(
+      'Send now',
+      name: 'send_password_reset',
+      desc: '',
+      args: [],
+    );
+  }
   String get i_remember_my_password_return_to_login {
     return Intl.message(
       'I remember my password return to login',
