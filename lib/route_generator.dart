@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:markets/src/pages/Intro.dart';
+import 'package:markets/src/pages/collection.dart';
+import 'package:markets/src/pages/details2.dart';
 
 import 'src/models/route_argument.dart';
 import 'src/pages/Prelogin.dart';
@@ -65,6 +67,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => PagesWidget(currentTab: args));
       case '/Details':
         return MaterialPageRoute(builder: (_) => DetailsWidget(routeArgument: args));
+      case '/Details2':
+        return MaterialPageRoute(builder: (_) => Details2Widget(routeArgument: args));
       case '/Menu':
         return MaterialPageRoute(builder: (_) => MenuWidget(routeArgument: args as RouteArgument));
       case '/Product':
@@ -123,6 +127,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => OrdersWidget());
       case '/favorites':
         return MaterialPageRoute(builder: (_) => FavoritesWidget());
+      case '/AllRestaurant':
+        return MaterialPageRoute(builder: (_) => AllRestaurant());
 
       default:
 

@@ -30,6 +30,13 @@
             {
               "client_id": "509137739015-2cudgb660hn717k4brl58b1gsmhjegct.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "509137739015-m39l38q1n0o52gmqnccms35qo29and2k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.smartervision.restaurantRlutterUi24"
+              }
             }
           ]
         }
@@ -59,6 +66,49 @@
             {
               "client_id": "509137739015-2cudgb660hn717k4brl58b1gsmhjegct.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "509137739015-m39l38q1n0o52gmqnccms35qo29and2k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.smartervision.restaurantRlutterUi24"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509137739015:android:236bd8237bd33638a3b9a2",
+        "android_client_info": {
+          "package_name": "com.smartersvision.markets_owner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509137739015-2cudgb660hn717k4brl58b1gsmhjegct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2BJdgXKTrTeEBAgB-tzMFrGcUWytBW2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509137739015-2cudgb660hn717k4brl58b1gsmhjegct.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "509137739015-m39l38q1n0o52gmqnccms35qo29and2k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.smartervision.restaurantRlutterUi24"
+              }
             }
           ]
         }

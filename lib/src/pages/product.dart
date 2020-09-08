@@ -88,6 +88,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                               children: [
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: <Widget>[
                                     Expanded(
                                       flex: 3,
@@ -110,7 +111,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                       ),
                                     ),
                                     Expanded(
-                                      flex: 1,
+                                      flex: 0,
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.end,
                                         children: <Widget>[
@@ -121,7 +122,8 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                           ),
                                           _con.product.discountPrice > 0
                                               ? Helper.getPrice(_con.product.discountPrice, context,
-                                                  style: Theme.of(context).textTheme.bodyText2.merge(TextStyle(decoration: TextDecoration.lineThrough)))
+                                                  style:
+                                                      Theme.of(context).textTheme.bodyText2.merge(TextStyle(decoration: TextDecoration.lineThrough)))
                                               : SizedBox(height: 0),
                                         ],
                                       ),
@@ -205,8 +207,9 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                                 padding: EdgeInsets.all(0),
                                                 itemBuilder: (context, optionIndex) {
                                                   return OptionItemWidget(
-                                                    option:
-                                                        _con.product.options.where((option) => option.optionGroupId == optionGroup.id).elementAt(optionIndex),
+                                                    option: _con.product.options
+                                                        .where((option) => option.optionGroupId == optionGroup.id)
+                                                        .elementAt(optionIndex),
                                                     onChanged: _con.calculateTotal,
                                                   );
                                                 },

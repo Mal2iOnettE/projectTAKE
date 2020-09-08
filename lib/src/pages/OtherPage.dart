@@ -217,13 +217,19 @@ class _OtherPageState extends StateMVC<OtherPage> {
 
       ListTile(
         onTap: () {
-          Navigator.of(context).pushNamed('/Logout');
+          if (currentUser.value.apiToken != null) {
+            logout().then((value) {
+              Navigator.of(context).pushNamedAndRemoveUntil('/Pages', (Route<dynamic> route) => false, arguments: 0);
+            });
+          } else {
+            Navigator.of(context).pushNamed('/Login');
+          }
         },
-        trailing: Icon(Icons.arrow_forward_ios),
         title: Text(
-          S.of(context).log_out,
+          currentUser.value.apiToken != null ? S.of(context).log_out : S.of(context).login,
           style: Theme.of(context).textTheme.subtitle1,
         ),
+        trailing: Icon(Icons.arrow_forward_ios),
       ),
     ]);
   }

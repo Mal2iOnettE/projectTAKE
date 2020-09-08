@@ -115,12 +115,13 @@ class Helper {
         return Text('-', style: style ?? Theme.of(context).textTheme.subtitle1);
       }
       return RichText(
+        
         softWrap: false,
-        overflow: TextOverflow.fade,
+        overflow: TextOverflow.visible,
         maxLines: 1,
         text: setting.value?.currencyRight != null && setting.value?.currencyRight == false
             ? TextSpan(
-                text: setting.value?.defaultCurrency,
+                text: setting.value.secondDarkColor,
                 style: style ?? Theme.of(context).textTheme.subtitle1,
                 children: <TextSpan>[
                   TextSpan(
