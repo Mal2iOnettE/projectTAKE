@@ -19,31 +19,6 @@ class _OtherPageState extends StateMVC<OtherPage> {
   }
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return ListView(
-        children: <Widget>[
-          GestureDetector(
-            onTap: () {
-              currentUser.value.apiToken != null ? Navigator.of(context).pushNamed('/Profile') : Navigator.of(context).pushNamed('/Login');
-            },
-             child: currentUser.value.apiToken != null
-                ? UserAccountsDrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).hintColor.withOpacity(0.1),
-                    ),
-                    accountName: Text(
-                      currentUser.value.name,
-                      style: Theme.of(context).textTheme.headline6,
-                      textAlign:TextAlign.center
-                    ),
-                    accountEmail: Text(
-                      currentUser.value.email,
-                      style: Theme.of(context).textTheme.caption,
-                    ),
-                    currentAccountPicture: CircleAvatar(
-                      backgroundColor: Theme.of(context).accentColor,
-                      backgroundImage: NetworkImage(currentUser.value.image.thumb),
-=======
     return ListView(children: <Widget>[
       GestureDetector(
         onTap: () {
@@ -84,7 +59,6 @@ class _OtherPageState extends StateMVC<OtherPage> {
                   children: <Widget>[
                     SizedBox(
                       width: 30.0,
->>>>>>> be1692daf5c39e5c5ac5cdcb969dc7cbc09cd10d
                     ),
                     CircleAvatar(
                       radius: 50.0,
