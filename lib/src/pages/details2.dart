@@ -250,6 +250,33 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                   //SizedBox(width: 20),
                                 ],
                               ),
+
+                              SearchBarWidget(),
+                              Positioned(
+                                  top: 10,
+                                  right: 40,
+                                  left: 40,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                          height: 200,
+                                          padding: EdgeInsets.symmetric(vertical: 10),
+                                          child: ListView.builder(
+                                            itemCount: _con.featuredProducts.length,
+                                            scrollDirection: Axis.horizontal,
+                                            itemBuilder: (context, index) {
+                                              double _marginLeft = 0;
+                                              (index == 0) ? _marginLeft = 20 : _marginLeft = 0;
+                                              return ProductsCarouselItemWidget(
+                                                marginLeft: _marginLeft,
+                                                product: _con.featuredProducts.elementAt(index),
+                                                heroTag: '',
+                                              );
+                                            },
+                                          ))
+                                    ],
+                                  )),
+
                               // Padding(
                               //   padding: const EdgeInsets.symmetric(
                               //       horizontal: 20, vertical: 12),
@@ -387,6 +414,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               //           ),
                               //         ),
                               //       ),
+<<<<<<< HEAD
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Container(
@@ -411,6 +439,9 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                       );
                                     },
                                   )),
+=======
+
+>>>>>>> 29f975073049479df120d595a0ab9c3341ca1ea8
                               _con.featuredProducts.isEmpty
                                   ? SizedBox(height: 0)
                                   : ListView.separated(
@@ -458,6 +489,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                       ],
                     ),
+
                     Positioned(
                       top: 200,
                       right: 40,
@@ -539,7 +571,11 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                     SizedBox(
                                       width: 100,
                                     ),
+<<<<<<< HEAD
                                     Container(height: 20, width: 20, child: Image.asset('assets/img/marker.png')),
+=======
+                                    Container(height: 20, width: 20, child: Image.asset('assets/img/my_marker.png')),
+>>>>>>> 29f975073049479df120d595a0ab9c3341ca1ea8
                                     SizedBox(
                                       width: 5,
                                     ),
@@ -583,7 +619,11 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                       ),
                     ),
+<<<<<<< HEAD
                      
+=======
+
+>>>>>>> 29f975073049479df120d595a0ab9c3341ca1ea8
                     // Positioned(
                     //   top: 32,
                     //   right: 20,
