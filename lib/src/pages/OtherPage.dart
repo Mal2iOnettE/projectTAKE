@@ -22,7 +22,9 @@ class _OtherPageState extends StateMVC<OtherPage> {
     return ListView(children: <Widget>[
       GestureDetector(
         onTap: () {
-          currentUser.value.apiToken != null ? Navigator.of(context).pushNamed('/Profile') : Navigator.of(context).pushNamed('/Login');
+          currentUser.value.apiToken != null
+              ? Navigator.of(context).pushNamed('/Profile')
+              : Navigator.of(context).pushNamed('/Login');
         },
         child: currentUser.value.apiToken != null
             ? Column(
@@ -44,7 +46,8 @@ class _OtherPageState extends StateMVC<OtherPage> {
                     ),
                     CircleAvatar(
                       radius: 50.0,
-                      backgroundImage: NetworkImage("https://via.placeholder.com/150"),
+                      backgroundImage:
+                          NetworkImage("https://via.placeholder.com/150"),
                     ),
                     /*Icon(
                           Icons.person,
@@ -65,7 +68,8 @@ class _OtherPageState extends StateMVC<OtherPage> {
       ListTile(
         onTap: () {
           // Navigator.of(context).pushNamed('/Profile');
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileWidget()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => ProfileWidget()));
         },
         trailing: Icon(Icons.arrow_forward_ios),
         title: Text(
@@ -201,14 +205,18 @@ class _OtherPageState extends StateMVC<OtherPage> {
         onTap: () {
           if (currentUser.value.apiToken != null) {
             logout().then((value) {
-              Navigator.of(context).pushNamedAndRemoveUntil('/Pages', (Route<dynamic> route) => false, arguments: 0);
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/Pages', (Route<dynamic> route) => false,
+                  arguments: 0);
             });
           } else {
             Navigator.of(context).pushNamed('/Login');
           }
         },
         title: Text(
-          currentUser.value.apiToken != null ? S.of(context).log_out : S.of(context).login,
+          currentUser.value.apiToken != null
+              ? S.of(context).log_out
+              : S.of(context).login,
           style: Theme.of(context).textTheme.subtitle1,
         ),
         trailing: Icon(Icons.arrow_forward_ios),
