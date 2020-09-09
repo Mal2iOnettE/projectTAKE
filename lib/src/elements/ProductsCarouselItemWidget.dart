@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:markets/src/repository/settings_repository.dart';
 
 import '../helpers/helper.dart';
 import '../models/product.dart';
@@ -29,8 +30,8 @@ class ProductsCarouselItemWidget extends StatelessWidget {
               Hero(
                 tag: heroTag + product.id,
                 child: Container(
-                  margin: EdgeInsetsDirectional.only(start: this.marginLeft, end: 20),
-                  width: 100,
+                  margin: EdgeInsetsDirectional.only(start: this.marginLeft, end: 10),
+                  width: 130,
                   height: 130,
                   child: ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -46,24 +47,25 @@ class ProductsCarouselItemWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsetsDirectional.only(end: 25, top: 5),
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(100)), color: Theme.of(context).accentColor),
-                alignment: AlignmentDirectional.topEnd,
-                child: Helper.getPrice(
-                  product.price,
-                  context,
-                  style: Theme.of(context).textTheme.bodyText1.merge(TextStyle(color: Theme.of(context).primaryColor)),
-                ),
-              ),
+              // Container(
+              //   margin: EdgeInsetsDirectional.only(end: 25, top: 5),
+              //   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+              //   decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(100)), color: Theme.of(context).accentColor),
+              //   alignment: AlignmentDirectional.topEnd,
+              //   child: Helper.getPrice(
+              //     product.price,
+              //     context,
+              //     style: Theme.of(context).textTheme.bodyText1.merge(TextStyle(color: Theme.of(context).primaryColor)),
+              //   ),
+              // ),
             ],
           ),
           SizedBox(height: 5),
           Container(
-              width: 100,
+              width: 115,
               margin: EdgeInsetsDirectional.only(start: this.marginLeft, end: 20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     this.product.name,
@@ -71,12 +73,25 @@ class ProductsCarouselItemWidget extends StatelessWidget {
                     softWrap: false,
                     style: Theme.of(context).textTheme.bodyText2,
                   ),
-                  Text(
-                    product.market.name,
-                    overflow: TextOverflow.fade,
-                    softWrap: false,
-                    style: Theme.of(context).textTheme.caption,
+                  Row(
+                    children: [
+                      Helper.getPrice(
+                      product.price,
+                      context,
+                      style: Theme.of(context).textTheme.headline5.merge(TextStyle(color: Theme.of(context).accentColor)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left:8.0,top: 3),
+                        child: product.discountPrice > 0
+                            ? Helper.getPrice(product.discountPrice, context,
+                                style: Theme.of(context).textTheme.bodyText2.merge(TextStyle(decoration: TextDecoration.lineThrough)))
+                            : SizedBox(height: 0),
+                      ),
+                    ],
                   ),
+                  
+             
+
                 ],
               )),
         ],

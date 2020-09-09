@@ -387,13 +387,17 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               //           ),
                               //         ),
                               //       ),
-                              SizedBox(
-                                height: 300,
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Container(
+                                width: 390.0,
+                                child: SearchBarWidget(),
                               ),
+                            ),
 
                               Container(
                                   height: 200,
-                                  padding: EdgeInsets.symmetric(vertical: 10),
+                                  padding: EdgeInsets.symmetric(vertical: 0),
                                   child: ListView.builder(
                                     itemCount: _con.featuredProducts.length,
                                     scrollDirection: Axis.horizontal,
@@ -578,6 +582,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                       ),
                     ),
+                     
                     // Positioned(
                     //   top: 32,
                     //   right: 20,

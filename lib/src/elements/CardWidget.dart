@@ -13,9 +13,12 @@ import '../repository/settings_repository.dart';
 class CardWidget extends StatelessWidget {
   Market market;
   String heroTag;
-  Review review;
 
-  CardWidget({Key key, this.market, this.heroTag, this.review}) : super(key: key);
+  CardWidget({
+    Key key,
+    this.market,
+    this.heroTag,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -127,11 +130,6 @@ class CardWidget extends StatelessWidget {
                             style: Theme.of(context).textTheme.headline6.merge(
                                   TextStyle(color: Theme.of(context).textSelectionColor),
                                 )),
-                        Text(
-                          review.review.length.toString(),
-                            style: Theme.of(context).textTheme.headline6.merge(
-                                  TextStyle(color: Theme.of(context).textSelectionColor),
-                                ))
                       ]
 
                           //Helper.getStarsList(double.parse(market.rate)),
