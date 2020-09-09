@@ -144,8 +144,8 @@ Future<Stream<Review>> getRecentReviews() async {
   }
 }
 
-Future<Stream<Review>> getCountReviews() async {
-  final String url = '${GlobalConfiguration().getString('api_base_url')}market_reviews?orderBy=updated_at&sortedBy=desc&limit=3&with=user';
+Future<Stream<Review>> getCountReviews(String id) async {
+  final String url = '${GlobalConfiguration().getString('api_base_url')}market_reviews?search=market_id:$id';
   try {
     final client = new http.Client();
     final streamedRest = await client.send(http.Request('get', Uri.parse(url)));

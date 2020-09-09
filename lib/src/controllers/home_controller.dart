@@ -32,7 +32,7 @@ class HomeController extends ControllerMVC {
     listenForCategories();
     listenForPopularMarkets();
     listenForRecentReviews();
-    listenForCountReviews();
+    listenForCountReviews("1");
   }
 
   void listenForGalleries(String idMarket) async {
@@ -72,8 +72,8 @@ class HomeController extends ControllerMVC {
     }, onError: (a) {}, onDone: () {});
   }
 
-  Future<void> listenForCountReviews() async {
-    final Stream<Review> stream = await getRecentReviews();
+  Future<void> listenForCountReviews(String id) async {
+    final Stream<Review> stream = await getCountReviews(id);
     stream.listen((Review _review) {
       setState(() => recentReviews.add(_review));
     }, onError: (a) {}, onDone: () {});

@@ -127,7 +127,8 @@ class CardWidget extends StatelessWidget {
                             style: Theme.of(context).textTheme.headline6.merge(
                                   TextStyle(color: Theme.of(context).textSelectionColor),
                                 )),
-                        Text(review.review.length.toString(),
+                        Text(
+                          review.review.length.toString(),
                             style: Theme.of(context).textTheme.headline6.merge(
                                   TextStyle(color: Theme.of(context).textSelectionColor),
                                 ))

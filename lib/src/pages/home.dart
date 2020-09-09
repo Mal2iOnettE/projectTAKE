@@ -1,11 +1,12 @@
-
 import 'package:flutter/material.dart';
+import 'package:markets/src/controllers/reviews_controller.dart';
 import 'package:markets/src/elements/CardWidget.dart';
 import 'package:markets/src/elements/GalleryCarouselWidget.dart';
 import 'package:markets/src/elements/ListMarket.dart';
 import 'package:markets/src/elements/promotionsCarouselWidget.dart';
 import 'package:markets/src/models/market.dart';
 import 'package:markets/src/models/media.dart';
+import 'package:markets/src/models/review.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 import '../../generated/l10n.dart';
@@ -25,8 +26,9 @@ import '../elements/FilterWidget.dart';
 class HomeWidget extends StatefulWidget {
   final GlobalKey<ScaffoldState> parentScaffoldKey;
   List<Market> marketsList;
+  List<Review> reviewList;
 
-  HomeWidget({Key key, this.parentScaffoldKey, this.marketsList}) : super(key: key);
+  HomeWidget({Key key, this.parentScaffoldKey, this.marketsList,this.reviewList}) : super(key: key);
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -34,17 +36,19 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends StateMVC<HomeWidget> {
   HomeController _con;
+  ReviewsController _recon;
 
-  _HomeWidgetState() : super(
-    HomeController()) {
+  _HomeWidgetState() : super
+  (HomeController()) {
     _con = controller;
   }
+ 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       /* leading: new IconButton(
+        /* leading: new IconButton(
           icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
           onPressed: () => widget.parentScaffoldKey.currentState.openDrawer(),
         ),*/
@@ -104,13 +108,11 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                 child: ListTile(
                   dense: true,
                   contentPadding: EdgeInsets.symmetric(vertical: 1.0),
-                  
                   trailing: Text(
                     "See all",
                     style: Theme.of(context).textTheme.caption,
                   ),
-                 onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
-                 
+                  onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
                   title: Text(
                     S.of(context).nearby_restaurant,
                     style: Theme.of(context).textTheme.headline4,
@@ -122,7 +124,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                 ),
               ),
 
-             /* ListMarkets(
+              /* ListMarkets(
                 marketList: _con.topMarkets,
                 heroTag: 'home_top_markets',
               ),*/
@@ -130,9 +132,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               /// Markets
               CardsCarouselWidget(
                 marketsList: _con.topMarkets, 
-                heroTag: 'home_top_markets',
-                listReview: _con.recentReviews
-              ),
+                heroTag: 'home_top_markets', 
+              
+          ),
 
               //Trending this week
               ListTile(
@@ -171,10 +173,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                 ),
               ),
               //Most Popular
-             /* CategoriesCarouselWidget(
+              /* CategoriesCarouselWidget(
                 categories: _con.categories,
               ),*/
-
 
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 20),
