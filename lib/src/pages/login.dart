@@ -32,7 +32,7 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: Helper.of(context).onWillPop,
+     // onWillPop: Helper.of(context).onWillPop,
       child: Scaffold(
         key: _con.scaffoldKey,
         resizeToAvoidBottomPadding: false,
