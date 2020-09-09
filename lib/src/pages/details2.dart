@@ -474,7 +474,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               ),
                               Center(
                                 child: Text(
-                                  'Good Day Cafe',
+                                  _con.market.name,
                                   style: TextStyle(
                                     fontFamily: 'ProductSans',
                                     fontSize: 25.0,
@@ -485,6 +485,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               ),
                               ListTile(
                                 title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.all(11.0),
