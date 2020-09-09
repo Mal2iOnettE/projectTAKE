@@ -50,8 +50,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
         key: _con.scaffoldKey,
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            Navigator.of(context).pushNamed('/Menu',
-                arguments: new RouteArgument(id: widget.routeArgument.id));
+            Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
           },
           isExtended: true,
           materialTapTargetSize: MaterialTapTargetSize.padded,
@@ -84,17 +83,14 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                       shrinkWrap: false,
                       slivers: <Widget>[
                         SliverAppBar(
-                          backgroundColor:
-                              Theme.of(context).accentColor.withOpacity(0.9),
+                          backgroundColor: Theme.of(context).accentColor.withOpacity(0.9),
                           expandedHeight: 300,
                           elevation: 0,
-                          iconTheme: IconThemeData(
-                              color: Theme.of(context).primaryColor),
+                          iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
                           flexibleSpace: FlexibleSpaceBar(
                             collapseMode: CollapseMode.parallax,
                             background: Hero(
-                              tag: (widget?.routeArgument?.heroTag ?? '') +
-                                  _con.market.id,
+                              tag: (widget?.routeArgument?.heroTag ?? '') + _con.market.id,
                               child: CachedNetworkImage(
                                 fit: BoxFit.cover,
                                 imageUrl: _con.market.image.url,
@@ -102,8 +98,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                   'assets/img/loading.gif',
                                   fit: BoxFit.cover,
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    Icon(Icons.error),
+                                errorWidget: (context, url, error) => Icon(Icons.error),
                               ),
                             ),
                           ),
@@ -112,12 +107,10 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                           child: Wrap(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(
-                                    right: 20, left: 20, bottom: 0, top: 20),
+                                padding: const EdgeInsets.only(right: 20, left: 20, bottom: 0, top: 20),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    
                                     //ชื่อร้าน
                                     // Expanded(
                                     //   child: Text(
@@ -253,6 +246,33 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                   //SizedBox(width: 20),
                                 ],
                               ),
+
+                              SearchBarWidget(),
+                              Positioned(
+                                  top: 10,
+                                  right: 40,
+                                  left: 40,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                          height: 200,
+                                          padding: EdgeInsets.symmetric(vertical: 10),
+                                          child: ListView.builder(
+                                            itemCount: _con.featuredProducts.length,
+                                            scrollDirection: Axis.horizontal,
+                                            itemBuilder: (context, index) {
+                                              double _marginLeft = 0;
+                                              (index == 0) ? _marginLeft = 20 : _marginLeft = 0;
+                                              return ProductsCarouselItemWidget(
+                                                marginLeft: _marginLeft,
+                                                product: _con.featuredProducts.elementAt(index),
+                                                heroTag: '',
+                                              );
+                                            },
+                                          ))
+                                    ],
+                                  )),
+
                               // Padding(
                               //   padding: const EdgeInsets.symmetric(
                               //       horizontal: 20, vertical: 12),
@@ -390,26 +410,25 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               //           ),
                               //         ),
                               //       ),
-                              // _con.featuredProducts.isEmpty
-                              //     ? SizedBox(height: 0)
-                              //     : ListView.separated(
-                              //         padding:
-                              //             EdgeInsets.symmetric(vertical: 10),
-                              //         scrollDirection: Axis.vertical,
-                              //         shrinkWrap: true,
-                              //         primary: false,
-                              //         itemCount: _con.featuredProducts.length,
-                              //         separatorBuilder: (context, index) {
-                              //           return SizedBox(height: 10);
-                              //         },
-                              //         itemBuilder: (context, index) {
-                              //           return ProductItemWidget(
-                              //             heroTag: 'details_featured_product',
-                              //             product: _con.featuredProducts
-                              //                 .elementAt(index),
-                              //           );
-                              //         },
-                              //       ),
+
+                              _con.featuredProducts.isEmpty
+                                  ? SizedBox(height: 0)
+                                  : ListView.separated(
+                                      padding: EdgeInsets.symmetric(vertical: 10),
+                                      scrollDirection: Axis.vertical,
+                                      shrinkWrap: true,
+                                      primary: false,
+                                      itemCount: _con.featuredProducts.length,
+                                      separatorBuilder: (context, index) {
+                                        return SizedBox(height: 10);
+                                      },
+                                      itemBuilder: (context, index) {
+                                        return ProductItemWidget(
+                                          heroTag: 'details_featured_product',
+                                          product: _con.featuredProducts.elementAt(index),
+                                        );
+                                      },
+                                    ),
                               SizedBox(height: 100),
                               // _con.reviews.isEmpty
                               //     ? SizedBox(height: 5)
@@ -445,6 +464,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                       ],
                     ),
+
                     Positioned(
                       top: 200,
                       right: 40,
@@ -461,7 +481,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               ),
                               Center(
                                 child: Text(
-                                  'Good Day Cafe',
+                                  _con.market.name,
                                   style: TextStyle(
                                     fontFamily: 'ProductSans',
                                     fontSize: 25.0,
@@ -512,10 +532,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                     SizedBox(
                                       width: 100,
                                     ),
-                                    Container(
-                                        height: 20,
-                                        width: 20,
-                                        child: Image.asset('assets/img/my_marker.png')),
+                                    Container(height: 20, width: 20, child: Image.asset('assets/img/my_marker.png')),
                                     SizedBox(
                                       width: 5,
                                     ),
@@ -559,39 +576,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                       ),
                     ),
-                    Positioned(
-                        top: 410,
-                        right: 40,
-                        left: 40,
-                        child: SearchBarWidget()),
-
-                    Positioned(
-                        top: 500,
-                        right: 40,
-                        left: 40,
-                        child: Column(
-                          children: [
-                            Container(
-                                height: 200,
-                                padding: EdgeInsets.symmetric(vertical: 10),
-                                child: ListView.builder(
-                                  itemCount: _con.featuredProducts.length,
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) {
-                                    double _marginLeft = 0;
-                                    (index == 0)
-                                        ? _marginLeft = 20
-                                        : _marginLeft = 0;
-                                    return ProductsCarouselItemWidget(
-                                      marginLeft: _marginLeft,
-                                      product: _con.featuredProducts
-                                          .elementAt(index),
-                                      heroTag: '',
-                                    );
-                                  },
-                                ))
-                          ],
-                        )),
 
                     // Positioned(
                     //   top: 32,
