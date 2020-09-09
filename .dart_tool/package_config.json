@@ -794,7 +794,15 @@
       "languageVersion": "2.2"
     }
   ],
+<<<<<<< HEAD
   "generated": "2020-09-09T02:57:17.653077Z",
+=======
+<<<<<<< HEAD
+  "generated": "2020-09-08T04:50:38.642010Z",
+=======
+  "generated": "2020-09-08T10:26:42.699906Z",
+>>>>>>> d34eadf035e990b6b71125ebc7c55eb941745de9
+>>>>>>> 4e3736b43d115c84409b487f823a185789e309aa
   "generator": "pub",
   "generatorVersion": "2.10.0-73.0.dev"
 }
