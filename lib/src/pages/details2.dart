@@ -35,10 +35,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
     _con = controller;
   }
 
-
-
-
-
   @override
   void initState() {
     _con.listenForMarket(id: widget.routeArgument.id);
@@ -54,7 +50,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
         key: _con.scaffoldKey,
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
+            Navigator.of(context).pushNamed('/Menu',
+                arguments: new RouteArgument(id: widget.routeArgument.id));
           },
           isExtended: true,
           materialTapTargetSize: MaterialTapTargetSize.padded,
@@ -87,14 +84,17 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                       shrinkWrap: false,
                       slivers: <Widget>[
                         SliverAppBar(
-                          backgroundColor: Theme.of(context).accentColor.withOpacity(0.9),
+                          backgroundColor:
+                              Theme.of(context).accentColor.withOpacity(0.9),
                           expandedHeight: 300,
                           elevation: 0,
-                          iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+                          iconTheme: IconThemeData(
+                              color: Theme.of(context).primaryColor),
                           flexibleSpace: FlexibleSpaceBar(
                             collapseMode: CollapseMode.parallax,
                             background: Hero(
-                              tag: (widget?.routeArgument?.heroTag ?? '') + _con.market.id,
+                              tag: (widget?.routeArgument?.heroTag ?? '') +
+                                  _con.market.id,
                               child: CachedNetworkImage(
                                 fit: BoxFit.cover,
                                 imageUrl: _con.market.image.url,
@@ -102,7 +102,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                   'assets/img/loading.gif',
                                   fit: BoxFit.cover,
                                 ),
-                                errorWidget: (context, url, error) => Icon(Icons.error),
+                                errorWidget: (context, url, error) =>
+                                    Icon(Icons.error),
                               ),
                             ),
                           ),
@@ -111,7 +112,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                           child: Wrap(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(right: 20, left: 20, bottom: 0, top: 20),
+                                padding: const EdgeInsets.only(
+                                    right: 20, left: 20, bottom: 0, top: 20),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
@@ -260,16 +262,21 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                     children: [
                                       Container(
                                           height: 200,
-                                          padding: EdgeInsets.symmetric(vertical: 10),
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 10),
                                           child: ListView.builder(
-                                            itemCount: _con.featuredProducts.length,
+                                            itemCount:
+                                                _con.featuredProducts.length,
                                             scrollDirection: Axis.horizontal,
                                             itemBuilder: (context, index) {
                                               double _marginLeft = 0;
-                                              (index == 0) ? _marginLeft = 20 : _marginLeft = 0;
+                                              (index == 0)
+                                                  ? _marginLeft = 20
+                                                  : _marginLeft = 0;
                                               return ProductsCarouselItemWidget(
                                                 marginLeft: _marginLeft,
-                                                product: _con.featuredProducts.elementAt(index),
+                                                product: _con.featuredProducts
+                                                    .elementAt(index),
                                                 heroTag: '',
                                               );
                                             },
@@ -414,38 +421,11 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               //           ),
                               //         ),
                               //       ),
-<<<<<<< HEAD
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Container(
-                                width: 390.0,
-                                child: SearchBarWidget(),
-                              ),
-                            ),
-
-                              Container(
-                                  height: 200,
-                                  padding: EdgeInsets.symmetric(vertical: 0),
-                                  child: ListView.builder(
-                                    itemCount: _con.featuredProducts.length,
-                                    scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) {
-                                      double _marginLeft = 0;
-                                      (index == 0) ? _marginLeft = 20 : _marginLeft = 0;
-                                      return ProductsCarouselItemWidget(
-                                        marginLeft: _marginLeft,
-                                        product: _con.featuredProducts.elementAt(index),
-                                        heroTag: '',
-                                      );
-                                    },
-                                  )),
-=======
-
->>>>>>> 29f975073049479df120d595a0ab9c3341ca1ea8
                               _con.featuredProducts.isEmpty
                                   ? SizedBox(height: 0)
                                   : ListView.separated(
-                                      padding: EdgeInsets.symmetric(vertical: 10),
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10),
                                       scrollDirection: Axis.vertical,
                                       shrinkWrap: true,
                                       primary: false,
@@ -456,7 +436,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                       itemBuilder: (context, index) {
                                         return ProductItemWidget(
                                           heroTag: 'details_featured_product',
-                                          product: _con.featuredProducts.elementAt(index),
+                                          product: _con.featuredProducts
+                                              .elementAt(index),
                                         );
                                       },
                                     ),
@@ -464,25 +445,31 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               _con.reviews.isEmpty
                                   ? SizedBox(height: 5)
                                   : Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10, horizontal: 20),
                                       child: ListTile(
                                         dense: true,
-                                        contentPadding: EdgeInsets.symmetric(vertical: 0),
+                                        contentPadding:
+                                            EdgeInsets.symmetric(vertical: 0),
                                         leading: Icon(
                                           Icons.recent_actors,
                                           color: Theme.of(context).hintColor,
                                         ),
                                         title: Text(
                                           S.of(context).what_they_say,
-                                          style: Theme.of(context).textTheme.headline4,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline4,
                                         ),
                                       ),
                                     ),
                               _con.reviews.isEmpty
                                   ? SizedBox(height: 5)
                                   : Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                                      child: ReviewsListWidget(reviewsList: _con.reviews),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 10),
+                                      child: ReviewsListWidget(
+                                          reviewsList: _con.reviews),
                                     ),
                             ],
                           ),
@@ -517,7 +504,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               ),
                               ListTile(
                                 title: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.all(11.0),
@@ -546,12 +534,11 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsets.only(left: 8.0),
+                                            padding: const EdgeInsets.only(
+                                                left: 8.0),
                                             child: Text(
-                                              
                                               "( ${_con.reviews.length} )",
                                               style: TextStyle(
-                                                
                                                 fontSize: 15.0,
                                                 color: Colors.grey,
                                                 //fontWeight: FontWeight.bold,
@@ -571,11 +558,11 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                     SizedBox(
                                       width: 100,
                                     ),
-<<<<<<< HEAD
-                                    Container(height: 20, width: 20, child: Image.asset('assets/img/marker.png')),
-=======
-                                    Container(height: 20, width: 20, child: Image.asset('assets/img/my_marker.png')),
->>>>>>> 29f975073049479df120d595a0ab9c3341ca1ea8
+                                    Container(
+                                        height: 20,
+                                        width: 20,
+                                        child: Image.asset(
+                                            'assets/img/my_marker.png')),
                                     SizedBox(
                                       width: 5,
                                     ),
@@ -619,11 +606,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                       ),
                     ),
-<<<<<<< HEAD
-                     
-=======
-
->>>>>>> 29f975073049479df120d595a0ab9c3341ca1ea8
                     // Positioned(
                     //   top: 32,
                     //   right: 20,
