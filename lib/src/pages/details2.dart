@@ -82,6 +82,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                       primary: true,
                       shrinkWrap: false,
                       slivers: <Widget>[
+                        
                         SliverAppBar(
                           backgroundColor: Theme.of(context).accentColor.withOpacity(0.9),
                           expandedHeight: 300,
@@ -103,6 +104,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                             ),
                           ),
                         ),
+                        
                         SliverToBoxAdapter(
                           child: Wrap(
                             children: [
@@ -456,127 +458,9 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                       ],
                     ),
-                    Positioned(
-                      top: 200,
-                      right: 40,
-                      left: 40,
-                      child: Container(
-                        height: 200.0,
-                        width: 300.0,
-                        child: Card(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(top: 10),
-                              ),
-                              Center(
-                                child: Text(
-                                  _con.market.name,
-                                  style: TextStyle(
-                                    fontFamily: 'ProductSans',
-                                    fontSize: 25.0,
-                                    color: Colors.pink,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              ListTile(
-                                title: Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(11.0),
-                                      child: Text(
-                                        _con.market.phone,
-                                        style: TextStyle(
-                                          fontFamily: 'ProductSans',
-                                          fontSize: 15.0,
-                                          color: Colors.grey,
-                                          //fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Row(
-                                        children: [
-                                          Icon(Icons.star),
-                                          Text(
-                                            _con.market.rate,
-                                            style: TextStyle(
-                                              fontFamily: 'ProductSans',
-                                              fontSize: 15.0,
-                                              color: Colors.grey,
-                                              //fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Center(
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      width: 100,
-                                    ),
-                                    Container(height: 20, width: 20, child: Image.asset('assets/img/my_marker.png')),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      'TAKE TOWN',
-                                      style: TextStyle(
-                                        fontFamily: 'ProductSans',
-                                        fontSize: 15.0,
-                                        color: Colors.grey,
-                                        //fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: 80,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: RaisedButton(
-                                      shape: StadiumBorder(),
-                                      onPressed: () {},
-                                      child: Text("20-30 minutes"),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Icon(
-                                    Icons.map,
-                                    color: Colors.grey,
-                                    size: 24.0,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(top: 410, right: 40, left: 40, child: SearchBarWidget()),
+                    
 
-                    Positioned(
-                        top: 500,
-                        right: 40,
-                        left: 40,
-                        child: Column(
-                          children: [],
-                        )),
-
+               
                     // Positioned(
                     //   top: 32,
                     //   right: 20,
