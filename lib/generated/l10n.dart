@@ -2286,6 +2286,16 @@ String get payment {
 
     );
 }
+
+String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+
+    );
+}
  
 
 

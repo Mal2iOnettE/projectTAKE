@@ -32,24 +32,6 @@ class _OtherPageState extends StateMVC<OtherPage> {
                   ),
                 ],
               )
-
-            /*UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).hintColor.withOpacity(0.1),
-                ),
-                accountName: Text(
-                  currentUser.value.name,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                accountEmail: Text(
-                  currentUser.value.email,
-                  style: Theme.of(context).textTheme.caption,
-                ),
-                currentAccountPicture: CircleAvatar(
-                  backgroundColor: Theme.of(context).accentColor,
-                  backgroundImage: NetworkImage(currentUser.value.image.thumb),
-                ),
-              )*/
             : Container(
                 padding: EdgeInsets.symmetric(vertical: 15, horizontal: 0.0),
                 decoration: BoxDecoration(

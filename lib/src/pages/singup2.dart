@@ -26,15 +26,19 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
       child: Scaffold(
         key: _con.scaffoldKey,
         //resizeToAvoidBottomPadding: false,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              height: 100,
-            ),
+         body: Center(
+          child: Container(
+            width: 400.0,
+            decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/img/BG-1.png'))),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  height: 110,
+                ),
             Container(
               width: config.App(context).appWidth(84),
-              height: config.App(context).appHeight(20),
+              height: config.App(context).appHeight(10),
               child: Text(
                 S.of(context).create_your_account,
                 style: Theme.of(context)
@@ -78,16 +82,9 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                       decoration: InputDecoration(
                         labelText: S.of(context).email,
                         labelStyle: TextStyle(color: Colors.grey),
-                        contentPadding: EdgeInsets.all(12),
+                        contentPadding: EdgeInsets.all(18),
                         hintText: 'johndoe@gmail.com',
-                        hintStyle: TextStyle(color: Colors.grey),
-                        prefixIcon: Icon(Icons.alternate_email,
-                            color: Theme.of(context).accentColor),
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Theme.of(context)
-                                    .focusColor
-                                    .withOpacity(0.2))),
+                        hintStyle: TextStyle(color: Colors.grey),                        
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Theme.of(context)
@@ -114,13 +111,11 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                       decoration: InputDecoration(
                         labelText: S.of(context).password,
                         labelStyle: TextStyle(color: Colors.grey),
-                        contentPadding: EdgeInsets.all(12),
+                        contentPadding: EdgeInsets.all(18),
                         hintText: '••••••••••••',
                         hintStyle: TextStyle(
                             color:
                                 Theme.of(context).focusColor.withOpacity(0.7)),
-                        prefixIcon: Icon(Icons.lock_outline,
-                            color: Theme.of(context).accentColor),
                         suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -166,13 +161,9 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                       decoration: InputDecoration(
                         labelText: S.of(context).phone,
                         labelStyle: TextStyle(color: Colors.grey),
-                        contentPadding: EdgeInsets.all(12),
+                        contentPadding: EdgeInsets.all(18),
                         hintText: 'Phonenumber',
-                        hintStyle: TextStyle(color: Colors.grey),
-                        prefixIcon: Icon(Icons.alternate_email,
-                            color: Theme.of(context).accentColor),
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey)),
+                        hintStyle: TextStyle(color: Colors.grey),              
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Theme.of(context)
@@ -186,23 +177,37 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 35),
+
+                  Padding(
+                    padding: const EdgeInsets.only(left:24.0,right:24.0 ),
+                    child: Container(
+                      height: 55,
+                      child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16)
+                        ),
+                        child: Text(
+                          S.of(context).next,
+                          style: TextStyle(color: Theme.of(context).primaryColor),
+                        ), 
+                        color: Colors.pink,
+                        onPressed: () {
+                          _con.register();
+                          Navigator.pushReplacement(
+                             context,
+                             
+                              MaterialPageRoute(
+                                  builder: (context) => MobileVerification2()));
+                        },
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 30),
 
-                  BlockButtonWidget(
-                    text: Text(
-                      S.of(context).register,
-                      style: TextStyle(color: Theme.of(context).primaryColor),
-                    ),
-                    color: Colors.pink,
-                    onPressed: () {
-                      _con.register();
-                      Navigator.pushReplacement(
-                         context,
-                          MaterialPageRoute(
-                              builder: (context) => MobileVerification2()));
-                    },
+                  Center(child: Text('By signing up you agree to our Terms of Use and Privacy Policy')
+                  
                   ),
-                  SizedBox(height: 25),
 
 //                      FlatButton(
 //                        onPressed: () {
@@ -238,6 +243,6 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
           ],
         ),
       ),
-    );
+    ),),);
   }
 }

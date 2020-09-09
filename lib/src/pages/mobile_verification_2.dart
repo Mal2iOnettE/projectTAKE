@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
-
 import '../../generated/l10n.dart';
 import '../elements/BlockButtonWidget.dart';
 import '../helpers/app_config.dart' as config;
@@ -11,7 +10,19 @@ class MobileVerification2 extends StatelessWidget {
   Widget build(BuildContext context) {
     final _ac = config.App(context);
     return Scaffold(
-      body: Padding(
+      
+        //resizeToAvoidBottomPadding: false,
+         body: Center(
+          child: Container(
+            width: 400.0,
+            decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/img/BG-1.png'))),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  height: 110,
+                ),
+      Padding(
         padding: const EdgeInsets.all(40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -22,20 +33,28 @@ class MobileVerification2 extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Text(
-                    'Verify Your Account',
+                    'Verification',
                     style: Theme.of(context).textTheme.headline5,
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 40),
                   Text(
-                    'We are sending OTP to validate your mobile number. Hang on!',
-                    style: Theme.of(context).textTheme.bodyText2,
+                    'We’ve sent a verification code to',
+                    style: Theme.of(context).textTheme.caption,
                     textAlign: TextAlign.center,
                   ),
+            SizedBox(height: 15),
+            Text(
+              'SMS has been sent to +155 4585 555',
+              style: Theme.of(context).textTheme.bodyText2,
+              
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 80),
                 ],
               ),
             ),
-            SizedBox(height: 50),
+            
             OTPTextField(
               length:4,
               width: MediaQuery.of(context).size.width,
@@ -62,24 +81,30 @@ class MobileVerification2 extends StatelessWidget {
                 hintText: '000-000',
               ),
             ),*/
-            SizedBox(height: 15),
-            Text(
-              'SMS has been sent to +155 4585 555',
-              style: Theme.of(context).textTheme.caption,
-              textAlign: TextAlign.center,
+            SizedBox(height: 40),
+  
+
+             Padding(
+               padding: const EdgeInsets.only(left: 5.0,right: 5.0),
+               child: Container(
+                 height: 55,
+                 child: RaisedButton(
+                   shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16)
+                        ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed('/Pages', arguments:0);
+                  },
+                  color: Theme.of(context).accentColor,
+                  child: Text(S.of(context).verify.toUpperCase(),
+                      style: Theme.of(context).textTheme.headline6.merge(TextStyle(color: Theme.of(context).primaryColor))),
             ),
-            SizedBox(height: 80),
-            new BlockButtonWidget(
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed('/Pages', arguments:0);
-              },
-              color: Theme.of(context).accentColor,
-              text: Text(S.of(context).verify.toUpperCase(),
-                  style: Theme.of(context).textTheme.headline6.merge(TextStyle(color: Theme.of(context).primaryColor))),
-            ),
+               ),
+             ),
           ],
         ),
       ),
-    );
+   
+               ],),),), );
   }
 }
