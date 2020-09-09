@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Wed Sep 09 10:10:41 ICT 2020
-base.0=D\:\\TAKE_TOWN\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-=======
-#Tue Sep 08 17:01:58 ICT 2020
+#Wed Sep 09 14:33:37 ICT 2020
 base.0=C\:\\Users\\Admin\\Desktop\\Eca\\TAKE_APP_DELIVERY\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
->>>>>>> 4e3736b43d115c84409b487f823a185789e309aa
 path.0=classes.dex
 renamed.0=classes.dex
