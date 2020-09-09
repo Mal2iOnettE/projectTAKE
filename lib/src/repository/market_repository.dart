@@ -144,6 +144,20 @@ Future<Stream<Review>> getRecentReviews() async {
   }
 }
 
+Future<Stream<Review>> getCountReviews() async {
+  final String url = '${GlobalConfiguration().getString('api_base_url')}market_reviews?orderBy=updated_at&sortedBy=desc&limit=3&with=user';
+  try {
+    final client = new http.Client();
+    final streamedRest = await client.send(http.Request('get', Uri.parse(url)));
+    return streamedRest.stream.transform(utf8.decoder).transform(json.decoder).map((data) => Helper.getData(data)).expand((data) => (data as List)).map((data) {
+      return Review.fromJSON(data);
+    });
+  } catch (e) {
+    print(CustomTrace(StackTrace.current, message: url).toString());
+    return new Stream.value(new Review.fromJSON({}));
+  }
+}
+
 Future<Review> addMarketReview(Review review, Market market) async {
   final String url = '${GlobalConfiguration().getString('api_base_url')}market_reviews';
   final client = new http.Client();

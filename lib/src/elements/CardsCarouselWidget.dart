@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:markets/src/models/review.dart';
 
 import '../elements/CardsCarouselLoaderWidget.dart';
 import '../models/market.dart';
@@ -9,8 +10,9 @@ import 'CardWidget.dart';
 class CardsCarouselWidget extends StatefulWidget {
   List<Market> marketsList;
   String heroTag;
+  List<Review> listReview;
 
-  CardsCarouselWidget({Key key, this.marketsList, this.heroTag}) : super(key: key);
+  CardsCarouselWidget({Key key, this.marketsList, this.heroTag,this.listReview}) : super(key: key);
 
   @override
   _CardsCarouselWidgetState createState() => _CardsCarouselWidgetState();
@@ -40,12 +42,11 @@ class _CardsCarouselWidgetState extends State<CardsCarouselWidget> {
                           heroTag: widget.heroTag,
                         ));
                   },
-                  child: 
-                  CardWidget(
+                  child: CardWidget(
                     market: widget.marketsList.elementAt(index), 
-                    heroTag: widget.heroTag
+                    heroTag: widget.heroTag,
+                    review: widget.listReview.elementAt(0),
                     ),
-
                 );
               },
             ),

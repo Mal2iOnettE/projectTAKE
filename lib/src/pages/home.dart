@@ -130,7 +130,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               /// Markets
               CardsCarouselWidget(
                 marketsList: _con.topMarkets, 
-                heroTag: 'home_top_markets'
+                heroTag: 'home_top_markets',
+                listReview: _con.recentReviews
               ),
 
               //Trending this week
