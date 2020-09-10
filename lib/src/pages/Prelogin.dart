@@ -57,7 +57,8 @@ class _Prelogin2State extends State<Prelogin2> {
             height: 50,
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginWidget()));
+                Navigator.pushNamed(context, '/Login');
+                //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginWidget()));
               },
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               child: Text("Log In"),

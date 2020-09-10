@@ -85,10 +85,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20.0),
                 child: SearchBarWidget(
-                    /*
                     onClickFilter: (event) {
                     widget.parentScaffoldKey.currentState.openEndDrawer();
-                  },*/
+                  },
                     ),
               ),
 

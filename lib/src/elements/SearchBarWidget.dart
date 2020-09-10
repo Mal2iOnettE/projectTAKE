@@ -5,7 +5,6 @@ import '../elements/SearchWidget.dart';
 
 class SearchBarWidget extends StatelessWidget {
   final ValueChanged onClickFilter;
-
   const SearchBarWidget({Key key, this.onClickFilter}) : super(key: key);
 
   @override
@@ -37,7 +36,7 @@ class SearchBarWidget extends StatelessWidget {
                 style: Theme.of(context).textTheme.caption.merge(TextStyle(fontSize: 14)),
               ),
             ),
-           /* InkWell(
+           InkWell(
               onTap: () {
                 onClickFilter('e');
               },
@@ -45,7 +44,7 @@ class SearchBarWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 5, left: 5, top: 3, bottom: 3),
                 child: Icon(Icons.filter_list, color: Theme.of(context).accentColor),
               ),
-            ),*/
+            ),
           ],
         ),
       ),

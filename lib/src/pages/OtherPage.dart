@@ -4,7 +4,6 @@ import 'package:markets/generated/l10n.dart';
 import 'package:markets/generated/l10n.dart';
 import 'package:markets/src/controllers/profile_controller.dart';
 import 'package:markets/src/elements/ProfileAvatarWidget.dart';
-import 'package:markets/src/pages/pages.dart';
 import 'package:markets/src/pages/profile.dart';
 import 'package:markets/src/repository/user_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
@@ -66,8 +65,8 @@ class _OtherPageState extends StateMVC<OtherPage> {
       //Profile
       ListTile(
         onTap: () {
-          // Navigator.of(context).pushNamed('/Profile');
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileWidget()));
+          Navigator.of(context).pushNamed('/Profile');
+          //Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileWidget()));
         },
         trailing: Icon(Icons.arrow_forward_ios),
         title: Text(
@@ -214,7 +213,7 @@ class _OtherPageState extends StateMVC<OtherPage> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () => logout().then(
-                    (value) => Navigator.of(context).push(MaterialPageRoute(builder: (context)=> PagesWidget(currentTab: 0))),
+                    (value) => Navigator.of(context).pushNamed('/Pages', arguments: 0),
                   ),
                   color: Theme.of(context).accentColor,
                 ),
