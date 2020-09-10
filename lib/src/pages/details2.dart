@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:markets/src/elements/ProductsCarouselItemWidget.dart';
 import 'package:markets/src/elements/SearchBarWidget.dart';
+import 'package:markets/src/elements/ShoppingCartButtonWidget.dart';
+import 'package:markets/src/repository/user_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -35,10 +37,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
     _con = controller;
   }
 
-
-
-
-
   @override
   void initState() {
     _con.listenForMarket(id: widget.routeArgument.id);
@@ -54,8 +52,10 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
         key: _con.scaffoldKey,
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
+            Navigator.of(context).pushNamed('/Cart', arguments: RouteArgument(param: '/Details2', id: _con.market.id));
           },
+          //Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
+
           isExtended: true,
           materialTapTargetSize: MaterialTapTargetSize.padded,
           // icon: Icon(
@@ -520,10 +520,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                           Padding(
                                             padding: const EdgeInsets.only(left: 8.0),
                                             child: Text(
-                                              
                                               "( ${_con.reviews.length} )",
                                               style: TextStyle(
-                                                
                                                 fontSize: 15.0,
                                                 color: Colors.grey,
                                                 //fontWeight: FontWeight.bold,

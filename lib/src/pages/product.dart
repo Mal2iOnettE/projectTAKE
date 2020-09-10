@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../../generated/l10n.dart';
 import '../controllers/product_controller.dart';
@@ -99,16 +100,13 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                             _con.product?.name ?? '',
                                             overflow: TextOverflow.ellipsis,
                                             maxLines: 5,
-                                            style: Theme.of(context).textTheme.headline3.merge (TextStyle(color: Theme.of(context).accentColor)),
+                                            style: Theme.of(context).textTheme.headline3.merge(TextStyle(color: Theme.of(context).accentColor)),
                                           ),
-                                          
                                         ],
                                       ),
                                     ),
-                                   
                                   ],
                                 ),
-                                
                                 Divider(height: 10),
                                 Text(Helper.skipHtml(_con.product.description)),
                                 ListTile(
@@ -116,7 +114,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                   contentPadding: EdgeInsets.symmetric(vertical: 10),
                                   title: Text(
                                     S.of(context).options,
-                                    style: Theme.of(context).textTheme.headline3.merge (TextStyle(color: Theme.of(context).accentColor)),
+                                    style: Theme.of(context).textTheme.headline3.merge(TextStyle(color: Theme.of(context).accentColor)),
                                   ),
                                 ),
                                 _con.product.optionGroups == null
@@ -194,10 +192,10 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                             child: RefreshProgressIndicator(),
                           )
                         : ShoppingCartFloatButtonWidget(
-                            
+
                             //gotocart
-                            
-                          ),
+
+                            ),
                   ),
                   Positioned(
                     bottom: 0,
@@ -215,7 +213,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Row(
-                              children: <Widget>[                               
+                              children: <Widget>[
                                 Container(
                                   child: Center(
                                     child: Row(
@@ -223,7 +221,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: <Widget>[
                                         Padding(
-                                          padding: const EdgeInsets.only(left:115.0),
+                                          padding: const EdgeInsets.only(left: 115.0),
                                           child: Container(
                                             child: Center(
                                               child: IconButton(
@@ -300,10 +298,17 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                             Navigator.of(context).pushNamed("/Login");
                                           } else {
                                             if (_con.isSameMarkets(_con.product)) {
-                                              _con.addToCart(_con.product);
-                                            } else {
-                                              
-                                            }
+                                              Alert(
+                                                context: context, 
+                                                title: 'Successfully', 
+                                                desc: 'Item was added to cart', 
+                                                buttons: [
+                                                  DialogButton(
+                                                    child: Text("Done"),
+                                                    onPressed: () => _con.addToCart(_con.product),
+                                                )
+                                              ]).show();
+                                            } else {}
                                           }
                                         },
                                         padding: EdgeInsets.symmetric(vertical: 14),
