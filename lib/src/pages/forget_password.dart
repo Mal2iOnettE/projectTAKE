@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:markets/src/elements/SearchBarWidget.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../../generated/l10n.dart';
 import '../controllers/user_controller.dart';
@@ -38,7 +39,7 @@ class _ForgetPasswordWidgetState extends StateMVC<ForgetPasswordWidget> {
               height: 110,
             ),
             Container(
-              width: config.App(context).appWidth(84),
+              width: config.App(context).appWidth(50),
               height: config.App(context).appHeight(10),
               child: Center(
                 child: Text(
@@ -102,18 +103,25 @@ class _ForgetPasswordWidgetState extends StateMVC<ForgetPasswordWidget> {
                           padding: EdgeInsets.all(12),
                           child: Text(
                             S.of(context).send_password_reset,
-                            style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 20.0),
+                            style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 15.0),
                           ),
                           color: Theme.of(context).accentColor,
                           onPressed: () {
                             _con.resetPassword();
+                            Alert(context: context, title: "resetpassword has been send to your email", buttons: [
+                              DialogButton(
+                                  child: Text(
+                                    "Yes",
+                                    style: TextStyle(color: Colors.white, fontSize: 20),
+                                  ),
+                                  onPressed: () =>Navigator.of(context).pop())
+                            ]).show();
                           }),
                     ),
                   ),
                 ],
               ),
             ),
-
           ],
         ),
       ),

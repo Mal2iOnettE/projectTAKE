@@ -21,6 +21,8 @@ class HomeController extends ControllerMVC {
   List<Market> topMarkets = <Market>[];
   List<Market> popularMarkets = <Market>[];
   List<Review> recentReviews = <Review>[];
+
+  List<Review> countReviews = <Review>[];
   List<Product> trendingProducts = <Product>[];
 
   HomeController() {
@@ -30,6 +32,7 @@ class HomeController extends ControllerMVC {
     listenForCategories();
     listenForPopularMarkets();
     listenForRecentReviews();
+    listenForCountReviews("1");
   }
 
   void listenForGalleries(String idMarket) async {
@@ -64,6 +67,13 @@ class HomeController extends ControllerMVC {
 
   Future<void> listenForRecentReviews() async {
     final Stream<Review> stream = await getRecentReviews();
+    stream.listen((Review _review) {
+      setState(() => recentReviews.add(_review));
+    }, onError: (a) {}, onDone: () {});
+  }
+
+  Future<void> listenForCountReviews(String id) async {
+    final Stream<Review> stream = await getCountReviews(id);
     stream.listen((Review _review) {
       setState(() => recentReviews.add(_review));
     }, onError: (a) {}, onDone: () {});

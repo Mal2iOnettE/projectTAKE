@@ -6,7 +6,7 @@ class Setting {
   String defaultCurrency;
   String distanceUnit;
   bool currencyRight = false;
-  int currencyDecimalDigits = 2;
+  int currencyDecimalDigits = 0;
   bool payPalEnabled = true;
   bool stripeEnabled = true;
   bool razorPayEnabled = true;

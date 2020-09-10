@@ -35,6 +35,10 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
     _con = controller;
   }
 
+
+
+
+
   @override
   void initState() {
     _con.listenForMarket(id: widget.routeArgument.id);
@@ -410,7 +414,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               //           ),
                               //         ),
                               //       ),
-
                               _con.featuredProducts.isEmpty
                                   ? SizedBox(height: 0)
                                   : ListView.separated(
@@ -430,35 +433,29 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                       },
                                     ),
                               SizedBox(height: 100),
-                              // _con.reviews.isEmpty
-                              //     ? SizedBox(height: 5)
-                              //     : Padding(
-                              //         padding: const EdgeInsets.symmetric(
-                              //             vertical: 10, horizontal: 20),
-                              //         child: ListTile(
-                              //           dense: true,
-                              //           contentPadding:
-                              //               EdgeInsets.symmetric(vertical: 0),
-                              //           leading: Icon(
-                              //             Icons.recent_actors,
-                              //             color: Theme.of(context).hintColor,
-                              //           ),
-                              //           title: Text(
-                              //             S.of(context).what_they_say,
-                              //             style: Theme.of(context)
-                              //                 .textTheme
-                              //                 .headline4,
-                              //           ),
-                              //         ),
-                              //       ),
-                              // _con.reviews.isEmpty
-                              //     ? SizedBox(height: 5)
-                              //     : Padding(
-                              //         padding: const EdgeInsets.symmetric(
-                              //             horizontal: 20, vertical: 10),
-                              //         child: ReviewsListWidget(
-                              //             reviewsList: _con.reviews),
-                              //       ),
+                              _con.reviews.isEmpty
+                                  ? SizedBox(height: 5)
+                                  : Padding(
+                                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                                      child: ListTile(
+                                        dense: true,
+                                        contentPadding: EdgeInsets.symmetric(vertical: 0),
+                                        leading: Icon(
+                                          Icons.recent_actors,
+                                          color: Theme.of(context).hintColor,
+                                        ),
+                                        title: Text(
+                                          S.of(context).what_they_say,
+                                          style: Theme.of(context).textTheme.headline4,
+                                        ),
+                                      ),
+                                    ),
+                              _con.reviews.isEmpty
+                                  ? SizedBox(height: 5)
+                                  : Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                                      child: ReviewsListWidget(reviewsList: _con.reviews),
+                                    ),
                             ],
                           ),
                         ),
@@ -492,11 +489,12 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               ),
                               ListTile(
                                 title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.all(11.0),
                                       child: Text(
-                                        'Cafe,  Cafe & Coffee',
+                                        _con.market.name,
                                         style: TextStyle(
                                           fontFamily: 'ProductSans',
                                           fontSize: 15.0,
@@ -517,6 +515,19 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                               fontSize: 15.0,
                                               color: Colors.grey,
                                               //fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 8.0),
+                                            child: Text(
+                                              
+                                              "( ${_con.reviews.length} )",
+                                              style: TextStyle(
+                                                
+                                                fontSize: 15.0,
+                                                color: Colors.grey,
+                                                //fontWeight: FontWeight.bold,
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -576,7 +587,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                       ),
                     ),
-
                     // Positioned(
                     //   top: 32,
                     //   right: 20,

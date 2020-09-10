@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:markets/src/models/review.dart';
 import 'package:markets/src/pages/favorites.dart';
 
 import '../../generated/l10n.dart';
@@ -13,7 +14,11 @@ class CardWidget extends StatelessWidget {
   Market market;
   String heroTag;
 
-  CardWidget({Key key, this.market, this.heroTag}) : super(key: key);
+  CardWidget({
+    Key key,
+    this.market,
+    this.heroTag,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -124,7 +129,7 @@ class CardWidget extends StatelessWidget {
                         Text(market.rate.toString(),
                             style: Theme.of(context).textTheme.headline6.merge(
                                   TextStyle(color: Theme.of(context).textSelectionColor),
-                                ))
+                                )),
                       ]
 
                           //Helper.getStarsList(double.parse(market.rate)),

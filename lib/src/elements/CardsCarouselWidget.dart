@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:markets/src/models/review.dart';
 
 import '../elements/CardsCarouselLoaderWidget.dart';
 import '../models/market.dart';
@@ -40,12 +41,10 @@ class _CardsCarouselWidgetState extends State<CardsCarouselWidget> {
                           heroTag: widget.heroTag,
                         ));
                   },
-                  child: 
-                  CardWidget(
-                    market: widget.marketsList.elementAt(index), 
-                    heroTag: widget.heroTag
-                    ),
-
+                  child: CardWidget(
+                    market: widget.marketsList.elementAt(index),
+                    heroTag: widget.heroTag,
+                  ),
                 );
               },
             ),
