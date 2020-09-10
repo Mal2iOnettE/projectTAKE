@@ -100,16 +100,13 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                             _con.product?.name ?? '',
                                             overflow: TextOverflow.ellipsis,
                                             maxLines: 5,
-                                            style: Theme.of(context).textTheme.headline3.merge (TextStyle(color: Theme.of(context).accentColor)),
+                                            style: Theme.of(context).textTheme.headline3.merge(TextStyle(color: Theme.of(context).accentColor)),
                                           ),
-                                          
                                         ],
                                       ),
                                     ),
-                                   
                                   ],
                                 ),
-                                
                                 Divider(height: 10),
                                 Text(Helper.skipHtml(_con.product.description)),
                                 ListTile(
@@ -117,7 +114,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                   contentPadding: EdgeInsets.symmetric(vertical: 10),
                                   title: Text(
                                     S.of(context).options,
-                                    style: Theme.of(context).textTheme.headline3.merge (TextStyle(color: Theme.of(context).accentColor)),
+                                    style: Theme.of(context).textTheme.headline3.merge(TextStyle(color: Theme.of(context).accentColor)),
                                   ),
                                 ),
                                 _con.product.optionGroups == null
@@ -188,6 +185,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                   Positioned(
                     top: 32,
                     right: 20,
+<<<<<<< HEAD
                     child:_con.favorite?.id != null
                                       ? OutlineButton(
                                           onPressed: () {
@@ -217,6 +215,19 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                             color: Theme.of(context).primaryColor,
                                           )),
                     
+=======
+                    child: _con.loadCart
+                        ? SizedBox(
+                            width: 60,
+                            height: 60,
+                            child: RefreshProgressIndicator(),
+                          )
+                        : ShoppingCartFloatButtonWidget(
+
+                            //gotocart
+
+                            ),
+>>>>>>> 4363831ee03989f36f4f444d4d5fa160942b97e0
                   ),
                   Positioned(
                     bottom: 0,
@@ -234,7 +245,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Row(
-                              children: <Widget>[                               
+                              children: <Widget>[
                                 Container(
                                   child: Center(
                                     child: Row(
@@ -242,7 +253,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: <Widget>[
                                         Padding(
-                                          padding: const EdgeInsets.only(left:115.0),
+                                          padding: const EdgeInsets.only(left: 115.0),
                                           child: Container(
                                             child: Center(
                                               child: IconButton(
@@ -276,17 +287,17 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                             SizedBox(height: 10),
                             Row(
                               children: <Widget>[
-                        //         Expanded(
-                        //           child: _con.loadCart
-                        // ? SizedBox(
-                        //     width: 60,
-                        //     height: 60,
-                        //     child: RefreshProgressIndicator(),
-                        //   )
-                        // : ShoppingCartFloatButtonWidget(
-                      
-                        //   ),
-                        //         ),
+                                //         Expanded(
+                                //           child: _con.loadCart
+                                // ? SizedBox(
+                                //     width: 60,
+                                //     height: 60,
+                                //     child: RefreshProgressIndicator(),
+                                //   )
+                                // : ShoppingCartFloatButtonWidget(
+
+                                //   ),
+                                //         ),
                                 SizedBox(width: 40),
                                 Stack(
                                   fit: StackFit.loose,
@@ -299,37 +310,25 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                           if (currentUser.value.apiToken == null) {
                                             Navigator.of(context).pushNamed("/Login");
                                           } else {
-                                            if (_con.isSameMarkets(_con.product)) {
-                                               Alert(
-                                                    context: context,
-                                                    type: AlertType.success,
-                                                    title: "Success",
-                                                    desc: "This product was added to cart.",
-                                                    buttons: [
-                                                      DialogButton(
-                                                        child: Text(
-                                                          "Done",
-                                                          style: TextStyle(color: Colors.white, fontSize: 20),
-                                                        ),
-                                                        onPressed: () => Navigator.pop(context),
-                                                        width: 120,
-                                                      )
-                                                    ],
-                                                  ).show();
-                                              _con.addToCart(_con.product);
-                                            } else {
-                                              //  showDialog(
-                                              //   context: context,
-                                              //   builder: (BuildContext context) {
-                                              //     // return object of type Dialog
-                                              //     return AddToCartAlertDialogWidget(
-                                              //         oldProduct: _con.carts.elementAt(0)?.product,
-                                              //         newProduct: _con.product,
-                                              //         onPressed: (product, {reset: true}) {
-                                              //           return _con.addToCart(_con.product, reset: true);
-                                              //         });
-                                              //   });
-                                            }
+                                            Alert(
+                                              context: context,
+                                              type: AlertType.success,
+                                              title: "Success",
+                                              desc: "This product was added to cart.",
+                                              buttons: [
+                                                DialogButton(
+                                                  child: Text(
+                                                    "Done",
+                                                    style: TextStyle(color: Colors.white, fontSize: 20),
+                                                  ),
+                                                  onPressed: () => Navigator.pop(context),
+                                                  width: 120,
+                                                )
+                                              ],
+                                            ).show();
+                                            _con.addToCart(_con.product);
+
+
                                           }
                                         },
                                         padding: EdgeInsets.symmetric(vertical: 14),
@@ -354,9 +353,6 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                         style: Theme.of(context).textTheme.headline4.merge(TextStyle(color: Theme.of(context).primaryColor)),
                                       ),
                                     )
-
-               
-
                                   ],
                                 ),
                               ],
