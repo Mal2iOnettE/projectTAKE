@@ -297,18 +297,23 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                           if (currentUser.value.apiToken == null) {
                                             Navigator.of(context).pushNamed("/Login");
                                           } else {
-                                            if (_con.isSameMarkets(_con.product)) {
-                                              Alert(
-                                                context: context, 
-                                                title: 'Successfully', 
-                                                desc: 'Item was added to cart', 
-                                                buttons: [
-                                                  DialogButton(
-                                                    child: Text("Done"),
-                                                    onPressed: () => _con.addToCart(_con.product),
+                                            Alert(
+                                              context: context,
+                                              type: AlertType.success,
+                                              title: "Success",
+                                              desc: "This product was added to cart.",
+                                              buttons: [
+                                                DialogButton(
+                                                  child: Text(
+                                                    "Done",
+                                                    style: TextStyle(color: Colors.white, fontSize: 20),
+                                                  ),
+                                                  onPressed: () => Navigator.pop(context),
+                                                  width: 120,
                                                 )
-                                              ]).show();
-                                            } else {}
+                                              ],
+                                            ).show();
+                                            _con.addToCart(_con.product);
                                           }
                                         },
                                         padding: EdgeInsets.symmetric(vertical: 14),
