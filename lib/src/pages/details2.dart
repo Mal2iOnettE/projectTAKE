@@ -414,34 +414,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               //           ),
                               //         ),
                               //       ),
-<<<<<<< HEAD
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Container(
-                                width: 390.0,
-                                child: SearchBarWidget(),
-                              ),
-                            ),
-
-                              Container(
-                                  height: 200,
-                                  padding: EdgeInsets.symmetric(vertical: 0),
-                                  child: ListView.builder(
-                                    itemCount: _con.featuredProducts.length,
-                                    scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) {
-                                      double _marginLeft = 0;
-                                      (index == 0) ? _marginLeft = 20 : _marginLeft = 0;
-                                      return ProductsCarouselItemWidget(
-                                        marginLeft: _marginLeft,
-                                        product: _con.featuredProducts.elementAt(index),
-                                        heroTag: '',
-                                      );
-                                    },
-                                  )),
-=======
-
->>>>>>> 35dc19c4be1477dafa29269deb706a16e1c751f9
                               _con.featuredProducts.isEmpty
                                   ? SizedBox(height: 0)
                                   : ListView.separated(
@@ -571,11 +543,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                     SizedBox(
                                       width: 100,
                                     ),
-<<<<<<< HEAD
-                                    Container(height: 20, width: 20, child: Image.asset('assets/img/marker.png')),
-=======
                                     Container(height: 20, width: 20, child: Image.asset('assets/img/my_marker.png')),
->>>>>>> 35dc19c4be1477dafa29269deb706a16e1c751f9
                                     SizedBox(
                                       width: 5,
                                     ),
@@ -619,11 +587,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                       ),
                     ),
-<<<<<<< HEAD
-                     
-=======
-
->>>>>>> 35dc19c4be1477dafa29269deb706a16e1c751f9
                     // Positioned(
                     //   top: 32,
                     //   right: 20,

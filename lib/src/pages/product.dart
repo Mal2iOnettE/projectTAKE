@@ -215,49 +215,6 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Row(
-<<<<<<< HEAD
-                              //mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                // Expanded(
-                                //   child: Text(
-                                //     S.of(context).quantity,
-                                //     style: Theme.of(context).textTheme.subtitle1,
-                                //   ),
-                                // ),
-                                Row(
-                                  //mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    CircleAvatar(
-                                      backgroundColor: Theme.of(context).accentColor,
-                                      child: IconButton(
-                                        onPressed: () {
-                                          _con.decrementQuantity();
-                                        },
-                                        iconSize: 30,
-                                        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                                        icon: Icon(Icons.remove),
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left:28.0,right: 28.0),
-                                      child: Text(_con.quantity.floor().toString(), style: Theme.of(context).textTheme.headline3),
-                                    ),
-                                    CircleAvatar(
-                                      backgroundColor: Theme.of(context).accentColor,
-                                      child: IconButton(
-                                        onPressed: () {
-                                          _con.incrementQuantity();
-                                        },
-                                        iconSize: 30,
-                                        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                                        icon: Icon(Icons.add),
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
-                                  ],
-=======
                               children: <Widget>[                               
                                 Container(
                                   child: Center(
@@ -294,7 +251,6 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                       ],
                                     ),
                                   ),
->>>>>>> 35dc19c4be1477dafa29269deb706a16e1c751f9
                                 ),
                               ],
                             ),
