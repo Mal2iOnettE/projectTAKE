@@ -100,16 +100,13 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                             _con.product?.name ?? '',
                                             overflow: TextOverflow.ellipsis,
                                             maxLines: 5,
-                                            style: Theme.of(context).textTheme.headline3.merge (TextStyle(color: Theme.of(context).accentColor)),
+                                            style: Theme.of(context).textTheme.headline3.merge(TextStyle(color: Theme.of(context).accentColor)),
                                           ),
-                                          
                                         ],
                                       ),
                                     ),
-                                   
                                   ],
                                 ),
-                                
                                 Divider(height: 10),
                                 Text(Helper.skipHtml(_con.product.description)),
                                 ListTile(
@@ -117,7 +114,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                   contentPadding: EdgeInsets.symmetric(vertical: 10),
                                   title: Text(
                                     S.of(context).options,
-                                    style: Theme.of(context).textTheme.headline3.merge (TextStyle(color: Theme.of(context).accentColor)),
+                                    style: Theme.of(context).textTheme.headline3.merge(TextStyle(color: Theme.of(context).accentColor)),
                                   ),
                                 ),
                                 _con.product.optionGroups == null
@@ -188,35 +185,17 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                   Positioned(
                     top: 32,
                     right: 20,
-                    child:_con.favorite?.id != null
-                                      ? OutlineButton(
-                                          onPressed: () {
-                                            _con.removeFromFavorite(_con.favorite);
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
-                                          color: Theme.of(context).primaryColor,
-                                          shape: StadiumBorder(),
-                                          borderSide: BorderSide(color: Theme.of(context).accentColor),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).accentColor,
-                                          ))
-                                      : FlatButton(
-                                          onPressed: () {
-                                            if (currentUser.value.apiToken == null) {
-                                              Navigator.of(context).pushNamed("/Login");
-                                            } else {
-                                              _con.addToFavorite(_con.product);
-                                            }
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
-                                          color: Theme.of(context).accentColor,
-                                          shape: StadiumBorder(),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).primaryColor,
-                                          )),
-                    
+                    child: _con.loadCart
+                        ? SizedBox(
+                            width: 60,
+                            height: 60,
+                            child: RefreshProgressIndicator(),
+                          )
+                        : ShoppingCartFloatButtonWidget(
+
+                            //gotocart
+
+                            ),
                   ),
                   Positioned(
                     bottom: 0,
@@ -234,7 +213,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Row(
-                              children: <Widget>[                               
+                              children: <Widget>[
                                 Container(
                                   child: Center(
                                     child: Row(
@@ -242,7 +221,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: <Widget>[
                                         Padding(
-                                          padding: const EdgeInsets.only(left:115.0),
+                                          padding: const EdgeInsets.only(left: 115.0),
                                           child: Container(
                                             child: Center(
                                               child: IconButton(
