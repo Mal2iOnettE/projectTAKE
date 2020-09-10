@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:markets/src/pages/login.dart';
+import 'package:markets/src/repository/user_repository.dart';
 
 class Prelogin2 extends StatefulWidget {
   @override
@@ -9,6 +10,13 @@ class Prelogin2 extends StatefulWidget {
 }
 
 class _Prelogin2State extends State<Prelogin2> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    checkIflOgin();
+  }
+
   @override
   Widget build(BuildContext context) {
     //var width2 = 80;
@@ -106,7 +114,7 @@ class _Prelogin2State extends State<Prelogin2> {
             height: 50,
             child: OutlineButton.icon(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/SignUp');
+                Navigator.pushNamed(context, '/Register');
               },
               borderSide: BorderSide(
                 color: Colors.white, //Color of the border
@@ -141,5 +149,9 @@ class _Prelogin2State extends State<Prelogin2> {
         ],
       ),
     ));
+  }
+
+  void checkIflOgin() {
+    currentUser.value.apiToken != null ? print("ok") : print("please login");
   }
 }

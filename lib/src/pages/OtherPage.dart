@@ -4,9 +4,11 @@ import 'package:markets/generated/l10n.dart';
 import 'package:markets/generated/l10n.dart';
 import 'package:markets/src/controllers/profile_controller.dart';
 import 'package:markets/src/elements/ProfileAvatarWidget.dart';
+import 'package:markets/src/pages/pages.dart';
 import 'package:markets/src/pages/profile.dart';
 import 'package:markets/src/repository/user_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class OtherPage extends StatefulWidget {
   @override
@@ -200,9 +202,33 @@ class _OtherPageState extends StateMVC<OtherPage> {
       ListTile(
         onTap: () {
           if (currentUser.value.apiToken != null) {
-            logout().then((value) {
-              Navigator.of(context).pushNamedAndRemoveUntil('/Pages', (Route<dynamic> route) => false, arguments: 0);
-            });
+            Alert(
+              context: context,
+              type: AlertType.warning,
+              title: "Log out!?",
+              desc: "Aru you really want to Log out?",
+              buttons: [
+                DialogButton(
+                  child: Text(
+                    "Yes",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () => logout().then(
+                    (value) => Navigator.of(context).push(MaterialPageRoute(builder: (context)=> PagesWidget(currentTab: 0))),
+                  ),
+                  color: Theme.of(context).accentColor,
+                ),
+                // DialogButton(
+                //   child: Text(
+                //     "Cancel",
+                //     style: TextStyle(color: Colors.black, fontSize: 20),
+                //   ),
+                //   onPressed: () => Navigator.pop(context),
+                //   color: Colors.white,
+                //   //gradient: LinearGradient(colors: [Color.fromRGBO(116, 116, 191, 1.0), Color.fromRGBO(52, 138, 199, 1.0)]),
+                // )
+              ],
+            ).show();
           } else {
             Navigator.of(context).pushNamed('/Login');
           }
