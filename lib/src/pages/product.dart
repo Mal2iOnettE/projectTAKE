@@ -221,7 +221,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: <Widget>[
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 115.0),
+                                          padding: const EdgeInsets.only(left: 80),
                                           child: Container(
                                             child: Center(
                                               child: IconButton(
