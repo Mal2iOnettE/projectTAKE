@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../../generated/l10n.dart';
 import '../controllers/product_controller.dart';
@@ -187,17 +188,35 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                   Positioned(
                     top: 32,
                     right: 20,
-                    child: _con.loadCart
-                        ? SizedBox(
-                            width: 60,
-                            height: 60,
-                            child: RefreshProgressIndicator(),
-                          )
-                        : ShoppingCartFloatButtonWidget(
-                            
-                            //gotocart
-                            
-                          ),
+                    child:_con.favorite?.id != null
+                                      ? OutlineButton(
+                                          onPressed: () {
+                                            _con.removeFromFavorite(_con.favorite);
+                                          },
+                                          padding: EdgeInsets.symmetric(vertical: 14),
+                                          color: Theme.of(context).primaryColor,
+                                          shape: StadiumBorder(),
+                                          borderSide: BorderSide(color: Theme.of(context).accentColor),
+                                          child: Icon(
+                                            Icons.favorite,
+                                            color: Theme.of(context).accentColor,
+                                          ))
+                                      : FlatButton(
+                                          onPressed: () {
+                                            if (currentUser.value.apiToken == null) {
+                                              Navigator.of(context).pushNamed("/Login");
+                                            } else {
+                                              _con.addToFavorite(_con.product);
+                                            }
+                                          },
+                                          padding: EdgeInsets.symmetric(vertical: 14),
+                                          color: Theme.of(context).accentColor,
+                                          shape: StadiumBorder(),
+                                          child: Icon(
+                                            Icons.favorite,
+                                            color: Theme.of(context).primaryColor,
+                                          )),
+                    
                   ),
                   Positioned(
                     bottom: 0,
@@ -257,37 +276,18 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                             SizedBox(height: 10),
                             Row(
                               children: <Widget>[
-                                Expanded(
-                                  child: _con.favorite?.id != null
-                                      ? OutlineButton(
-                                          onPressed: () {
-                                            _con.removeFromFavorite(_con.favorite);
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
-                                          color: Theme.of(context).primaryColor,
-                                          shape: StadiumBorder(),
-                                          borderSide: BorderSide(color: Theme.of(context).accentColor),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).accentColor,
-                                          ))
-                                      : FlatButton(
-                                          onPressed: () {
-                                            if (currentUser.value.apiToken == null) {
-                                              Navigator.of(context).pushNamed("/Login");
-                                            } else {
-                                              _con.addToFavorite(_con.product);
-                                            }
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
-                                          color: Theme.of(context).accentColor,
-                                          shape: StadiumBorder(),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).primaryColor,
-                                          )),
-                                ),
-                                SizedBox(width: 10),
+                        //         Expanded(
+                        //           child: _con.loadCart
+                        // ? SizedBox(
+                        //     width: 60,
+                        //     height: 60,
+                        //     child: RefreshProgressIndicator(),
+                        //   )
+                        // : ShoppingCartFloatButtonWidget(
+                      
+                        //   ),
+                        //         ),
+                                SizedBox(width: 40),
                                 Stack(
                                   fit: StackFit.loose,
                                   alignment: AlignmentDirectional.centerEnd,
@@ -300,9 +300,35 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                             Navigator.of(context).pushNamed("/Login");
                                           } else {
                                             if (_con.isSameMarkets(_con.product)) {
+                                               Alert(
+                                                    context: context,
+                                                    type: AlertType.success,
+                                                    title: "Success",
+                                                    desc: "This product was added to cart.",
+                                                    buttons: [
+                                                      DialogButton(
+                                                        child: Text(
+                                                          "Done",
+                                                          style: TextStyle(color: Colors.white, fontSize: 20),
+                                                        ),
+                                                        onPressed: () => Navigator.pop(context),
+                                                        width: 120,
+                                                      )
+                                                    ],
+                                                  ).show();
                                               _con.addToCart(_con.product);
                                             } else {
-                                              
+                                              //  showDialog(
+                                              //   context: context,
+                                              //   builder: (BuildContext context) {
+                                              //     // return object of type Dialog
+                                              //     return AddToCartAlertDialogWidget(
+                                              //         oldProduct: _con.carts.elementAt(0)?.product,
+                                              //         newProduct: _con.product,
+                                              //         onPressed: (product, {reset: true}) {
+                                              //           return _con.addToCart(_con.product, reset: true);
+                                              //         });
+                                              //   });
                                             }
                                           }
                                         },
@@ -328,6 +354,9 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                         style: Theme.of(context).textTheme.headline4.merge(TextStyle(color: Theme.of(context).primaryColor)),
                                       ),
                                     )
+
+               
+
                                   ],
                                 ),
                               ],
