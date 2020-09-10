@@ -221,7 +221,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: <Widget>[
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 115.0),
+                                          padding: const EdgeInsets.only(left: 80),
                                           child: Container(
                                             child: Center(
                                               child: IconButton(
@@ -295,8 +295,11 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                               ],
                                             ).show();
                                             _con.addToCart(_con.product);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
                                           }
                                         },
                                         padding: EdgeInsets.symmetric(vertical: 14),
