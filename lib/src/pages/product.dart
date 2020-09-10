@@ -193,7 +193,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                           onPressed: () {
                                             _con.removeFromFavorite(_con.favorite);
                                           },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
+                                          padding: EdgeInsets.symmetric(vertical: 8.0),
                                           color: Theme.of(context).primaryColor,
                                           shape: StadiumBorder(),
                                           borderSide: BorderSide(color: Theme.of(context).accentColor),
@@ -211,7 +211,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                           },
                                           padding: EdgeInsets.symmetric(vertical: 14),
                                           color: Theme.of(context).accentColor,
-                                          shape: StadiumBorder(),
+                                         
                                           child: Icon(
                                             Icons.favorite,
                                             color: Theme.of(context).primaryColor,
