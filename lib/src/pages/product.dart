@@ -295,11 +295,6 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                               ],
                                             ).show();
                                             _con.addToCart(_con.product);
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/master
                                           }
                                         },
                                         padding: EdgeInsets.symmetric(vertical: 14),
