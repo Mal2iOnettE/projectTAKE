@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Fri Sep 11 11:20:11 ICT 2020
 base.0=D\:\\TAKE_TOWN\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+=======
+#Fri Sep 11 09:58:38 ICT 2020
+base.0=C\:\\Users\\Admin\\Desktop\\Eca\\TAKE_APP_DELIVERY\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+>>>>>>> pending
 path.0=classes.dex
 renamed.0=classes.dex

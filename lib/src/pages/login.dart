@@ -42,7 +42,7 @@ class _LoginWidgetState extends StateMVC<LoginWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                height: 110,
+                height: 90,
               ),
               Container(
                 width: config.App(context).appWidth(84),

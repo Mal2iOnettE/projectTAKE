@@ -255,37 +255,18 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                             SizedBox(height: 10),
                             Row(
                               children: <Widget>[
-                                Expanded(
-                                  child: _con.favorite?.id != null
-                                      ? OutlineButton(
-                                          onPressed: () {
-                                            _con.removeFromFavorite(_con.favorite);
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
-                                          color: Theme.of(context).primaryColor,
-                                          shape: StadiumBorder(),
-                                          borderSide: BorderSide(color: Theme.of(context).accentColor),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).accentColor,
-                                          ))
-                                      : FlatButton(
-                                          onPressed: () {
-                                            if (currentUser.value.apiToken == null) {
-                                              Navigator.of(context).pushNamed("/Login");
-                                            } else {
-                                              _con.addToFavorite(_con.product);
-                                            }
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
-                                          color: Theme.of(context).accentColor,
-                                          shape: StadiumBorder(),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).primaryColor,
-                                          )),
-                                ),
-                                SizedBox(width: 10),
+                                //         Expanded(
+                                //           child: _con.loadCart
+                                // ? SizedBox(
+                                //     width: 60,
+                                //     height: 60,
+                                //     child: RefreshProgressIndicator(),
+                                //   )
+                                // : ShoppingCartFloatButtonWidget(
+
+                                //   ),
+                                //         ),
+                                SizedBox(width: 40),
                                 Stack(
                                   fit: StackFit.loose,
                                   alignment: AlignmentDirectional.centerEnd,
