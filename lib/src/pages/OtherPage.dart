@@ -269,11 +269,6 @@ class _OtherPageState extends StateMVC<OtherPage> {
                 )
               ],
             ).show();
-            // logout().then((value) {
-            //   Navigator.of(context).pushNamedAndRemoveUntil(
-            //       '/Pages', (Route<dynamic> route) => false,
-            //       arguments: 0);
-            // });
           } else {
             Navigator.of(context).pushNamed('/Login');
           }
