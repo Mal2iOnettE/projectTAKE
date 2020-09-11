@@ -105,19 +105,13 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                             ),
                             Positioned(
                               top: 200,
-                              left: 50.0,
+                              left: 10.0,
                               child: Container(
                                   height: 200,
-                                  width: 300,
+                                  width: 390,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(300.0),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: Offset(5.0, 0.0), 
-                                      color: Colors.black12, 
-                                      blurRadius: 10.0
-                                    )
-                                  ]),
+                                      borderRadius: BorderRadius.circular(300.0),
+                                      boxShadow: [BoxShadow(offset: Offset(5.0, 0.0), color: Colors.black12, blurRadius: 10.0)]),
                                   child: Card(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -157,14 +151,30 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                                 child: Row(
                                                   children: [
                                                     Icon(Icons.star),
-                                                    Text(
-                                                      _con.market.rate,
-                                                      style: TextStyle(
-                                                        fontFamily: 'ProductSans',
-                                                        fontSize: 15.0,
-                                                        color: Colors.grey,
-                                                        //fontWeight: FontWeight.bold,
-                                                      ),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          _con.market.rate,
+                                                          style: TextStyle(
+                                                            fontFamily: 'ProductSans',
+                                                            fontSize: 15.0,
+                                                            color: Colors.grey,
+                                                            //fontWeight: FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0),
+                                                          child: Text(
+                                                            ("( ${_con.reviews.length.toString()} )"),
+                                                            style: TextStyle(
+                                                              fontFamily: 'ProductSans',
+                                                              fontSize: 15.0,
+                                                              color: Colors.grey,
+                                                              //fontWeight: FontWeight.bold,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ],
                                                 ),
@@ -223,7 +233,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                           ],
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 110.0,
                         ),
                         SearchBarWidget(),
                         Container(
