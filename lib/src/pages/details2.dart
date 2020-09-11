@@ -105,19 +105,13 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                             ),
                             Positioned(
                               top: 200,
-                              left: 50.0,
+                              left: 18.0,
                               child: Container(
                                   height: 200,
-                                  width: 300,
+                                  width: 380,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(300.0),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: Offset(5.0, 0.0), 
-                                      color: Colors.black12, 
-                                      blurRadius: 10.0
-                                    )
-                                  ]),
+                                      borderRadius: BorderRadius.circular(300.0),
+                                      boxShadow: [BoxShadow(offset: Offset(5.0, 0.0), color: Colors.black12, blurRadius: 10.0)]),
                                   child: Card(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -131,7 +125,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                             style: TextStyle(
                                               fontFamily: 'ProductSans',
                                               fontSize: 25.0,
-                                              color: Colors.pink,
+                                              color: Theme.of(context).accentColor,
                                               fontWeight: FontWeight.bold,
                                             ),
                                           ),
@@ -156,15 +150,34 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                                 padding: const EdgeInsets.all(5.0),
                                                 child: Row(
                                                   children: [
-                                                    Icon(Icons.star),
-                                                    Text(
-                                                      _con.market.rate,
-                                                      style: TextStyle(
-                                                        fontFamily: 'ProductSans',
-                                                        fontSize: 15.0,
-                                                        color: Colors.grey,
-                                                        //fontWeight: FontWeight.bold,
-                                                      ),
+                                                    Icon(
+                                                      Icons.star,
+                                                      color: Theme.of(context).accentColor ,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          _con.market.rate,
+                                                          style: TextStyle(
+                                                            fontFamily: 'ProductSans',
+                                                            fontSize: 15.0,
+                                                            color: Colors.grey,
+                                                            //fontWeight: FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0),
+                                                          child: Text(
+                                                            ("( ${_con.reviews.length.toString()} )"),
+                                                            style: TextStyle(
+                                                              fontFamily: 'ProductSans',
+                                                              fontSize: 15.0,
+                                                              color: Colors.grey,
+                                                              //fontWeight: FontWeight.bold,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ],
                                                 ),
@@ -196,7 +209,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                           ),
                                         ),
                                         Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Padding(
                                               padding: const EdgeInsets.all(8.0),
@@ -223,9 +236,12 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                           ],
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 110.0,
                         ),
+
                         SearchBarWidget(),
+
+                        
                         Container(
                             height: 200,
                             padding: EdgeInsets.symmetric(vertical: 10),
@@ -287,114 +303,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                     ),
                   )
 
-            /*Stack(
-                  fit: StackFit.expand,
-                  children: <Widget>[
-                    CustomScrollView(
-                      primary: true,
-                      shrinkWrap: false,
-                      slivers: <Widget>[
-                       
-                        SliverAppBar(
-                          backgroundColor: Theme.of(context).accentColor.withOpacity(0.9),
-                          expandedHeight: 300,
-                          elevation: 0,
-                          iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-                          flexibleSpace: FlexibleSpaceBar(
-                            collapseMode: CollapseMode.parallax,
-                            background: Hero(
-                              tag: (widget?.routeArgument?.heroTag ?? '') + _con.market.id,
-                              child: CachedNetworkImage(
-                                fit: BoxFit.cover,
-                                imageUrl: _con.market.image.url,
-                                placeholder: (context, url) => Image.asset(
-                                  'assets/img/loading.gif',
-                                  fit: BoxFit.cover,
-                                ),
-                                errorWidget: (context, url, error) => Icon(Icons.error),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SearchBarWidget(),
-                              Container(
-                                  height: 200,
-                                  padding: EdgeInsets.symmetric(vertical: 10),
-                                  child: ListView.builder(
-                                    itemCount: _con.featuredProducts.length,
-                                    scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) {
-                                      double _marginLeft = 0;
-                                      (index == 0) ? _marginLeft = 20 : _marginLeft = 0;
-                                      return ProductsCarouselItemWidget(
-                                        marginLeft: _marginLeft,
-                                        product: _con.featuredProducts.elementAt(index),
-                                        heroTag: '',
-                                      );
-                                    },
-                                  )),
-                              _con.featuredProducts.isEmpty
-                                  ? SizedBox(height: 0)
-                                  : ListView.separated(
-                                      padding: EdgeInsets.symmetric(vertical: 10),
-                                      scrollDirection: Axis.vertical,
-                                      shrinkWrap: true,
-                                      primary: false,
-                                      itemCount: _con.featuredProducts.length,
-                                      separatorBuilder: (context, index) {
-                                        return SizedBox(height: 10);
-                                      },
-                                      itemBuilder: (context, index) {
-                                        return ProductItemWidget(
-                                          heroTag: 'details_featured_product',
-                                          product: _con.featuredProducts.elementAt(index),
-                                        );
-                                      },
-                                    ),
-                              _con.reviews.isEmpty
-                                  ? SizedBox(height: 5)
-                                  : Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                                      child: ListTile(
-                                        dense: true,
-                                        contentPadding: EdgeInsets.symmetric(vertical: 0),
-                                        leading: Icon(
-                                          Icons.recent_actors,
-                                          color: Theme.of(context).hintColor,
-                                        ),
-                                        title: Text(
-                                          S.of(context).what_they_say,
-                                          style: Theme.of(context).textTheme.headline4,
-                                        ),
-                                      ),
-                                    ),
-                              _con.reviews.isEmpty
-                                  ? SizedBox(height: 5)
-                                  : Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                                      child: ReviewsListWidget(reviewsList: _con.reviews),
-                                    ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    // Positioned(
-                    //   top: 32,
-                    //   right: 20,
-                    //   child: ShoppingCartFloatButtonWidget(
-                    //     iconColor: Theme.of(context).primaryColor,
-                    //     labelColor: Theme.of(context).hintColor,
-                    //     routeArgument: RouteArgument(
-                    //         param: '/Details', id: widget.routeArgument.id),
-                    //   ),
-                    // ),
-                  ],
-                ),*/
+         
             ));
   }
 }
