@@ -28,7 +28,9 @@ class HomeWidget extends StatefulWidget {
   List<Market> marketsList;
   List<Review> reviewList;
 
-  HomeWidget({Key key, this.parentScaffoldKey, this.marketsList,this.reviewList}) : super(key: key);
+  HomeWidget(
+      {Key key, this.parentScaffoldKey, this.marketsList, this.reviewList})
+      : super(key: key);
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -38,11 +40,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
   HomeController _con;
   ReviewsController _recon;
 
-  _HomeWidgetState() : super
-  (HomeController()) {
+  _HomeWidgetState() : super(HomeController()) {
     _con = controller;
   }
- 
 
   @override
   Widget build(BuildContext context) {
@@ -61,12 +61,17 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           builder: (context, value, child) {
             return Text(
               value.appName ?? S.of(context).home,
-              style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  .merge(TextStyle(letterSpacing: 1.3)),
             );
           },
         ),
         actions: <Widget>[
-          new ShoppingCartButtonWidget(iconColor: Theme.of(context).hintColor, labelColor: Theme.of(context).accentColor),
+          new ShoppingCartButtonWidget(
+              iconColor: Theme.of(context).hintColor,
+              labelColor: Theme.of(context).accentColor),
         ],
       ),
       body:
@@ -83,13 +88,13 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
             children: <Widget>[
               //Serach bar
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20.0),
                 child: SearchBarWidget(
-                    /*
-                    onClickFilter: (event) {
+                  onClickFilter: (event) {
                     widget.parentScaffoldKey.currentState.openEndDrawer();
-                  },*/
-                    ),
+                  },
+                ),
               ),
 
               CategoriesCarouselWidget(
@@ -118,7 +123,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   subtitle: Text(
-                    S.of(context).near_to + " " + (settingsRepo.deliveryAddress.value?.address ?? S.of(context).unknown),
+                    S.of(context).near_to +
+                        " " +
+                        (settingsRepo.deliveryAddress.value?.address ??
+                            S.of(context).unknown),
                     style: Theme.of(context).textTheme.caption,
                   ),
                 ),
@@ -131,10 +139,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
 
               /// Markets
               CardsCarouselWidget(
-                marketsList: _con.topMarkets, 
-                heroTag: 'home_top_markets', 
-              
-          ),
+                marketsList: _con.topMarkets,
+                heroTag: 'home_top_markets',
+              ),
 
               //Trending this week
               ListTile(
@@ -156,7 +163,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               ),
 
               //Trainding Product
-              ProductsCarouselWidget(productsList: _con.trendingProducts, heroTag: 'home_product_carousel'),
+              ProductsCarouselWidget(
+                  productsList: _con.trendingProducts,
+                  heroTag: 'home_product_carousel'),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ListTile(
@@ -178,7 +187,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               ),*/
 
               Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 20),
+                padding: const EdgeInsets.only(
+                    left: 20, right: 20, bottom: 20, top: 20),
                 child: ListTile(
                   dense: true,
                   contentPadding: EdgeInsets.symmetric(vertical: 0),
