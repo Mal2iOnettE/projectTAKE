@@ -185,37 +185,6 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                   Positioned(
                     top: 32,
                     right: 20,
-<<<<<<< HEAD
-                    child:_con.favorite?.id != null
-                                      ? OutlineButton(
-                                          onPressed: () {
-                                            _con.removeFromFavorite(_con.favorite);
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 8.0),
-                                          color: Theme.of(context).primaryColor,
-                                          shape: StadiumBorder(),
-                                          borderSide: BorderSide(color: Theme.of(context).accentColor),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).accentColor,
-                                          ))
-                                      : FlatButton(
-                                          onPressed: () {
-                                            if (currentUser.value.apiToken == null) {
-                                              Navigator.of(context).pushNamed("/Login");
-                                            } else {
-                                              _con.addToFavorite(_con.product);
-                                            }
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
-                                          color: Theme.of(context).accentColor,
-                                         
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).primaryColor,
-                                          )),
-                    
-=======
                     child: _con.loadCart
                         ? SizedBox(
                             width: 60,
@@ -227,7 +196,6 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                             //gotocart
 
                             ),
->>>>>>> 4363831ee03989f36f4f444d4d5fa160942b97e0
                   ),
                   Positioned(
                     bottom: 0,
@@ -253,7 +221,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: <Widget>[
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 115.0),
+                                          padding: const EdgeInsets.only(left: 80),
                                           child: Container(
                                             child: Center(
                                               child: IconButton(
@@ -327,8 +295,11 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                               ],
                                             ).show();
                                             _con.addToCart(_con.product);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
                                           }
                                         },
                                         padding: EdgeInsets.symmetric(vertical: 14),
