@@ -70,14 +70,8 @@ class _OtherPageState extends StateMVC<OtherPage> {
       //Profile
       ListTile(
         onTap: () {
-<<<<<<< HEAD
-          // Navigator.of(context).pushNamed('/Profile');
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ProfileWidget()));
-=======
           Navigator.of(context).pushNamed('/Profile');
           //Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileWidget()));
->>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
         },
         trailing: Icon(Icons.arrow_forward_ios),
         title: Text(
@@ -247,42 +241,17 @@ class _OtherPageState extends StateMVC<OtherPage> {
             Alert(
               context: context,
               type: AlertType.warning,
-<<<<<<< HEAD
-              title: "Logout?",
-              buttons: [
-                DialogButton(
-                  onPressed: () => logout().then((value) =>
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/Pages', (Route<dynamic> route) => false,
-                          arguments: 0)),
-                  //Navigator.pop(context),
-=======
               title: "Log out!?",
               desc: "Aru you really want to Log out?",
               buttons: [
                 DialogButton(
->>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
                   child: Text(
                     "Yes",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-<<<<<<< HEAD
-                  color: Color.fromRGBO(0, 179, 134, 1.0),
-                ),
-                DialogButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text(
-                    "Cancel",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  gradient: LinearGradient(colors: [
-                    Color.fromRGBO(116, 116, 191, 1.0),
-                    Color.fromRGBO(52, 138, 199, 1.0)
-                  ]),
-                )
-=======
                   onPressed: () => logout().then(
-                    (value) => Navigator.of(context).pushNamed('/Pages', arguments: 0),
+                    (value) =>
+                        Navigator.of(context).pushNamed('/Pages', arguments: 0),
                   ),
                   color: Theme.of(context).accentColor,
                 ),
@@ -295,7 +264,6 @@ class _OtherPageState extends StateMVC<OtherPage> {
                 //   color: Colors.white,
                 //   //gradient: LinearGradient(colors: [Color.fromRGBO(116, 116, 191, 1.0), Color.fromRGBO(52, 138, 199, 1.0)]),
                 // )
->>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
               ],
             ).show();
           } else {

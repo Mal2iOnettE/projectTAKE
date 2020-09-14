@@ -8,3 +8,15 @@ import '../elements/CreditCardsWidget.dart';
 import '../helpers/helper.dart';
 import '../models/route_argument.dart';
 import '../repository/settings_repository.dart';
+
+class checkout_deliverypick extends StatefulWidget {
+  @override
+  _checkout_deliverypickState createState() => _checkout_deliverypickState();
+}
+
+class _checkout_deliverypickState extends State<checkout_deliverypick> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}

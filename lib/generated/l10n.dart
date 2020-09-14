@@ -14,7 +14,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -2292,22 +2294,7 @@ class S {
       desc: '',
       args: [],
     );
-<<<<<<< HEAD
-}
-
-String get ordersomethingelse {
-    return Intl.message(
-      'Order something else',
-      name: 'ordersomethingelse',
-      desc: '',
-      args: [],
-
-    );
-}
- 
-=======
   }
->>>>>>> master
 
   String get validCouponCode {
     return Intl.message(
@@ -2331,6 +2318,15 @@ String get ordersomethingelse {
     return Intl.message(
       'Have Coupon Code?',
       name: 'haveCouponCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get ordersomethingelse {
+    return Intl.message(
+      'Order something else ?',
+      name: 'ordersomethingelse',
       desc: '',
       args: [],
     );
