@@ -39,10 +39,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
 
   _Details2WidgetState() : super((MarketController())) {
     _con = controller;
-    
   }
-
- 
 
   @override
   void initState() {
@@ -57,6 +54,23 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: _con.scaffoldKey,
+       /* appBar: AppBar(
+          automaticallyImplyLeading: false,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/Pages', arguments: 0);
+            },
+            icon: Icon(Icons.arrow_back),
+            color: Theme.of(context).hintColor,
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          title: Text(
+            S.of(context).cart,
+            style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+          ),
+        ),*/
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             Navigator.of(context).pushNamed('/Cart', arguments: RouteArgument(param: '/Details2', id: _con.market.id));
@@ -65,17 +79,13 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
 
           isExtended: true,
           materialTapTargetSize: MaterialTapTargetSize.padded,
-          // icon: Icon(
-          //   Icons.shopping_basket,
-          //   color: Theme.of(context).primaryColor,
-          // ),
 
           label: Container(
             width: 300.0,
             child: Center(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     S.of(context).go_to_cart,
@@ -362,5 +372,4 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
       ),
     );
   }
-
 }

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_map_location_picker/google_map_location_picker.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:markets/src/repository/settings_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 import '../../generated/l10n.dart';
@@ -102,6 +105,24 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.headline4,
                     ),
+                    trailing: Icon(Icons.add_circle),
+                    onTap: () async {
+                      LocationResult result = await showLocationPicker(
+                        context,
+                        setting.value.googleMapsKey,
+                        initialCenter: LatLng(deliveryAddress.value?.latitude ?? 0, deliveryAddress.value?.longitude ?? 0),
+                        automaticallyAnimateToCurrentLocation: true,
+                        //mapStylePath: 'assets/mapStyle.json',
+                        myLocationButtonEnabled: true,
+                        //resultCardAlignment: Alignment.bottomCenter,
+                      );
+                      _con.addAddress(new Address.fromJSON({
+                        'address': result.address,
+                        'latitude': result.latLng.latitude,
+                        'longitude': result.latLng.longitude,
+                      }));
+                      print("result = $result");
+                    },
                     subtitle: _con.carts.isNotEmpty && Helper.canDelivery(_con.carts[0].product.market, carts: _con.carts)
                         ? Text(
                             S.of(context).click_to_confirm_your_address_and_pay_or_long_press,
@@ -130,7 +151,6 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                                 _con.addAddress(_address);
                               },
                             );
-                            
                           } else {
                             _con.toggleDelivery();
                           }

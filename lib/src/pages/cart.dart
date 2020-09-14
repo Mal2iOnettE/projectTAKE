@@ -48,7 +48,7 @@ class _CartWidgetState extends StateMVC<CartWidget> {
               if (widget.routeArgument != null) {
                 Navigator.of(context).pushReplacementNamed(widget.routeArgument.param, arguments: RouteArgument(id: widget.routeArgument.id));
               } else {
-                Navigator.of(context).pushReplacementNamed('/Pages', arguments:0);
+                Navigator.of(context).pushReplacementNamed('/Pages', arguments: 0);
               }
             },
             icon: Icon(Icons.arrow_back),
@@ -67,8 +67,6 @@ class _CartWidgetState extends StateMVC<CartWidget> {
           child: _con.carts.isEmpty
               ? EmptyCartWidget()
               : ListView(
-
-                
                   children: [
                     Column(
                       children: <Widget>[

@@ -127,7 +127,7 @@ class _FilterWidgetState extends StateMVC<FilterWidget> {
                               onChanged: (value) {
                                 _con.onChangeFieldsFilter(index);
                               },
-                              title: Text(
+                              title: Text( 
                                 _con.fields.elementAt(index).name,
                                 overflow: TextOverflow.fade,
                                 softWrap: false,
@@ -142,22 +142,25 @@ class _FilterWidgetState extends StateMVC<FilterWidget> {
             ),
             SizedBox(height: 15),
         ///button applyfilter
-            FlatButton(
-              onPressed: () {
-                _con.saveFilter().whenComplete(() {
-                  widget.onFilter(_con.filter);
-                });
-              },
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-              color: Theme.of(context).accentColor,
-              shape: StadiumBorder(),
-              child: Text(
-                S.of(context).apply_filters,
-                textAlign: TextAlign.start,
-                style: TextStyle(color: Theme.of(context).primaryColor),
+            Container(
+              width: 300.0,
+              child: FlatButton(
+                onPressed: () {
+                  _con.saveFilter().whenComplete(() {
+                    widget.onFilter(_con.filter);
+                  });
+                },
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                color: Theme.of(context).accentColor,
+                shape: StadiumBorder(),
+                child: Text(
+                  S.of(context).apply_filters,
+                  textAlign: TextAlign.start,
+                  style: TextStyle(color: Theme.of(context).primaryColor),
+                ),
               ),
             ),
-            SizedBox(height: 15)
+           
           ],
         ),
       ),
