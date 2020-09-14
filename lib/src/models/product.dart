@@ -1,3 +1,5 @@
+import 'package:markets/src/models/coupon.dart';
+
 import '../models/category.dart';
 import '../models/market.dart';
 import '../models/media.dart';
@@ -83,6 +85,42 @@ class Product {
     map["capacity"] = capacity;
     map["package_items_count"] = packageItemsCount;
     return map;
+  }
+
+  Coupon applyCoupon(Coupon coupon) {
+    if (coupon.code != '') {
+      if (coupon.valid == null) {
+        coupon.valid = false;
+      }
+      coupon.discountables.forEach((element) {
+        if (element.discountableType == "App\\Models\\Product") {
+          if (element.discountableId == id) {
+            coupon = _couponDiscountPrice(coupon);
+          }
+        } else if (element.discountableType == "App\\Models\\Market") {
+          if (element.discountableId == market.id) {
+            coupon = _couponDiscountPrice(coupon);
+          }
+        } else if (element.discountableType == "App\\Models\\Category") {
+          if (element.discountableId == category.id) {
+            coupon = _couponDiscountPrice(coupon);
+          }
+        }
+      });
+    }
+    return coupon;
+  }
+
+   Coupon _couponDiscountPrice(Coupon coupon) {
+    coupon.valid = true;
+    discountPrice = price;
+    if (coupon.discountType == 'fixed') {
+      price -= coupon.discount;
+    } else {
+      price = price - (price * coupon.discount / 100);
+    }
+    if (price < 0) price = 0;
+    return coupon;
   }
 
   double getRate() {
