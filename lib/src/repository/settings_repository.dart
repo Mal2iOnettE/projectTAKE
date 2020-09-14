@@ -9,6 +9,7 @@ import 'package:global_configuration/global_configuration.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:location/location.dart';
+import 'package:markets/src/models/coupon.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../helpers/custom_trace.dart';
@@ -19,6 +20,7 @@ import '../models/setting.dart';
 ValueNotifier<Setting> setting = new ValueNotifier(new Setting());
 ValueNotifier<Address> deliveryAddress = new ValueNotifier(new Address());
 final navigatorKey = GlobalKey<NavigatorState>();
+Coupon coupon = new Coupon.fromJSON({});
 //LocationData locationData;
 
 Future<Setting> initSettings() async {

@@ -7,8 +7,6 @@ import '../elements/CardWidget.dart';
 import '../elements/CircularLoadingWidget.dart';
 import '../elements/ProductItemWidget.dart';
 import '../models/route_argument.dart';
-import '../elements/FilterWidget.dart';
-
 
 class SearchResultWidget extends StatefulWidget {
   final String heroTag;
@@ -39,7 +37,7 @@ class _SearchResultWidgetState extends StateMVC<SearchResultWidget> {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(top: 15, left: 20, right: 50),
+            padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
             child: ListTile(
               dense: true,
               contentPadding: EdgeInsets.symmetric(vertical: 0),
@@ -57,16 +55,9 @@ class _SearchResultWidgetState extends StateMVC<SearchResultWidget> {
               subtitle: Text(
                 S.of(context).ordered_by_nearby_first,
                 style: Theme.of(context).textTheme.caption,
-
-                
               ),
             ),
-
-            
           ),
-
-         
-
           Padding(
             padding: const EdgeInsets.all(20),
             child: TextField(
@@ -76,7 +67,6 @@ class _SearchResultWidgetState extends StateMVC<SearchResultWidget> {
               },
               autofocus: true,
               decoration: InputDecoration(
-                
                 contentPadding: EdgeInsets.all(12),
                 hintText: S.of(context).search_for_markets_or_products,
                 hintStyle: Theme.of(context).textTheme.caption.merge(TextStyle(fontSize: 14)),
@@ -84,17 +74,6 @@ class _SearchResultWidgetState extends StateMVC<SearchResultWidget> {
                 border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.1))),
                 focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.3))),
                 enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.1))),
-                suffixIcon: IconButton(icon: Icon(Icons.filter_vintage),color:Colors.black, 
-                
-                onPressed: () {
-                              Navigator.of(context).pushNamed('/filter',
-                                  arguments: RouteArgument(
-                                  ),
-                                  );
-                },
-                )
-                
-               
               ),
             ),
           ),
