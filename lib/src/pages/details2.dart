@@ -21,6 +21,7 @@ import '../repository/settings_repository.dart';
 
 class Details2Widget extends StatefulWidget {
   final RouteArgument routeArgument;
+  
 
   Details2Widget({Key key, this.routeArgument}) : super(key: key);
 
@@ -32,6 +33,7 @@ class Details2Widget extends StatefulWidget {
 
 class _Details2WidgetState extends StateMVC<Details2Widget> {
   MarketController _con;
+  ValueChanged onClickFilter;
 
   _Details2WidgetState() : super(MarketController()) {
     _con = controller;
@@ -152,7 +154,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                                   children: [
                                                     Icon(
                                                       Icons.star,
-                                                      color: Theme.of(context).accentColor ,
+                                                      color: Theme.of(context).accentColor,
                                                     ),
                                                     Row(
                                                       children: [
@@ -239,9 +241,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                           height: 110.0,
                         ),
 
-                        SearchBarWidget(),
-
-                        
+                        searchBarMarket(),
+                        //SearchBarWidget(),
                         Container(
                             height: 200,
                             padding: EdgeInsets.symmetric(vertical: 10),
@@ -301,9 +302,52 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               ),
                       ],
                     ),
-                  )
+                  )));
+  }
 
-         
-            ));
+  Widget searchBarMarket(){
+    return InkWell(
+      onTap: () {
+       Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+              color: Colors.transparent,
+              border: Border.all(
+                color: Theme.of(context).focusColor.withOpacity(0.2),
+              ),
+              borderRadius: BorderRadius.circular(10),
+              
+              ),
+          child: Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(right: 12, left: 0),
+                child: Icon(Icons.search, color: Theme.of(context).accentColor),
+              ),
+              Expanded(
+                child: Text(
+                  S.of(context).search_for_markets_or_products,
+                  maxLines: 1,
+                  style: Theme.of(context).textTheme.caption.merge(TextStyle(fontSize: 14)),
+                ),
+              ),
+             /*InkWell(
+                onTap: () {
+                  onClickFilter('e');
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 5, left: 5, top: 3, bottom: 3),
+                  child: Icon(Icons.filter_list, color: Theme.of(context).accentColor),
+                ),
+              ),*/
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
