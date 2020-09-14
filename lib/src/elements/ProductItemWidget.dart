@@ -31,26 +31,7 @@ class ProductItemWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Hero(
-              tag: heroTag + product.id,
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-                child: CachedNetworkImage(
-                  height: 60,
-                  width: 60,
-                  fit: BoxFit.cover,
-                  imageUrl: product.image.thumb,
-                  placeholder: (context, url) => Image.asset(
-                    'assets/img/loading.gif',
-                    fit: BoxFit.cover,
-                    height: 60,
-                    width: 60,
-                  ),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
-                ),
-              ),
-            ),
-            SizedBox(width: 15),
+            //SizedBox(width: 8),
             Flexible(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -74,23 +55,45 @@ class ProductItemWidget extends StatelessWidget {
                           maxLines: 2,
                           style: Theme.of(context).textTheme.caption,
                         ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Helper.getPrice(
+                              product.price,
+                              context,
+                              style: Theme.of(context).textTheme.headline4,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0,bottom:3),
+                              child: product.discountPrice > 0
+                                  ? Helper.getPrice(product.discountPrice, context,
+                                      style: Theme.of(context).textTheme.bodyText2.merge(TextStyle(decoration: TextDecoration.lineThrough)))
+                                  : SizedBox(height: 0),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
                   SizedBox(width: 8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      Helper.getPrice(
-                        product.price,
-                        context,
-                        style: Theme.of(context).textTheme.headline4,
+                  Hero(
+                    tag: heroTag + product.id,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      child: CachedNetworkImage(
+                        height: 60,
+                        width: 60,
+                        fit: BoxFit.cover,
+                        imageUrl: product.image.thumb,
+                        placeholder: (context, url) => Image.asset(
+                          'assets/img/loading.gif',
+                          fit: BoxFit.cover,
+                          height: 60,
+                          width: 60,
+                        ),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
-                      product.discountPrice > 0
-                          ? Helper.getPrice(product.discountPrice, context,
-                              style: Theme.of(context).textTheme.bodyText2.merge(TextStyle(decoration: TextDecoration.lineThrough)))
-                          : SizedBox(height: 0),
-                    ],
+                    ),
                   ),
                 ],
               ),

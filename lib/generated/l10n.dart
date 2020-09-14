@@ -2296,6 +2296,16 @@ String get next {
 
     );
 }
+
+String get placeorder {
+    return Intl.message(
+      'Place order',
+      name: 'placeorder',
+      desc: '',
+      args: [],
+
+    );
+}
  
 
 

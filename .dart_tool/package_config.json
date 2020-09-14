@@ -555,9 +555,9 @@
     },
     {
       "name": "rflutter_alert",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-1.0.3",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-1.0.5",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.7"
     },
     {
       "name": "rxdart",
@@ -794,7 +794,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-09-14T02:31:38.257933Z",
+  "generated": "2020-09-14T02:33:08.860458Z",
   "generator": "pub",
   "generatorVersion": "2.10.0-73.0.dev"
 }

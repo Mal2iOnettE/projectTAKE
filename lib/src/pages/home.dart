@@ -85,12 +85,12 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20.0),
                 child: SearchBarWidget(
-                    /*
                     onClickFilter: (event) {
                     widget.parentScaffoldKey.currentState.openEndDrawer();
-                  },*/
+                  },
                     ),
               ),
+              
 
               CategoriesCarouselWidget(
                 categories: _con.categories,
@@ -216,10 +216,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: ReviewsListWidget(reviewsList: _con.recentReviews),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 20),
+              //   child: ReviewsListWidget(reviewsList: _con.recentReviews),
+              // ),
             ],
           ),
         ),

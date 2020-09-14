@@ -83,7 +83,7 @@ class CartBottomDetailsWidget extends StatelessWidget {
                           color: !_con.carts[0].product.market.closed ? Theme.of(context).accentColor : Theme.of(context).focusColor.withOpacity(0.5),
                           shape: StadiumBorder(),
                           child: Text(
-                            S.of(context).checkout,
+                            S.of(context).placeorder,
                             textAlign: TextAlign.start,
                             style: Theme.of(context).textTheme.bodyText1.merge(TextStyle(color: Theme.of(context).primaryColor)),
                           ),
@@ -99,6 +99,7 @@ class CartBottomDetailsWidget extends StatelessWidget {
                       )
                     ],
                   ),
+                     Text('Order something else'),
                   SizedBox(height: 10),
                 ],
               ),
