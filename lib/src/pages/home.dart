@@ -79,6 +79,26 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: InkWell(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          onTap: (){
+                             Navigator.of(context).pushNamed('/DeliveryAddresses');
+                          },
+                          title: Text("Deliver To"),
+                          subtitle: Text(
+                            (settingsRepo.deliveryAddress.value?.address ?? S.of(context).unknown),
+                            style: Theme.of(context).textTheme.caption,
+                          ),
+                          trailing: Icon(Icons.arrow_drop_down),
+                        )
+                      ],
+                    ),
+                  )),
               //Serach bar
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20.0),
@@ -114,10 +134,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     S.of(context).nearby_restaurant,
                     style: Theme.of(context).textTheme.headline4,
                   ),
-                  subtitle: Text(
-                    S.of(context).near_to + " " + (settingsRepo.deliveryAddress.value?.address ?? S.of(context).unknown),
-                    style: Theme.of(context).textTheme.caption,
-                  ),
+                  // subtitle: Text(
+                  //   S.of(context).near_to + " " + (settingsRepo.deliveryAddress.value?.address ?? S.of(context).unknown),
+                  //   style: Theme.of(context).textTheme.caption,
+                  // ),
                 ),
               ),
 

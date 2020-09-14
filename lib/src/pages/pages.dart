@@ -63,7 +63,8 @@ class _PagesWidgetState extends State<PagesWidget> {
           //widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
           break;
         case 1:
-          widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
+          //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
+            widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
           break;
         case 3:
         
@@ -123,7 +124,7 @@ class _PagesWidgetState extends State<PagesWidget> {
                  child: new Icon(Icons.home, color: Theme.of(context).accentColor),*/
                 ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
+              icon: Icon(Icons.map),
               title: new Container(height: 0.0),
             ),
             BottomNavigationBarItem(

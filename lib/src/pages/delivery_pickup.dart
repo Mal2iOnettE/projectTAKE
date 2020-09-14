@@ -130,6 +130,7 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                                 _con.addAddress(_address);
                               },
                             );
+                            
                           } else {
                             _con.toggleDelivery();
                           }
