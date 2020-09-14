@@ -38,7 +38,7 @@ class _CheckoutWidgetState extends StateMVC<CheckoutWidget> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          S.of(context).checkout,
+          S.of(context).placeorder,
           style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
         ),
       ),
