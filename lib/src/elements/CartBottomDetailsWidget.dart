@@ -19,7 +19,7 @@ class CartBottomDetailsWidget extends StatelessWidget {
     return _con.carts.isEmpty
         ? SizedBox(height: 0)
         : Container(
-            height: 280,
+            height: 300,
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
@@ -183,11 +183,6 @@ class CartBottomDetailsWidget extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 15.0, color: Theme.of(context).accentColor),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Order something else',
-                    style: TextStyle(color: Theme.of(context).accentColor),
                   ),
                 ],
               ),
