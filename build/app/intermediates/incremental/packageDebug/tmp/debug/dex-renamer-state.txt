@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Mon Sep 14 11:26:04 ICT 2020
 base.0=/Users/bamopass/Desktop/Take_pj_master/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+=======
+#Mon Sep 14 09:41:51 ICT 2020
+base.0=C\:\\Users\\Admin\\Desktop\\Eca\\TAKE_APP_DELIVERY\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+>>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
 path.0=classes.dex
 renamed.0=classes.dex

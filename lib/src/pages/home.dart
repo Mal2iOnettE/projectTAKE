@@ -28,9 +28,13 @@ class HomeWidget extends StatefulWidget {
   List<Market> marketsList;
   List<Review> reviewList;
 
+<<<<<<< HEAD
   HomeWidget(
       {Key key, this.parentScaffoldKey, this.marketsList, this.reviewList})
       : super(key: key);
+=======
+  HomeWidget({Key key, this.parentScaffoldKey, this.marketsList, this.reviewList}) : super(key: key);
+>>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -226,10 +230,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: ReviewsListWidget(reviewsList: _con.recentReviews),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 20),
+              //   child: ReviewsListWidget(reviewsList: _con.recentReviews),
+              // ),
             ],
           ),
         ),

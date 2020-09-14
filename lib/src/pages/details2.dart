@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:markets/src/elements/ProductsCarouselItemWidget.dart';
 import 'package:markets/src/elements/SearchBarWidget.dart';
+import 'package:markets/src/elements/ShoppingCartButtonWidget.dart';
+import 'package:markets/src/repository/user_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -19,6 +21,7 @@ import '../repository/settings_repository.dart';
 
 class Details2Widget extends StatefulWidget {
   final RouteArgument routeArgument;
+  
 
   Details2Widget({Key key, this.routeArgument}) : super(key: key);
 
@@ -30,6 +33,7 @@ class Details2Widget extends StatefulWidget {
 
 class _Details2WidgetState extends StateMVC<Details2Widget> {
   MarketController _con;
+  ValueChanged onClickFilter;
 
   _Details2WidgetState() : super(MarketController()) {
     _con = controller;
@@ -50,9 +54,15 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
         key: _con.scaffoldKey,
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
+<<<<<<< HEAD
             Navigator.of(context).pushNamed('/Menu',
                 arguments: new RouteArgument(id: widget.routeArgument.id));
+=======
+            Navigator.of(context).pushNamed('/Cart', arguments: RouteArgument(param: '/Details2', id: _con.market.id));
+>>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
           },
+          //Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
+
           isExtended: true,
           materialTapTargetSize: MaterialTapTargetSize.padded,
           // icon: Icon(
@@ -61,7 +71,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
           // ),
 
           label: Container(
-            // decoration: BoxDecoration(borderRadius: BorderRadius.circular(100)),
             width: 300.0,
             child: Center(
               child: Text(
@@ -73,6 +82,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         body: RefreshIndicator(
+<<<<<<< HEAD
           onRefresh: _con.refreshMarket,
           child: _con.market == null
               ? CircularLoadingWidget(height: 500)
@@ -516,23 +526,63 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                           fontSize: 15.0,
                                           color: Colors.grey,
                                           //fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
+=======
+            onRefresh: _con.refreshMarket,
+            child: _con.market == null
+                ? CircularLoadingWidget(height: 500)
+                : SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Stack(
+                          // fit: StackFit.loose,
+                          overflow: Overflow.visible,
+                          children: <Widget>[
+                            Positioned(
+                              child: Container(
+                                height: 300,
+                                width: double.infinity,
+                                child: Hero(
+                                  tag: (widget?.routeArgument?.heroTag ?? '') + _con.market.id,
+                                  child: CachedNetworkImage(
+                                    fit: BoxFit.cover,
+                                    imageUrl: _con.market.image.url,
+                                    placeholder: (context, url) => Image.asset(
+                                      'assets/img/loading.gif',
+                                      fit: BoxFit.cover,
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Row(
-                                        children: [
-                                          Icon(Icons.star),
-                                          Text(
-                                            _con.market.rate,
+                                    errorWidget: (context, url, error) => Icon(Icons.error),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: 200,
+                              left: 18.0,
+                              child: Container(
+                                  height: 200,
+                                  width: 380,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(300.0),
+                                      boxShadow: [BoxShadow(offset: Offset(5.0, 0.0), color: Colors.black12, blurRadius: 10.0)]),
+                                  child: Card(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 10),
+>>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
+                                        ),
+                                        Center(
+                                          child: Text(
+                                            _con.market.name,
                                             style: TextStyle(
                                               fontFamily: 'ProductSans',
-                                              fontSize: 15.0,
-                                              color: Colors.grey,
-                                              //fontWeight: FontWeight.bold,
+                                              fontSize: 25.0,
+                                              color: Theme.of(context).accentColor,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
+<<<<<<< HEAD
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 left: 8.0),
@@ -542,9 +592,64 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                                 fontSize: 15.0,
                                                 color: Colors.grey,
                                                 //fontWeight: FontWeight.bold,
+=======
+                                        ),
+                                        ListTile(
+                                          title: Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.all(5.0),
+                                                child: Text(
+                                                  _con.market.phone,
+                                                  style: TextStyle(
+                                                    fontFamily: 'ProductSans',
+                                                    fontSize: 15.0,
+                                                    color: Colors.grey,
+                                                    //fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+>>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
                                               ),
-                                            ),
+                                              Padding(
+                                                padding: const EdgeInsets.all(5.0),
+                                                child: Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons.star,
+                                                      color: Theme.of(context).accentColor,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          _con.market.rate,
+                                                          style: TextStyle(
+                                                            fontFamily: 'ProductSans',
+                                                            fontSize: 15.0,
+                                                            color: Colors.grey,
+                                                            //fontWeight: FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0),
+                                                          child: Text(
+                                                            ("( ${_con.reviews.length.toString()} )"),
+                                                            style: TextStyle(
+                                                              fontFamily: 'ProductSans',
+                                                              fontSize: 15.0,
+                                                              color: Colors.grey,
+                                                              //fontWeight: FontWeight.bold,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
                                           ),
+<<<<<<< HEAD
                                         ],
                                       ),
                                     ),
@@ -574,38 +679,125 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                         color: Colors.grey,
                                         //fontWeight: FontWeight.bold,
                                       ),
+=======
+                                        ),
+                                        Center(
+                                          child: Row(
+                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            children: [
+                                              SizedBox(
+                                                width: 100,
+                                              ),
+                                              Container(height: 20, width: 20, child: Image.asset('assets/img/marker.png')),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                'TAKE TOWN',
+                                                style: TextStyle(
+                                                  fontFamily: 'ProductSans',
+                                                  fontSize: 15.0,
+                                                  color: Colors.grey,
+                                                  //fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: RaisedButton(
+                                                shape: StadiumBorder(),
+                                                onPressed: () {},
+                                                child: Text("20-30 minutes"),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                            Icon(
+                                              Icons.map,
+                                              color: Colors.grey,
+                                              size: 24.0,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+>>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
                                     ),
-                                  ],
+                                  )),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 110.0,
+                        ),
+
+                        searchBarMarket(),
+                        //SearchBarWidget(),
+                        Container(
+                            height: 200,
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            child: ListView.builder(
+                              itemCount: _con.featuredProducts.length,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) {
+                                double _marginLeft = 0;
+                                (index == 0) ? _marginLeft = 20 : _marginLeft = 0;
+                                return ProductsCarouselItemWidget(
+                                  marginLeft: _marginLeft,
+                                  product: _con.featuredProducts.elementAt(index),
+                                  heroTag: '',
+                                );
+                              },
+                            )),
+                        _con.featuredProducts.isEmpty
+                            ? SizedBox(height: 0)
+                            : ListView.separated(
+                                padding: EdgeInsets.symmetric(vertical: 10),
+                                scrollDirection: Axis.vertical,
+                                shrinkWrap: true,
+                                primary: false,
+                                itemCount: _con.featuredProducts.length,
+                                separatorBuilder: (context, index) {
+                                  return SizedBox(height: 10);
+                                },
+                                itemBuilder: (context, index) {
+                                  return ProductItemWidget(
+                                    heroTag: 'details_featured_product',
+                                    product: _con.featuredProducts.elementAt(index),
+                                  );
+                                },
+                              ),
+                        _con.reviews.isEmpty
+                            ? SizedBox(height: 5)
+                            : Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                                child: ListTile(
+                                  dense: true,
+                                  contentPadding: EdgeInsets.symmetric(vertical: 0),
+                                  leading: Icon(
+                                    Icons.recent_actors,
+                                    color: Theme.of(context).hintColor,
+                                  ),
+                                  title: Text(
+                                    S.of(context).what_they_say,
+                                    style: Theme.of(context).textTheme.headline4,
+                                  ),
                                 ),
                               ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: 80,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: RaisedButton(
-                                      shape: StadiumBorder(),
-                                      onPressed: () {},
-                                      child: Text("20-30 minutes"),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Icon(
-                                    Icons.map,
-                                    color: Colors.grey,
-                                    size: 24.0,
-                                  ),
-                                ],
+                        _con.reviews.isEmpty
+                            ? SizedBox(height: 5)
+                            : Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                                child: ReviewsListWidget(reviewsList: _con.reviews),
                               ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      ],
                     ),
+<<<<<<< HEAD
                     // Positioned(
                     //   top: 32,
                     //   right: 20,
@@ -617,7 +809,54 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                     //   ),
                     // ),
                   ],
+=======
+                  )));
+  }
+
+  Widget searchBarMarket(){
+    return InkWell(
+      onTap: () {
+       Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+              color: Colors.transparent,
+              border: Border.all(
+                color: Theme.of(context).focusColor.withOpacity(0.2),
+              ),
+              borderRadius: BorderRadius.circular(10),
+              
+              ),
+          child: Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(right: 12, left: 0),
+                child: Icon(Icons.search, color: Theme.of(context).accentColor),
+              ),
+              Expanded(
+                child: Text(
+                  S.of(context).search_for_markets_or_products,
+                  maxLines: 1,
+                  style: Theme.of(context).textTheme.caption.merge(TextStyle(fontSize: 14)),
+>>>>>>> 792d2eb26728554ecab43ddc3489afb4a68e277b
                 ),
-        ));
+              ),
+             /*InkWell(
+                onTap: () {
+                  onClickFilter('e');
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 5, left: 5, top: 3, bottom: 3),
+                  child: Icon(Icons.filter_list, color: Theme.of(context).accentColor),
+                ),
+              ),*/
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

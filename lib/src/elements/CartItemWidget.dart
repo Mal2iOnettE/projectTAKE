@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:markets/src/models/coupon.dart';
 
 import '../helpers/helper.dart';
 import '../models/cart.dart';
@@ -9,11 +10,12 @@ import '../models/route_argument.dart';
 class CartItemWidget extends StatefulWidget {
   String heroTag;
   Cart cart;
+  Coupon coupon;
   VoidCallback increment;
   VoidCallback decrement;
   VoidCallback onDismissed;
 
-  CartItemWidget({Key key, this.cart, this.heroTag, this.increment, this.decrement, this.onDismissed}) : super(key: key);
+  CartItemWidget({Key key, this.cart, this.heroTag, this.increment, this.decrement, this.onDismissed, this.coupon}) : super(key: key);
 
   @override
   _CartItemWidgetState createState() => _CartItemWidgetState();
@@ -86,7 +88,8 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                               );
                             }),
                           ),
-                          Helper.getPrice(widget.cart.getProductPrice(), context, style: Theme.of(context).textTheme.headline4)
+                          Helper.getPrice(widget.cart.getProductPrice(), context, style: Theme.of(context).textTheme.headline4),
+                         //getDiscountValue()
                         ],
                       ),
                     ),
@@ -100,12 +103,12 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                               widget.increment();
                             });
                           },
-                          iconSize: 40,
+                          iconSize: 30,
                           padding: EdgeInsets.symmetric(horizontal: 5),
                           icon: Icon(Icons.add_circle_outline),
                           color: Theme.of(context).hintColor,
                         ),
-                        //Text(widget.cart.quantity.toString(), style: Theme.of(context).textTheme.subtitle1),
+                        Text(widget.cart.quantity.floor().toString(), style: Theme.of(context).textTheme.subtitle1),
                         IconButton(
                           onPressed: () {
                             setState(() {
@@ -115,7 +118,7 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                           iconSize: 30,
                           padding: EdgeInsets.symmetric(horizontal: 5),
                           icon: Icon(Icons.remove_circle_outline),
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).hintColor,
                           //color: Theme.of(context).hintColor,
                         ),
                       ],
@@ -128,5 +131,13 @@ class _CartItemWidgetState extends State<CartItemWidget> {
         ),
       ),
     );
+  }
+
+  Widget getDiscountValue() {
+    var getDiscount = widget.coupon.discount;
+
+    getDiscount != null ? print("discount: ${getDiscount.toString()}") : print("none");
+
+    return Text("discount");
   }
 }
