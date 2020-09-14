@@ -4,6 +4,7 @@ import '../../generated/l10n.dart';
 import '../controllers/cart_controller.dart';
 import '../helpers/helper.dart';
 
+
 class CartBottomDetailsWidget extends StatelessWidget {
   const CartBottomDetailsWidget({
     Key key,
@@ -18,7 +19,7 @@ class CartBottomDetailsWidget extends StatelessWidget {
     return _con.carts.isEmpty
         ? SizedBox(height: 0)
         : Container(
-            height: 200,
+            height: 230,
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
@@ -99,7 +100,17 @@ class CartBottomDetailsWidget extends StatelessWidget {
                       )
                     ],
                   ),
-                     Text('Order something else'),
+                    FlatButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/Pages');
+                    },
+                    textColor: Theme.of(context).hintColor,
+                    child: Text(
+                      S.of(context).ordersomethingelse,
+                      style: TextStyle(fontSize: 15.0, color: Theme.of(context).accentColor),
+                    ),
+                  ),
+
                   SizedBox(height: 10),
                 ],
               ),

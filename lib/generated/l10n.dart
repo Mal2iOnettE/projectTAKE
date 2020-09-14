@@ -2306,6 +2306,16 @@ String get placeorder {
 
     );
 }
+
+String get ordersomethingelse {
+    return Intl.message(
+      'Order something else',
+      name: 'ordersomethingelse',
+      desc: '',
+      args: [],
+
+    );
+}
  
 
 
