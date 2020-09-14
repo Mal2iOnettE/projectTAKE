@@ -28,7 +28,7 @@ class HomeWidget extends StatefulWidget {
   List<Market> marketsList;
   List<Review> reviewList;
 
-  HomeWidget({Key key, this.parentScaffoldKey, this.marketsList,this.reviewList}) : super(key: key);
+  HomeWidget({Key key, this.parentScaffoldKey, this.marketsList, this.reviewList}) : super(key: key);
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -38,11 +38,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
   HomeController _con;
   ReviewsController _recon;
 
-  _HomeWidgetState() : super
-  (HomeController()) {
+  _HomeWidgetState() : super(HomeController()) {
     _con = controller;
   }
- 
 
   @override
   Widget build(BuildContext context) {
@@ -85,12 +83,11 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20.0),
                 child: SearchBarWidget(
-                    onClickFilter: (event) {
+                  onClickFilter: (event) {
                     widget.parentScaffoldKey.currentState.openEndDrawer();
                   },
-                    ),
+                ),
               ),
-              
 
               CategoriesCarouselWidget(
                 categories: _con.categories,
@@ -131,10 +128,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
 
               /// Markets
               CardsCarouselWidget(
-                marketsList: _con.topMarkets, 
-                heroTag: 'home_top_markets', 
-              
-          ),
+                marketsList: _con.topMarkets,
+                heroTag: 'home_top_markets',
+              ),
 
               //Trending this week
               ListTile(

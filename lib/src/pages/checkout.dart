@@ -119,7 +119,7 @@ class _CheckoutWidgetState extends StateMVC<CheckoutWidget> {
                 Positioned(
                   bottom: 0,
                   child: Container(
-                    height: 255,
+                    height: 300,
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor,

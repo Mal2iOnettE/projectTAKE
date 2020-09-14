@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
-import '../elements/SearchWidget.dart';
+import 'SearchWidget.dart';
 
-class SearchBarWidget extends StatelessWidget {
+class SearchBarMarketWidget extends StatelessWidget {
   final ValueChanged onClickFilter;
-  const SearchBarWidget({Key key, this.onClickFilter}) : super(key: key);
+  const SearchBarMarketWidget({Key key, this.onClickFilter}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class SearchBarWidget extends StatelessWidget {
                   style: Theme.of(context).textTheme.caption.merge(TextStyle(fontSize: 14)),
                 ),
               ),
-             /*InkWell(
+             InkWell(
                 onTap: () {
                   onClickFilter('e');
                 },
@@ -46,7 +46,7 @@ class SearchBarWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 5, left: 5, top: 3, bottom: 3),
                   child: Icon(Icons.filter_list, color: Theme.of(context).accentColor),
                 ),
-              ),*/
+              ),
             ],
           ),
         ),

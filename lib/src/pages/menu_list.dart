@@ -44,7 +44,7 @@ class _MenuWidgetState extends StateMVC<MenuWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _con.scaffoldKey,
-      drawer: DrawerWidget(),
+      //drawer: DrawerWidget(),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -174,7 +174,17 @@ class _MenuWidgetState extends StateMVC<MenuWidget> {
                     ),
                   ),
             _con.products.isEmpty
-                ? CircularLoadingWidget(height: 250)
+                ? Center(
+                  child: Container(
+                    height: 250.0,
+                    width: 200.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/img/not_found.png')
+                      )
+                    ),
+                  ),
+                )
                 : ListView.separated(
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,

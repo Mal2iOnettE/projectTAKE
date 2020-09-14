@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:markets/src/repository/settings_repository.dart';
 
 import '../../generated/l10n.dart';
 import '../controllers/cart_controller.dart';
@@ -19,7 +20,11 @@ class CartBottomDetailsWidget extends StatelessWidget {
     return _con.carts.isEmpty
         ? SizedBox(height: 0)
         : Container(
+<<<<<<< HEAD
             height: 230,
+=======
+            height: 280,
+>>>>>>> master
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
@@ -31,6 +36,39 @@ class CartBottomDetailsWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(bottom: 15),
+                    child: TextField(
+                      keyboardType: TextInputType.text,
+                      onSubmitted: (String value) {
+                        _con.doApplyCoupon(value);
+                      },
+                      cursorColor: Theme.of(context).accentColor,
+                      controller: TextEditingController()..text = coupon?.code ?? '',
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                        floatingLabelBehavior: FloatingLabelBehavior.always,
+                        hintStyle: Theme.of(context).textTheme.bodyText1,
+                        suffixText: coupon?.valid == null ? '' : (coupon.valid ? S.of(context).validCouponCode : S.of(context).invalidCouponCode),
+                        suffixStyle: Theme.of(context).textTheme.caption.merge(TextStyle(color: _con.getCouponIconColor())),
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: Icon(
+                            Icons.confirmation_number,
+                            color: _con.getCouponIconColor(),
+                            size: 28,
+                          ),
+                        ),
+                        hintText: S.of(context).haveCouponCode,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30), borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30), borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30), borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                      ),
+                    ),
+                  ),
                   Row(
                     children: <Widget>[
                       Expanded(
@@ -100,6 +138,7 @@ class CartBottomDetailsWidget extends StatelessWidget {
                       )
                     ],
                   ),
+<<<<<<< HEAD
                     FlatButton(
                     onPressed: () {
                       Navigator.of(context).pushNamed('/Pages');
@@ -111,7 +150,15 @@ class CartBottomDetailsWidget extends StatelessWidget {
                     ),
                   ),
 
+<<<<<<< HEAD
                   SizedBox(height: 5),
+=======
+=======
+>>>>>>> master
+                  SizedBox(height: 10),
+                  Text('Order something else' , style: TextStyle(color: Theme.of(context).accentColor),),
+                  
+>>>>>>> ff2b86367f404b5692031a2deee427f1a2c5eb1f
                 ],
               ),
             ),
