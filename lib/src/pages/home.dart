@@ -75,7 +75,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                   ListTile(
                     onTap: () {
                       if (currentUser.value.apiToken == null) {
-                        _con.requestForCurrentLocation(context);
+                        Navigator.of(context).pushReplacementNamed('/Login');
+                        //_con.requestForCurrentLocation(context);
                       } else {
                         var bottomSheetController = widget.parentScaffoldKey.currentState.showBottomSheet(
                           (context) => DeliveryAddressBottomSheetWidget(scaffoldKey: widget.parentScaffoldKey),
