@@ -68,10 +68,11 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
         ],
         bottom: PreferredSize(
             child: Padding(
-              padding: const EdgeInsets.only(top: 0, left: 20, right: 20, bottom: 0),
+              padding: const EdgeInsets.only(top: 0, left: 25, right: 25, bottom: 10),
               child: Column(
+                //mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  InkWell(
+                  ListTile(
                     onTap: () {
                       if (currentUser.value.apiToken == null) {
                         _con.requestForCurrentLocation(context);
@@ -87,15 +88,32 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                         });
                       }
                     },
-                    child: ListTile(
-                      title: Text(
+                    title: Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Text(
                         S.of(context).near_to + " " + (settingsRepo.deliveryAddress.value?.address),
                         style: Theme.of(context).textTheme.caption,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      trailing: Icon(Icons.arrow_drop_down),
                     ),
+                    // title: Text(
+                    //   S.of(context).delivery,
+                    //   style: TextStyle(
+                    //       color: settingsRepo.deliveryAddress.value?.address == null ?
+                    //       Theme.of(context).accentColor :
+                    //       Theme.of(context).primaryColor),
+                    //   overflow: TextOverflow.ellipsis,
+                    // ),
                   ),
+                  // if (settingsRepo.deliveryAddress.value?.address != null)
+                  //   Padding(
+                  //     padding: const EdgeInsets.only(top: 5),
+                  //     child: Text(
+                  //       S.of(context).near_to + " " + (settingsRepo.deliveryAddress.value?.address),
+                  //       style: Theme.of(context).textTheme.caption,
+                  //       overflow: TextOverflow.ellipsis,
+                  //     ),
+                  //   ),
                 ],
               ),
             ),
@@ -143,7 +161,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                             ),
                           ),
                           InkWell(
-                            onTap: ()=> Navigator.pushNamed(context, '/AllRestaurant'),
+                            onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
                             child: Text("See all"),
                           )
                         ],
