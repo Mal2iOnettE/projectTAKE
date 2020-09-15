@@ -107,21 +107,7 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                     ),
                     trailing: Icon(Icons.add_circle),
                     onTap: () async {
-                      LocationResult result = await showLocationPicker(
-                        context,
-                        setting.value.googleMapsKey,
-                        initialCenter: LatLng(deliveryAddress.value?.latitude ?? 0, deliveryAddress.value?.longitude ?? 0),
-                        automaticallyAnimateToCurrentLocation: true,
-                        //mapStylePath: 'assets/mapStyle.json',
-                        myLocationButtonEnabled: true,
-                        //resultCardAlignment: Alignment.bottomCenter,
-                      );
-                      _con.addAddress(new Address.fromJSON({
-                        'address': result.address,
-                        'latitude': result.latLng.latitude,
-                        'longitude': result.latLng.longitude,
-                      }));
-                      print("result = $result");
+                      Navigator.of(context).pushNamed('/DeliveryAddresses');
                     },
                     subtitle: _con.carts.isNotEmpty && Helper.canDelivery(_con.carts[0].product.market, carts: _con.carts)
                         ? Text(
