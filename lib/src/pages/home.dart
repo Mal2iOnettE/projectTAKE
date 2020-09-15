@@ -29,7 +29,13 @@ class HomeWidget extends StatefulWidget {
   List<Market> marketsList;
   List<Review> reviewList;
 
+<<<<<<< HEAD
+  HomeWidget(
+      {Key key, this.parentScaffoldKey, this.marketsList, this.reviewList})
+      : super(key: key);
+=======
   HomeWidget({Key key, this.parentScaffoldKey, this.marketsList, this.reviewList}) : super(key: key);
+>>>>>>> 4aa2228c560a159849714d0493e223ff5667bfad
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -59,12 +65,17 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           builder: (context, value, child) {
             return Text(
               value.appName ?? S.of(context).home,
-              style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  .merge(TextStyle(letterSpacing: 1.3)),
             );
           },
         ),
         actions: <Widget>[
-          new ShoppingCartButtonWidget(iconColor: Theme.of(context).hintColor, labelColor: Theme.of(context).accentColor),
+          new ShoppingCartButtonWidget(
+              iconColor: Theme.of(context).hintColor,
+              labelColor: Theme.of(context).accentColor),
         ],
         bottom: PreferredSize(
             child: Padding(
@@ -131,6 +142,54 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
+<<<<<<< HEAD
+            children: <Widget>[
+              //Serach bar
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20.0),
+                child: SearchBarWidget(
+                  onClickFilter: (event) {
+                    widget.parentScaffoldKey.currentState.openEndDrawer();
+                  },
+                ),
+              ),
+
+              CategoriesCarouselWidget(
+                categories: _con.categories,
+              ),
+              /*PromotionsCarouselWidget(
+                gallery: _con.galleries,
+              ),*/
+              //ImageThumbCarouselWidget(galleriesList: _con.galleries),
+
+              PromotionsCarouselWidget(),
+
+              //Location
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: ListTile(
+                  dense: true,
+                  contentPadding: EdgeInsets.symmetric(vertical: 1.0),
+                  trailing: Text(
+                    "See all",
+                    style: Theme.of(context).textTheme.caption,
+                  ),
+                  onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
+                  title: Text(
+                    S.of(context).nearby_restaurant,
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                  subtitle: Text(
+                    S.of(context).near_to +
+                        " " +
+                        (settingsRepo.deliveryAddress.value?.address ??
+                            S.of(context).unknown),
+                    style: Theme.of(context).textTheme.caption,
+                  ),
+                ),
+              ),
+=======
             children: List.generate(settingsRepo.setting.value.homeSections.length, (index) {
               String _homeSection = settingsRepo.setting.value.homeSections.elementAt(index);
               switch (_homeSection) {
@@ -296,6 +355,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           //         },
           //       ),
           //     ),
+>>>>>>> 4aa2228c560a159849714d0493e223ff5667bfad
 
           //     CategoriesCarouselWidget(
           //       categories: _con.categories,
@@ -305,7 +365,15 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           //     ),*/
           //     //ImageThumbCarouselWidget(galleriesList: _con.galleries),
 
+<<<<<<< HEAD
+              /// Markets
+              CardsCarouselWidget(
+                marketsList: _con.topMarkets,
+                heroTag: 'home_top_markets',
+              ),
+=======
           //     PromotionsCarouselWidget(),
+>>>>>>> 4aa2228c560a159849714d0493e223ff5667bfad
 
           //     //Location
           //     Padding(
@@ -329,10 +397,60 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           //       ),
           //     ),
 
+<<<<<<< HEAD
+              //Trainding Product
+              ProductsCarouselWidget(
+                  productsList: _con.trendingProducts,
+                  heroTag: 'home_product_carousel'),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: ListTile(
+                  dense: true,
+                  contentPadding: EdgeInsets.symmetric(vertical: 0),
+                  leading: Icon(
+                    Icons.category,
+                    color: Theme.of(context).hintColor,
+                  ),
+                  title: Text(
+                    S.of(context).product_categories,
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                ),
+              ),
+              //Most Popular
+              /* CategoriesCarouselWidget(
+                categories: _con.categories,
+              ),*/
+
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 20, right: 20, bottom: 20, top: 20),
+                child: ListTile(
+                  dense: true,
+                  contentPadding: EdgeInsets.symmetric(vertical: 0),
+                  leading: Icon(
+                    Icons.trending_up,
+                    color: Theme.of(context).hintColor,
+                  ),
+                  title: Text(
+                    S.of(context).most_popular,
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: GridWidget(
+                  marketsList: _con.popularMarkets,
+                  heroTag: 'home_markets',
+                ),
+              ),
+=======
           //     /* ListMarkets(
           //       marketList: _con.topMarkets,
           //       heroTag: 'home_top_markets',
           //     ),*/
+>>>>>>> 4aa2228c560a159849714d0493e223ff5667bfad
 
           //     /// Markets
           //     CardsCarouselWidget(
