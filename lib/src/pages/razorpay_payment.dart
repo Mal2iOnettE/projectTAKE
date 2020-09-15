@@ -51,7 +51,7 @@ class _RazorPayPaymentWidgetState extends StateMVC<RazorPayPaymentWidget> {
                 _con.url = url;
               });
               if (url == "${GlobalConfiguration().getString('base_url')}payments/razorpay") {
-                Navigator.of(context).pushReplacementNamed('/Pages', arguments: 3);
+                Navigator.of(context).pushReplacementNamed('/Pages', arguments: 0);
               }
             },
             onProgressChanged: (InAppWebViewController controller, int progress) {

@@ -192,6 +192,7 @@ class _OtherPageState extends StateMVC<OtherPage> {
       //Support center
       ListTile(
         onTap: () {
+<<<<<<< HEAD
           if (currentUser.value.apiToken != null) {
             Alert(
               context: context,
@@ -225,6 +226,9 @@ class _OtherPageState extends StateMVC<OtherPage> {
             ).show();
             //Navigator.of(context).pushNamed('/Languages');
           }
+=======
+          Navigator.of(context).pushNamed('/Support');
+>>>>>>> master
         },
         trailing: Icon(Icons.arrow_forward_ios),
         title: Text(
