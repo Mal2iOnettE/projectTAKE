@@ -159,7 +159,98 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                       )
                     : NotDeliverableAddressesItemWidget()
               ],
-            )
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor.withOpacity(0.9),
+                boxShadow: [
+                  BoxShadow(
+                      color: Theme.of(context).focusColor.withOpacity(0.1),
+                      blurRadius: 5,
+                      offset: Offset(0, 2)),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  // Container(
+                  //   height: 60,
+                  //   width: 60,
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.all(Radius.circular(5)),
+                  //     //image: DecorationImage(image: AssetImage(paymentMethod.logo), fit: BoxFit.fill),
+                  //   ),
+                  // ),
+                  SizedBox(width: 15),
+                  Flexible(
+                    child: Column(children: [
+                      SizedBox(width: 10),
+                      ListTile(
+                        // leading: Icon(
+                        //   Icons.shopping_cart,
+                        //   color: Theme.of(context).hintColor,
+                        // ),
+                        title: Text(
+                          S.of(context).shopping_cart,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        subtitle: Text(
+                          S.of(context).verify_your_quantity_and_click_checkout,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.caption,
+                        ),
+                        trailing: Icon(
+                          Icons.keyboard_arrow_right,
+                          color: Theme.of(context).focusColor,
+                        ),
+                      ),
+                      // ListTile(
+                      //   // leading: Icon(
+                      //   //   Icons.shopping_cart,
+                      //   //   color: Theme.of(context).hintColor,
+                      //   // ),
+                      //   title: Text(
+                      //     S.of(context).shopping_cart,
+                      //     maxLines: 1,
+                      //     overflow: TextOverflow.ellipsis,
+                      //     style: Theme.of(context).textTheme.headline4,
+                      //   ),
+                      //   subtitle: Text(
+                      //     S.of(context).verify_your_quantity_and_click_checkout,
+                      //     maxLines: 1,
+                      //     overflow: TextOverflow.ellipsis,
+                      //     style: Theme.of(context).textTheme.caption,
+                      //   ),
+                      //   trailing: Icon(
+                      //     Icons.keyboard_arrow_right,
+                      //     color: Theme.of(context).focusColor,
+                      //   ),
+                      // ),
+                      // ListTile(
+                      //   contentPadding: EdgeInsets.symmetric(vertical: 0),
+                      //   leading: Icon(
+                      //     Icons.monetization_on,
+                      //     color: Theme.of(context).hintColor,
+                      //   ),
+                      //   title: Text(
+                      //     S.of(context).cash_on_delivery,
+                      //     maxLines: 1,
+                      //     overflow: TextOverflow.ellipsis,
+                      //     style: Theme.of(context).textTheme.headline4,
+                      //   ),
+                      //   subtitle: Text(
+                      //       S.of(context).select_your_preferred_payment_mode),
+                      // ),
+                    ]),
+                  ),
+                  SizedBox(width: 8),
+                ],
+              ),
+            ),
           ],
         ),
       ),
