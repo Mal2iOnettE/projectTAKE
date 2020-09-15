@@ -1,5 +1,5 @@
 {
-  "base_url": "https://www.ta-kemore.com/Delivery/public",
-  "api_base_url": "https://www.ta-kemore.com/Delivery/public/api/"
+  "base_url":"https://www.ta-kemore.com/Delivery/public/",
+  "api_base_url":"https://www.ta-kemore.com/Delivery/public/api/"
 
 }
