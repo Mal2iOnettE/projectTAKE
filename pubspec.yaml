@@ -53,6 +53,7 @@ dependencies:
   splashscreen: ^1.2.0
   flare_splash_screen: any
   rflutter_alert: ^1.0.5
+  carousel_slider: ^2.2.1
 
 flutter_icons:
   image_path: "assets/takelogo/take_logo07.png" 
