@@ -26,7 +26,7 @@ class _ListMarketsState extends State<ListMarkets> {
    return widget.marketList.isEmpty
         ? Text("Empty")
         : Container(
-            height: 200,
+            height: double.infinity,
             child: 
             ListView.builder(
               scrollDirection: Axis.vertical,

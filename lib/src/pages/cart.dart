@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:markets/src/models/coupon.dart';
+import 'package:markets/src/repository/settings_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 import '../../generated/l10n.dart';
@@ -11,8 +13,9 @@ import '../models/route_argument.dart';
 
 class CartWidget extends StatefulWidget {
   final RouteArgument routeArgument;
+  Coupon coupon;
 
-  CartWidget({Key key, this.routeArgument}) : super(key: key);
+  CartWidget({Key key, this.routeArgument, this.coupon}) : super(key: key);
 
   @override
   _CartWidgetState createState() => _CartWidgetState();
@@ -45,7 +48,7 @@ class _CartWidgetState extends StateMVC<CartWidget> {
               if (widget.routeArgument != null) {
                 Navigator.of(context).pushReplacementNamed(widget.routeArgument.param, arguments: RouteArgument(id: widget.routeArgument.id));
               } else {
-                Navigator.of(context).pushReplacementNamed('/Pages', arguments: 2);
+                Navigator.of(context).pushReplacementNamed('/Pages', arguments: 0);
               }
             },
             icon: Icon(Icons.arrow_back),
@@ -63,59 +66,60 @@ class _CartWidgetState extends StateMVC<CartWidget> {
           onRefresh: _con.refreshCarts,
           child: _con.carts.isEmpty
               ? EmptyCartWidget()
-              : Container(
-                  child: ListView(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 10),
-                        child: ListTile(
-                          contentPadding: EdgeInsets.symmetric(vertical: 0),
-                          leading: Icon(
-                            Icons.shopping_cart,
-                            color: Theme.of(context).hintColor,
-                          ),
-                          title: Text(
-                            S.of(context).shopping_cart,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context).textTheme.headline4,
-                          ),
-                          subtitle: Text(
-                            S.of(context).verify_your_quantity_and_click_checkout,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context).textTheme.caption,
+              : ListView(
+                  children: [
+                    Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 10),
+                          child: ListTile(
+                            contentPadding: EdgeInsets.symmetric(vertical: 0),
+                            leading: Icon(
+                              Icons.shopping_cart,
+                              color: Theme.of(context).hintColor,
+                            ),
+                            title: Text(
+                              S.of(context).shopping_cart,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context).textTheme.headline4,
+                            ),
+                            subtitle: Text(
+                              S.of(context).verify_your_quantity_and_click_checkout,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context).textTheme.caption,
+                            ),
                           ),
                         ),
-                      ),
-                      ListView.separated(
-                        padding: EdgeInsets.symmetric(vertical: 15),
-                        scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                        primary: false,
-                        itemCount: _con.carts.length,
-                        separatorBuilder: (context, index) {
-                          return SizedBox(height: 15);
-                        },
-                        itemBuilder: (context, index) {
-                          return CartItemWidget(
-                            cart: _con.carts.elementAt(index),
-                            heroTag: 'cart',
-                            increment: () {
-                              _con.incrementQuantity(_con.carts.elementAt(index));
-                            },
-                            decrement: () {
-                              _con.decrementQuantity(_con.carts.elementAt(index));
-                            },
-                            onDismissed: () {
-                              _con.removeFromCart(_con.carts.elementAt(index));
-                            },
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+                        ListView.separated(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          primary: true,
+                          itemCount: _con.carts.length,
+                          separatorBuilder: (context, index) {
+                            return SizedBox(height: 15);
+                          },
+                          itemBuilder: (context, index) {
+                            return CartItemWidget(
+                              cart: _con.carts.elementAt(index),
+                              heroTag: 'cart',
+                              increment: () {
+                                _con.incrementQuantity(_con.carts.elementAt(index));
+                              },
+                              decrement: () {
+                                _con.decrementQuantity(_con.carts.elementAt(index));
+                              },
+                              onDismissed: () {
+                                _con.removeFromCart(_con.carts.elementAt(index));
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
         ),
       ),

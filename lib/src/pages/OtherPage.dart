@@ -7,6 +7,7 @@ import 'package:markets/src/elements/ProfileAvatarWidget.dart';
 import 'package:markets/src/pages/profile.dart';
 import 'package:markets/src/repository/user_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class OtherPage extends StatefulWidget {
   @override
@@ -32,24 +33,6 @@ class _OtherPageState extends StateMVC<OtherPage> {
                   ),
                 ],
               )
-
-            /*UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).hintColor.withOpacity(0.1),
-                ),
-                accountName: Text(
-                  currentUser.value.name,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                accountEmail: Text(
-                  currentUser.value.email,
-                  style: Theme.of(context).textTheme.caption,
-                ),
-                currentAccountPicture: CircleAvatar(
-                  backgroundColor: Theme.of(context).accentColor,
-                  backgroundImage: NetworkImage(currentUser.value.image.thumb),
-                ),
-              )*/
             : Container(
                 padding: EdgeInsets.symmetric(vertical: 15, horizontal: 0.0),
                 decoration: BoxDecoration(
@@ -82,8 +65,8 @@ class _OtherPageState extends StateMVC<OtherPage> {
       //Profile
       ListTile(
         onTap: () {
-          // Navigator.of(context).pushNamed('/Profile');
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileWidget()));
+          Navigator.of(context).pushNamed('/Profile');
+          //Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileWidget()));
         },
         trailing: Icon(Icons.arrow_forward_ios),
         title: Text(
@@ -204,7 +187,7 @@ class _OtherPageState extends StateMVC<OtherPage> {
       //Support center
       ListTile(
         onTap: () {
-          Navigator.of(context).pushNamed('/Languages');
+          Navigator.of(context).pushNamed('/Support');
         },
         trailing: Icon(Icons.arrow_forward_ios),
         title: Text(
@@ -218,9 +201,33 @@ class _OtherPageState extends StateMVC<OtherPage> {
       ListTile(
         onTap: () {
           if (currentUser.value.apiToken != null) {
-            logout().then((value) {
-              Navigator.of(context).pushNamedAndRemoveUntil('/Pages', (Route<dynamic> route) => false, arguments: 0);
-            });
+            Alert(
+              context: context,
+              type: AlertType.warning,
+              title: "Log out!?",
+              desc: "Aru you really want to Log out?",
+              buttons: [
+                DialogButton(
+                  child: Text(
+                    "Yes",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () => logout().then(
+                    (value) => Navigator.of(context).pushNamed('/Pages', arguments: 0),
+                  ),
+                  color: Theme.of(context).accentColor,
+                ),
+                // DialogButton(
+                //   child: Text(
+                //     "Cancel",
+                //     style: TextStyle(color: Colors.black, fontSize: 20),
+                //   ),
+                //   onPressed: () => Navigator.pop(context),
+                //   color: Colors.white,
+                //   //gradient: LinearGradient(colors: [Color.fromRGBO(116, 116, 191, 1.0), Color.fromRGBO(52, 138, 199, 1.0)]),
+                // )
+              ],
+            ).show();
           } else {
             Navigator.of(context).pushNamed('/Login');
           }

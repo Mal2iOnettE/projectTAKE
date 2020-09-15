@@ -38,7 +38,7 @@ class _CheckoutWidgetState extends StateMVC<CheckoutWidget> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          S.of(context).checkout,
+          S.of(context).placeorder,
           style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
         ),
       ),
@@ -119,7 +119,7 @@ class _CheckoutWidgetState extends StateMVC<CheckoutWidget> {
                 Positioned(
                   bottom: 0,
                   child: Container(
-                    height: 255,
+                    height: 300,
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor,

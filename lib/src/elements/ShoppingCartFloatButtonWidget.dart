@@ -53,22 +53,22 @@ class _ShoppingCartFloatButtonWidgetState extends StateMVC<ShoppingCartFloatButt
         child: Stack(
           alignment: AlignmentDirectional.bottomEnd,
           children: <Widget>[
-            Icon(
-              Icons.shopping_cart,
-              color: this.widget.iconColor,
-              size: 28,
-            ),
-            Container(
-              child: Text(
-                _con.cartCount.toString(),
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.caption.merge(
-                      TextStyle(color: Theme.of(context).primaryColor, fontSize: 10),
-                    ),
+            Text ('Go to cart'),
+           
+            Positioned(
+              right: 40,
+              child: Container(
+                child: Text(
+                  _con.cartCount.toString(),
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.caption.merge(
+                        TextStyle(color: Theme.of(context).primaryColor, fontSize: 15),
+                      ),
+                ),
+                padding: EdgeInsets.all(0),
+                decoration: BoxDecoration(color: this.widget.labelColor, borderRadius: BorderRadius.all(Radius.circular(10))),
+                constraints: BoxConstraints(minWidth: 15, maxWidth: 15, minHeight: 15, maxHeight: 15),
               ),
-              padding: EdgeInsets.all(0),
-              decoration: BoxDecoration(color: this.widget.labelColor, borderRadius: BorderRadius.all(Radius.circular(10))),
-              constraints: BoxConstraints(minWidth: 15, maxWidth: 15, minHeight: 15, maxHeight: 15),
             ),
           ],
         ),

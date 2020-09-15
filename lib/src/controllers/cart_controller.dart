@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:markets/src/models/coupon.dart';
+import 'package:markets/src/repository/coupon_repository.dart';
+import 'package:markets/src/repository/settings_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 import '../../generated/l10n.dart';
@@ -21,10 +24,12 @@ class CartController extends ControllerMVC {
   }
 
   void listenForCarts({String message}) async {
+    carts.clear();
     final Stream<Cart> stream = await getCart();
     stream.listen((Cart _cart) {
       if (!carts.contains(_cart)) {
         setState(() {
+          coupon = _cart.product.applyCoupon(coupon);
           carts.add(_cart);
         });
       }
@@ -78,6 +83,21 @@ class CartController extends ControllerMVC {
       scaffoldKey?.currentState?.showSnackBar(SnackBar(
         content: Text(S.of(context).the_product_was_removed_from_your_cart(_cart.product.name)),
       ));
+    });
+  }
+
+    void doApplyCoupon(String code, {String message}) async {
+    coupon = new Coupon.fromJSON({"code": code, "valid": null});
+    final Stream<Coupon> stream = await verifyCoupon(code);
+    stream.listen((Coupon _coupon) async {
+      coupon = _coupon;
+    }, onError: (a) {
+      print(a);
+      scaffoldKey?.currentState?.showSnackBar(SnackBar(
+        content: Text(S.of(context).verify_your_internet_connection),
+      ));
+    }, onDone: () {
+      listenForCarts();
     });
   }
 
@@ -137,5 +157,13 @@ class CartController extends ControllerMVC {
         Navigator.of(context).pushNamed('/DeliveryPickup');
       }
     }
+  }
+   Color getCouponIconColor() {
+    if (coupon?.valid == true) {
+      return Colors.green;
+    } else if (coupon?.valid == false) {
+      return Colors.redAccent;
+    }
+    return Theme.of(context).focusColor.withOpacity(0.7);
   }
 }

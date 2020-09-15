@@ -10,18 +10,17 @@ import 'intl/messages_all.dart';
 
 class S {
   S();
-  
-  static const AppLocalizationDelegate delegate =
-    AppLocalizationDelegate();
+
+  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
     final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name); 
+    final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       return S();
     });
-  } 
+  }
 
   static S of(BuildContext context) {
     return Localizations.of<S>(context, S);
@@ -44,7 +43,8 @@ class S {
       args: [],
     );
   }
-   String get nearby_restaurant {
+
+  String get nearby_restaurant {
     return Intl.message(
       'Restaurants nearby',
       name: 'nearby_restaurant',
@@ -350,7 +350,6 @@ class S {
     );
   }
 
-  
   String get forgot_password {
     return Intl.message(
       'Forgot Password ?',
@@ -369,7 +368,7 @@ class S {
     );
   }
 
-    String get dont_have_account {
+  String get dont_have_account {
     return Intl.message(
       'Don\'t have an account?',
       name: 'dont_have_account',
@@ -396,7 +395,6 @@ class S {
     );
   }
 
-  
   String get go_to_cart {
     return Intl.message(
       'Go to Cart',
@@ -558,7 +556,7 @@ class S {
       args: [],
     );
   }
-  
+
   String get phone {
     return Intl.message(
       'Phone',
@@ -567,8 +565,6 @@ class S {
       args: [],
     );
   }
-
-
 
   String get address {
     return Intl.message(
@@ -641,7 +637,8 @@ class S {
       args: [],
     );
   }
-   String get john_doe {
+
+  String get john_doe {
     return Intl.message(
       'John Doe',
       name: 'john_doe',
@@ -704,7 +701,6 @@ class S {
     );
   }
 
-  
   String get enter_password {
     return Intl.message(
       'Enter Password',
@@ -786,7 +782,6 @@ class S {
     );
   }
 
-  
   String get login_ {
     return Intl.message(
       'Login',
@@ -1309,7 +1304,6 @@ class S {
     );
   }
 
-  
   String get lets_start_with_register {
     return Intl.message(
       'Create Your Account',
@@ -1328,8 +1322,7 @@ class S {
     );
   }
 
-
-String get send_password_reset {
+  String get send_password_reset {
     return Intl.message(
       'Send now',
       name: 'send_password_reset',
@@ -1337,6 +1330,7 @@ String get send_password_reset {
       args: [],
     );
   }
+
   String get i_remember_my_password_return_to_login {
     return Intl.message(
       'I remember my password return to login',
@@ -2228,7 +2222,7 @@ String get send_password_reset {
     );
   }
 
- String get open_store {
+  String get open_store {
     return Intl.message(
       'Open store',
       name: 'open_store',
@@ -2246,7 +2240,6 @@ String get send_password_reset {
     );
   }
 
-  
   String get support_center {
     return Intl.message(
       'Support center',
@@ -2256,31 +2249,55 @@ String get send_password_reset {
     );
   }
 
-
-String get cuisines {
+  String get cuisines {
     return Intl.message(
       'Cuisines',
       name: 'cuisines',
       desc: '',
       args: [],
-
     );
-}
+  }
 
-String get order_history {
+  String get order_history {
     return Intl.message(
       'Order history',
       name: 'order_history',
       desc: '',
       args: [],
-
     );
-}
+  }
 
-String get payment {
+  String get payment {
     return Intl.message(
       'Payment',
       name: 'payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get placeorder {
+    return Intl.message(
+      'Place order',
+      name: 'placeorder',
+      desc: '',
+      args: [],
+    );
+}
+
+String get ordersomethingelse {
+    return Intl.message(
+      'Order something else',
+      name: 'ordersomethingelse',
       desc: '',
       args: [],
 
@@ -2288,9 +2305,107 @@ String get payment {
 }
  
 
-
+  String get validCouponCode {
+    return Intl.message(
+      'Valid Coupon',
+      name: 'validCouponCode',
+      desc: '',
+      args: [],
+    );
   }
 
+  String get invalidCouponCode {
+    return Intl.message(
+      'Invalid Coupon',
+      name: 'invalidCouponCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get haveCouponCode {
+    return Intl.message(
+      'Have Coupon Code?',
+      name: 'haveCouponCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+String get myorderdelivered {
+    return Intl.message(
+      'My order did not delivered',
+      name: 'myorderdelivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get myordercame {
+    return Intl.message(
+      'My order came with missing items',
+      name: 'myordercame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get changmyphone {
+    return Intl.message(
+      'Chang my phone number',
+      name: 'changmyphone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get changmydelivery {
+    return Intl.message(
+      'Chang my delivery address',
+      name: 'changmydelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get howdoichange {
+    return Intl.message(
+      'How do I change payment method',
+      name: 'howdoichange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get canirefund {
+    return Intl.message(
+      'Can I refund my order',
+      name: 'canirefund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get frequently {
+    return Intl.message(
+      'Frequently asked questions',
+      name: 'frequently',
+      desc: '',
+      args: [],
+    );
+  }
+
+    String get paymentmethods {
+    return Intl.message(
+      'Payment Methods',
+      name: 'paymentmethods',
+      desc: '',
+      args: [],
+    );
+  }
+
+
+}
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();

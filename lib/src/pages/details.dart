@@ -275,21 +275,30 @@ class _DetailsWidgetState extends StateMVC<DetailsWidget> {
                               ),
                               _con.featuredProducts.isEmpty
                                   ? SizedBox(height: 0)
-                                  : Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                                      child: ListTile(
-                                        dense: true,
-                                        contentPadding: EdgeInsets.symmetric(vertical: 0),
-                                        leading: Icon(
-                                          Icons.shopping_basket,
-                                          color: Theme.of(context).hintColor,
+                                  : Row(
+                                    children: [
+                                              Icon(
+                                              Icons.favorite,
+                                              color: Theme.of(context).primaryColor,
+                                          size: 24,
                                         ),
-                                        title: Text(
-                                          S.of(context).featured_products,
-                                          style: Theme.of(context).textTheme.headline4,
+                                      Padding(
+                                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                                          child: ListTile(
+                                            dense: true,
+                                            contentPadding: EdgeInsets.symmetric(vertical: 0),
+                                            leading: Icon(
+                                              Icons.shopping_basket,
+                                              color: Theme.of(context).hintColor,
+                                            ),
+                                            title: Text(
+                                              S.of(context).featured_products,
+                                              style: Theme.of(context).textTheme.headline4,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
+                                    ],
+                                  ),
                               _con.featuredProducts.isEmpty
                                   ? SizedBox(height: 0)
                                   : ListView.separated(

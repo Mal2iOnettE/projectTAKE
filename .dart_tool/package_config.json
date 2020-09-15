@@ -62,6 +62,12 @@
       "languageVersion": "2.1"
     },
     {
+      "name": "carousel_slider",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "characters",
       "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.0.0",
       "packageUri": "lib/",
@@ -555,9 +561,9 @@
     },
     {
       "name": "rflutter_alert",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-1.0.3",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-1.0.5",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.7"
     },
     {
       "name": "rxdart",
@@ -794,7 +800,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-09-15T07:13:57.921351Z",
+  "generated": "2020-09-15T07:15:20.785405Z",
   "generator": "pub",
   "generatorVersion": "2.9.1"
 }

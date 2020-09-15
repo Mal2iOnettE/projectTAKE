@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../../generated/l10n.dart';
 import '../controllers/product_controller.dart';
@@ -53,7 +54,7 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                 fit: StackFit.expand,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(bottom: 125),
+                    margin: EdgeInsets.only(bottom: 30),
                     padding: EdgeInsets.only(bottom: 15),
                     child: CustomScrollView(
                       primary: true,
@@ -98,93 +99,26 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                           Text(
                                             _con.product?.name ?? '',
                                             overflow: TextOverflow.ellipsis,
-                                            maxLines: 2,
-                                            style: Theme.of(context).textTheme.headline3,
+                                            maxLines: 5,
+                                            style: Theme.of(context).textTheme.headline3.merge(TextStyle(color: Theme.of(context).accentColor)),
                                           ),
-                                          Text(
-                                            _con.product?.market?.name ?? '',
-                                            overflow: TextOverflow.ellipsis,
-                                            maxLines: 2,
-                                            style: Theme.of(context).textTheme.bodyText2,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 0,
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.end,
-                                        children: <Widget>[
-                                          Helper.getPrice(
-                                            _con.product.price,
-                                            context,
-                                            style: Theme.of(context).textTheme.headline2,
-                                          ),
-                                          _con.product.discountPrice > 0
-                                              ? Helper.getPrice(_con.product.discountPrice, context,
-                                                  style:
-                                                      Theme.of(context).textTheme.bodyText2.merge(TextStyle(decoration: TextDecoration.lineThrough)))
-                                              : SizedBox(height: 0),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
-                                Row(
-                                  children: <Widget>[
-                                    Container(
-                                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 3),
-                                      decoration: BoxDecoration(
-                                          color: Helper.canDelivery(_con.product.market) && _con.product.deliverable ? Colors.green : Colors.orange,
-                                          borderRadius: BorderRadius.circular(24)),
-                                      child: Helper.canDelivery(_con.product.market) && _con.product.deliverable
-                                          ? Text(
-                                              S.of(context).deliverable,
-                                              style: Theme.of(context).textTheme.caption.merge(TextStyle(color: Theme.of(context).primaryColor)),
-                                            )
-                                          : Text(
-                                              S.of(context).not_deliverable,
-                                              style: Theme.of(context).textTheme.caption.merge(TextStyle(color: Theme.of(context).primaryColor)),
-                                            ),
-                                    ),
-                                    Expanded(child: SizedBox(height: 0)),
-                                    Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 3),
-                                        decoration: BoxDecoration(color: Theme.of(context).focusColor, borderRadius: BorderRadius.circular(24)),
-                                        child: Text(
-                                          _con.product.capacity + " " + _con.product.unit,
-                                          style: Theme.of(context).textTheme.caption.merge(TextStyle(color: Theme.of(context).primaryColor)),
-                                        )),
-                                    SizedBox(width: 5),
-                                    Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 3),
-                                        decoration: BoxDecoration(color: Theme.of(context).focusColor, borderRadius: BorderRadius.circular(24)),
-                                        child: Text(
-                                          _con.product.packageItemsCount + " " + S.of(context).items,
-                                          style: Theme.of(context).textTheme.caption.merge(TextStyle(color: Theme.of(context).primaryColor)),
-                                        )),
-                                  ],
-                                ),
-                                Divider(height: 20),
+                                Divider(height: 10),
                                 Text(Helper.skipHtml(_con.product.description)),
                                 ListTile(
                                   dense: true,
                                   contentPadding: EdgeInsets.symmetric(vertical: 10),
-                                  leading: Icon(
-                                    Icons.add_circle,
-                                    color: Theme.of(context).hintColor,
-                                  ),
                                   title: Text(
                                     S.of(context).options,
-                                    style: Theme.of(context).textTheme.subtitle1,
-                                  ),
-                                  subtitle: Text(
-                                    S.of(context).select_options_to_add_them_on_the_product,
-                                    style: Theme.of(context).textTheme.caption,
+                                    style: Theme.of(context).textTheme.headline3.merge(TextStyle(color: Theme.of(context).accentColor)),
                                   ),
                                 ),
                                 _con.product.optionGroups == null
-                                    ? CircularLoadingWidget(height: 100)
+                                    ? CircularLoadingWidget(height: 50)
                                     : ListView.separated(
                                         padding: EdgeInsets.all(0),
                                         itemBuilder: (context, optionGroupIndex) {
@@ -194,13 +128,9 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                               ListTile(
                                                 dense: true,
                                                 contentPadding: EdgeInsets.symmetric(vertical: 0),
-                                                leading: Icon(
-                                                  Icons.add_circle_outline,
-                                                  color: Theme.of(context).hintColor,
-                                                ),
                                                 title: Text(
                                                   optionGroup.name,
-                                                  style: Theme.of(context).textTheme.subtitle1,
+                                                  style: Theme.of(context).textTheme.caption,
                                                 ),
                                               ),
                                               ListView.separated(
@@ -262,10 +192,10 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                             child: RefreshProgressIndicator(),
                           )
                         : ShoppingCartFloatButtonWidget(
-                            iconColor: Theme.of(context).primaryColor,
-                            labelColor: Theme.of(context).hintColor,
-                            routeArgument: RouteArgument(param: '/Product', id: _con.product.id),
-                          ),
+
+                            //gotocart
+
+                            ),
                   ),
                   Positioned(
                     bottom: 0,
@@ -283,84 +213,60 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Row(
-                              //mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                // Expanded(
-                                //   child: Text(
-                                //     S.of(context).quantity,
-                                //     style: Theme.of(context).textTheme.subtitle1,
-                                //   ),
-                                // ),
-                                Row(
-                                  //mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    CircleAvatar(
-                                      backgroundColor: Theme.of(context).accentColor,
-                                      child: IconButton(
-                                        onPressed: () {
-                                          _con.decrementQuantity();
-                                        },
-                                        iconSize: 30,
-                                        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                                        icon: Icon(Icons.remove),
-                                        color: Theme.of(context).primaryColor,
-                                      ),
+                                Container(
+                                  child: Center(
+                                    child: Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 80),
+                                          child: Container(
+                                            child: Center(
+                                              child: IconButton(
+                                                onPressed: () {
+                                                  _con.decrementQuantity();
+                                                },
+                                                iconSize: 40,
+                                                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                                                icon: Icon(Icons.remove_circle_outline),
+                                                color: Theme.of(context).accentColor,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Text((_con.quantity.floor().toString()), style: Theme.of(context).textTheme.subtitle1),
+                                        IconButton(
+                                          onPressed: () {
+                                            _con.incrementQuantity();
+                                          },
+                                          iconSize: 40,
+                                          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                                          icon: Icon(Icons.add_circle_outline),
+                                          color: Theme.of(context).accentColor,
+                                        )
+                                      ],
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left:28.0,right: 28.0),
-                                      child: Text(_con.quantity.floor().toString(), style: Theme.of(context).textTheme.headline3),
-                                    ),
-                                    CircleAvatar(
-                                      backgroundColor: Theme.of(context).accentColor,
-                                      child: IconButton(
-                                        onPressed: () {
-                                          _con.incrementQuantity();
-                                        },
-                                        iconSize: 30,
-                                        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                                        icon: Icon(Icons.add),
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
                               ],
                             ),
                             SizedBox(height: 10),
                             Row(
                               children: <Widget>[
-                                Expanded(
-                                  child: _con.favorite?.id != null
-                                      ? OutlineButton(
-                                          onPressed: () {
-                                            _con.removeFromFavorite(_con.favorite);
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
-                                          color: Theme.of(context).primaryColor,
-                                          shape: StadiumBorder(),
-                                          borderSide: BorderSide(color: Theme.of(context).accentColor),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).accentColor,
-                                          ))
-                                      : FlatButton(
-                                          onPressed: () {
-                                            if (currentUser.value.apiToken == null) {
-                                              Navigator.of(context).pushNamed("/Login");
-                                            } else {
-                                              _con.addToFavorite(_con.product);
-                                            }
-                                          },
-                                          padding: EdgeInsets.symmetric(vertical: 14),
-                                          color: Theme.of(context).accentColor,
-                                          shape: StadiumBorder(),
-                                          child: Icon(
-                                            Icons.favorite,
-                                            color: Theme.of(context).primaryColor,
-                                          )),
-                                ),
-                                SizedBox(width: 10),
+                                //         Expanded(
+                                //           child: _con.loadCart
+                                // ? SizedBox(
+                                //     width: 60,
+                                //     height: 60,
+                                //     child: RefreshProgressIndicator(),
+                                //   )
+                                // : ShoppingCartFloatButtonWidget(
+
+                                //   ),
+                                //         ),
+                                SizedBox(width: 40),
                                 Stack(
                                   fit: StackFit.loose,
                                   alignment: AlignmentDirectional.centerEnd,
@@ -372,22 +278,23 @@ class _ProductWidgetState extends StateMVC<ProductWidget> {
                                           if (currentUser.value.apiToken == null) {
                                             Navigator.of(context).pushNamed("/Login");
                                           } else {
-                                            if (_con.isSameMarkets(_con.product)) {
-                                              _con.addToCart(_con.product);
-                                            } else {
-                                              showDialog(
-                                                context: context,
-                                                builder: (BuildContext context) {
-                                                  // return object of type Dialog
-                                                  return AddToCartAlertDialogWidget(
-                                                      oldProduct: _con.carts.elementAt(0)?.product,
-                                                      newProduct: _con.product,
-                                                      onPressed: (product, {reset: true}) {
-                                                        return _con.addToCart(_con.product, reset: true);
-                                                      });
-                                                },
-                                              );
-                                            }
+                                            Alert(
+                                              context: context,
+                                              type: AlertType.success,
+                                              title: "Success",
+                                              desc: "This product was added to cart.",
+                                              buttons: [
+                                                DialogButton(
+                                                  child: Text(
+                                                    "Done",
+                                                    style: TextStyle(color: Colors.white, fontSize: 20),
+                                                  ),
+                                                  onPressed: () => Navigator.pop(context),
+                                                  width: 120,
+                                                )
+                                              ],
+                                            ).show();
+                                            _con.addToCart(_con.product);
                                           }
                                         },
                                         padding: EdgeInsets.symmetric(vertical: 14),
