@@ -36,7 +36,6 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends StateMVC<HomeWidget> {
   HomeController _con;
-  ReviewsController _recon;
 
   _HomeWidgetState() : super(HomeController()) {
     _con = controller;
@@ -86,8 +85,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ListTile(
-                          onTap: (){
-                             Navigator.of(context).pushNamed('/DeliveryAddresses');
+                          onTap: () {
+                            Navigator.of(context).pushNamed('/DeliveryAddresses');
                           },
                           title: Text("Deliver To"),
                           subtitle: Text(
