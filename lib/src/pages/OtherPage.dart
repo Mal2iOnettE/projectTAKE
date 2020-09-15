@@ -187,7 +187,7 @@ class _OtherPageState extends StateMVC<OtherPage> {
       //Support center
       ListTile(
         onTap: () {
-          Navigator.of(context).pushNamed('/Languages');
+          Navigator.of(context).pushNamed('/Support');
         },
         trailing: Icon(Icons.arrow_forward_ios),
         title: Text(

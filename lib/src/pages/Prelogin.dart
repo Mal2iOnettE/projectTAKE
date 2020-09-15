@@ -142,7 +142,7 @@ class _Prelogin2State extends State<Prelogin2> {
               "By signing up you agree to our Terms of Use and Privacy Policy",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 16.0,
+                fontSize: 10.0,
               ),
               textAlign: TextAlign.center,
             ),

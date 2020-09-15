@@ -2292,7 +2292,18 @@ class S {
       desc: '',
       args: [],
     );
-  }
+}
+
+String get ordersomethingelse {
+    return Intl.message(
+      'Order something else',
+      name: 'ordersomethingelse',
+      desc: '',
+      args: [],
+
+    );
+}
+ 
 
   String get validCouponCode {
     return Intl.message(
@@ -2320,6 +2331,80 @@ class S {
       args: [],
     );
   }
+
+String get myorderdelivered {
+    return Intl.message(
+      'My order did not delivered',
+      name: 'myorderdelivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get myordercame {
+    return Intl.message(
+      'My order came with missing items',
+      name: 'myordercame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get changmyphone {
+    return Intl.message(
+      'Chang my phone number',
+      name: 'changmyphone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get changmydelivery {
+    return Intl.message(
+      'Chang my delivery address',
+      name: 'changmydelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get howdoichange {
+    return Intl.message(
+      'How do I change payment method',
+      name: 'howdoichange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get canirefund {
+    return Intl.message(
+      'Can I refund my order',
+      name: 'canirefund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get frequently {
+    return Intl.message(
+      'Frequently asked questions',
+      name: 'frequently',
+      desc: '',
+      args: [],
+    );
+  }
+
+    String get paymentmethods {
+    return Intl.message(
+      'Payment Methods',
+      name: 'paymentmethods',
+      desc: '',
+      args: [],
+    );
+  }
+
+
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
