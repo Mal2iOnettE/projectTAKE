@@ -54,7 +54,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: _con.scaffoldKey,
-       /* appBar: AppBar(
+        /* appBar: AppBar(
           automaticallyImplyLeading: false,
           leading: IconButton(
             onPressed: () {
@@ -369,12 +369,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
   Widget searchBarMarket() {
     return InkWell(
       onTap: () {
-<<<<<<< HEAD
         Navigator.of(context).pushNamed('/Menu',
             arguments: new RouteArgument(id: widget.routeArgument.id));
-=======
-        Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
->>>>>>> master
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),

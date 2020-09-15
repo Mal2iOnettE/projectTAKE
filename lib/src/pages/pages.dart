@@ -67,13 +67,10 @@ class _PagesWidgetState extends State<PagesWidget> {
                   routeArgument: widget.routeArgument);
           break;
         case 1:
-<<<<<<< HEAD
-          widget.currentPage =
-              NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
-=======
           //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
-          widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
->>>>>>> master
+          widget.currentPage = MapWidget(
+              parentScaffoldKey: widget.scaffoldKey,
+              routeArgument: widget.routeArgument);
           break;
         case 3:
           widget.currentPage = OtherPage();
@@ -93,12 +90,8 @@ class _PagesWidgetState extends State<PagesWidget> {
         key: widget.scaffoldKey,
         drawer: DrawerWidget(),
         endDrawer: FilterWidget(onFilter: (filter) {
-<<<<<<< HEAD
           Navigator.of(context)
               .pushReplacementNamed('/pages', arguments: widget.currentTab);
-=======
-          Navigator.of(context).pushReplacementNamed('/pages', arguments: widget.currentTab);
->>>>>>> master
         }),
         body: widget.currentPage,
         bottomNavigationBar: BottomNavigationBar(
@@ -117,29 +110,8 @@ class _PagesWidgetState extends State<PagesWidget> {
           },
           // this will be set when a new tab is tapped
           items: [
-<<<<<<< HEAD
             BottomNavigationBarItem(
-                title: new Container(height: 5.0), icon: new Icon(Icons.home)
-                /* icon: Container(
-                  width: 42,
-                  height: 42,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).accentColor,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                    boxShadow: [
-                      BoxShadow(color: Theme.of(context).accentColor.withOpacity(0.4), blurRadius: 40, offset: Offset(0, 15)),
-                      BoxShadow(color: Theme.of(context).accentColor.withOpacity(0.4), blurRadius: 13, offset: Offset(0, 3))
-                    ],
-                  ),
-                 child: new Icon(Icons.home, color: Theme.of(context).accentColor),*/
-                ),
-=======
->>>>>>> master
-            BottomNavigationBarItem(
-              title: new Container(height: 5.0), 
-              icon: new Icon(Icons.home)),
+                title: new Container(height: 5.0), icon: new Icon(Icons.home)),
             BottomNavigationBarItem(
               icon: Icon(Icons.map),
               title: new Container(height: 0.0),

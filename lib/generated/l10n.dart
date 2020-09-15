@@ -2294,22 +2294,16 @@ class S {
       desc: '',
       args: [],
     );
-<<<<<<< HEAD
   }
-=======
-}
 
-String get ordersomethingelse {
+  String get ordersomethingelse {
     return Intl.message(
       'Order something else',
       name: 'ordersomethingelse',
       desc: '',
       args: [],
-
     );
-}
- 
->>>>>>> master
+  }
 
   String get validCouponCode {
     return Intl.message(
@@ -2338,23 +2332,14 @@ String get ordersomethingelse {
     );
   }
 
-<<<<<<< HEAD
-  String get ordersomethingelse {
-    return Intl.message(
-      'Order something else ?',
-      name: 'ordersomethingelse',
-=======
-String get myorderdelivered {
+  String get myorderdelivered {
     return Intl.message(
       'My order did not delivered',
       name: 'myorderdelivered',
->>>>>>> master
       desc: '',
       args: [],
     );
   }
-<<<<<<< HEAD
-=======
 
   String get myordercame {
     return Intl.message(
@@ -2410,7 +2395,7 @@ String get myorderdelivered {
     );
   }
 
-    String get paymentmethods {
+  String get paymentmethods {
     return Intl.message(
       'Payment Methods',
       name: 'paymentmethods',
@@ -2418,9 +2403,6 @@ String get myorderdelivered {
       args: [],
     );
   }
-
-
->>>>>>> master
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

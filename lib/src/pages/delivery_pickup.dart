@@ -111,17 +111,13 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.headline4,
                     ),
-<<<<<<< HEAD
-                    subtitle: _con.carts.isNotEmpty &&
-                            Helper.canDelivery(_con.carts[0].product.market,
-                                carts: _con.carts)
-=======
                     trailing: Icon(Icons.add_circle),
                     onTap: () async {
                       Navigator.of(context).pushNamed('/DeliveryAddresses');
                     },
-                    subtitle: _con.carts.isNotEmpty && Helper.canDelivery(_con.carts[0].product.market, carts: _con.carts)
->>>>>>> master
+                    subtitle: _con.carts.isNotEmpty &&
+                            Helper.canDelivery(_con.carts[0].product.market,
+                                carts: _con.carts)
                         ? Text(
                             S
                                 .of(context)
