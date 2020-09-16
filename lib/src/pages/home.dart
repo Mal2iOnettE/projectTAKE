@@ -42,6 +42,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
     _con = controller;
   }
 
+ 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,18 +93,24 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                             });
                           }
                         },
-                        child: Text(
-                          settingsRepo.deliveryAddress.value?.address == null
-                              ? Text("UnKnow")
-                              : S.of(context).near_to + " " + (settingsRepo.deliveryAddress.value?.address),
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color:
-                                  settingsRepo.deliveryAddress.value?.address == null ? Theme.of(context).hintColor : Theme.of(context).primaryColor),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            color: settingsRepo.deliveryAddress.value?.address == null
+                                ? Theme.of(context).focusColor.withOpacity(0.1)
+                                : Theme.of(context).accentColor,
+                          ),
+                          child: Text(
+                            S.of(context).deliveryTo,
+                            style: TextStyle(
+                                color: settingsRepo.deliveryAddress.value?.address == null
+                                    ? Theme.of(context).hintColor
+                                    : Theme.of(context).primaryColor),
+                          ),
                         ),
                       ),
                     ],
-                    
                   ),
                   if (settingsRepo.deliveryAddress.value?.address != null)
                     Padding(
@@ -113,10 +121,11 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
+                
                 ],
               ),
             ),
-            preferredSize: Size.fromHeight(35.0)),
+            preferredSize: Size.fromHeight(50.0)),
       ),
       body:
 

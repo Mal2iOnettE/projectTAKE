@@ -123,7 +123,7 @@ class _DeliveryAddressesWidgetState extends StateMVC<DeliveryAddressesWidget> {
                               context: context,
                               address: _address,
                               onChanged: (Address _address) {
-                                _con.updateAddress(_address);
+                                _con.updateAddress(_address); 
                               },
                             );
                           },
