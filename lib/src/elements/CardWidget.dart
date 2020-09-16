@@ -138,20 +138,43 @@ class CardWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 20.0),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
-                  child: Container(
-                      height: 40.0,
-                      width: 40.0,
-                      child: IconButton(
-                          icon: Icon(
-                            Icons.favorite,
-                            color: Theme.of(context).accentColor,
-                          ),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => FavoritesWidget()));
-                          })),
-                )
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      FlatButton(
+                        padding: EdgeInsets.all(0),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/Pages', arguments: new RouteArgument(id: '1', param: market));
+                        },
+                        child: Icon(Icons.directions, color: Theme.of(context).primaryColor),
+                        color: Theme.of(context).accentColor,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                      ),
+                      market.distance > 0
+                          ? Text(
+                              Helper.getDistance(market.distance, Helper.of(context).trans(setting.value.distanceUnit)),
+                              overflow: TextOverflow.fade,
+                              maxLines: 1,
+                              softWrap: false,
+                            )
+                          : SizedBox(height: 0)
+                    ],
+                  ),
+                ),
+                // Padding(
+                //   padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
+                //   child: Container(
+                //       height: 40.0,
+                //       width: 40.0,
+                //       child: IconButton(
+                //           icon: Icon(
+                //             Icons.favorite,
+                //             color: Theme.of(context).accentColor,
+                //           ),
+                //           onPressed: () {
+                //             Navigator.push(context, MaterialPageRoute(builder: (context) => FavoritesWidget()));
+                //           })),
+                // )
               ],
             ),
           )
