@@ -102,6 +102,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                         ),
                       ),
                     ],
+                    
                   ),
                   if (settingsRepo.deliveryAddress.value?.address != null)
                     Padding(
