@@ -1,4 +1,4 @@
-#Tue Sep 15 14:26:51 ICT 2020
+#Thu Sep 17 09:43:08 ICT 2020
 base.0=/Users/bamopass/Desktop/Take_pj_master/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
