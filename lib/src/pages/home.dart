@@ -29,13 +29,9 @@ class HomeWidget extends StatefulWidget {
   List<Market> marketsList;
   List<Review> reviewList;
 
-<<<<<<< HEAD
   HomeWidget(
       {Key key, this.parentScaffoldKey, this.marketsList, this.reviewList})
       : super(key: key);
-=======
-  HomeWidget({Key key, this.parentScaffoldKey, this.marketsList, this.reviewList}) : super(key: key);
->>>>>>> master
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -47,8 +43,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
   _HomeWidgetState() : super(HomeController()) {
     _con = controller;
   }
-
- 
 
   @override
   Widget build(BuildContext context) {
@@ -67,52 +61,25 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           builder: (context, value, child) {
             return Text(
               value.appName ?? S.of(context).home,
-              style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  .merge(TextStyle(letterSpacing: 1.3)),
             );
           },
         ),
         actions: <Widget>[
-          new ShoppingCartButtonWidget(iconColor: Theme.of(context).hintColor, labelColor: Theme.of(context).accentColor),
+          new ShoppingCartButtonWidget(
+              iconColor: Theme.of(context).hintColor,
+              labelColor: Theme.of(context).accentColor),
         ],
         bottom: PreferredSize(
             child: Padding(
-<<<<<<< HEAD
-              padding:
-                  const EdgeInsets.only(top: 0, left: 20, right: 20, bottom: 0),
-=======
-              padding: const EdgeInsets.only(top: 0, left: 25, right: 25, bottom: 10),
->>>>>>> master
+              padding: const EdgeInsets.only(
+                  top: 0, left: 25, right: 25, bottom: 10),
               child: Column(
                 //mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-<<<<<<< HEAD
-                  InkWell(
-                    onTap: () {
-                      if (currentUser.value.apiToken == null) {
-                        _con.requestForCurrentLocation(context);
-                      } else {
-                        var bottomSheetController = widget
-                            .parentScaffoldKey.currentState
-                            .showBottomSheet(
-                          (context) => DeliveryAddressBottomSheetWidget(
-                              scaffoldKey: widget.parentScaffoldKey),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10)),
-                          ),
-                        );
-                        bottomSheetController.closed.then((value) {
-                          _con.refreshHome();
-                        });
-                      }
-                    },
-                    child: ListTile(
-                      title: Text(
-                        S.of(context).near_to +
-                            " " +
-                            (settingsRepo.deliveryAddress.value?.address),
-=======
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -121,10 +88,15 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                           if (currentUser.value.apiToken == null) {
                             _con.requestForCurrentLocation(context);
                           } else {
-                            var bottomSheetController = widget.parentScaffoldKey.currentState.showBottomSheet(
-                              (context) => DeliveryAddressBottomSheetWidget(scaffoldKey: widget.parentScaffoldKey),
+                            var bottomSheetController = widget
+                                .parentScaffoldKey.currentState
+                                .showBottomSheet(
+                              (context) => DeliveryAddressBottomSheetWidget(
+                                  scaffoldKey: widget.parentScaffoldKey),
                               shape: RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                                borderRadius: new BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10)),
                               ),
                             );
                             bottomSheetController.closed.then((value) {
@@ -133,17 +105,22 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                           }
                         },
                         child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 6, horizontal: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: settingsRepo.deliveryAddress.value?.address == null
+                            color: settingsRepo
+                                        .deliveryAddress.value?.address ==
+                                    null
                                 ? Theme.of(context).focusColor.withOpacity(0.1)
                                 : Theme.of(context).accentColor,
                           ),
                           child: Text(
                             S.of(context).deliveryTo,
                             style: TextStyle(
-                                color: settingsRepo.deliveryAddress.value?.address == null
+                                color: settingsRepo
+                                            .deliveryAddress.value?.address ==
+                                        null
                                     ? Theme.of(context).hintColor
                                     : Theme.of(context).primaryColor),
                           ),
@@ -155,13 +132,13 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     Padding(
                       padding: const EdgeInsets.only(top: 5),
                       child: Text(
-                        S.of(context).near_to + " " + (settingsRepo.deliveryAddress.value?.address),
->>>>>>> master
+                        S.of(context).near_to +
+                            " " +
+                            (settingsRepo.deliveryAddress.value?.address),
                         style: Theme.of(context).textTheme.caption,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                
                 ],
               ),
             ),
@@ -178,15 +155,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
-<<<<<<< HEAD
             children: List.generate(
                 settingsRepo.setting.value.homeSections.length, (index) {
               String _homeSection =
                   settingsRepo.setting.value.homeSections.elementAt(index);
-=======
-            children: List.generate(settingsRepo.setting.value.homeSections.length, (index) {
-              String _homeSection = settingsRepo.setting.value.homeSections.elementAt(index);
->>>>>>> master
               switch (_homeSection) {
                 case 'slider':
                   return HomeSliderWidget(slides: _con.slides);
@@ -206,26 +178,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-<<<<<<< HEAD
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  S.of(context).top_markets,
-                                  style: Theme.of(context).textTheme.headline4,
-                                  maxLines: 1,
-                                  softWrap: false,
-                                  overflow: TextOverflow.fade,
-                                ),
-                              ),
-                              InkWell(
-                                onTap: () => Navigator.pushNamed(
-                                    context, '/AllRestaurant'),
-                                child: Text("See all"),
-                              )
-                            ],
-=======
                           Expanded(
                             child: Text(
                               S.of(context).top_markets,
@@ -236,9 +188,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                             ),
                           ),
                           InkWell(
-                            onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/AllRestaurant'),
                             child: Text("See all"),
->>>>>>> master
                           )
                         ]),
                   );
@@ -339,8 +291,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               }
             }),
           ),
-<<<<<<< HEAD
-=======
 
           // Column(
           //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -506,7 +456,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           //     // ),
           //   ],
           // ),
->>>>>>> master
         ),
       ),
     );

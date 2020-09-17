@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-  "base_url":"https://midez.xyz/public/",
-  "api_base_url":"https://midez.xyz/public/api/"
-
-}
-=======
   "base_url": "https://www.ta-kemore.com/Delivery/public/",
   "api_base_url": "https://www.ta-kemore.com/Delivery/public/api/"
 }
->>>>>>> master
