@@ -24,6 +24,7 @@ import '../repository/settings_repository.dart' as settingsRepo;
 import '../repository/user_repository.dart';
 import '../elements/FilterWidget.dart';
 
+// ignore: must_be_immutable
 class HomeWidget extends StatefulWidget {
   final GlobalKey<ScaffoldState> parentScaffoldKey;
   List<Market> marketsList;
