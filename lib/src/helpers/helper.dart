@@ -145,7 +145,7 @@ class Helper {
   }
 
   static Widget getDiscpuntPercent(double myPrice, double discountprice, BuildContext context, {TextStyle style}) {
-    var percent = 100;
+    
     var discoutAfter = myPrice - discountprice;
 
     var sum = (discoutAfter / discountprice);
@@ -233,7 +233,7 @@ class Helper {
       total += getTotalOrderPrice(productOrder);
     });
     total += order.deliveryFee;
-    total += order.tax * total / 100;
+    //total += order.tax * total / 100;
     return total;
   }
 
