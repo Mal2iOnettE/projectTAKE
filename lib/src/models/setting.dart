@@ -6,6 +6,7 @@ class Setting {
   String appName = '';
   double defaultTax;
   String defaultCurrency;
+  String percent;
   String distanceUnit;
   bool currencyRight = false;
   int currencyDecimalDigits = 2;
@@ -48,6 +49,7 @@ class Setting {
       enableVersion = jsonMap['enable_version'] == null || jsonMap['enable_version'] == '0' ? false : true;
       defaultTax = double.tryParse(jsonMap['default_tax'] ?? '0') ?? 0.0; //double.parse(jsonMap['default_tax'].toString());
       defaultCurrency = jsonMap['default_currency'] ?? '';
+      percent = jsonMap['percent'] ?? '%';
       currencyDecimalDigits = int.tryParse(jsonMap['default_currency_decimal_digits'] ?? '2') ?? 2;
       currencyRight = jsonMap['currency_right'] == null || jsonMap['currency_right'] == '0' ? false : true;
       payPalEnabled = jsonMap['enable_paypal'] == null || jsonMap['enable_paypal'] == '0' ? false : true;
@@ -73,6 +75,7 @@ class Setting {
     map["app_name"] = appName;
     map["default_tax"] = defaultTax;
     map["default_currency"] = defaultCurrency;
+    map["percent"] = percent;
     map["default_currency_decimal_digits"] = currencyDecimalDigits;
     map["currency_right"] = currencyRight;
     map["enable_paypal"] = payPalEnabled;
