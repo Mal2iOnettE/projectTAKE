@@ -53,7 +53,7 @@ class _MapWidgetState extends StateMVC<MapWidget> {
               )
             : IconButton(
                 icon: new Icon(Icons.arrow_back, color: Theme.of(context).hintColor),
-                onPressed: () => Navigator.of(context).pushNamed('/Pages', arguments: 2),
+                onPressed: () => Navigator.of(context).pushNamed('/Pages', arguments: 0),
               ),
         title: Text(
           S.of(context).maps_explorer,

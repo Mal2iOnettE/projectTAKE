@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:markets/src/controllers/cart_controller.dart';
 import 'package:markets/src/elements/ProductsCarouselItemWidget.dart';
 import 'package:markets/src/elements/SearchBarWidget.dart';
 import 'package:markets/src/elements/ShoppingCartButtonWidget.dart';
+import 'package:markets/src/repository/cart_repository.dart';
 import 'package:markets/src/repository/user_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -21,7 +23,6 @@ import '../repository/settings_repository.dart';
 
 class Details2Widget extends StatefulWidget {
   final RouteArgument routeArgument;
-  
 
   Details2Widget({Key key, this.routeArgument}) : super(key: key);
 
@@ -33,9 +34,10 @@ class Details2Widget extends StatefulWidget {
 
 class _Details2WidgetState extends StateMVC<Details2Widget> {
   MarketController _con;
+  CartController _conCart;
   ValueChanged onClickFilter;
 
-  _Details2WidgetState() : super(MarketController()) {
+  _Details2WidgetState() : super((MarketController())) {
     _con = controller;
   }
 
@@ -52,6 +54,23 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: _con.scaffoldKey,
+       /* appBar: AppBar(
+          automaticallyImplyLeading: false,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/Pages', arguments: 0);
+            },
+            icon: Icon(Icons.arrow_back),
+            color: Theme.of(context).hintColor,
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          title: Text(
+            S.of(context).cart,
+            style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+          ),
+        ),*/
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             Navigator.of(context).pushNamed('/Cart', arguments: RouteArgument(param: '/Details2', id: _con.market.id));
@@ -60,17 +79,21 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
 
           isExtended: true,
           materialTapTargetSize: MaterialTapTargetSize.padded,
-          // icon: Icon(
-          //   Icons.shopping_basket,
-          //   color: Theme.of(context).primaryColor,
-          // ),
 
           label: Container(
             width: 300.0,
             child: Center(
-              child: Text(
-                S.of(context).go_to_cart,
-                style: TextStyle(color: Theme.of(context).primaryColor),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    S.of(context).go_to_cart,
+                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  ),
+                  //Text(_con..length.toString())
+                  //getCartCount()
+                ],
               ),
             ),
           ),
@@ -305,23 +328,22 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                   )));
   }
 
-  Widget searchBarMarket(){
+  Widget searchBarMarket() {
     return InkWell(
       onTap: () {
-       Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
+        Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
-              color: Colors.transparent,
-              border: Border.all(
-                color: Theme.of(context).focusColor.withOpacity(0.2),
-              ),
-              borderRadius: BorderRadius.circular(10),
-              
-              ),
+            color: Colors.transparent,
+            border: Border.all(
+              color: Theme.of(context).focusColor.withOpacity(0.2),
+            ),
+            borderRadius: BorderRadius.circular(10),
+          ),
           child: Row(
             children: <Widget>[
               Padding(
@@ -335,7 +357,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                   style: Theme.of(context).textTheme.caption.merge(TextStyle(fontSize: 14)),
                 ),
               ),
-             /*InkWell(
+              /*InkWell(
                 onTap: () {
                   onClickFilter('e');
                 },
