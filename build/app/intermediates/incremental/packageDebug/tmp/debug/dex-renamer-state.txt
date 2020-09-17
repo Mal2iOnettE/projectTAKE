@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+#Tue Sep 15 09:46:22 ICT 2020
+=======
+<<<<<<< HEAD
 #Tue Sep 15 09:48:46 ICT 2020
 base.0=D\:\\TAKE_TOWN\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 =======
 #Mon Sep 14 12:12:24 ICT 2020
+>>>>>>> b77d930c5b2a59064370414195d46bc48c64fd59
 base.0=C\:\\Users\\Admin\\Desktop\\Eca\\TAKE_APP_DELIVERY\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 >>>>>>> 06ffa3501a4c4ecc54ff6df5a65292e6187c0bd3
 path.0=classes.dex
