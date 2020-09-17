@@ -41,6 +41,7 @@ class CategoriesCarouselItemWidget extends StatelessWidget {
                   /*child: category.image.url.toLowerCase().endsWith('.svg')
                       ? SvgPicture.network(
                           category.image.url,
+                          
                           color: Theme.of(context).accentColor,
                           fit: BoxFit.fill,
                         )
