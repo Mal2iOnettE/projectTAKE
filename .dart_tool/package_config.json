@@ -800,7 +800,11 @@
       "languageVersion": "2.2"
     }
   ],
+<<<<<<< HEAD
   "generated": "2020-09-17T03:44:14.193948Z",
+=======
+  "generated": "2020-09-17T02:40:49.262518Z",
+>>>>>>> b2663c02fbf672242bba27f8ee4da785e59ab495
   "generator": "pub",
   "generatorVersion": "2.9.0"
 }

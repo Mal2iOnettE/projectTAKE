@@ -38,7 +38,7 @@ class HomeController extends ControllerMVC {
     listenForCountReviews("1");
   }
 
-   Future<void> listenForSlides() async {
+  Future<void> listenForSlides() async {
     final Stream<Slide> stream = await getSlides();
     stream.listen((Slide _slide) {
       setState(() => slides.add(_slide));
@@ -46,7 +46,6 @@ class HomeController extends ControllerMVC {
       print(a);
     }, onDone: () {});
   }
-
 
   void listenForGalleries(String idMarket) async {
     final Stream<Gallery> stream = await getGalleries(idMarket);
