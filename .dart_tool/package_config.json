@@ -21,7 +21,7 @@
     },
     {
       "name": "android_intent",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/android_intent-0.3.7+2",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/android_intent-0.3.7+3",
       "packageUri": "lib/",
       "languageVersion": "2.3"
     },
@@ -159,7 +159,7 @@
     },
     {
       "name": "equatable",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-1.2.3",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-1.2.5",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -213,7 +213,7 @@
     },
     {
       "name": "flutter_cache_manager",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_cache_manager-1.4.1",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_cache_manager-1.4.2",
       "packageUri": "lib/",
       "languageVersion": "2.6"
     },
@@ -231,9 +231,9 @@
     },
     {
       "name": "flutter_launcher_icons",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.7.5",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.8.0",
       "packageUri": "lib/",
-      "languageVersion": "2.2"
+      "languageVersion": "2.3"
     },
     {
       "name": "flutter_localizations",
@@ -243,7 +243,7 @@
     },
     {
       "name": "flutter_plugin_android_lifecycle",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.8",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.9",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -273,7 +273,7 @@
     },
     {
       "name": "fluttertoast",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-7.0.4",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-7.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -465,7 +465,7 @@
     },
     {
       "name": "package_info",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/package_info-0.4.1",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/package_info-0.4.3",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -477,7 +477,7 @@
     },
     {
       "name": "path_drawing",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-0.4.1",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-0.4.1+1",
       "packageUri": "lib/",
       "languageVersion": "1.19"
     },
@@ -489,7 +489,7 @@
     },
     {
       "name": "path_provider",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.11",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.14",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -507,7 +507,7 @@
     },
     {
       "name": "path_provider_platform_interface",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-1.0.2",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-1.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -549,7 +549,7 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+2",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -561,7 +561,7 @@
     },
     {
       "name": "rflutter_alert",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-1.0.5",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/rflutter_alert-1.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -597,7 +597,7 @@
     },
     {
       "name": "shared_preferences_linux",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-0.0.2+1",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-0.0.2+2",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -639,7 +639,7 @@
     },
     {
       "name": "sqflite",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.1",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.1+1",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -717,21 +717,21 @@
     },
     {
       "name": "url_launcher_platform_interface",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-1.0.7",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-1.0.8",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
     {
       "name": "url_launcher_web",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-0.1.2+1",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-0.1.3+2",
       "packageUri": "lib/",
       "languageVersion": "2.2"
     },
     {
       "name": "uuid",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/uuid-2.2.0",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/uuid-2.2.2",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.2"
     },
     {
       "name": "vector_math",
@@ -741,13 +741,13 @@
     },
     {
       "name": "video_player",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-0.10.11+2",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-0.10.12+2",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
     {
       "name": "video_player_platform_interface",
-      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_platform_interface-2.1.0",
+      "rootUri": "file:///Users/bamopass/Desktop/Dart/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_platform_interface-2.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -800,7 +800,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-09-17T02:48:43.492998Z",
+  "generated": "2020-09-17T02:49:24.660272Z",
   "generator": "pub",
   "generatorVersion": "2.9.1"
 }

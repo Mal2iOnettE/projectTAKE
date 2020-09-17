@@ -59,6 +59,7 @@ class _PagesWidgetState extends State<PagesWidget> {
               HomeWidget(parentScaffoldKey: widget.scaffoldKey);
           //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
           break;
+<<<<<<< HEAD
         case 2:
           widget.currentPage =
               //FavoritesWidget(parentScaffoldKey: widget.scaffoldKey);
@@ -66,11 +67,17 @@ class _PagesWidgetState extends State<PagesWidget> {
                   parentScaffoldKey: widget.scaffoldKey,
                   routeArgument: widget.routeArgument);
           break;
+=======
+>>>>>>> master
         case 1:
           //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
           widget.currentPage = MapWidget(
               parentScaffoldKey: widget.scaffoldKey,
               routeArgument: widget.routeArgument);
+          break;
+        case 2:
+          widget.currentPage = FavoritesWidget(parentScaffoldKey: widget.scaffoldKey);
+          //widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
           break;
         case 3:
           widget.currentPage = OtherPage();
@@ -121,6 +128,7 @@ class _PagesWidgetState extends State<PagesWidget> {
               title: new Container(height: 0.0),
             ),
             BottomNavigationBarItem(
+              
               icon: new Icon(Icons.person),
               title: new Container(height: 0.0),
             ),

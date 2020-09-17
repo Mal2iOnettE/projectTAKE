@@ -47,17 +47,23 @@ class ProductsCarouselItemWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              // Container(
-              //   margin: EdgeInsetsDirectional.only(end: 25, top: 5),
-              //   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-              //   decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(100)), color: Theme.of(context).accentColor),
-              //   alignment: AlignmentDirectional.topEnd,
-              //   child: Helper.getPrice(
-              //     product.price,
-              //     context,
-              //     style: Theme.of(context).textTheme.bodyText1.merge(TextStyle(color: Theme.of(context).primaryColor)),
-              //   ),
-              // ),
+              Padding(
+                padding: const EdgeInsets.all(0.0),
+                child: product.discountPrice > 0
+                    ? Container(
+                        margin: EdgeInsetsDirectional.only(end: 25, top: 5),
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(100)), color: Theme.of(context).accentColor),
+                        alignment: AlignmentDirectional.topEnd,
+                        child: Helper.getDiscpuntPercent(
+                          product.price,
+                          product.discountPrice,
+                          context,
+                          style: Theme.of(context).textTheme.bodyText1.merge(TextStyle(color: Theme.of(context).primaryColor)),
+                        ),
+                      )
+                    : SizedBox(height: 0),
+              ),
             ],
           ),
           SizedBox(height: 5),
@@ -76,22 +82,21 @@ class ProductsCarouselItemWidget extends StatelessWidget {
                   Row(
                     children: [
                       Helper.getPrice(
-                      product.price,
-                      context,
-                      style: Theme.of(context).textTheme.headline5.merge(TextStyle(color: Theme.of(context).accentColor)),
+                        product.price,
+                        context,
+                        style: Theme.of(context).textTheme.headline5.merge(TextStyle(color: Theme.of(context).accentColor)),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left:8.0,top: 3),
+                        padding: const EdgeInsets.only(left: 8.0, top: 3),
                         child: product.discountPrice > 0
                             ? Helper.getPrice(product.discountPrice, context,
                                 style: Theme.of(context).textTheme.bodyText2.merge(TextStyle(decoration: TextDecoration.lineThrough)))
                             : SizedBox(height: 0),
                       ),
+
+                      
                     ],
                   ),
-                  
-             
-
                 ],
               )),
         ],

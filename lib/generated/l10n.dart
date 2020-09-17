@@ -1531,6 +1531,15 @@ class S {
     );
   }
 
+   String get deliveryTo {
+    return Intl.message(
+      'Delivery to',
+      name: 'deliveryTo',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get pickup {
     return Intl.message(
       'Pickup',
