@@ -262,6 +262,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
                         SizedBox(
                           height: 110.0,
+                          
                         ),
 
                         searchBarMarket(),
