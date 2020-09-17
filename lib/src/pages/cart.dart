@@ -48,7 +48,7 @@ class _CartWidgetState extends StateMVC<CartWidget> {
               if (widget.routeArgument != null) {
                 Navigator.of(context).pushReplacementNamed(widget.routeArgument.param, arguments: RouteArgument(id: widget.routeArgument.id));
               } else {
-                Navigator.of(context).pushReplacementNamed('/Pages', arguments: 2);
+                Navigator.of(context).pushReplacementNamed('/Pages', arguments: 0);
               }
             },
             icon: Icon(Icons.arrow_back),

@@ -55,7 +55,7 @@ class _DeliveryAddressesWidgetState extends StateMVC<DeliveryAddressesWidget> {
                   context,
                   setting.value.googleMapsKey,
                   initialCenter: LatLng(deliveryAddress.value?.latitude ?? 0, deliveryAddress.value?.longitude ?? 0),
-                  //automaticallyAnimateToCurrentLocation: true,
+                  automaticallyAnimateToCurrentLocation: true,
                   //mapStylePath: 'assets/mapStyle.json',
                   myLocationButtonEnabled: true,
                   //resultCardAlignment: Alignment.bottomCenter,
@@ -123,7 +123,7 @@ class _DeliveryAddressesWidgetState extends StateMVC<DeliveryAddressesWidget> {
                               context: context,
                               address: _address,
                               onChanged: (Address _address) {
-                                _con.updateAddress(_address);
+                                _con.updateAddress(_address); 
                               },
                             );
                           },

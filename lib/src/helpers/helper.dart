@@ -3,6 +3,7 @@ import 'dart:math';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -92,9 +93,7 @@ class Helper {
       return Icon(Icons.star, size: size, color: Color(0xFFFFB24D));
     });
     if (rate - rate.floor() > 0) {
-      list.add(Icon(Icons.star_half, 
-      size: size, 
-      color: Color(0xFFFFB24D)));
+      list.add(Icon(Icons.star_half, size: size, color: Color(0xFFFFB24D)));
     }
     list.addAll(List.generate(5 - rate.floor() - (rate - rate.floor()).ceil(), (index) {
       return Icon(Icons.star_border, size: size, color: Color(0xFFFFB24D));
@@ -115,7 +114,6 @@ class Helper {
         return Text('-', style: style ?? Theme.of(context).textTheme.subtitle1);
       }
       return RichText(
-        
         softWrap: false,
         overflow: TextOverflow.visible,
         maxLines: 1,
@@ -146,7 +144,65 @@ class Helper {
     }
   }
 
+  static Widget getDiscpuntPercent(double myPrice, double discountprice, BuildContext context, {TextStyle style}) {
+    var percent = 100;
+    var discoutAfter = myPrice - discountprice;
+
+    var sum = (discoutAfter / discountprice);
+    var finalpercent = sum * 100;
+     print("myPrice ${myPrice}");
+    print("discountprice ${discoutAfter}");
+    print("subtrac ${sum}");
+    print("percent ${finalpercent}");
+    
+
+    if (style != null) {
+      style = style.merge(TextStyle(fontSize: style.fontSize + 2));
+    }
+    try {
+      if (finalpercent == 0) {
+        return Text('-', style: style ?? Theme.of(context).textTheme.subtitle1);
+      }
+      return RichText(
+        softWrap: false,
+        overflow: TextOverflow.visible,
+        maxLines: 1,
+        text: setting.value?.currencyRight != null && setting.value?.currencyRight == false
+            ? TextSpan(
+                text: setting.value.secondDarkColor,
+                style: style ?? Theme.of(context).textTheme.subtitle1,
+                children: <TextSpan>[
+                  TextSpan(
+                      text: finalpercent.toStringAsFixed(setting.value?.currencyDecimalDigits) ?? '', style: style ?? Theme.of(context).textTheme.subtitle1),
+                ],
+              )
+            : TextSpan(
+                text: finalpercent.toStringAsFixed(setting.value?.currencyDecimalDigits) ?? '',
+                style: style ?? Theme.of(context).textTheme.subtitle1,
+                children: <TextSpan>[
+                  TextSpan(
+                      text: "%",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: style != null ? style.fontSize - 4 : Theme.of(context).textTheme.subtitle1.fontSize - 4)),
+                ],
+              ),
+      );
+    } catch (e) {
+      return Text('');
+    }
+  }
+
   static double getTotalOrderPrice(ProductOrder productOrder) {
+    double total = productOrder.price;
+    productOrder.options.forEach((option) {
+      total += option.price != null ? option.price : 0;
+    });
+    total *= productOrder.quantity;
+    return total;
+  }
+
+  static double getTotalPrice(ProductOrder productOrder) {
     double total = productOrder.price;
     productOrder.options.forEach((option) {
       total += option.price != null ? option.price : 0;
@@ -298,6 +354,60 @@ class Helper {
         port: Uri.parse(GlobalConfiguration().getString('base_url')).port,
         path: _path + path);
     return uri;
+  }
+
+  Color getColorFromHex(String hex) {
+    if (hex.contains('#')) {
+      return Color(int.parse(hex.replaceAll("#", "0xFF")));
+    } else {
+      return Color(int.parse("0xFF" + hex));
+    }
+  }
+
+  static BoxFit getBoxFit(String boxFit) {
+    switch (boxFit) {
+      case 'cover':
+        return BoxFit.cover;
+      case 'fill':
+        return BoxFit.fill;
+      case 'contain':
+        return BoxFit.contain;
+      case 'fit_height':
+        return BoxFit.fitHeight;
+      case 'fit_width':
+        return BoxFit.fitWidth;
+      case 'none':
+        return BoxFit.none;
+      case 'scale_down':
+        return BoxFit.scaleDown;
+      default:
+        return BoxFit.cover;
+    }
+  }
+
+  static AlignmentDirectional getAlignmentDirectional(String alignmentDirectional) {
+    switch (alignmentDirectional) {
+      case 'top_start':
+        return AlignmentDirectional.topStart;
+      case 'top_center':
+        return AlignmentDirectional.topCenter;
+      case 'top_end':
+        return AlignmentDirectional.topEnd;
+      case 'center_start':
+        return AlignmentDirectional.centerStart;
+      case 'center':
+        return AlignmentDirectional.topCenter;
+      case 'center_end':
+        return AlignmentDirectional.centerEnd;
+      case 'bottom_start':
+        return AlignmentDirectional.bottomStart;
+      case 'bottom_center':
+        return AlignmentDirectional.bottomCenter;
+      case 'bottom_end':
+        return AlignmentDirectional.bottomEnd;
+      default:
+        return AlignmentDirectional.bottomEnd;
+    }
   }
 
   Future<bool> onWillPop() {

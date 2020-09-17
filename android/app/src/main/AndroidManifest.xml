@@ -11,13 +11,12 @@
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
     <application
-        android:usesCleartextTraffic="true"
         android:name=".Application"
-        android:label="TAKE TOWN"
+        android:label="Markets"
         android:icon="@mipmap/ic_launcher">
 
         <meta-data android:name="com.google.android.geo.API_KEY"
-                   android:value="AIzaSyAjs4xKXYfxLJV1Ln7yCLfVrkJOEjj3CyY"/>
+                   android:value="AIzaSyDeYttpuQHuuYdaEXltzMDJ2xXsSRRXMnA"/>
         <meta-data
                 android:name="com.google.firebase.messaging.default_notification_icon"
                 android:resource="@mipmap/ic_notification" />

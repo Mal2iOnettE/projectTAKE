@@ -14,6 +14,15 @@ import '../../generated/l10n.dart';
 import '../controllers/filter_controller.dart';
 import '../models/filter.dart';
 
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:mvc_pattern/mvc_pattern.dart';
+
+import '../../generated/l10n.dart';
+import '../controllers/filter_controller.dart';
+import '../elements/CircularLoadingWidget.dart';
+import '../models/filter.dart';
+
 class FilterWidget extends StatefulWidget {
   final ValueChanged<Filter> onFilter;
 
@@ -24,15 +33,24 @@ class FilterWidget extends StatefulWidget {
 }
 
 class _FilterWidgetState extends StateMVC<FilterWidget> {
-  DietaryController _con;
+  FilterController _con;
 
-  _FilterWidgetState() : super(DietaryController()) {
+  _FilterWidgetState() : super(FilterController()) {
     _con = controller;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _con.scaffoldKey,
+      appBar: AppBar(
+        title: Text("Filter & Sort"),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          
+        ],
+      ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -141,7 +159,8 @@ class _FilterWidgetState extends StateMVC<FilterWidget> {
               ),
             ),
             SizedBox(height: 15),
-        ///button applyfilter
+
+            
             FlatButton(
               onPressed: () {
                 _con.saveFilter().whenComplete(() {

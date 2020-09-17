@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:markets/src/elements/GalleryItemWidget.dart';
 import 'package:markets/src/models/gallery.dart';
+import 'package:markets/src/models/slide.dart';
 import 'package:markets/src/repository/gallery_repository.dart';
+import 'package:markets/src/repository/slider_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 import '../helpers/helper.dart';
@@ -21,7 +23,7 @@ class HomeController extends ControllerMVC {
   List<Market> topMarkets = <Market>[];
   List<Market> popularMarkets = <Market>[];
   List<Review> recentReviews = <Review>[];
-
+  List<Slide> slides = <Slide>[];
   List<Review> countReviews = <Review>[];
   List<Product> trendingProducts = <Product>[];
 
@@ -30,9 +32,19 @@ class HomeController extends ControllerMVC {
     listenForTopMarkets();
     listenForTrendingProducts();
     listenForCategories();
+    listenForSlides();
     listenForPopularMarkets();
     listenForRecentReviews();
     listenForCountReviews("1");
+  }
+
+  Future<void> listenForSlides() async {
+    final Stream<Slide> stream = await getSlides();
+    stream.listen((Slide _slide) {
+      setState(() => slides.add(_slide));
+    }, onError: (a) {
+      print(a);
+    }, onDone: () {});
   }
 
   void listenForGalleries(String idMarket) async {
@@ -109,6 +121,7 @@ class HomeController extends ControllerMVC {
       recentReviews = <Review>[];
       trendingProducts = <Product>[];
     });
+    await listenForSlides();
     await listenForGalleries("1");
     await listenForTopMarkets();
     await listenForTrendingProducts();

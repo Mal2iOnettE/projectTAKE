@@ -54,23 +54,25 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      /*  TextFormField(
-                        keyboardType: TextInputType.text,
-                        onSaved: (input) => _con.user.name = input,
-                        validator: (input) => input.length < 3 ? S.of(context).should_be_more_than_3_letters : null,
-                        decoration: InputDecoration(
-                          labelText: S.of(context).full_name,
-                          labelStyle: TextStyle(color: Colors.grey),
-                          contentPadding: EdgeInsets.all(12),
-                          hintText: S.of(context).john_doe,
-                          hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                          prefixIcon: Icon(Icons.person_outline, color: Theme.of(context).accentColor),
-                          border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                        ),
-                      ),*/
-                      //SizedBox(height: 30),
+                       Padding( padding: EdgeInsets.only(right: 27, left: 27),
+                         child: TextFormField(
+                          keyboardType: TextInputType.text,
+                          onSaved: (input) => _con.user.name = input,
+                          validator: (input) => input.length < 3 ? S.of(context).should_be_more_than_3_letters : null,
+                          decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white70,
+                              labelText: S.of(context).full_name,
+                              labelStyle: TextStyle(color: Colors.grey),
+                              contentPadding: EdgeInsets.all(18),
+                              hintText: 'Name',
+                              hintStyle: TextStyle(color: Colors.grey),
+                              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
+                              enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                            ),
+                      ),
+                       ),
+                      SizedBox(height: 30),
                       Padding(
                         padding: EdgeInsets.only(right: 27, left: 27),
                         child: TextFormField(
@@ -123,7 +125,7 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                       ),
 
                       SizedBox(height: 30),
-
+/*
                       Padding(
                         padding: EdgeInsets.only(right: 27, left: 27),
                         child: TextFormField(
@@ -142,7 +144,7 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                             enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
                           ),
                         ),
-                      ),
+                      ),*/
                       SizedBox(height: 35),
 
                     // Next Button
@@ -160,7 +162,7 @@ class _SignUpWidget2State extends StateMVC<SignUpWidget2> {
                             color: Theme.of(context).accentColor,
                             onPressed: () {
                               _con.register();
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MobileVerification2()));
+                              //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MobileVerification2()));
                             },
                           ),
                         ),

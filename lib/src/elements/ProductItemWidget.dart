@@ -64,12 +64,18 @@ class ProductItemWidget extends StatelessWidget {
                               style: Theme.of(context).textTheme.headline4,
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 8.0,bottom:3),
+                              padding: const EdgeInsets.only(left: 8.0, bottom: 3),
                               child: product.discountPrice > 0
                                   ? Helper.getPrice(product.discountPrice, context,
                                       style: Theme.of(context).textTheme.bodyText2.merge(TextStyle(decoration: TextDecoration.lineThrough)))
                                   : SizedBox(height: 0),
                             ),
+                            Helper.getDiscpuntPercent(
+                          product.price,
+                          product.discountPrice,
+                          context,
+                          style: Theme.of(context).textTheme.bodyText1.merge(TextStyle(color: Theme.of(context).primaryColor)),
+                        ),
                           ],
                         ),
                       ],
