@@ -150,10 +150,10 @@ class Helper {
 
     var sum = (discoutAfter / discountprice);
     var finalpercent = sum * 100;
-     print("myPrice ${myPrice}");
-    print("discountprice ${discoutAfter}");
-    print("subtrac ${sum}");
-    print("percent ${finalpercent}");
+    //  print("myPrice ${myPrice}");
+    // print("discountprice ${discoutAfter}");
+    // print("subtrac ${sum}");
+    // print("percent ${finalpercent}");
     
 
     if (style != null) {
