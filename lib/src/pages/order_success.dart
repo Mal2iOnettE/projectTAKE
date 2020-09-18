@@ -34,6 +34,12 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
 
   @override
   Widget build(BuildContext context) {
+
+    var sub = _con.subTotal;
+   
+    var fee = _con.deliveryFee;
+
+    var subwithfee = sub + fee;
     return Scaffold(
         key: _con.scaffoldKey,
         appBar: AppBar(
@@ -193,9 +199,10 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                                     style: Theme.of(context).textTheme.headline6,
                                   ),
                                 ),
-                                Helper.getPrice(_con.total,context, style: Theme.of(context).textTheme.headline6)
+                                Helper.getPrice(subwithfee,context, style: Theme.of(context).textTheme.headline6)
                               ],
                             ),
+                            
                             SizedBox(height: 20),
                             SizedBox(
                               width: MediaQuery.of(context).size.width - 40,

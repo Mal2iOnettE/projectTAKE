@@ -18,7 +18,7 @@ class CartBottomDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var sub = _con.subTotal;
-    var tax = _con.taxAmount;
+   
     var fee = _con.deliveryFee;
 
     var subwithfee = sub + fee;

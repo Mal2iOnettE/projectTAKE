@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:markets/src/pages/Intro.dart';
+import 'package:markets/src/pages/OtherPage.dart';
 import 'package:markets/src/pages/collection.dart';
 import 'package:markets/src/pages/details2.dart';
 
@@ -130,10 +131,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => FavoritesWidget());
       case '/AllRestaurant':
         return MaterialPageRoute(builder: (_) => AllRestaurant());
-        case '/Support':
-      return MaterialPageRoute(builder: (_) => Support());
-
-
+      case '/Support':
+        return MaterialPageRoute(builder: (_) => Support());
+      case '/OtherPage':
+        return MaterialPageRoute(builder: (_) => OtherPage());
       default:
 
         // If there is no such named route in the switch statement, e.g. /third
