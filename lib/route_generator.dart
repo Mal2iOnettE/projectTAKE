@@ -3,6 +3,7 @@ import 'package:markets/src/pages/Intro.dart';
 import 'package:markets/src/pages/OtherPage.dart';
 import 'package:markets/src/pages/collection.dart';
 import 'package:markets/src/pages/details2.dart';
+import 'package:markets/src/pages/order_success2.dart';
 
 import 'src/models/route_argument.dart';
 import 'src/pages/Prelogin.dart';
@@ -92,9 +93,9 @@ class RouteGenerator {
       case '/Checkout':
         return MaterialPageRoute(builder: (_) => CheckoutWidget());
       case '/CashOnDelivery':
-        return MaterialPageRoute(builder: (_) => OrderSuccessWidget(routeArgument: RouteArgument(param: 'Cash on Delivery')));
+        return MaterialPageRoute(builder: (_) => OrderSuccess2Widget(routeArgument: RouteArgument(param: 'Cash on Delivery')));
       case '/PayOnPickup':
-        return MaterialPageRoute(builder: (_) => OrderSuccessWidget(routeArgument: RouteArgument(param: 'Pay on Pickup')));
+        return MaterialPageRoute(builder: (_) => OrderSuccess2Widget(routeArgument: RouteArgument(param: 'Pay on Pickup')));
       case '/PayPal':
         return MaterialPageRoute(builder: (_) => PayPalPaymentWidget(routeArgument: args as RouteArgument));
       case '/RazorPay':

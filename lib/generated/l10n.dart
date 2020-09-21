@@ -1529,7 +1529,7 @@ class S {
     );
   }
 
-   String get deliveryTo {
+  String get deliveryTo {
     return Intl.message(
       'Delivery to',
       name: 'deliveryTo',
@@ -2301,18 +2301,16 @@ class S {
       desc: '',
       args: [],
     );
-}
+  }
 
-String get ordersomethingelse {
+  String get ordersomethingelse {
     return Intl.message(
       'Order something else',
       name: 'ordersomethingelse',
       desc: '',
       args: [],
-
     );
-}
- 
+  }
 
   String get validCouponCode {
     return Intl.message(
@@ -2341,7 +2339,7 @@ String get ordersomethingelse {
     );
   }
 
-String get myorderdelivered {
+  String get myorderdelivered {
     return Intl.message(
       'My order did not delivered',
       name: 'myorderdelivered',
@@ -2404,10 +2402,28 @@ String get myorderdelivered {
     );
   }
 
-    String get paymentmethods {
+  String get paymentmethods {
     return Intl.message(
       'Payment Methods',
       name: 'paymentmethods',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get track_my_order {
+    return Intl.message(
+      'Trcak My Order',
+      name: 'track_my_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get order_something_else {
+    return Intl.message(
+      'Order Somthing else',
+      name: 'order_something_else',
       desc: '',
       args: [],
     );

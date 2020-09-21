@@ -144,7 +144,7 @@ class Helper {
     }
   }
 
-  static Widget getDiscpuntPercent(double myPrice, double discountprice, BuildContext context, {TextStyle style}) {
+  static Widget getDiscountPercent(double myPrice, double discountprice, BuildContext context, {TextStyle style}) {
     
     var discoutAfter = myPrice - discountprice;
 
