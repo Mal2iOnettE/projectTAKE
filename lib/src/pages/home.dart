@@ -135,6 +135,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Column(
+
+            
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,

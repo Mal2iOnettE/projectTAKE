@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_map_location_picker/google_map_location_picker.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:markets/src/elements/DeliveryAddressBottomSheetWidget.dart';
+import 'package:markets/src/elements/DeliveryAddressChange.dart';
 import 'package:markets/src/repository/settings_repository.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
@@ -16,6 +18,7 @@ import '../helpers/helper.dart';
 import '../models/address.dart';
 import '../models/payment_method.dart';
 import '../models/route_argument.dart';
+import '../repository/settings_repository.dart' as settingsRepo;
 
 class DeliveryPickupWidget extends StatefulWidget {
   final RouteArgument routeArgument;
@@ -31,6 +34,16 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
 
   _DeliveryPickupWidgetState() : super(DeliveryPickupController()) {
     _con = controller;
+  }
+
+  var bottomSheetController;
+  var newAddress;
+  _refreshAction() {
+    setState(() {
+      bottomSheetController.closed.then((value) {
+        settingsRepo.deliveryAddress.value?.address;
+      });
+    });
   }
 
   @override
@@ -124,34 +137,71 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                           ),
                   ),
                 ),
-                _con.carts.isNotEmpty && Helper.canDelivery(_con.carts[0].product.market, carts: _con.carts)
-                    ? DeliveryAddressesItemWidget(
-                        paymentMethod: _con.getDeliveryMethod(),
-                        address: _con.deliveryAddress,
-                        onPressed: (Address _address) {
-                          if (_con.deliveryAddress.id == null || _con.deliveryAddress.id == 'null') {
-                            DeliveryAddressDialog(
-                              context: context,
-                              address: _address,
-                              onChanged: (Address _address) {
-                                _con.addAddress(_address);
-                              },
-                            );
-                          } else {
-                            _con.toggleDelivery();
-                          }
-                        },
-                        onLongPress: (Address _address) {
-                          DeliveryAddressDialog(
-                            context: context,
-                            address: _address,
-                            onChanged: (Address _address) {
-                              _con.updateAddress(_address);
+                Column(
+                  children: [
+                    _con.carts.isNotEmpty && Helper.canDelivery(_con.carts[0].product.market, carts: _con.carts)
+                        ? DeliveryAddressesItemWidget(
+                            paymentMethod: _con.getDeliveryMethod(),
+                            address: _con.deliveryAddress,
+                            onPressed: (Address _address) {
+                              if (_con.deliveryAddress.id == null || _con.deliveryAddress.id == 'null') {
+                                DeliveryAddressDialog(
+                                    context: context,
+                                    address: _address,
+                                    onChanged: (Address _address) {
+                                      _con.addAddress(_address);
+                                      settingsRepo.deliveryAddress.value?.address;
+                                    });
+                                if (settingsRepo.deliveryAddress.value?.address != null)
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 5),
+                                    child: Text(
+                                      (settingsRepo.deliveryAddress.value?.address),
+                                      style: Theme.of(context).textTheme.caption,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  );
+                              } else {
+                                _con.toggleDelivery();
+                              }
                             },
+                            onLongPress: (Address _address) {
+                              DeliveryAddressDialog(
+                                context: context,
+                                address: _address,
+                                onChanged: (Address _address) {
+                                  _con.updateAddress(_address);
+                                },
+                              );
+                            },
+                          )
+                        : NotDeliverableAddressesItemWidget(),
+                    FlatButton(
+                        onPressed: () {
+                          // DeliveryAddressChange(
+                          //   context: context,
+                          //   address: _con.deliveryAddress,
+                          //   onChanged: (Address _address) {
+                          //     _con.changeAddress(_address);
+                          //   },
+                          // );
+                          //Navigator.of(context).pop();
+                          bottomSheetController = _con.scaffoldKey.currentState.showBottomSheet(
+                            (context) => DeliveryAddressBottomSheetWidget(scaffoldKey: _con.scaffoldKey),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                            ),
                           );
+                          bottomSheetController.closed.then((value) {
+                            settingsRepo.deliveryAddress.value?.address = newAddress;
+                          });
                         },
-                      )
-                    : NotDeliverableAddressesItemWidget()
+                        child: Text(
+                          "Change new Address",
+                          style: TextStyle(color: Theme.of(context).accentColor),
+                        )),
+                  ],
+                )
               ],
             )
           ],

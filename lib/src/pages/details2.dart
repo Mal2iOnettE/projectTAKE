@@ -54,7 +54,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: _con.scaffoldKey,
-       /* appBar: AppBar(
+        /* appBar: AppBar(
           automaticallyImplyLeading: false,
           leading: IconButton(
             onPressed: () {
@@ -266,6 +266,26 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
 
                         searchBarMarket(),
                         //SearchBarWidget(),
+                        ////Sales Items
+                        ListTile(
+                          dense: true,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                          leading: Icon(
+                            Icons.trending_up,
+                            color: Theme.of(context).hintColor,
+                          ),
+                          title: Text(
+                            S.of(context).trending_this_week,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                          subtitle: Text(
+                            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
+                            maxLines: 2,
+                            style: Theme.of(context).textTheme.caption,
+                          ),
+                        ),
+
+                        ///Product slides
                         Container(
                             height: 200,
                             padding: EdgeInsets.symmetric(vertical: 10),
@@ -282,6 +302,28 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                 );
                               },
                             )),
+
+                            ///All manu
+                           ListTile(
+                          dense: true,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                          leading: Icon(
+                            Icons.trending_up,
+                            color: Theme.of(context).hintColor,
+                          ),
+                          title: Text(
+                            S.of(context).trending_this_week,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                          subtitle: Text(
+                            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
+                            maxLines: 2,
+                            style: Theme.of(context).textTheme.caption,
+                          ),
+                        ),
+
+
+                        ///Product ListView
                         _con.featuredProducts.isEmpty
                             ? SizedBox(height: 0)
                             : ListView.separated(
@@ -300,6 +342,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                   );
                                 },
                               ),
+
+                        //Review List
                         _con.reviews.isEmpty
                             ? SizedBox(height: 5)
                             : Padding(

@@ -144,16 +144,16 @@ class Helper {
     }
   }
 
-  static Widget getDiscpuntPercent(double myPrice, double discountprice, BuildContext context, {TextStyle style}) {
-    var percent = 100;
+  static Widget getDiscountPercent(double myPrice, double discountprice, BuildContext context, {TextStyle style}) {
+    
     var discoutAfter = myPrice - discountprice;
 
     var sum = (discoutAfter / discountprice);
     var finalpercent = sum * 100;
-     print("myPrice ${myPrice}");
-    print("discountprice ${discoutAfter}");
-    print("subtrac ${sum}");
-    print("percent ${finalpercent}");
+    //  print("myPrice ${myPrice}");
+    // print("discountprice ${discoutAfter}");
+    // print("subtrac ${sum}");
+    // print("percent ${finalpercent}");
     
 
     if (style != null) {
@@ -233,7 +233,7 @@ class Helper {
       total += getTotalOrderPrice(productOrder);
     });
     total += order.deliveryFee;
-    total += order.tax * total / 100;
+    //total += order.tax * total / 100;
     return total;
   }
 

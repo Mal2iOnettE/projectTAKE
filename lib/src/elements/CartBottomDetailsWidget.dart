@@ -18,7 +18,7 @@ class CartBottomDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var sub = _con.subTotal;
-    var tax = _con.taxAmount;
+
     var fee = _con.deliveryFee;
 
     var subwithfee = sub + fee;
@@ -131,6 +131,7 @@ class CartBottomDetailsWidget extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Helper.getPrice(
                           //_con.total,
+
                           subwithfee,
                           context,
                           style: Theme.of(context).textTheme.headline4.merge(TextStyle(color: Theme.of(context).primaryColor)),
