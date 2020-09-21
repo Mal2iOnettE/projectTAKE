@@ -8,19 +8,19 @@ import '../helpers/helper.dart';
 import '../models/payment.dart';
 import '../models/route_argument.dart';
 
-class OrderSuccessWidget extends StatefulWidget {
+class OrderConfirmWidget extends StatefulWidget {
   final RouteArgument routeArgument;
 
-  OrderSuccessWidget({Key key, this.routeArgument}) : super(key: key);
+  OrderConfirmWidget({Key key, this.routeArgument}) : super(key: key);
 
   @override
-  _OrderSuccessWidgetState createState() => _OrderSuccessWidgetState();
+  _OrderConfirmWidgetState createState() => _OrderConfirmWidgetState();
 }
 
-class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
+class _OrderConfirmWidgetState extends StateMVC<OrderConfirmWidget> {
   CheckoutController _con;
 
-  _OrderSuccessWidgetState() : super(CheckoutController()) {
+  _OrderConfirmWidgetState() : super(CheckoutController()) {
     _con = controller;
   }
 
@@ -132,26 +132,26 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                           ],
                         ),
                         SizedBox(height: 15),
-                        // Opacity(
-                        //   opacity: 0.4,
-                        //   child: Text(
-                        //     S
-                        //         .of(context)
-                        //         .your_order_has_been_successfully_submitted,
-                        //     textAlign: TextAlign.center,
-                        //     style: Theme.of(context)
-                        //         .textTheme
-                        //         .headline3
-                        //         .merge(TextStyle(fontWeight: FontWeight.w300)),
-                        //   ),
-                        // ),
+                        Opacity(
+                          opacity: 0.4,
+                          child: Text(
+                            S
+                                .of(context)
+                                .your_order_has_been_successfully_submitted,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline3
+                                .merge(TextStyle(fontWeight: FontWeight.w300)),
+                          ),
+                        ),
                       ],
                     ),
                   ),
                   Positioned(
                     bottom: 0,
                     child: Container(
-                      height: 455,
+                      height: 255,
                       padding:
                           EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                       decoration: BoxDecoration(
@@ -175,16 +175,16 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                           children: <Widget>[
                             Row(
                               children: <Widget>[
-                                // Expanded(
-                                //   child: Text(
-                                //     S.of(context).subtotal,
-                                //     style:
-                                //         Theme.of(context).textTheme.bodyText1,
-                                //   ),
-                                // ),
-                                // Helper.getPrice(_con.subTotal, context,
-                                //     style:
-                                //         Theme.of(context).textTheme.subtitle1)
+                                Expanded(
+                                  child: Text(
+                                    S.of(context).subtotal,
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1,
+                                  ),
+                                ),
+                                Helper.getPrice(_con.subTotal, context,
+                                    style:
+                                        Theme.of(context).textTheme.subtitle1)
                               ],
                             ),
                             SizedBox(height: 3),
@@ -211,73 +211,47 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                                   ),
                             SizedBox(height: 3),
                             Row(
-                                // children: <Widget>[
-                                //   Expanded(
-                                //     child: Text(
-                                //       "${S.of(context).tax} (${_con.carts[0].product.market.defaultTax}%)",
-                                //       style:
-                                //           Theme.of(context).textTheme.bodyText1,
-                                //     ),
-                                //   ),
-                                //   Helper.getPrice(_con.taxAmount, context,
-                                //       style:
-                                //           Theme.of(context).textTheme.subtitle1)
-                                // ],
-                                ),
-                            //Divider(height: 30),
-                            Row(
-                                // children: <Widget>[
-                                //   Expanded(
-                                //     child: Text(
-                                //       S.of(context).total,
-                                //       style:
-                                //           Theme.of(context).textTheme.headline6,
-                                //     ),
-                                //   ),
-                                //   Helper.getPrice(_con.total, context,
-                                //       style:
-                                //           Theme.of(context).textTheme.headline6)
-                                // ],
-                                ),
-                            Image.asset(
-                              'assets/img/tick.png',
-                              height: 100,
-                              width: 100,
-                            ),
-                            SizedBox(height: 3),
-
-                            Center(
-                                child: Text(
-                              'Thank you for your Order',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 25.0),
-                            )),
-                            SizedBox(height: 20),
-                            Opacity(
-                              opacity: 0.4,
-                              child: Center(
+                              children: <Widget>[
+                                Expanded(
                                   child: Text(
-                                'You can track the delivery in the \n"Orders" section ',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 17.0),
-                              )),
+                                    "${S.of(context).tax} (${_con.carts[0].product.market.defaultTax}%)",
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1,
+                                  ),
+                                ),
+                                Helper.getPrice(_con.taxAmount, context,
+                                    style:
+                                        Theme.of(context).textTheme.subtitle1)
+                              ],
                             ),
-                            SizedBox(height: 100),
+                            Divider(height: 30),
+                            Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: Text(
+                                    S.of(context).total,
+                                    style:
+                                        Theme.of(context).textTheme.headline6,
+                                  ),
+                                ),
+                                Helper.getPrice(_con.total, context,
+                                    style:
+                                        Theme.of(context).textTheme.headline6)
+                              ],
+                            ),
+                            SizedBox(height: 20),
                             SizedBox(
                               width: MediaQuery.of(context).size.width - 40,
                               child: FlatButton(
                                 onPressed: () {
-                                  Navigator.of(context)
-                                      .pushNamed('/Track_orders');
+                                  Navigator.of(context).pushNamed('/orders');
                                   // Navigator.of(context).pushNamed('/Pages', arguments: 3);
                                 },
                                 padding: EdgeInsets.symmetric(vertical: 14),
                                 color: Theme.of(context).accentColor,
                                 shape: StadiumBorder(),
                                 child: Text(
-                                  S.of(context).track_my_order,
+                                  S.of(context).my_orders,
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                       color: Theme.of(context).primaryColor),
@@ -285,26 +259,6 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                               ),
                             ),
                             SizedBox(height: 10),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width - 40,
-                              child: OutlineButton(
-                                onPressed: () {
-                                  //Navigator.of(context).pushNamed('/orders');
-                                  Navigator.of(context)
-                                      .pushNamed('/Pages', arguments: 0);
-                                },
-                                padding: EdgeInsets.symmetric(vertical: 14),
-                                color: Theme.of(context).accentColor,
-                                shape: StadiumBorder(),
-                                child: Text(
-                                  S.of(context).Order_something_else,
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(
-                                      //color: Theme.of(context).primaryColor
-                                      color: Colors.pink),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ),

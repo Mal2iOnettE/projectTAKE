@@ -24,7 +24,6 @@ import '../repository/settings_repository.dart' as settingsRepo;
 import '../repository/user_repository.dart';
 import '../elements/FilterWidget.dart';
 
-// ignore: must_be_immutable
 class HomeWidget extends StatefulWidget {
   final GlobalKey<ScaffoldState> parentScaffoldKey;
   List<Market> marketsList;
@@ -179,19 +178,24 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Text(
-                              S.of(context).top_markets,
-                              style: Theme.of(context).textTheme.headline4,
-                              maxLines: 1,
-                              softWrap: false,
-                              overflow: TextOverflow.fade,
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () =>
-                                Navigator.pushNamed(context, '/AllRestaurant'),
-                            child: Text("See all"),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  S.of(context).top_markets,
+                                  style: Theme.of(context).textTheme.headline4,
+                                  maxLines: 1,
+                                  softWrap: false,
+                                  overflow: TextOverflow.fade,
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () => Navigator.pushNamed(
+                                    context, '/AllRestaurant'),
+                                child: Text("See all"),
+                              )
+                            ],
                           )
                         ]),
                   );

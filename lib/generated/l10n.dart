@@ -451,6 +451,33 @@ class S {
     );
   }
 
+  String get track_my_order {
+    return Intl.message(
+      'Track my orders',
+      name: 'Track_my_orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get Order_something_else {
+    return Intl.message(
+      'Order something else',
+      name: 'Order_something_else',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get track_the_delivery {
+    return Intl.message(
+      'You can track the delivery in the "Orders" section',
+      name: 'track_the_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get profile {
     return Intl.message(
       'Profile',
@@ -1531,7 +1558,7 @@ class S {
     );
   }
 
-   String get deliveryTo {
+  String get deliveryTo {
     return Intl.message(
       'Delivery to',
       name: 'deliveryTo',
