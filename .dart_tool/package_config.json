@@ -350,6 +350,18 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "image_ink_well",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/image_ink_well-0.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "inkwell_splash",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/inkwell_splash-0.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "intl",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
       "packageUri": "lib/",
@@ -800,7 +812,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-09-17T05:52:15.329288Z",
+  "generated": "2020-09-22T03:50:23.648165Z",
   "generator": "pub",
   "generatorVersion": "2.9.2"
 }

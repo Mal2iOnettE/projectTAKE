@@ -40,6 +40,8 @@ import 'src/elements/Cuisines.dart';
 import 'src/pages/orders.dart';
 import 'src/pages/favorites.dart';
 import 'src/pages/supportcenter.dart';
+import 'src/pages/takehome.dart';
+import 'src/pages/home.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -130,8 +132,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => FavoritesWidget());
       case '/AllRestaurant':
         return MaterialPageRoute(builder: (_) => AllRestaurant());
-        case '/Support':
+      case '/Support':
       return MaterialPageRoute(builder: (_) => Support());
+      case '/Takehome':
+      return MaterialPageRoute(builder: (_) => Takehome());
+       case '/home':
+      return MaterialPageRoute(builder: (_) => HomeWidget());
 
 
       default:
