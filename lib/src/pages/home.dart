@@ -8,6 +8,8 @@ import 'package:markets/src/elements/promotionsCarouselWidget.dart';
 import 'package:markets/src/models/market.dart';
 import 'package:markets/src/models/media.dart';
 import 'package:markets/src/models/review.dart';
+import 'package:markets/src/pages/TAKE01.dart';
+import 'package:markets/src/pages/TAKE02.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 import '../../generated/l10n.dart';
@@ -41,8 +43,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
   _HomeWidgetState() : super(HomeController()) {
     _con = controller;
   }
-
- 
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +121,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                
                 ],
               ),
             ),
@@ -130,145 +129,181 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
       body:
 
           //Refresh
+
           RefreshIndicator(
         onRefresh: _con.refreshHome,
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Column(
-
-            
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
-            children: List.generate(settingsRepo.setting.value.homeSections.length, (index) {
-              String _homeSection = settingsRepo.setting.value.homeSections.elementAt(index);
-              switch (_homeSection) {
-                case 'slider':
-                  return HomeSliderWidget(slides: _con.slides);
-                case 'search':
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: SearchBarWidget(
-                      onClickFilter: (event) {
-                        widget.parentScaffoldKey.currentState.openEndDrawer();
-                      },
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => TAKE01PAGE()));
+                    },
+                    child: Container(
+                      height: 150.0,
+                      width: 150.0,
+                      child: Card(
+                        color: Colors.red,
+                        child: Text("TAKE01"),
+                      ),
                     ),
-                  );
-                case 'top_markets_heading':
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 10),
-                    child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              S.of(context).top_markets,
-                              style: Theme.of(context).textTheme.headline4,
-                              maxLines: 1,
-                              softWrap: false,
-                              overflow: TextOverflow.fade,
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
-                            child: Text("See all"),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute
+                      (builder: (context) => TAKE02PAGE()));
+                    },
+                    child: Container(
+                      height: 150.0,
+                      width: 150.0,
+                      child: Card(
+                        color: Colors.green,
+                        child: Text("TAKE02"),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: List.generate(settingsRepo.setting.value.homeSections.length, (index) {
+                  String _homeSection = settingsRepo.setting.value.homeSections.elementAt(index);
+                  switch (_homeSection) {
+                    case 'slider':
+                      return HomeSliderWidget(slides: _con.slides);
+                    case 'search':
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: SearchBarWidget(
+                          onClickFilter: (event) {
+                            widget.parentScaffoldKey.currentState.openEndDrawer();
+                          },
+                        ),
+                      );
+                    case 'top_markets_heading':
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 10),
+                        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  S.of(context).top_markets,
+                                  style: Theme.of(context).textTheme.headline4,
+                                  maxLines: 1,
+                                  softWrap: false,
+                                  overflow: TextOverflow.fade,
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
+                                child: Text("See all"),
+                              )
+                            ],
                           )
-                        ],
-                      )
-                    ]),
-                  );
-                case 'top_markets':
-                  return CardsCarouselWidget(marketsList: _con.topMarkets, heroTag: 'home_top_markets');
-                case 'trending_week_heading':
-                  return ListTile(
-                    dense: true,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                    leading: Icon(
-                      Icons.trending_up,
-                      color: Theme.of(context).hintColor,
-                    ),
-                    title: Text(
-                      S.of(context).trending_this_week,
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                    subtitle: Text(
-                      S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
-                      maxLines: 2,
-                      style: Theme.of(context).textTheme.caption,
-                    ),
-                  );
-                case 'trending_week':
-                  return ProductsCarouselWidget(productsList: _con.trendingProducts, heroTag: 'home_product_carousel');
-                case 'categories_heading':
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ListTile(
-                      dense: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 0),
-                      leading: Icon(
-                        Icons.category,
-                        color: Theme.of(context).hintColor,
-                      ),
-                      title: Text(
-                        S.of(context).product_categories,
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ),
-                  );
-                case 'categories':
-                  return CategoriesCarouselWidget(
-                    categories: _con.categories,
-                  );
-                case 'popular_heading':
-                  return Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                    child: ListTile(
-                      dense: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 0),
-                      leading: Icon(
-                        Icons.trending_up,
-                        color: Theme.of(context).hintColor,
-                      ),
-                      title: Text(
-                        S.of(context).most_popular,
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ),
-                  );
-                case 'popular':
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: GridWidget(
-                      marketsList: _con.popularMarkets,
-                      heroTag: 'home_markets',
-                    ),
-                  );
-                case 'recent_reviews_heading':
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ListTile(
-                      dense: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 20),
-                      leading: Icon(
-                        Icons.recent_actors,
-                        color: Theme.of(context).hintColor,
-                      ),
-                      title: Text(
-                        S.of(context).recent_reviews,
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ),
-                  );
-                case 'recent_reviews':
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ReviewsListWidget(reviewsList: _con.recentReviews),
-                  );
-                default:
-                  return SizedBox(height: 0);
-              }
-            }),
+                        ]),
+                      );
+                    case 'top_markets':
+                      return CardsCarouselWidget(marketsList: _con.topMarkets, heroTag: 'home_top_markets');
+                    case 'trending_week_heading':
+                      return ListTile(
+                        dense: true,
+                        contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                        leading: Icon(
+                          Icons.trending_up,
+                          color: Theme.of(context).hintColor,
+                        ),
+                        title: Text(
+                          S.of(context).trending_this_week,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        subtitle: Text(
+                          S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
+                          maxLines: 2,
+                          style: Theme.of(context).textTheme.caption,
+                        ),
+                      );
+                    case 'trending_week':
+                      return ProductsCarouselWidget(productsList: _con.trendingProducts, heroTag: 'home_product_carousel');
+                    case 'categories_heading':
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: ListTile(
+                          dense: true,
+                          contentPadding: EdgeInsets.symmetric(vertical: 0),
+                          leading: Icon(
+                            Icons.category,
+                            color: Theme.of(context).hintColor,
+                          ),
+                          title: Text(
+                            S.of(context).product_categories,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                        ),
+                      );
+                    case 'categories':
+                      return CategoriesCarouselWidget(
+                        categories: _con.categories,
+                      );
+                    case 'popular_heading':
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                        child: ListTile(
+                          dense: true,
+                          contentPadding: EdgeInsets.symmetric(vertical: 0),
+                          leading: Icon(
+                            Icons.trending_up,
+                            color: Theme.of(context).hintColor,
+                          ),
+                          title: Text(
+                            S.of(context).most_popular,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                        ),
+                      );
+                    case 'popular':
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: GridWidget(
+                          marketsList: _con.popularMarkets,
+                          heroTag: 'home_markets',
+                        ),
+                      );
+                    case 'recent_reviews_heading':
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: ListTile(
+                          dense: true,
+                          contentPadding: EdgeInsets.symmetric(vertical: 20),
+                          leading: Icon(
+                            Icons.recent_actors,
+                            color: Theme.of(context).hintColor,
+                          ),
+                          title: Text(
+                            S.of(context).recent_reviews,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                        ),
+                      );
+                    case 'recent_reviews':
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: ReviewsListWidget(reviewsList: _con.recentReviews),
+                      );
+                    default:
+                      return SizedBox(height: 0);
+                  }
+                }),
+              ),
+            ],
           ),
 
           // Column(
