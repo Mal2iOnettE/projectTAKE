@@ -9,17 +9,17 @@ class ListTileMarket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100, width: 300.0,
+      height: 100,
+      width: 300.0,
       child: ListTile(
         title: Text(listmarket.name),
         trailing: Icon(Icons.ac_unit),
         leading: Container(
-          height: 50,width: 50,
+          height: 50,
+          width: 50,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(listmarket.image.url)
-            )
-          ),
+              image:
+                  DecorationImage(image: NetworkImage(listmarket.image.url))),
         ),
       ),
     );

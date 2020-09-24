@@ -2152,6 +2152,15 @@ class S {
     );
   }
 
+  String get clickOnTheProductForMoreDetails {
+    return Intl.message(
+      'Click on the product for more details',
+      name: 'Click on the product for more details',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get tapAgainToLeave {
     return Intl.message(
       'Tap again to leave',
@@ -2237,6 +2246,15 @@ class S {
     return Intl.message(
       'Products',
       name: 'products',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get featuresproducts {
+    return Intl.message(
+      'Features Products',
+      name: 'Features products',
       desc: '',
       args: [],
     );
