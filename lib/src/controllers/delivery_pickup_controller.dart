@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:markets/src/elements/DeliveryAddressBottomSheetWidget.dart';
 
 import '../../generated/l10n.dart';
 import '../models/address.dart' as model;
@@ -42,6 +43,26 @@ class DeliveryPickupController extends CartController {
       setState(() {
         settingRepo.deliveryAddress.value = value;
         this.deliveryAddress = value;
+      });
+    }).whenComplete(() {
+      scaffoldKey?.currentState?.showSnackBar(SnackBar(
+        content: Text(S.of(context).the_address_updated_successfully),
+      ));
+    });
+  }
+
+  void changeAddress(model.Address address) {
+    userRepo.updateAddress(address).then((value) {
+      setState(() {
+        var bottomSheetController = scaffoldKey.currentState.showBottomSheet(
+          (context) => DeliveryAddressBottomSheetWidget(scaffoldKey: scaffoldKey),
+          shape: RoundedRectangleBorder(
+            borderRadius: new BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+          ),
+        );
+        bottomSheetController.closed.then((value) {
+          settingRepo.deliveryAddress.value?.address;
+        });
       });
     }).whenComplete(() {
       scaffoldKey?.currentState?.showSnackBar(SnackBar(

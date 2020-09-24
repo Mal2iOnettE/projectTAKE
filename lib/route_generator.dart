@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:markets/src/pages/Intro.dart';
+import 'package:markets/src/pages/OtherPage.dart';
 import 'package:markets/src/pages/collection.dart';
 import 'package:markets/src/pages/details2.dart';
+<<<<<<< HEAD
 import 'package:markets/src/pages/track_orders.dart';
+=======
+import 'package:markets/src/pages/order_success2.dart';
+>>>>>>> master
 
 import 'src/models/route_argument.dart';
 import 'src/pages/Prelogin.dart';
@@ -107,6 +112,7 @@ class RouteGenerator {
       case '/Checkout':
         return MaterialPageRoute(builder: (_) => CheckoutWidget());
       case '/CashOnDelivery':
+<<<<<<< HEAD
         return MaterialPageRoute(
             builder: (_) => OrderSuccessWidget(
                 routeArgument: RouteArgument(param: 'Cash on Delivery')));
@@ -114,6 +120,11 @@ class RouteGenerator {
         return MaterialPageRoute(
             builder: (_) => OrderSuccessWidget(
                 routeArgument: RouteArgument(param: 'Pay on Pickup')));
+=======
+        return MaterialPageRoute(builder: (_) => OrderSuccess2Widget(routeArgument: RouteArgument(param: 'Cash on Delivery')));
+      case '/PayOnPickup':
+        return MaterialPageRoute(builder: (_) => OrderSuccess2Widget(routeArgument: RouteArgument(param: 'Pay on Pickup')));
+>>>>>>> master
       case '/PayPal':
         return MaterialPageRoute(
             builder: (_) =>
@@ -160,7 +171,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => AllRestaurant());
       case '/Support':
         return MaterialPageRoute(builder: (_) => Support());
+<<<<<<< HEAD
 
+=======
+      case '/OtherPage':
+        return MaterialPageRoute(builder: (_) => OtherPage());
+>>>>>>> master
       default:
 
         // If there is no such named route in the switch statement, e.g. /third

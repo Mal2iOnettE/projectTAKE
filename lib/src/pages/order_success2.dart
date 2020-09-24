@@ -8,19 +8,19 @@ import '../helpers/helper.dart';
 import '../models/payment.dart';
 import '../models/route_argument.dart';
 
-class OrderSuccessWidget extends StatefulWidget {
+class OrderSuccess2Widget extends StatefulWidget {
   final RouteArgument routeArgument;
 
-  OrderSuccessWidget({Key key, this.routeArgument}) : super(key: key);
+  OrderSuccess2Widget({Key key, this.routeArgument}) : super(key: key);
 
   @override
-  _OrderSuccessWidgetState createState() => _OrderSuccessWidgetState();
+  _OrderSuccess2WidgetState createState() => _OrderSuccess2WidgetState();
 }
 
-class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
+class _OrderSuccess2WidgetState extends StateMVC<OrderSuccess2Widget> {
   CheckoutController _con;
 
-  _OrderSuccessWidgetState() : super(CheckoutController()) {
+  _OrderSuccess2WidgetState() : super(CheckoutController()) {
     _con = controller;
   }
 
@@ -34,12 +34,6 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
 
   @override
   Widget build(BuildContext context) {
-
-    var sub = _con.subTotal;
-   
-    var fee = _con.deliveryFee;
-
-    var subwithfee = sub + fee;
     return Scaffold(
         key: _con.scaffoldKey,
         appBar: AppBar(
@@ -216,7 +210,6 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                                     ],
                                   ),
                             SizedBox(height: 3),
-<<<<<<< HEAD
                             Row(
                                 // children: <Widget>[
                                 //   Expanded(
@@ -232,20 +225,6 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                                 // ],
                                 ),
                             //Divider(height: 30),
-=======
-                            // Row(
-                            //   children: <Widget>[
-                            //     Expanded(
-                            //       child: Text(
-                            //         "${S.of(context).tax} (${_con.carts[0].product.market.defaultTax}%)",
-                            //         style: Theme.of(context).textTheme.bodyText1,
-                            //       ),
-                            //     ),
-                            //     //Helper.getPrice(_con.taxAmount, context, style: Theme.of(context).textTheme.subtitle1)
-                            //   ],
-                            // ),
-                            Divider(height: 30),
->>>>>>> master
                             Row(
                                 // children: <Widget>[
                                 //   Expanded(
@@ -260,9 +239,8 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                                 //           Theme.of(context).textTheme.headline6)
                                 // ],
                                 ),
-<<<<<<< HEAD
                             Image.asset(
-                              'assets/img/tick.png',
+                              'assets/img/logo.png',
                               height: 100,
                               width: 100,
                             ),
@@ -274,12 +252,6 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 25.0),
                             )),
-=======
-                                Helper.getPrice(subwithfee,context, style: Theme.of(context).textTheme.headline6)
-                              ],
-                            ),
-                            
->>>>>>> master
                             SizedBox(height: 20),
                             Opacity(
                               opacity: 0.4,
@@ -297,14 +269,9 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                               width: MediaQuery.of(context).size.width - 40,
                               child: FlatButton(
                                 onPressed: () {
-<<<<<<< HEAD
                                   Navigator.of(context)
                                       .pushNamed('/Track_orders');
                                   // Navigator.of(context).pushNamed('/Pages', arguments: 3);
-=======
-                                  //Navigator.of(context).pushNamed('/orders');
-                                 Navigator.of(context).pushNamed('/Pages', arguments: 0);
->>>>>>> master
                                 },
                                 padding: EdgeInsets.symmetric(vertical: 14),
                                 color: Theme.of(context).accentColor,
@@ -330,7 +297,7 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                                 color: Theme.of(context).accentColor,
                                 shape: StadiumBorder(),
                                 child: Text(
-                                  S.of(context).Order_something_else,
+                                  S.of(context).order_something_else,
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                       //color: Theme.of(context).primaryColor

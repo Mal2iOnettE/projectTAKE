@@ -301,6 +301,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
 
                         searchBarMarket(),
                         //SearchBarWidget(),
+<<<<<<< HEAD
 
                         ListTile(
                           dense: true,
@@ -316,10 +317,31 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                           ),
                           subtitle: Text(
                             S.of(context).clickOnTheProductForMoreDetails,
+=======
+                        ////Sales Items
+                        ListTile(
+                          dense: true,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                          leading: Icon(
+                            Icons.trending_up,
+                            color: Theme.of(context).hintColor,
+                          ),
+                          title: Text(
+                            S.of(context).trending_this_week,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                          subtitle: Text(
+                            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
+>>>>>>> master
                             maxLines: 2,
                             style: Theme.of(context).textTheme.caption,
                           ),
                         ),
+<<<<<<< HEAD
+=======
+
+                        ///Product slides
+>>>>>>> master
                         Container(
                             height: 200,
                             padding: EdgeInsets.symmetric(vertical: 10),
@@ -339,6 +361,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                 );
                               },
                             )),
+<<<<<<< HEAD
                         ListTile(
                           dense: true,
                           contentPadding: EdgeInsets.symmetric(
@@ -355,10 +378,28 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                             S
                                 .of(context)
                                 .clickOnTheProductToGetMoreDetailsAboutIt,
+=======
+
+                            ///All manu
+                           ListTile(
+                          dense: true,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                          leading: Icon(
+                            Icons.trending_up,
+                            color: Theme.of(context).hintColor,
+                          ),
+                          title: Text(
+                            S.of(context).trending_this_week,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                          subtitle: Text(
+                            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
+>>>>>>> master
                             maxLines: 2,
                             style: Theme.of(context).textTheme.caption,
                           ),
                         ),
+<<<<<<< HEAD
                         _con.categories.isEmpty
                             ? SizedBox(height: 90)
                             : Container(
@@ -467,6 +508,13 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                               'assets/img/not_found.png'))),
                                 ),
                               )
+=======
+
+
+                        ///Product ListView
+                        _con.featuredProducts.isEmpty
+                            ? SizedBox(height: 0)
+>>>>>>> master
                             : ListView.separated(
                                 scrollDirection: Axis.vertical,
                                 shrinkWrap: true,
@@ -482,6 +530,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                   );
                                 },
                               ),
+<<<<<<< HEAD
                         // _con.featuredProducts.isEmpty
                         //     ? SizedBox(height: 0)
                         //     : ListView.separated(
@@ -502,6 +551,10 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         //           // );
                         //         },
                         //       ),
+=======
+
+                        //Review List
+>>>>>>> master
                         _con.reviews.isEmpty
                             ? SizedBox(height: 5)
                             : Padding(
