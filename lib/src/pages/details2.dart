@@ -108,7 +108,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                       children: [
                         Stack(
                           // fit: StackFit.loose,
-                          overflow: Overflow.visible,
+                          //overflow: Overflow.visible,
                           children: <Widget>[
                             Positioned(
                               child: Container(
@@ -380,6 +380,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
+          
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: Colors.transparent,
