@@ -2424,13 +2424,28 @@ class S {
     return Intl.message(
       'Order Somthing else',
       name: 'order_something_else',
-      
       desc: '',
       args: [],
     );
   }
 
+  String get take_branch_suwintawong {
+    return Intl.message(
+      'Suwintawong \nBranch',
+      name: 'take_branch_suwintawong',
+      desc: '',
+      args: [],
+    );
+  }
 
+   String get take_maketplace {
+    return Intl.message(
+      'Market\nPlace',
+      name: 'take_maketplace',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

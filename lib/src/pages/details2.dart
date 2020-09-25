@@ -303,8 +303,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               },
                             )),
 
-                            ///All manu
-                           ListTile(
+                        ///All manu
+                        ListTile(
                           dense: true,
                           contentPadding: EdgeInsets.symmetric(horizontal: 20),
                           leading: Icon(
@@ -321,7 +321,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                             style: Theme.of(context).textTheme.caption,
                           ),
                         ),
-
 
                         ///Product ListView
                         _con.featuredProducts.isEmpty
@@ -380,7 +379,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: Colors.transparent,

@@ -800,19 +800,7 @@
       "languageVersion": "2.2"
     }
   ],
-<<<<<<< HEAD
-  "generated": "2020-09-25T02:31:40.816977Z",
-=======
-<<<<<<< HEAD
-  "generated": "2020-09-24T08:34:57.367875Z",
-=======
-<<<<<<< HEAD
-  "generated": "2020-09-21T08:15:30.618486Z",
-=======
-  "generated": "2020-09-21T07:25:44.567426Z",
->>>>>>> 01f308ce98065ed9c49310958aace3934bba2bee
->>>>>>> 1f390ecb630828cfe5f6d3657c2857f634b2f469
->>>>>>> fdca839a2bd4c95983570bf63226b3848e9fb727
+  "generated": "2020-09-25T02:44:52.657243Z",
   "generator": "pub",
   "generatorVersion": "2.10.0-136.0.dev"
 }

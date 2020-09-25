@@ -24,6 +24,8 @@ class Address {
     }
   }
 
+
+
   bool isUnknown() {
     return latitude == null || longitude == null;
   }
