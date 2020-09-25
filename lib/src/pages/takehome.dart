@@ -24,7 +24,7 @@ class _TakehomeState extends State<Takehome> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ImageInkWell(
-                        onPressed:() => Navigator.pushNamed(context, '/home'),
+                        onPressed:() => Navigator.pushNamed(context, '/Home2'),
                         width: 150,
                         height: 80,
                         image: NetworkImage(
@@ -40,7 +40,7 @@ class _TakehomeState extends State<Takehome> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ImageInkWell(
-                        onPressed:() => Navigator.pushNamed(context, '/AllRestaurant'),
+                        onPressed:() => Navigator.pushNamed(context, '/Marketplace'),
                         width: 150,
                         height: 80,
                         image: NetworkImage(

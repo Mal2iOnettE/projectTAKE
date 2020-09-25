@@ -167,7 +167,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                       );
                     case 'top_markets_heading':
                       return Padding(
-                        padding: const EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 10),
+                        padding: const EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
                         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

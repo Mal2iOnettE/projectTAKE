@@ -42,6 +42,8 @@ import 'src/pages/favorites.dart';
 import 'src/pages/supportcenter.dart';
 import 'src/pages/takehome.dart';
 import 'src/pages/home.dart';
+import 'src/pages/Home2.dart';
+import 'src/pages/Marketplace.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -138,6 +140,11 @@ class RouteGenerator {
       return MaterialPageRoute(builder: (_) => Takehome());
        case '/home':
       return MaterialPageRoute(builder: (_) => HomeWidget());
+      case '/Home2':
+      return MaterialPageRoute(builder: (_) => Home2Widget());
+      case '/Marketplace':
+      return MaterialPageRoute(builder: (_) => Marketplace());
+
 
 
       default:
