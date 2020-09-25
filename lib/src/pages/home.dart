@@ -134,7 +134,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Column(
             children: [
-              SelectionPages(),
+              Padding(
+                padding: const EdgeInsets.only(bottom:20.0),
+                child: SelectionPages(),
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
