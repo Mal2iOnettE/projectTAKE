@@ -8,7 +8,13 @@ import 'package:markets/src/elements/promotionsCarouselWidget.dart';
 import 'package:markets/src/models/market.dart';
 import 'package:markets/src/models/media.dart';
 import 'package:markets/src/models/review.dart';
+<<<<<<< HEAD
 import 'package:markets/src/pages/takehome.dart';
+=======
+import 'package:markets/src/pages/TAKE01.dart';
+import 'package:markets/src/pages/TAKE02.dart';
+import 'package:markets/src/pages/selectionPage.dart';
+>>>>>>> origin/master
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 import '../../generated/l10n.dart';
@@ -43,8 +49,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
     _con = controller;
   }
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +66,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           builder: (context, value, child) {
             return Text(
               value.appName ?? S.of(context).home,
-              style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+              style: Theme.of(context).textTheme.headline2.merge(TextStyle(letterSpacing: 1.3)),
             );
           },
         ),
@@ -122,7 +126,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                
                 ],
               ),
             ),
@@ -131,15 +134,20 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
 
       
       body:
+<<<<<<< HEAD
 
      
 
           //Refresh
           RefreshIndicator(
+=======
+      RefreshIndicator(
+>>>>>>> origin/master
         onRefresh: _con.refreshHome,
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Column(
+<<<<<<< HEAD
               
             
 
@@ -147,6 +155,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
 
                  Takehome(),
 
+=======
+            children: [
+              SelectionPages(),
+>>>>>>> origin/master
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -155,19 +167,33 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                   String _homeSection = settingsRepo.setting.value.homeSections.elementAt(index);
                   switch (_homeSection) {
                     case 'slider':
+<<<<<<< HEAD
                       return HomeSliderWidget(slides: _con.slides);  
+=======
+                      return HomeSliderWidget(slides: _con.slides);
+>>>>>>> origin/master
                     case 'search':
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: SearchBarWidget(
+<<<<<<< HEAD
                           onClickFilter: (event) {
                             widget.parentScaffoldKey.currentState.openEndDrawer();
                           },
+=======
+                          // onClickFilter: (event) {
+                          //   widget.parentScaffoldKey.currentState.openEndDrawer();
+                          // },
+>>>>>>> origin/master
                         ),
                       );
                     case 'top_markets_heading':
                       return Padding(
+<<<<<<< HEAD
                         padding: const EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
+=======
+                        padding: const EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 10),
+>>>>>>> origin/master
                         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

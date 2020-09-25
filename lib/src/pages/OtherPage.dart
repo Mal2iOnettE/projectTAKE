@@ -213,7 +213,9 @@ class _OtherPageState extends StateMVC<OtherPage> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () => logout().then(
-                    (value) => Navigator.of(context).pushNamed('/Pages', arguments: 0),
+                    (value) => Future.delayed(Duration.zero, () {
+                      Navigator.of(context).pushNamed('/Pages', arguments: 0);
+                    }),
                   ),
                   color: Theme.of(context).accentColor,
                 ),

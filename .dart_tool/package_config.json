@@ -812,7 +812,13 @@
       "languageVersion": "2.2"
     }
   ],
+<<<<<<< HEAD
   "generated": "2020-09-25T09:25:56.476101Z",
   "generator": "pub",
   "generatorVersion": "2.9.2"
+=======
+  "generated": "2020-09-25T02:44:52.657243Z",
+  "generator": "pub",
+  "generatorVersion": "2.10.0-136.0.dev"
+>>>>>>> origin/master
 }

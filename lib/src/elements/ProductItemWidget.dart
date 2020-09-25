@@ -70,7 +70,7 @@ class ProductItemWidget extends StatelessWidget {
                                       style: Theme.of(context).textTheme.bodyText2.merge(TextStyle(decoration: TextDecoration.lineThrough)))
                                   : SizedBox(height: 0),
                             ),
-                            Helper.getDiscpuntPercent(
+                            Helper.getDiscountPercent(
                           product.price,
                           product.discountPrice,
                           context,

@@ -34,6 +34,12 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
 
   @override
   Widget build(BuildContext context) {
+
+    var sub = _con.subTotal;
+   
+    var fee = _con.deliveryFee;
+
+    var subwithfee = sub + fee;
     return Scaffold(
         key: _con.scaffoldKey,
         appBar: AppBar(
@@ -173,17 +179,17 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                                     ],
                                   ),
                             SizedBox(height: 3),
-                            Row(
-                              children: <Widget>[
-                                Expanded(
-                                  child: Text(
-                                    "${S.of(context).tax} (${_con.carts[0].product.market.defaultTax}%)",
-                                    style: Theme.of(context).textTheme.bodyText1,
-                                  ),
-                                ),
-                                Helper.getPrice(_con.taxAmount, context, style: Theme.of(context).textTheme.subtitle1)
-                              ],
-                            ),
+                            // Row(
+                            //   children: <Widget>[
+                            //     Expanded(
+                            //       child: Text(
+                            //         "${S.of(context).tax} (${_con.carts[0].product.market.defaultTax}%)",
+                            //         style: Theme.of(context).textTheme.bodyText1,
+                            //       ),
+                            //     ),
+                            //     //Helper.getPrice(_con.taxAmount, context, style: Theme.of(context).textTheme.subtitle1)
+                            //   ],
+                            // ),
                             Divider(height: 30),
                             Row(
                               children: <Widget>[
@@ -193,16 +199,17 @@ class _OrderSuccessWidgetState extends StateMVC<OrderSuccessWidget> {
                                     style: Theme.of(context).textTheme.headline6,
                                   ),
                                 ),
-                                Helper.getPrice(_con.total, context, style: Theme.of(context).textTheme.headline6)
+                                Helper.getPrice(subwithfee,context, style: Theme.of(context).textTheme.headline6)
                               ],
                             ),
+                            
                             SizedBox(height: 20),
                             SizedBox(
                               width: MediaQuery.of(context).size.width - 40,
                               child: FlatButton(
                                 onPressed: () {
-                                  Navigator.of(context).pushNamed('/orders');
-                                 // Navigator.of(context).pushNamed('/Pages', arguments: 3);
+                                  //Navigator.of(context).pushNamed('/orders');
+                                 Navigator.of(context).pushNamed('/Pages', arguments: 0);
                                 },
                                 padding: EdgeInsets.symmetric(vertical: 14),
                                 color: Theme.of(context).accentColor,
