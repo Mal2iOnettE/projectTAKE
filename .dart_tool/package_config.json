@@ -812,11 +812,7 @@
       "languageVersion": "2.2"
     }
   ],
-<<<<<<< HEAD
-  "generated": "2020-09-25T08:50:21.966480Z",
-=======
-  "generated": "2020-09-25T08:46:19.117872Z",
->>>>>>> master
+  "generated": "2020-09-25T09:22:59.818372Z",
   "generator": "pub",
   "generatorVersion": "2.9.2"
 }
