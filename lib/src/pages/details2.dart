@@ -108,7 +108,7 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                       children: [
                         Stack(
                           // fit: StackFit.loose,
-                          overflow: Overflow.visible,
+                          //overflow: Overflow.visible,
                           children: <Widget>[
                             Positioned(
                               child: Container(
@@ -303,8 +303,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                               },
                             )),
 
-                            ///All manu
-                           ListTile(
+                        ///All manu
+                        ListTile(
                           dense: true,
                           contentPadding: EdgeInsets.symmetric(horizontal: 20),
                           leading: Icon(
@@ -321,7 +321,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                             style: Theme.of(context).textTheme.caption,
                           ),
                         ),
-
 
                         ///Product ListView
                         _con.featuredProducts.isEmpty
