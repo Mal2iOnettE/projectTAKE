@@ -137,7 +137,6 @@ class RouteGenerator {
       case '/AllRestaurant':
         return MaterialPageRoute(builder: (_) => AllRestaurant());
       case '/Support':
-<<<<<<< HEAD
       return MaterialPageRoute(builder: (_) => Support());
       case '/Takehome':
       return MaterialPageRoute(builder: (_) => Takehome());
@@ -150,11 +149,6 @@ class RouteGenerator {
 
 
 
-=======
-        return MaterialPageRoute(builder: (_) => Support());
-      case '/OtherPage':
-        return MaterialPageRoute(builder: (_) => OtherPage());
->>>>>>> origin/master
       default:
 
         // If there is no such named route in the switch statement, e.g. /third
