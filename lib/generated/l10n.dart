@@ -14,7 +14,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -444,6 +446,33 @@ class S {
     return Intl.message(
       'My Orders',
       name: 'my_orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get track_my_order {
+    return Intl.message(
+      'Track my orders',
+      name: 'Track_my_orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get Order_something_else {
+    return Intl.message(
+      'Order something else',
+      name: 'Order_something_else',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get track_the_delivery {
+    return Intl.message(
+      'You can track the delivery in the "Orders" section',
+      name: 'track_the_delivery',
       desc: '',
       args: [],
     );
@@ -2123,6 +2152,15 @@ class S {
     );
   }
 
+  String get clickOnTheProductForMoreDetails {
+    return Intl.message(
+      'Click on the product for more details',
+      name: 'Click on the product for more details',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get tapAgainToLeave {
     return Intl.message(
       'Tap again to leave',
@@ -2208,6 +2246,15 @@ class S {
     return Intl.message(
       'Products',
       name: 'products',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get featuresproducts {
+    return Intl.message(
+      'Features Products',
+      name: 'Features products',
       desc: '',
       args: [],
     );
@@ -2420,15 +2467,6 @@ class S {
     );
   }
 
-  String get track_my_order {
-    return Intl.message(
-      'Trcak My Order',
-      name: 'track_my_order',
-      desc: '',
-      args: [],
-    );
-  }
-
   String get order_something_else {
     return Intl.message(
       'Order Somthing else',
@@ -2437,6 +2475,7 @@ class S {
       args: [],
     );
   }
+<<<<<<< HEAD
 
   String get take_branch_suwintawong {
     return Intl.message(
@@ -2455,6 +2494,8 @@ class S {
       args: [],
     );
   }
+=======
+>>>>>>> checked
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

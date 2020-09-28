@@ -55,15 +55,19 @@ class _PagesWidgetState extends State<PagesWidget> {
       widget.currentTab = tabItem;
       switch (tabItem) {
         case 0:
-          widget.currentPage = HomeWidget(parentScaffoldKey: widget.scaffoldKey);
+          widget.currentPage =
+              HomeWidget(parentScaffoldKey: widget.scaffoldKey);
           //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
           break;
         case 1:
           //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
-          widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
+          widget.currentPage = MapWidget(
+              parentScaffoldKey: widget.scaffoldKey,
+              routeArgument: widget.routeArgument);
           break;
         case 2:
-          widget.currentPage = FavoritesWidget(parentScaffoldKey: widget.scaffoldKey);
+          widget.currentPage =
+              FavoritesWidget(parentScaffoldKey: widget.scaffoldKey);
           //widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
           break;
         case 3:
@@ -84,7 +88,8 @@ class _PagesWidgetState extends State<PagesWidget> {
         key: widget.scaffoldKey,
         drawer: DrawerWidget(),
         endDrawer: FilterWidget(onFilter: (filter) {
-          Navigator.of(context).pushReplacementNamed('/pages', arguments: widget.currentTab);
+          Navigator.of(context)
+              .pushReplacementNamed('/pages', arguments: widget.currentTab);
         }),
         body: widget.currentPage,
         bottomNavigationBar: BottomNavigationBar(
@@ -104,8 +109,7 @@ class _PagesWidgetState extends State<PagesWidget> {
           // this will be set when a new tab is tapped
           items: [
             BottomNavigationBarItem(
-              title: new Container(height: 5.0), 
-              icon: new Icon(Icons.home)),
+                title: new Container(height: 5.0), icon: new Icon(Icons.home)),
             BottomNavigationBarItem(
               icon: Icon(Icons.map),
               title: new Container(height: 0.0),
@@ -115,7 +119,6 @@ class _PagesWidgetState extends State<PagesWidget> {
               title: new Container(height: 0.0),
             ),
             BottomNavigationBarItem(
-              
               icon: new Icon(Icons.person),
               title: new Container(height: 0.0),
             ),

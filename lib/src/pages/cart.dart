@@ -46,9 +46,12 @@ class _CartWidgetState extends StateMVC<CartWidget> {
           leading: IconButton(
             onPressed: () {
               if (widget.routeArgument != null) {
-                Navigator.of(context).pushReplacementNamed(widget.routeArgument.param, arguments: RouteArgument(id: widget.routeArgument.id));
+                Navigator.of(context).pushReplacementNamed(
+                    widget.routeArgument.param,
+                    arguments: RouteArgument(id: widget.routeArgument.id));
               } else {
-                Navigator.of(context).pushReplacementNamed('/Pages', arguments: 0);
+                Navigator.of(context)
+                    .pushReplacementNamed('/Pages', arguments: 0);
               }
             },
             icon: Icon(Icons.arrow_back),
@@ -59,7 +62,10 @@ class _CartWidgetState extends StateMVC<CartWidget> {
           centerTitle: true,
           title: Text(
             S.of(context).cart,
-            style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+            style: Theme.of(context)
+                .textTheme
+                .headline6
+                .merge(TextStyle(letterSpacing: 1.3)),
           ),
         ),
         body: RefreshIndicator(
@@ -85,7 +91,9 @@ class _CartWidgetState extends StateMVC<CartWidget> {
                               style: Theme.of(context).textTheme.headline4,
                             ),
                             subtitle: Text(
-                              S.of(context).verify_your_quantity_and_click_checkout,
+                              S
+                                  .of(context)
+                                  .verify_your_quantity_and_click_checkout,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context).textTheme.caption,
@@ -106,13 +114,16 @@ class _CartWidgetState extends StateMVC<CartWidget> {
                               cart: _con.carts.elementAt(index),
                               heroTag: 'cart',
                               increment: () {
-                                _con.incrementQuantity(_con.carts.elementAt(index));
+                                _con.incrementQuantity(
+                                    _con.carts.elementAt(index));
                               },
                               decrement: () {
-                                _con.decrementQuantity(_con.carts.elementAt(index));
+                                _con.decrementQuantity(
+                                    _con.carts.elementAt(index));
                               },
                               onDismissed: () {
-                                _con.removeFromCart(_con.carts.elementAt(index));
+                                _con.removeFromCart(
+                                    _con.carts.elementAt(index));
                               },
                             );
                           },
