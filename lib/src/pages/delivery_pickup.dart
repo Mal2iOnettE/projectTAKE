@@ -147,62 +147,41 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                           ),
                   ),
                 ),
-<<<<<<< HEAD
-                _con.carts.isNotEmpty &&
-                        Helper.canDelivery(_con.carts[0].product.market,
-                            carts: _con.carts)
-                    ? DeliveryAddressesItemWidget(
-                        paymentMethod: _con.getDeliveryMethod(),
-                        address: _con.deliveryAddress,
-                        onPressed: (Address _address) {
-                          if (_con.deliveryAddress.id == null ||
-                              _con.deliveryAddress.id == 'null') {
-                            DeliveryAddressDialog(
-                              context: context,
-                              address: _address,
-                              onChanged: (Address _address) {
-                                _con.addAddress(_address);
-                              },
-                            );
-                          } else {
-                            _con.toggleDelivery();
-                          }
-                        },
-                        onLongPress: (Address _address) {
-                          DeliveryAddressDialog(
-                            context: context,
-                            address: _address,
-                            onChanged: (Address _address) {
-                              _con.updateAddress(_address);
-=======
                 Column(
                   children: [
-                    _con.carts.isNotEmpty && Helper.canDelivery(_con.carts[0].product.market, carts: _con.carts)
+                    _con.carts.isNotEmpty &&
+                            Helper.canDelivery(_con.carts[0].product.market,
+                                carts: _con.carts)
                         ? DeliveryAddressesItemWidget(
                             paymentMethod: _con.getDeliveryMethod(),
                             address: _con.deliveryAddress,
                             onPressed: (Address _address) {
-                              if (_con.deliveryAddress.id == null || _con.deliveryAddress.id == 'null') {
+                              if (_con.deliveryAddress.id == null ||
+                                  _con.deliveryAddress.id == 'null') {
                                 DeliveryAddressDialog(
                                     context: context,
                                     address: _address,
                                     onChanged: (Address _address) {
                                       _con.addAddress(_address);
-                                      settingsRepo.deliveryAddress.value?.address;
+                                      settingsRepo
+                                          .deliveryAddress.value?.address;
                                     });
-                                if (settingsRepo.deliveryAddress.value?.address != null)
+                                if (settingsRepo
+                                        .deliveryAddress.value?.address !=
+                                    null)
                                   Padding(
                                     padding: const EdgeInsets.only(top: 5),
                                     child: Text(
-                                      (settingsRepo.deliveryAddress.value?.address),
-                                      style: Theme.of(context).textTheme.caption,
+                                      (settingsRepo
+                                          .deliveryAddress.value?.address),
+                                      style:
+                                          Theme.of(context).textTheme.caption,
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                   );
                               } else {
                                 _con.toggleDelivery();
                               }
->>>>>>> master
                             },
                             onLongPress: (Address _address) {
                               DeliveryAddressDialog(
@@ -225,19 +204,25 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                           //   },
                           // );
                           //Navigator.of(context).pop();
-                          bottomSheetController = _con.scaffoldKey.currentState.showBottomSheet(
-                            (context) => DeliveryAddressBottomSheetWidget(scaffoldKey: _con.scaffoldKey),
+                          bottomSheetController =
+                              _con.scaffoldKey.currentState.showBottomSheet(
+                            (context) => DeliveryAddressBottomSheetWidget(
+                                scaffoldKey: _con.scaffoldKey),
                             shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                              borderRadius: new BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10)),
                             ),
                           );
                           bottomSheetController.closed.then((value) {
-                            settingsRepo.deliveryAddress.value?.address = newAddress;
+                            settingsRepo.deliveryAddress.value?.address =
+                                newAddress;
                           });
                         },
                         child: Text(
                           "Change new Address",
-                          style: TextStyle(color: Theme.of(context).accentColor),
+                          style:
+                              TextStyle(color: Theme.of(context).accentColor),
                         )),
                   ],
                 )

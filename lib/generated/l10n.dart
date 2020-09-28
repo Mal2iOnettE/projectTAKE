@@ -2457,30 +2457,15 @@ class S {
       args: [],
     );
   }
-<<<<<<< HEAD
-=======
-
-  String get track_my_order {
-    return Intl.message(
-      'Trcak My Order',
-      name: 'track_my_order',
-      desc: '',
-      args: [],
-    );
-  }
 
   String get order_something_else {
     return Intl.message(
       'Order Somthing else',
       name: 'order_something_else',
-      
       desc: '',
       args: [],
     );
   }
-
-
->>>>>>> master
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

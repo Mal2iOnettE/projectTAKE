@@ -18,13 +18,8 @@ class _TrackordersState extends State<Trackorders> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Image.asset(
-<<<<<<< HEAD
-      'assets/img/Track.png',
-      height: 12,
-=======
       'assets/img/Track_order.png',
       height: 1200,
->>>>>>> master
       width: 500,
       fit: BoxFit.fitWidth,
     ));

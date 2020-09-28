@@ -301,23 +301,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
 
                         searchBarMarket(),
                         //SearchBarWidget(),
-<<<<<<< HEAD
-
-                        ListTile(
-                          dense: true,
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          leading: Icon(
-                            Icons.subject,
-                            color: Theme.of(context).hintColor,
-                          ),
-                          title: Text(
-                            S.of(context).featuresproducts,
-                            style: Theme.of(context).textTheme.headline4,
-                          ),
-                          subtitle: Text(
-                            S.of(context).clickOnTheProductForMoreDetails,
-=======
                         ////Sales Items
                         ListTile(
                           dense: true,
@@ -331,17 +314,15 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                             style: Theme.of(context).textTheme.headline4,
                           ),
                           subtitle: Text(
-                            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
->>>>>>> master
+                            S
+                                .of(context)
+                                .clickOnTheProductToGetMoreDetailsAboutIt,
                             maxLines: 2,
                             style: Theme.of(context).textTheme.caption,
                           ),
                         ),
-<<<<<<< HEAD
-=======
 
                         ///Product slides
->>>>>>> master
                         Container(
                             height: 200,
                             padding: EdgeInsets.symmetric(vertical: 10),
@@ -361,27 +342,9 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                 );
                               },
                             )),
-<<<<<<< HEAD
-                        ListTile(
-                          dense: true,
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          leading: Icon(
-                            Icons.subject,
-                            color: Theme.of(context).hintColor,
-                          ),
-                          title: Text(
-                            S.of(context).products,
-                            style: Theme.of(context).textTheme.headline4,
-                          ),
-                          subtitle: Text(
-                            S
-                                .of(context)
-                                .clickOnTheProductToGetMoreDetailsAboutIt,
-=======
 
-                            ///All manu
-                           ListTile(
+                        ///All manu
+                        ListTile(
                           dense: true,
                           contentPadding: EdgeInsets.symmetric(horizontal: 20),
                           leading: Icon(
@@ -393,128 +356,17 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                             style: Theme.of(context).textTheme.headline4,
                           ),
                           subtitle: Text(
-                            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
->>>>>>> master
+                            S
+                                .of(context)
+                                .clickOnTheProductToGetMoreDetailsAboutIt,
                             maxLines: 2,
                             style: Theme.of(context).textTheme.caption,
                           ),
                         ),
-<<<<<<< HEAD
-                        _con.categories.isEmpty
-                            ? SizedBox(height: 90)
-                            : Container(
-                                height: 90,
-                                child: ListView(
-                                  primary: false,
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.horizontal,
-                                  children: List.generate(
-                                      _con.categories.length, (index) {
-                                    var _category =
-                                        _con.categories.elementAt(index);
-                                    var _selected = this
-                                        .selectedCategories
-                                        .contains(_category.id);
-                                    return Padding(
-                                      padding: const EdgeInsetsDirectional.only(
-                                          start: 20),
-                                      child: RawChip(
-                                        elevation: 0,
-                                        label: Text(_category.name),
-                                        labelStyle: _selected
-                                            ? Theme.of(context)
-                                                .textTheme
-                                                .bodyText2
-                                                .merge(TextStyle(
-                                                    color: Theme.of(context)
-                                                        .primaryColor))
-                                            : Theme.of(context)
-                                                .textTheme
-                                                .bodyText2,
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 12, vertical: 15),
-                                        backgroundColor: Theme.of(context)
-                                            .focusColor
-                                            .withOpacity(0.1),
-                                        selectedColor:
-                                            Theme.of(context).accentColor,
-                                        selected: _selected,
-                                        //shape: StadiumBorder(side: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.05))),
-                                        showCheckmark: false,
-                                        avatar: (_category.id == '0')
-                                            ? null
-                                            : (_category.image.url
-                                                    .toLowerCase()
-                                                    .endsWith('.svg')
-                                                ? SvgPicture.network(
-                                                    _category.image.url,
-                                                    color: _selected
-                                                        ? Theme.of(context)
-                                                            .primaryColor
-                                                        : Theme.of(context)
-                                                            .accentColor,
-                                                  )
-                                                : CachedNetworkImage(
-                                                    fit: BoxFit.cover,
-                                                    imageUrl:
-                                                        _category.image.icon,
-                                                    placeholder:
-                                                        (context, url) =>
-                                                            Image.asset(
-                                                      'assets/img/loading.gif',
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                    errorWidget:
-                                                        (context, url, error) =>
-                                                            Icon(Icons.error),
-                                                  )),
-                                        onSelected: (bool value) {
-                                          setState(() {
-                                            if (_category.id == '0') {
-                                              this.selectedCategories = ['0'];
-                                            } else {
-                                              this
-                                                  .selectedCategories
-                                                  .removeWhere((element) =>
-                                                      element == '0');
-                                            }
-                                            if (value) {
-                                              this
-                                                  .selectedCategories
-                                                  .add(_category.id);
-                                            } else {
-                                              this
-                                                  .selectedCategories
-                                                  .removeWhere((element) =>
-                                                      element == _category.id);
-                                            }
-                                            _con.selectCategory(
-                                                this.selectedCategories);
-                                          });
-                                        },
-                                      ),
-                                    );
-                                  }),
-                                ),
-                              ),
-                        _con.products.isEmpty
-                            ? Center(
-                                child: Container(
-                                  height: 250.0,
-                                  width: 200.0,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              'assets/img/not_found.png'))),
-                                ),
-                              )
-=======
-
 
                         ///Product ListView
                         _con.featuredProducts.isEmpty
                             ? SizedBox(height: 0)
->>>>>>> master
                             : ListView.separated(
                                 scrollDirection: Axis.vertical,
                                 shrinkWrap: true,
@@ -530,31 +382,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                                   );
                                 },
                               ),
-<<<<<<< HEAD
-                        // _con.featuredProducts.isEmpty
-                        //     ? SizedBox(height: 0)
-                        //     : ListView.separated(
-                        //         padding: EdgeInsets.symmetric(vertical: 10),
-                        //         scrollDirection: Axis.vertical,
-                        //         shrinkWrap: true,
-                        //         primary: false,
-                        //         itemCount: _con.featuredProducts.length,
-                        //         separatorBuilder: (context, index) {
-                        //           return SizedBox(height: 10);
-                        //         },
-                        //         itemBuilder: (context, index) {
-
-                        //           // return ProductItemWidget(
-                        //           //   heroTag: 'details_featured_product',
-                        //           //   product:
-                        //           //       _con.featuredProducts.elementAt(index),
-                        //           // );
-                        //         },
-                        //       ),
-=======
 
                         //Review List
->>>>>>> master
                         _con.reviews.isEmpty
                             ? SizedBox(height: 5)
                             : Padding(

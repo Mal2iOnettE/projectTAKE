@@ -26,8 +26,8 @@ class _ListMarketsState extends State<ListMarkets> {
         : Padding(
             padding: const EdgeInsets.all(17.0),
             child: Container(
-              //height: MediaQuery.of(context).size.height,
-              height: 300,
+              height: MediaQuery.of(context).size.height,
+              // height: 300,
               child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,

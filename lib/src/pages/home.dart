@@ -155,115 +155,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Column(
-<<<<<<< HEAD
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
-            children: List.generate(
-                settingsRepo.setting.value.homeSections.length, (index) {
-              String _homeSection =
-                  settingsRepo.setting.value.homeSections.elementAt(index);
-              switch (_homeSection) {
-                case 'slider':
-                  return HomeSliderWidget(slides: _con.slides);
-                case 'search':
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: SearchBarWidget(
-                      onClickFilter: (event) {
-                        widget.parentScaffoldKey.currentState.openEndDrawer();
-                      },
-                    ),
-                  );
-                case 'top_markets_heading':
-                  return Padding(
-                    padding: const EdgeInsets.only(
-                        top: 15, left: 20, right: 20, bottom: 10),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  S.of(context).top_markets,
-                                  style: Theme.of(context).textTheme.headline4,
-                                  maxLines: 1,
-                                  softWrap: false,
-                                  overflow: TextOverflow.fade,
-                                ),
-                              ),
-                              InkWell(
-                                onTap: () => Navigator.pushNamed(
-                                    context, '/AllRestaurant'),
-                                child: Text("See all"),
-                              )
-                            ],
-                          )
-                        ]),
-                  );
-                case 'top_markets':
-                  return CardsCarouselWidget(
-                      marketsList: _con.topMarkets,
-                      heroTag: 'home_top_markets');
-                case 'trending_week_heading':
-                  return ListTile(
-                    dense: true,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                    leading: Icon(
-                      Icons.trending_up,
-                      color: Theme.of(context).hintColor,
-                    ),
-                    title: Text(
-                      S.of(context).trending_this_week,
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                    subtitle: Text(
-                      S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
-                      maxLines: 2,
-                      style: Theme.of(context).textTheme.caption,
-                    ),
-                  );
-                case 'trending_week':
-                  return ProductsCarouselWidget(
-                      productsList: _con.trendingProducts,
-                      heroTag: 'home_product_carousel');
-                case 'categories_heading':
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ListTile(
-                      dense: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 0),
-                      leading: Icon(
-                        Icons.category,
-                        color: Theme.of(context).hintColor,
-                      ),
-                      title: Text(
-                        S.of(context).product_categories,
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ),
-                  );
-                case 'categories':
-                  return CategoriesCarouselWidget(
-                    categories: _con.categories,
-                  );
-                case 'popular_heading':
-                  return Padding(
-                    padding:
-                        const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                    child: ListTile(
-                      dense: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 0),
-                      leading: Icon(
-                        Icons.trending_up,
-                        color: Theme.of(context).hintColor,
-                      ),
-                      title: Text(
-                        S.of(context).most_popular,
-                        style: Theme.of(context).textTheme.headline4,
-=======
             children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -271,7 +162,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => TAKE01PAGE()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TAKE01PAGE()));
                     },
                     child: Container(
                       height: 150.0,
@@ -279,14 +173,15 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                       child: Card(
                         color: Colors.red,
                         child: Text("TAKE01"),
->>>>>>> master
                       ),
                     ),
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute
-                      (builder: (context) => TAKE02PAGE()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TAKE02PAGE()));
                     },
                     child: Container(
                       height: 150.0,
@@ -303,8 +198,10 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
-                children: List.generate(settingsRepo.setting.value.homeSections.length, (index) {
-                  String _homeSection = settingsRepo.setting.value.homeSections.elementAt(index);
+                children: List.generate(
+                    settingsRepo.setting.value.homeSections.length, (index) {
+                  String _homeSection =
+                      settingsRepo.setting.value.homeSections.elementAt(index);
                   switch (_homeSection) {
                     case 'slider':
                       return HomeSliderWidget(slides: _con.slides);
@@ -313,36 +210,45 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: SearchBarWidget(
                           onClickFilter: (event) {
-                            widget.parentScaffoldKey.currentState.openEndDrawer();
+                            widget.parentScaffoldKey.currentState
+                                .openEndDrawer();
                           },
                         ),
                       );
                     case 'top_markets_heading':
                       return Padding(
-                        padding: const EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 10),
-                        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        padding: const EdgeInsets.only(
+                            top: 15, left: 20, right: 20, bottom: 10),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Expanded(
-                                child: Text(
-                                  S.of(context).top_markets,
-                                  style: Theme.of(context).textTheme.headline4,
-                                  maxLines: 1,
-                                  softWrap: false,
-                                  overflow: TextOverflow.fade,
-                                ),
-                              ),
-                              InkWell(
-                                onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
-                                child: Text("See all"),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      S.of(context).top_markets,
+                                      style:
+                                          Theme.of(context).textTheme.headline4,
+                                      maxLines: 1,
+                                      softWrap: false,
+                                      overflow: TextOverflow.fade,
+                                    ),
+                                  ),
+                                  InkWell(
+                                    onTap: () => Navigator.pushNamed(
+                                        context, '/AllRestaurant'),
+                                    child: Text("See all"),
+                                  )
+                                ],
                               )
-                            ],
-                          )
-                        ]),
+                            ]),
                       );
                     case 'top_markets':
-                      return CardsCarouselWidget(marketsList: _con.topMarkets, heroTag: 'home_top_markets');
+                      return CardsCarouselWidget(
+                          marketsList: _con.topMarkets,
+                          heroTag: 'home_top_markets');
                     case 'trending_week_heading':
                       return ListTile(
                         dense: true,
@@ -356,13 +262,17 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                           style: Theme.of(context).textTheme.headline4,
                         ),
                         subtitle: Text(
-                          S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
+                          S
+                              .of(context)
+                              .clickOnTheProductToGetMoreDetailsAboutIt,
                           maxLines: 2,
                           style: Theme.of(context).textTheme.caption,
                         ),
                       );
                     case 'trending_week':
-                      return ProductsCarouselWidget(productsList: _con.trendingProducts, heroTag: 'home_product_carousel');
+                      return ProductsCarouselWidget(
+                          productsList: _con.trendingProducts,
+                          heroTag: 'home_product_carousel');
                     case 'categories_heading':
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -385,7 +295,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                       );
                     case 'popular_heading':
                       return Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                        padding: const EdgeInsets.only(
+                            left: 20, right: 20, bottom: 20),
                         child: ListTile(
                           dense: true,
                           contentPadding: EdgeInsets.symmetric(vertical: 0),
@@ -426,7 +337,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     case 'recent_reviews':
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: ReviewsListWidget(reviewsList: _con.recentReviews),
+                        child:
+                            ReviewsListWidget(reviewsList: _con.recentReviews),
                       );
                     default:
                       return SizedBox(height: 0);

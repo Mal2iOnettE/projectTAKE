@@ -190,18 +190,6 @@ class CartBottomDetailsWidget extends StatelessWidget {
                           )
                         ],
                       ),
-<<<<<<< HEAD
-                      FlatButton(
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/Pages');
-                        },
-                        textColor: Theme.of(context).hintColor,
-                        child: Text(
-                          S.of(context).ordersomethingelse,
-                          style: TextStyle(
-                              fontSize: 15.0,
-                              color: Theme.of(context).accentColor),
-=======
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Helper.getPrice(
@@ -209,8 +197,8 @@ class CartBottomDetailsWidget extends StatelessWidget {
 
                           subwithfee,
                           context,
-                          style: Theme.of(context).textTheme.headline4.merge(TextStyle(color: Theme.of(context).primaryColor)),
->>>>>>> master
+                          style: Theme.of(context).textTheme.headline4.merge(
+                              TextStyle(color: Theme.of(context).primaryColor)),
                         ),
                       ),
                       SizedBox(height: 5),
