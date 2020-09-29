@@ -27,7 +27,7 @@ class _AllRestaurantState extends StateMVC<AllRestaurant> {
               flexibleSpace: Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/img/wallet.png'),
+                    image: AssetImage('assets/img/bingsu.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),

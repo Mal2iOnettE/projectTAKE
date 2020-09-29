@@ -4,6 +4,7 @@ import 'package:markets/src/pages/OtherPage.dart';
 import 'package:markets/src/pages/collection.dart';
 import 'package:markets/src/pages/details2.dart';
 import 'package:markets/src/pages/order_success2.dart';
+import 'package:markets/src/pages/track_orders.dart';
 
 import 'src/models/route_argument.dart';
 import 'src/pages/Prelogin.dart';
@@ -49,7 +50,8 @@ class RouteGenerator {
     final args = settings.arguments;
     switch (settings.name) {
       case '/Debug':
-        return MaterialPageRoute(builder: (_) => DebugWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) => DebugWidget(routeArgument: args as RouteArgument));
       case '/Splash':
         return MaterialPageRoute(builder: (_) => MainSplashScreen());
       case '/SignUp':
@@ -69,39 +71,63 @@ class RouteGenerator {
       case '/Pages':
         return MaterialPageRoute(builder: (_) => PagesWidget(currentTab: args));
       case '/Details':
-        return MaterialPageRoute(builder: (_) => DetailsWidget(routeArgument: args));
+        return MaterialPageRoute(
+            builder: (_) => DetailsWidget(routeArgument: args));
       case '/Details2':
-        return MaterialPageRoute(builder: (_) => Details2Widget(routeArgument: args));
+        return MaterialPageRoute(
+            builder: (_) => Details2Widget(routeArgument: args));
       case '/Menu':
-        return MaterialPageRoute(builder: (_) => MenuWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) => MenuWidget(routeArgument: args as RouteArgument));
       case '/Product':
-        return MaterialPageRoute(builder: (_) => ProductWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                ProductWidget(routeArgument: args as RouteArgument));
       case '/Category':
-        return MaterialPageRoute(builder: (_) => CategoryWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                CategoryWidget(routeArgument: args as RouteArgument));
       case '/Cart':
-        return MaterialPageRoute(builder: (_) => CartWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) => CartWidget(routeArgument: args as RouteArgument));
       case '/Tracking':
-        return MaterialPageRoute(builder: (_) => TrackingWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                TrackingWidget(routeArgument: args as RouteArgument));
       case '/Reviews':
-        return MaterialPageRoute(builder: (_) => ReviewsWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                ReviewsWidget(routeArgument: args as RouteArgument));
       case '/PaymentMethod':
         return MaterialPageRoute(builder: (_) => PaymentMethodsWidget());
       case '/DeliveryAddresses':
         return MaterialPageRoute(builder: (_) => DeliveryAddressesWidget());
       case '/DeliveryPickup':
-        return MaterialPageRoute(builder: (_) => DeliveryPickupWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                DeliveryPickupWidget(routeArgument: args as RouteArgument));
       case '/Checkout':
         return MaterialPageRoute(builder: (_) => CheckoutWidget());
       case '/CashOnDelivery':
-        return MaterialPageRoute(builder: (_) => OrderSuccess2Widget(routeArgument: RouteArgument(param: 'Cash on Delivery')));
+        return MaterialPageRoute(
+            builder: (_) => OrderSuccess2Widget(
+                routeArgument: RouteArgument(param: 'Cash on Delivery')));
       case '/PayOnPickup':
-        return MaterialPageRoute(builder: (_) => OrderSuccess2Widget(routeArgument: RouteArgument(param: 'Pay on Pickup')));
+        return MaterialPageRoute(
+            builder: (_) => OrderSuccess2Widget(
+                routeArgument: RouteArgument(param: 'Pay on Pickup')));
       case '/PayPal':
-        return MaterialPageRoute(builder: (_) => PayPalPaymentWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                PayPalPaymentWidget(routeArgument: args as RouteArgument));
       case '/RazorPay':
-        return MaterialPageRoute(builder: (_) => RazorPayPaymentWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                RazorPayPaymentWidget(routeArgument: args as RouteArgument));
       case '/OrderSuccess':
-        return MaterialPageRoute(builder: (_) => OrderSuccessWidget(routeArgument: args as RouteArgument));
+        return MaterialPageRoute(
+            builder: (_) =>
+                OrderSuccessWidget(routeArgument: args as RouteArgument));
       case '/Languages':
         return MaterialPageRoute(builder: (_) => LanguagesWidget());
       case '/Help':
@@ -116,6 +142,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Prelogin());*/
       case '/Prelogin':
         return MaterialPageRoute(builder: (_) => Prelogin2());
+      case '/Track_orders':
+        return MaterialPageRoute(builder: (_) => Trackorders());
       case '/filter':
         return MaterialPageRoute(builder: (_) => FilterWidget());
       case '/filterpag':
@@ -139,7 +167,9 @@ class RouteGenerator {
       default:
 
         // If there is no such named route in the switch statement, e.g. /third
-        return MaterialPageRoute(builder: (_) => Scaffold(body: SafeArea(child: Text('Route Error'))));
+        return MaterialPageRoute(
+            builder: (_) =>
+                Scaffold(body: SafeArea(child: Text('Route Error'))));
     }
   }
 }

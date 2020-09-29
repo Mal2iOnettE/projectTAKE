@@ -56,15 +56,27 @@ class _PagesWidgetState extends State<PagesWidget> {
       widget.currentTab = tabItem;
       switch (tabItem) {
         case 0:
-          widget.currentPage = HomeWidget(parentScaffoldKey: widget.scaffoldKey);
+          widget.currentPage =
+              HomeWidget(parentScaffoldKey: widget.scaffoldKey);
           //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
           break;
         case 1:
+<<<<<<< HEAD
           widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
           //widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
           break;
         case 2:
           //widget.currentPage = FavoritesWidget(parentScaffoldKey: widget.scaffoldKey);
+=======
+          //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
+          widget.currentPage = MapWidget(
+              parentScaffoldKey: widget.scaffoldKey,
+              routeArgument: widget.routeArgument);
+          break;
+        case 2:
+          widget.currentPage =
+              FavoritesWidget(parentScaffoldKey: widget.scaffoldKey);
+>>>>>>> 5d29c5a9745d821eb79ee6cf130d7842b289b430
           //widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
           widget.currentPage = ScanQRPage();
           break;
@@ -86,7 +98,8 @@ class _PagesWidgetState extends State<PagesWidget> {
         key: widget.scaffoldKey,
         drawer: DrawerWidget(),
         endDrawer: FilterWidget(onFilter: (filter) {
-          Navigator.of(context).pushReplacementNamed('/pages', arguments: widget.currentTab);
+          Navigator.of(context)
+              .pushReplacementNamed('/pages', arguments: widget.currentTab);
         }),
         body: widget.currentPage,
         bottomNavigationBar: BottomNavigationBar(
@@ -107,9 +120,15 @@ class _PagesWidgetState extends State<PagesWidget> {
           items: [
             BottomNavigationBarItem(title: new Container(height: 5.0), icon: new Icon(Icons.home)),
             BottomNavigationBarItem(
+<<<<<<< HEAD
               icon: Icon(
                 Icons.notifications
               ),
+=======
+                title: new Container(height: 5.0), icon: new Icon(Icons.home)),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+>>>>>>> 5d29c5a9745d821eb79ee6cf130d7842b289b430
               title: new Container(height: 0.0),
             ),
             BottomNavigationBarItem(

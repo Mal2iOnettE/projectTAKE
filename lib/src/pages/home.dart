@@ -32,7 +32,9 @@ class HomeWidget extends StatefulWidget {
   List<Market> marketsList;
   List<Review> reviewList;
 
-  HomeWidget({Key key, this.parentScaffoldKey, this.marketsList, this.reviewList}) : super(key: key);
+  HomeWidget(
+      {Key key, this.parentScaffoldKey, this.marketsList, this.reviewList})
+      : super(key: key);
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -62,16 +64,26 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           builder: (context, value, child) {
             return Text(
               value.appName ?? S.of(context).home,
+<<<<<<< HEAD
               style: Theme.of(context).textTheme.headline2.merge(TextStyle(letterSpacing: 1.3)),
+=======
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  .merge(TextStyle(letterSpacing: 1.3)),
+>>>>>>> checked
             );
           },
         ),
         actions: <Widget>[
-          new ShoppingCartButtonWidget(iconColor: Theme.of(context).hintColor, labelColor: Theme.of(context).accentColor),
+          new ShoppingCartButtonWidget(
+              iconColor: Theme.of(context).hintColor,
+              labelColor: Theme.of(context).accentColor),
         ],
         bottom: PreferredSize(
             child: Padding(
-              padding: const EdgeInsets.only(top: 0, left: 25, right: 25, bottom: 10),
+              padding: const EdgeInsets.only(
+                  top: 0, left: 25, right: 25, bottom: 10),
               child: Column(
                 //mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -83,10 +95,15 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                           if (currentUser.value.apiToken == null) {
                             _con.requestForCurrentLocation(context);
                           } else {
-                            var bottomSheetController = widget.parentScaffoldKey.currentState.showBottomSheet(
-                              (context) => DeliveryAddressBottomSheetWidget(scaffoldKey: widget.parentScaffoldKey),
+                            var bottomSheetController = widget
+                                .parentScaffoldKey.currentState
+                                .showBottomSheet(
+                              (context) => DeliveryAddressBottomSheetWidget(
+                                  scaffoldKey: widget.parentScaffoldKey),
                               shape: RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                                borderRadius: new BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10)),
                               ),
                             );
                             bottomSheetController.closed.then((value) {
@@ -95,17 +112,22 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                           }
                         },
                         child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 6, horizontal: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: settingsRepo.deliveryAddress.value?.address == null
+                            color: settingsRepo
+                                        .deliveryAddress.value?.address ==
+                                    null
                                 ? Theme.of(context).focusColor.withOpacity(0.1)
                                 : Theme.of(context).accentColor,
                           ),
                           child: Text(
                             S.of(context).deliveryTo,
                             style: TextStyle(
-                                color: settingsRepo.deliveryAddress.value?.address == null
+                                color: settingsRepo
+                                            .deliveryAddress.value?.address ==
+                                        null
                                     ? Theme.of(context).hintColor
                                     : Theme.of(context).primaryColor),
                           ),
@@ -117,7 +139,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     Padding(
                       padding: const EdgeInsets.only(top: 5),
                       child: Text(
-                        S.of(context).near_to + " " + (settingsRepo.deliveryAddress.value?.address),
+                        S.of(context).near_to +
+                            " " +
+                            (settingsRepo.deliveryAddress.value?.address),
                         style: Theme.of(context).textTheme.caption,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -134,16 +158,58 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Column(
             children: [
+<<<<<<< HEAD
               Padding(
                 padding: const EdgeInsets.only(bottom:20.0),
                 child: SelectionPages(),
+=======
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TAKE01PAGE()));
+                    },
+                    child: Container(
+                      height: 150.0,
+                      width: 150.0,
+                      child: Card(
+                        color: Colors.red,
+                        child: Text("TAKE01"),
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TAKE02PAGE()));
+                    },
+                    child: Container(
+                      height: 150.0,
+                      width: 150.0,
+                      child: Card(
+                        color: Colors.green,
+                        child: Text("TAKE02"),
+                      ),
+                    ),
+                  ),
+                ],
+>>>>>>> checked
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
-                children: List.generate(settingsRepo.setting.value.homeSections.length, (index) {
-                  String _homeSection = settingsRepo.setting.value.homeSections.elementAt(index);
+                children: List.generate(
+                    settingsRepo.setting.value.homeSections.length, (index) {
+                  String _homeSection =
+                      settingsRepo.setting.value.homeSections.elementAt(index);
                   switch (_homeSection) {
                     case 'slider':
                       return HomeSliderWidget(slides: _con.slides);
@@ -151,37 +217,52 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: SearchBarWidget(
+<<<<<<< HEAD
                           // onClickFilter: (event) {
                           //   widget.parentScaffoldKey.currentState.openEndDrawer();
                           // },
+=======
+                          onClickFilter: (event) {
+                            widget.parentScaffoldKey.currentState
+                                .openEndDrawer();
+                          },
+>>>>>>> checked
                         ),
                       );
                     case 'top_markets_heading':
                       return Padding(
-                        padding: const EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 10),
-                        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        padding: const EdgeInsets.only(
+                            top: 15, left: 20, right: 20, bottom: 10),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Expanded(
-                                child: Text(
-                                  S.of(context).top_markets,
-                                  style: Theme.of(context).textTheme.headline4,
-                                  maxLines: 1,
-                                  softWrap: false,
-                                  overflow: TextOverflow.fade,
-                                ),
-                              ),
-                              InkWell(
-                                onTap: () => Navigator.pushNamed(context, '/AllRestaurant'),
-                                child: Text("See all"),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      S.of(context).top_markets,
+                                      style:
+                                          Theme.of(context).textTheme.headline4,
+                                      maxLines: 1,
+                                      softWrap: false,
+                                      overflow: TextOverflow.fade,
+                                    ),
+                                  ),
+                                  InkWell(
+                                    onTap: () => Navigator.pushNamed(
+                                        context, '/AllRestaurant'),
+                                    child: Text("See all"),
+                                  )
+                                ],
                               )
-                            ],
-                          )
-                        ]),
+                            ]),
                       );
                     case 'top_markets':
-                      return CardsCarouselWidget(marketsList: _con.topMarkets, heroTag: 'home_top_markets');
+                      return CardsCarouselWidget(
+                          marketsList: _con.topMarkets,
+                          heroTag: 'home_top_markets');
                     case 'trending_week_heading':
                       return ListTile(
                         dense: true,
@@ -195,13 +276,17 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                           style: Theme.of(context).textTheme.headline4,
                         ),
                         subtitle: Text(
-                          S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
+                          S
+                              .of(context)
+                              .clickOnTheProductToGetMoreDetailsAboutIt,
                           maxLines: 2,
                           style: Theme.of(context).textTheme.caption,
                         ),
                       );
                     case 'trending_week':
-                      return ProductsCarouselWidget(productsList: _con.trendingProducts, heroTag: 'home_product_carousel');
+                      return ProductsCarouselWidget(
+                          productsList: _con.trendingProducts,
+                          heroTag: 'home_product_carousel');
                     case 'categories_heading':
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -224,7 +309,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                       );
                     case 'popular_heading':
                       return Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                        padding: const EdgeInsets.only(
+                            left: 20, right: 20, bottom: 20),
                         child: ListTile(
                           dense: true,
                           contentPadding: EdgeInsets.symmetric(vertical: 0),
@@ -265,7 +351,8 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                     case 'recent_reviews':
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: ReviewsListWidget(reviewsList: _con.recentReviews),
+                        child:
+                            ReviewsListWidget(reviewsList: _con.recentReviews),
                       );
                     default:
                       return SizedBox(height: 0);

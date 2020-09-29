@@ -9,6 +9,7 @@ import '../../generated/l10n.dart';
 import '../models/filter.dart';
 import '../controllers/filter_controller.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:chips_choice/chips_choice.dart';
 
 class Filterpage extends StatefulWidget {
   @override
@@ -21,16 +22,27 @@ class _FilterpagState extends State<Filterpage> {
     return Scaffold(
         body: Column(
       children: [
-        Text(
-          'price range',
-          style: TextStyle(fontSize: 20.0),
-        ),
-
         Expanded(
           child: ListView(
             primary: true,
             shrinkWrap: true,
             children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 25.0, top: 25.0),
+                child: Column(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        child: Text(
+                          'Price range',
+                          style: TextStyle(fontSize: 23.0),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: SelectableCircleList(
@@ -42,20 +54,31 @@ class _FilterpagState extends State<Filterpage> {
                   //initialValue: "4|subsecond",
                 ),
               ),
-              Text(
-                'Dietary',
-                style: TextStyle(fontSize: 20.0),
+              Padding(
+                padding: const EdgeInsets.only(left: 23.0),
+                child: Text(
+                  'Dietary',
+                  style: TextStyle(fontSize: 25.0),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
               ),
               Dietary(),
-              Text(
-                'Cuisines',
-                style: TextStyle(fontSize: 20.0),
+
+              Padding(
+                padding: const EdgeInsets.only(left: 23.0),
+                child: Text(
+                  'Cuisines',
+                  style: TextStyle(fontSize: 25.0),
+                ),
               ),
-              Cuisines(),
-              FlatButton(onPressed: () {}),
+              Cuisines()
+
+              //FlatButton(onPressed: () {}),
             ],
           ),
-          )
+        )
       ],
     ));
   }
