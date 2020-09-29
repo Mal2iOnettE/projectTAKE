@@ -64,14 +64,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           builder: (context, value, child) {
             return Text(
               value.appName ?? S.of(context).home,
-<<<<<<< HEAD
               style: Theme.of(context).textTheme.headline2.merge(TextStyle(letterSpacing: 1.3)),
-=======
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  .merge(TextStyle(letterSpacing: 1.3)),
->>>>>>> checked
             );
           },
         ),
@@ -158,49 +151,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Column(
             children: [
-<<<<<<< HEAD
               Padding(
                 padding: const EdgeInsets.only(bottom:20.0),
                 child: SelectionPages(),
-=======
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => TAKE01PAGE()));
-                    },
-                    child: Container(
-                      height: 150.0,
-                      width: 150.0,
-                      child: Card(
-                        color: Colors.red,
-                        child: Text("TAKE01"),
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => TAKE02PAGE()));
-                    },
-                    child: Container(
-                      height: 150.0,
-                      width: 150.0,
-                      child: Card(
-                        color: Colors.green,
-                        child: Text("TAKE02"),
-                      ),
-                    ),
-                  ),
-                ],
->>>>>>> checked
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,16 +170,9 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: SearchBarWidget(
-<<<<<<< HEAD
                           // onClickFilter: (event) {
                           //   widget.parentScaffoldKey.currentState.openEndDrawer();
                           // },
-=======
-                          onClickFilter: (event) {
-                            widget.parentScaffoldKey.currentState
-                                .openEndDrawer();
-                          },
->>>>>>> checked
                         ),
                       );
                     case 'top_markets_heading':

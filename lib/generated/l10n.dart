@@ -2466,7 +2466,6 @@ class S {
       args: [],
     );
   }
-<<<<<<< HEAD
 
   String get take_branch_suwintawong {
     return Intl.message(
@@ -2485,8 +2484,6 @@ class S {
       args: [],
     );
   }
-=======
->>>>>>> checked
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

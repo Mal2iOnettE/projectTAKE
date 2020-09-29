@@ -56,14 +56,10 @@ dependencies:
   splashscreen: ^1.2.0
   flare_splash_screen: any
   rflutter_alert: ^1.0.5
-<<<<<<< HEAD
   carousel_slider: ^2.2.1
   barcode_scan: any
   qr_code_scanner: ^0.0.13
   
-=======
-  carousel_slider: any
->>>>>>> 5d29c5a9745d821eb79ee6cf130d7842b289b430
 
 flutter_icons:
   image_path: "assets/takelogo/take_logo07.png" 
