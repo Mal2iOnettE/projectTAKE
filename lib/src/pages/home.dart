@@ -75,7 +75,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
               child: Column(
                 //mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
+                  Row( 
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(

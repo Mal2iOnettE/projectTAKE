@@ -44,6 +44,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "barcode_scan",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/barcode_scan-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0-nullsafety",
       "packageUri": "lib/",
@@ -180,6 +186,12 @@
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging-6.0.16",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "fixnum",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/fixnum-0.10.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
     },
     {
       "name": "flare_dart",
@@ -548,6 +560,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "protobuf",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/protobuf-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "provider",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+2",
       "packageUri": "lib/",
@@ -558,6 +576,12 @@
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/pub_semver-1.4.4",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "qr_code_scanner",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/qr_code_scanner-0.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
     },
     {
       "name": "rflutter_alert",
@@ -797,10 +821,10 @@
       "name": "markets",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.2"
+      "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-09-25T02:44:52.657243Z",
+  "generated": "2020-09-29T09:26:07.597633Z",
   "generator": "pub",
   "generatorVersion": "2.10.0-136.0.dev"
 }
