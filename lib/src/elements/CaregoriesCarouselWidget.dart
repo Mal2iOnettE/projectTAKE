@@ -15,7 +15,7 @@ class CategoriesCarouselWidget extends StatelessWidget {
     return this.categories.isEmpty
         ? CircularLoadingWidget(height: 150)
         : Container(
-            height: 130,
+            height: 100,
             padding: EdgeInsets.symmetric(vertical: 10),
             child: ListView.builder(
               itemCount: this.categories.length,

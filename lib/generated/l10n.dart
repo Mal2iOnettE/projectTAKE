@@ -2431,6 +2431,15 @@ class S {
     );
   }
 
+  String get home2 {
+    return Intl.message(
+      'Take Suwinthawong',
+      name: 'home2',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get canirefund {
     return Intl.message(
       'Can I refund my order',

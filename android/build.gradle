@@ -6,8 +6,12 @@ buildscript {
     }
 
     dependencies {
+<<<<<<< HEAD
+        classpath 'com.android.tools.build:gradle:3.5.0'
+=======
         //classpath 'com.android.tools.build:gradle:4.0.1'
         classpath 'com.android.tools.build:gradle:3.4.2'
+>>>>>>> origin/master
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // Add the google services classpath
         classpath 'com.google.gms:google-services:4.3.3'

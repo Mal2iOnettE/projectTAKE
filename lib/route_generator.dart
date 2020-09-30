@@ -44,6 +44,10 @@ import 'src/elements/Cuisines.dart';
 import 'src/pages/orders.dart';
 import 'src/pages/favorites.dart';
 import 'src/pages/supportcenter.dart';
+import 'src/pages/takehome.dart';
+import 'src/pages/home.dart';
+import 'src/pages/Home2.dart';
+import 'src/pages/Marketplace.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -162,11 +166,26 @@ class RouteGenerator {
       case '/AllRestaurant':
         return MaterialPageRoute(builder: (_) => AllRestaurant());
       case '/Support':
+<<<<<<< HEAD
         return MaterialPageRoute(builder: (_) => Support());
       case '/OtherPage':
         return MaterialPageRoute(builder: (_) => OtherPage());
       case '/HomePage':
         return MaterialPageRoute(builder: (_) => HomeWidget());
+=======
+      return MaterialPageRoute(builder: (_) => Support());
+      case '/Takehome':
+      return MaterialPageRoute(builder: (_) => Takehome());
+       case '/home':
+      return MaterialPageRoute(builder: (_) => HomeWidget());
+      case '/Home2':
+      return MaterialPageRoute(builder: (_) => Home2Widget());
+      case '/Marketplace':
+      return MaterialPageRoute(builder: (_) => Marketplace());
+
+
+
+>>>>>>> origin/phon
       default:
 
         // If there is no such named route in the switch statement, e.g. /third
