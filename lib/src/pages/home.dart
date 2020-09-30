@@ -8,9 +8,17 @@ import 'package:markets/src/elements/promotionsCarouselWidget.dart';
 import 'package:markets/src/models/market.dart';
 import 'package:markets/src/models/media.dart';
 import 'package:markets/src/models/review.dart';
+import 'package:markets/src/pages/TAKE01.dart';
+import 'package:markets/src/pages/TAKE02.dart';
+import 'package:markets/src/pages/selectionPage.dart';
+import 'package:mvc_pattern/mvc_pattern.dart';
+
+import '../../generated/l10n.dart';
+import '../controllers/home_controller.dart';
 import '../elements/CardsCarouselWidget.dart';
 import '../elements/CaregoriesCarouselWidget.dart';
 import '../elements/DeliveryAddressBottomSheetWidget.dart';
+import '../elements/GridWidget.dart';
 import '../elements/ProductsCarouselWidget.dart';
 import '../elements/ReviewsListWidget.dart';
 import '../elements/SearchBarWidget.dart';
@@ -136,8 +144,6 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
             ),
             preferredSize: Size.fromHeight(50.0)),
       ),
-
-      
       body:
       RefreshIndicator(
         onRefresh: _con.refreshHome,

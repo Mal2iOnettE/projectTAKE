@@ -56,9 +56,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
                   Container(
                     margin: EdgeInsets.all(8),
                     child: RaisedButton(
-                      onPressed: () {
-                    
-                      },
+                      onPressed: () {},
                       child: Text(qrText, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                     ),
                   )
