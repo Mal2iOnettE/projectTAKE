@@ -3,6 +3,7 @@ import 'package:markets/src/pages/Intro.dart';
 import 'package:markets/src/pages/OtherPage.dart';
 import 'package:markets/src/pages/collection.dart';
 import 'package:markets/src/pages/details2.dart';
+import 'package:markets/src/pages/home.dart';
 import 'package:markets/src/pages/order_success2.dart';
 import 'package:markets/src/pages/track_orders.dart';
 
@@ -164,6 +165,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Support());
       case '/OtherPage':
         return MaterialPageRoute(builder: (_) => OtherPage());
+      case '/HomePage':
+        return MaterialPageRoute(builder: (_) => HomeWidget());
       default:
 
         // If there is no such named route in the switch statement, e.g. /third

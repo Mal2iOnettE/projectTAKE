@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -58,7 +57,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
                     margin: EdgeInsets.all(8),
                     child: RaisedButton(
                       onPressed: () {
-                        ///
+                    
                       },
                       child: Text(qrText, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                     ),
@@ -75,11 +74,10 @@ class _ScanQRPageState extends State<ScanQRPage> {
   void _onQRViewCreated(QRViewController controller) {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
-       checkingValue(scanData);
-      //Navigator.pushNamed(context, '/details2');
+      //checkingValue(scanData);
+      Navigator.pushNamed(context, '/HomePage');
       setState(() {
         qrText = scanData;
-       
       });
     });
   }
@@ -92,7 +90,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
 
   _launchURL(String qrText) async {
     String url = qrText;
-    print("url: "+url);
+    print("url: " + url);
     if (await canLaunch(url)) {
       await launch(url);
     } else {
