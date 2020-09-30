@@ -1,9 +1,5 @@
-import 'package:barcode_scan/model/scan_result.dart';
-import 'package:barcode_scan/platform_wrapper.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:url_launcher/url_launcher.dart';
 
