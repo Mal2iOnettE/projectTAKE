@@ -59,6 +59,7 @@ dependencies:
   carousel_slider: ^2.2.1
   barcode_scan: any
   qr_code_scanner: ^0.0.13
+  image_ink_well: ^0.1.0
 
 
 
