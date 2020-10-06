@@ -17,6 +17,9 @@ class _TrackordersState extends State<Trackorders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Tracking Order"),
+      ),
         body: Image.asset(
       'assets/img/Track_order.png',
       height: 1200,

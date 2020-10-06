@@ -7,6 +7,7 @@ import 'package:markets/src/elements/ProductsCarouselItemWidget.dart';
 import 'package:markets/src/elements/ProductsCarouselWidget.dart';
 import 'package:markets/src/elements/SearchBarWidget.dart';
 import 'package:markets/src/elements/ShoppingCartButtonWidget.dart';
+import 'package:markets/src/models/market.dart';
 import 'package:markets/src/models/media.dart';
 import 'package:markets/src/repository/cart_repository.dart';
 import 'package:markets/src/repository/user_repository.dart';
@@ -37,7 +38,6 @@ class Details2Widget extends StatefulWidget {
 
 class _Details2WidgetState extends StateMVC<Details2Widget> {
   MarketController _con;
-  CartController _conCart;
   ValueChanged onClickFilter;
   List<String> selectedCategories;
 
@@ -52,6 +52,11 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
     _con.listenForFeaturedProducts(widget.routeArgument.id);
     _con.listenForMarketReviews(id: widget.routeArgument.id);
     _con.listenForCategories();
+    _con.market = (new Market())..id = widget.routeArgument.id;
+    _con.listenForTrendingProducts(widget.routeArgument.id);
+    _con.listenForCategories();
+    selectedCategories = ['0'];
+    _con.listenForProducts(widget.routeArgument.id);
     selectedCategories = ['0'];
 
     super.initState();
@@ -138,47 +143,13 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         ),
 
                         SizedBox(
-                          height: 110.0,
+                          height: 90.0,
                         ),
 
                         searchBarMarket(),
                         //SearchBarWidget(),
                         ////Sales Items
-                        ListTile(
-                          dense: true,
-                          contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                          leading: Icon(
-                            Icons.trending_up,
-                            color: Theme.of(context).hintColor,
-                          ),
-                          title: Text(
-                            S.of(context).trending_this_week,
-                            style: Theme.of(context).textTheme.headline4,
-                          ),
-                          subtitle: Text(
-                            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
-                            maxLines: 2,
-                            style: Theme.of(context).textTheme.caption,
-                          ),
-                        ),
-
-                        ///Product slides
-                        Container(
-                            height: 200,
-                            padding: EdgeInsets.symmetric(vertical: 10),
-                            child: ListView.builder(
-                              itemCount: _con.featuredProducts.length,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) {
-                                double _marginLeft = 0;
-                                (index == 0) ? _marginLeft = 20 : _marginLeft = 0;
-                                return ProductsCarouselItemWidget(
-                                  marginLeft: _marginLeft,
-                                  product: _con.featuredProducts.elementAt(index),
-                                  heroTag: '',
-                                );
-                              },
-                            )),
+                        trendingProduct(),
 
                         ///All manu
                         ListTile(
@@ -201,50 +172,147 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
 
                         ///Product ListView
                         _con.featuredProducts.isEmpty
-                            ? SizedBox(height: 0)
+                            ? Text("Loading...")
                             : ListView.separated(
                                 scrollDirection: Axis.vertical,
-                                shrinkWrap: true,
-                                primary: false,
-                                itemCount: _con.products.length,
-                                separatorBuilder: (context, index) {
-                                  return SizedBox(height: 10);
-                                },
+                                itemCount: 10,
+                                separatorBuilder: (context, index) => Divider(),
                                 itemBuilder: (context, index) {
-                                  return ProductItemWidget(
-                                    heroTag: 'menu_list',
-                                    product: _con.products.elementAt(index),
+                                  return Column(
+                                    children: [
+                                      Text(_con.products.length.toString()),
+                                      ProductItemWidget(
+                                        heroTag: 'menu_list',
+                                        product: _con.products.elementAt(index),
+                                      ),
+                                    ],
                                   );
                                 },
                               ),
 
-                        //Review List
-                        _con.reviews.isEmpty
-                            ? SizedBox(height: 5)
-                            : Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                                child: ListTile(
-                                  dense: true,
-                                  contentPadding: EdgeInsets.symmetric(vertical: 0),
-                                  leading: Icon(
-                                    Icons.recent_actors,
-                                    color: Theme.of(context).hintColor,
-                                  ),
-                                  title: Text(
-                                    S.of(context).what_they_say,
-                                    style: Theme.of(context).textTheme.headline4,
-                                  ),
-                                ),
-                              ),
-                        _con.reviews.isEmpty
-                            ? SizedBox(height: 5)
-                            : Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                                child: ReviewsListWidget(reviewsList: _con.reviews),
-                              ),
+                        ///Review
+                        marketReview(),
                       ],
                     ),
                   )));
+  }
+
+  Widget trendingProduct() {
+    return Column(
+      children: [
+        ListTile(
+          dense: true,
+          contentPadding: EdgeInsets.symmetric(horizontal: 20),
+          leading: Icon(
+            Icons.trending_up,
+            color: Theme.of(context).hintColor,
+          ),
+          title: Text(
+            S.of(context).trending_this_week,
+            style: Theme.of(context).textTheme.headline4,
+          ),
+          subtitle: Text(
+            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
+            maxLines: 2,
+            style: Theme.of(context).textTheme.caption,
+          ),
+        ),
+
+        ///Product slides
+        Container(
+            height: 200,
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: ListView.builder(
+              itemCount: _con.featuredProducts.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                double _marginLeft = 0;
+                (index == 0) ? _marginLeft = 20 : _marginLeft = 0;
+                return ProductsCarouselItemWidget(
+                  marginLeft: _marginLeft,
+                  product: _con.featuredProducts.elementAt(index),
+                  heroTag: '',
+                );
+              },
+            ))
+      ],
+    );
+  }
+
+  Widget marketAllProduct() {
+    return Column(
+      children: [
+        ///All Product
+        ListTile(
+          dense: true,
+          contentPadding: EdgeInsets.symmetric(horizontal: 20),
+          leading: Icon(
+            Icons.trending_up,
+            color: Theme.of(context).hintColor,
+          ),
+          title: Text(
+            S.of(context).all_product,
+            style: Theme.of(context).textTheme.headline4,
+          ),
+          subtitle: Text(
+            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
+            maxLines: 2,
+            style: Theme.of(context).textTheme.caption,
+          ),
+        ),
+
+        ///Product ListView
+        _con.featuredProducts.isEmpty
+            ? Text("Loading...")
+            : ListView.separated(
+                scrollDirection: Axis.vertical,
+                itemCount: 10,
+                separatorBuilder: (context, index) => Divider(),
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      Text(_con.products.length.toString()),
+                      ProductItemWidget(
+                        heroTag: 'menu_list',
+                        product: _con.products.elementAt(index),
+                      ),
+                    ],
+                  );
+                },
+              ),
+      ],
+    );
+  }
+
+  Widget marketReview() {
+    return Column(
+      children: [
+        //Review List
+        _con.reviews.isEmpty
+            ? SizedBox(height: 5)
+            : Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                child: ListTile(
+                  dense: true,
+                  contentPadding: EdgeInsets.symmetric(vertical: 0),
+                  leading: Icon(
+                    Icons.recent_actors,
+                    color: Theme.of(context).hintColor,
+                  ),
+                  title: Text(
+                    S.of(context).what_they_say,
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                ),
+              ),
+        _con.reviews.isEmpty
+            ? Text("Loading...")
+            : Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: ReviewsListWidget(reviewsList: _con.reviews),
+              ),
+      ],
+    );
   }
 
   Widget marketCard() {
@@ -332,14 +400,11 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
               ),
               Center(
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      width: 100,
-                    ),
-                    Container(height: 20, width: 20, child: Image.asset('assets/img/marker.png')),
-                    SizedBox(
-                      width: 5,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                      child: Container(height: 20, width: 20, child: Image.asset('assets/img/marker.png')),
                     ),
                     Text(
                       'TAKE TOWN',
@@ -364,9 +429,6 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                       child: Text("20-30 minutes"),
                     ),
                   ),
-                  SizedBox(
-                    width: 5,
-                  ),
                   Icon(
                     Icons.map,
                     color: Colors.grey,
@@ -386,42 +448,63 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
       onTap: () {
         Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
       },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          padding: EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            border: Border.all(
-              color: Theme.of(context).focusColor.withOpacity(0.2),
-            ),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Row(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(right: 12, left: 0),
-                child: Icon(Icons.search, color: Theme.of(context).accentColor),
-              ),
-              Expanded(
-                child: Text(
-                  S.of(context).search_for_markets_or_products,
-                  maxLines: 1,
-                  style: Theme.of(context).textTheme.caption.merge(TextStyle(fontSize: 14)),
-                ),
-              ),
-
-              /*InkWell(
-                onTap: () {
-                  onClickFilter('e');
+      child: Container(
+        height: 90,
+        child: ListView(
+          primary: false,
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          children: List.generate(_con.categories.length, (index) {
+            var _category = _con.categories.elementAt(index);
+            var _selected = this.selectedCategories.contains(_category.id);
+            return Padding(
+              padding: const EdgeInsetsDirectional.only(start: 20),
+              child: RawChip(
+                elevation: 0,
+                label: Text(_category.name),
+                labelStyle: _selected
+                    ? Theme.of(context).textTheme.bodyText2.merge(TextStyle(color: Theme.of(context).primaryColor))
+                    : Theme.of(context).textTheme.bodyText2,
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 15),
+                backgroundColor: Theme.of(context).focusColor.withOpacity(0.1),
+                selectedColor: Theme.of(context).accentColor,
+                selected: _selected,
+                //shape: StadiumBorder(side: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.05))),
+                showCheckmark: false,
+                avatar: (_category.id == '0')
+                    ? null
+                    : (_category.image.url.toLowerCase().endsWith('.svg')
+                        ? SvgPicture.network(
+                            _category.image.url,
+                            color: _selected ? Theme.of(context).primaryColor : Theme.of(context).accentColor,
+                          )
+                        : CachedNetworkImage(
+                            fit: BoxFit.cover,
+                            imageUrl: _category.image.icon,
+                            placeholder: (context, url) => Image.asset(
+                              'assets/img/loading.gif',
+                              fit: BoxFit.cover,
+                            ),
+                            errorWidget: (context, url, error) => Icon(Icons.error),
+                          )),
+                onSelected: (bool value) {
+                  setState(() {
+                    if (_category.id == '0') {
+                      this.selectedCategories = ['0'];
+                    } else {
+                      this.selectedCategories.removeWhere((element) => element == '0');
+                    }
+                    if (value) {
+                      this.selectedCategories.add(_category.id);
+                    } else {
+                      this.selectedCategories.removeWhere((element) => element == _category.id);
+                    }
+                    _con.selectCategory(this.selectedCategories);
+                  });
                 },
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 5, left: 5, top: 3, bottom: 3),
-                  child: Icon(Icons.filter_list, color: Theme.of(context).accentColor),
-                ),
-              ),*/
-            ],
-          ),
+              ),
+            );
+          }),
         ),
       ),
     );
