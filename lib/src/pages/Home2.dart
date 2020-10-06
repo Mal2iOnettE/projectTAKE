@@ -43,8 +43,6 @@ class _Home2WidgetState extends StateMVC<Home2Widget> {
     _con = controller;
   }
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +59,7 @@ class _Home2WidgetState extends StateMVC<Home2Widget> {
           valueListenable: settingsRepo.setting,
           builder: (context, value, child) {
             return Text(
-               S.of(context).home2,
+              S.of(context).home2,
               style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
             );
           },
@@ -122,17 +120,12 @@ class _Home2WidgetState extends StateMVC<Home2Widget> {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                
                 ],
               ),
             ),
             preferredSize: Size.fromHeight(50.0)),
       ),
-
-      
       body:
-
-     
 
           //Refresh
           RefreshIndicator(
@@ -140,12 +133,8 @@ class _Home2WidgetState extends StateMVC<Home2Widget> {
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Column(
-              
-            
-
             children: [
-
-                // Takehome(),
+              // Takehome(),
 
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -155,7 +144,7 @@ class _Home2WidgetState extends StateMVC<Home2Widget> {
                   String _homeSection = settingsRepo.setting.value.homeSections.elementAt(index);
                   switch (_homeSection) {
                     case 'slider':
-                      return HomeSliderWidget(slides: _con.slides);  
+                      return HomeSliderWidget(slides: _con.slides);
                     case 'search':
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
