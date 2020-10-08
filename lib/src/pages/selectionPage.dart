@@ -26,7 +26,7 @@ class _SelectionPagesState extends State<SelectionPages> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
               color: Theme.of(context).accentColor,
               child: Padding(
-                padding: const EdgeInsets.only(top:28.0,left: 15.0),
+                padding: const EdgeInsets.only(top: 28.0, left: 15.0),
                 child: Text(
                   S.of(context).take_branch_suwintawong,
                   style: Theme.of(context).textTheme.headline6,
@@ -37,18 +37,19 @@ class _SelectionPagesState extends State<SelectionPages> {
         ),
         InkWell(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => TAKE02PAGE()));
+            Navigator.pushNamed(context, "/Marketplace");
           },
           child: Container(
             height: 109.0,
             width: 200.0,
             child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
               color: Theme.of(context).accentColor,
               child: Padding(
-                padding: const EdgeInsets.only(top:28.0, left:15.0),
-                child: Text(S.of(context).take_maketplace,
-                style: Theme.of(context).textTheme.headline6,
+                padding: const EdgeInsets.only(top: 28.0, left: 15.0),
+                child: Text(
+                  S.of(context).take_maketplace,
+                  style: Theme.of(context).textTheme.headline6,
                 ),
               ),
             ),

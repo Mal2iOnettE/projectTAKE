@@ -464,6 +464,9 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
                         }
                         if (value) {
                           this.selectedCategories.add(_category.id);
+
+
+                          
                         } else {
                           this.selectedCategories.removeWhere((element) => element == _category.id);
                         }

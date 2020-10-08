@@ -146,10 +146,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Takehome());
       case '/home':
         return MaterialPageRoute(builder: (_) => HomeWidget());
-      case '/Home2':
-        return MaterialPageRoute(builder: (_) => Home2Widget());
+
+ 
       case '/Marketplace':
-        return MaterialPageRoute(builder: (_) => Marketplace());
+        return MaterialPageRoute(builder: (_) => MarketPlaceWidget());
 
       default:
 

@@ -21,6 +21,7 @@ class CategoriesCarouselItemWidget extends StatelessWidget {
       },
       child: Container(
         height: 150.0,
+        
         child: Column(
           children: <Widget>[
             Hero(
@@ -31,7 +32,7 @@ class CategoriesCarouselItemWidget extends StatelessWidget {
                 height: 80,
                 decoration: BoxDecoration(
                     color: Theme.of(context).accentColor,
-                    //borderRadius: BorderRadius.all(Radius.circular(5)),
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     shape: BoxShape.rectangle,
                     boxShadow: [BoxShadow(color: Theme.of(context).focusColor.withOpacity(0.2), offset: Offset(0, 2), blurRadius: 7.0)]),
                 child: Padding(

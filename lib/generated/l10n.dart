@@ -2493,6 +2493,15 @@ class S {
       args: [],
     );
   }
+
+   String get maketplace {
+    return Intl.message(
+      'Market Place',
+      name: 'maketplace',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
