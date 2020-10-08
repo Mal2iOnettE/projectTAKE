@@ -52,12 +52,8 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
     _con.listenForFeaturedProducts(widget.routeArgument.id);
     _con.listenForMarketReviews(id: widget.routeArgument.id);
     _con.listenForCategories();
-    _con.market = (new Market())..id = widget.routeArgument.id;
-    _con.listenForTrendingProducts(widget.routeArgument.id);
-    _con.listenForCategories();
     selectedCategories = ['0'];
     _con.listenForProducts(widget.routeArgument.id);
-    selectedCategories = ['0'];
 
     super.initState();
   }
@@ -148,47 +144,12 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
 
                         searchBarMarket(),
                         //SearchBarWidget(),
-                        ////Sales Items
+                        //Sales Items
                         trendingProduct(),
 
                         ///All manu
-                        ListTile(
-                          dense: true,
-                          contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                          leading: Icon(
-                            Icons.trending_up,
-                            color: Theme.of(context).hintColor,
-                          ),
-                          title: Text(
-                            S.of(context).all_product,
-                            style: Theme.of(context).textTheme.headline4,
-                          ),
-                          subtitle: Text(
-                            S.of(context).clickOnTheProductToGetMoreDetailsAboutIt,
-                            maxLines: 2,
-                            style: Theme.of(context).textTheme.caption,
-                          ),
-                        ),
-
-                        ///Product ListView
-                        _con.featuredProducts.isEmpty
-                            ? Text("Loading...")
-                            : ListView.separated(
-                                scrollDirection: Axis.vertical,
-                                itemCount: 10,
-                                separatorBuilder: (context, index) => Divider(),
-                                itemBuilder: (context, index) {
-                                  return Column(
-                                    children: [
-                                      Text(_con.products.length.toString()),
-                                      ProductItemWidget(
-                                        heroTag: 'menu_list',
-                                        product: _con.products.elementAt(index),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              ),
+                        
+                        marketAllProduct(),
 
                         ///Review
                         marketReview(),
@@ -262,21 +223,26 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
         ),
 
         ///Product ListView
-        _con.featuredProducts.isEmpty
-            ? Text("Loading...")
+        _con.products.isEmpty
+            ? Center(
+                child: Container(
+                  height: 250.0,
+                  width: 200.0,
+                  decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/img/not_found.png'))),
+                ),
+              )
             : ListView.separated(
                 scrollDirection: Axis.vertical,
-                itemCount: 10,
-                separatorBuilder: (context, index) => Divider(),
+                shrinkWrap: true,
+                primary: false,
+                itemCount: _con.products.length,
+                separatorBuilder: (context, index) {
+                  return SizedBox(height: 10);
+                },
                 itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      Text(_con.products.length.toString()),
-                      ProductItemWidget(
-                        heroTag: 'menu_list',
-                        product: _con.products.elementAt(index),
-                      ),
-                    ],
+                  return ProductItemWidget(
+                    heroTag: 'menu_list',
+                    product: _con.products.elementAt(index),
                   );
                 },
               ),
@@ -445,67 +411,91 @@ class _Details2WidgetState extends StateMVC<Details2Widget> {
 
   Widget searchBarMarket() {
     return InkWell(
-      onTap: () {
-        Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
-      },
-      child: Container(
-        height: 90,
-        child: ListView(
-          primary: false,
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          children: List.generate(_con.categories.length, (index) {
-            var _category = _con.categories.elementAt(index);
-            var _selected = this.selectedCategories.contains(_category.id);
-            return Padding(
-              padding: const EdgeInsetsDirectional.only(start: 20),
-              child: RawChip(
-                elevation: 0,
-                label: Text(_category.name),
-                labelStyle: _selected
-                    ? Theme.of(context).textTheme.bodyText2.merge(TextStyle(color: Theme.of(context).primaryColor))
-                    : Theme.of(context).textTheme.bodyText2,
-                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 15),
-                backgroundColor: Theme.of(context).focusColor.withOpacity(0.1),
-                selectedColor: Theme.of(context).accentColor,
-                selected: _selected,
-                //shape: StadiumBorder(side: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.05))),
-                showCheckmark: false,
-                avatar: (_category.id == '0')
-                    ? null
-                    : (_category.image.url.toLowerCase().endsWith('.svg')
-                        ? SvgPicture.network(
-                            _category.image.url,
-                            color: _selected ? Theme.of(context).primaryColor : Theme.of(context).accentColor,
-                          )
-                        : CachedNetworkImage(
-                            fit: BoxFit.cover,
-                            imageUrl: _category.image.icon,
-                            placeholder: (context, url) => Image.asset(
-                              'assets/img/loading.gif',
-                              fit: BoxFit.cover,
-                            ),
-                            errorWidget: (context, url, error) => Icon(Icons.error),
-                          )),
-                onSelected: (bool value) {
-                  setState(() {
-                    if (_category.id == '0') {
-                      this.selectedCategories = ['0'];
-                    } else {
-                      this.selectedCategories.removeWhere((element) => element == '0');
-                    }
-                    if (value) {
-                      this.selectedCategories.add(_category.id);
-                    } else {
-                      this.selectedCategories.removeWhere((element) => element == _category.id);
-                    }
-                    _con.selectCategory(this.selectedCategories);
-                  });
-                },
-              ),
-            );
-          }),
-        ),
+      // onTap: () {
+      //   Navigator.of(context).pushNamed('/Menu', arguments: new RouteArgument(id: widget.routeArgument.id));
+      // },
+      child: Column(
+        children: [
+          Container(
+            height: 90,
+            child: ListView(
+              primary: false,
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              children: List.generate(_con.categories.length, (index) {
+                var _category = _con.categories.elementAt(index);
+                var _selected = this.selectedCategories.contains(_category.id);
+                return Padding(
+                  padding: const EdgeInsetsDirectional.only(start: 20),
+                  child: RawChip(
+                    elevation: 0,
+                    label: Text(_category.name),
+                    labelStyle: _selected
+                        ? Theme.of(context).textTheme.bodyText2.merge(TextStyle(color: Theme.of(context).primaryColor))
+                        : Theme.of(context).textTheme.bodyText2,
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 15),
+                    backgroundColor: Theme.of(context).focusColor.withOpacity(0.1),
+                    selectedColor: Theme.of(context).accentColor,
+                    selected: _selected,
+                    //shape: StadiumBorder(side: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.05))),
+                    showCheckmark: false,
+                    avatar: (_category.id == '0')
+                        ? null
+                        : (_category.image.url.toLowerCase().endsWith('.svg')
+                            ? SvgPicture.network(
+                                _category.image.url,
+                                color: _selected ? Theme.of(context).primaryColor : Theme.of(context).accentColor,
+                              )
+                            : CachedNetworkImage(
+                                fit: BoxFit.cover,
+                                imageUrl: _category.image.icon,
+                                placeholder: (context, url) => Image.asset(
+                                  'assets/img/loading.gif',
+                                  fit: BoxFit.cover,
+                                ),
+                                errorWidget: (context, url, error) => Icon(Icons.error),
+                              )),
+                    onSelected: (bool value) {
+                      setState(() {
+                        if (_category.id == '0') {
+                          this.selectedCategories = ['0'];
+                        } else {
+                          this.selectedCategories.removeWhere((element) => element == '0');
+                        }
+                        if (value) {
+                          this.selectedCategories.add(_category.id);
+                        } else {
+                          this.selectedCategories.removeWhere((element) => element == _category.id);
+                        }
+                        _con.selectCategory(this.selectedCategories);
+                      });
+
+                      ///Product ListView
+                      _con.featuredProducts.isEmpty
+                          ? Text("Loading...")
+                          : ListView.separated(
+                              scrollDirection: Axis.vertical,
+                              itemCount: 10,
+                              separatorBuilder: (context, index) => Divider(),
+                              itemBuilder: (context, index) {
+                                return Column(
+                                  children: [
+                                    Text(_con.products.length.toString()),
+                                    ProductItemWidget(
+                                      heroTag: 'menu_list',
+                                      product: _con.products.elementAt(index),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                    },
+                  ),
+                );
+              }),
+            ),
+          ),
+        ],
       ),
     );
   }
