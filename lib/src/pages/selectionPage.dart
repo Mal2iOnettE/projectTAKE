@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:markets/generated/l10n.dart';
-import 'package:markets/src/pages/TAKE01.dart';
+import 'package:markets/src/pages/Take_suwintawong.dart';
 import 'package:markets/src/pages/TAKE02.dart';
 
 class SelectionPages extends StatefulWidget {
@@ -17,7 +17,7 @@ class _SelectionPagesState extends State<SelectionPages> {
       children: [
         InkWell(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => TAKE01PAGE()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => TAKESuwintawong()));
           },
           child: Container(
             height: 109.0,

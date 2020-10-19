@@ -27,18 +27,18 @@ import '../repository/settings_repository.dart' as settingsRepo;
 import '../repository/user_repository.dart';
 import '../elements/FilterWidget.dart';
 
-class HomeWidget extends StatefulWidget {
+class TAKESuwintawong extends StatefulWidget {
   final GlobalKey<ScaffoldState> parentScaffoldKey;
-  List<Market> marketsList;
-  List<Review> reviewList;
+  final List<Market> marketsList;
+  final List<Review> reviewList;
 
-  HomeWidget({Key key, this.parentScaffoldKey, this.marketsList, this.reviewList}) : super(key: key);
+  TAKESuwintawong({Key key, this.parentScaffoldKey, this.marketsList, this.reviewList}) : super(key: key);
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
 }
 
-class _HomeWidgetState extends StateMVC<HomeWidget> {
+class _HomeWidgetState extends StateMVC<TAKESuwintawong> {
   HomeController _con;
 
   _HomeWidgetState() : super(HomeController()) {

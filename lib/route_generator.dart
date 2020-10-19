@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:markets/src/pages/Intro.dart';
 import 'package:markets/src/pages/OtherPage.dart';
+import 'package:markets/src/pages/Take_suwintawong.dart';
 import 'package:markets/src/pages/collection.dart';
 import 'package:markets/src/pages/details2.dart';
 import 'package:markets/src/pages/home.dart';
@@ -34,7 +35,6 @@ import 'src/pages/signup.dart';
 import 'src/pages/singup2.dart';
 import 'src/pages/splash_screen.dart';
 import 'src/pages/tracking.dart';
-import 'src/pages/info.dart';
 import 'src/pages/pre_login.dart';
 import 'src/elements/FilterWidget.dart';
 import 'src/elements/filterpage.dart';
@@ -46,7 +46,6 @@ import 'src/pages/favorites.dart';
 import 'src/pages/supportcenter.dart';
 import 'src/pages/takehome.dart';
 import 'src/pages/home.dart';
-import 'src/pages/Home2.dart';
 import 'src/pages/Marketplace.dart';
 
 class RouteGenerator {
@@ -114,12 +113,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => HelpWidget());
       case '/Settings':
         return MaterialPageRoute(builder: (_) => SettingsWidget());
-      /*case '/info':
-        return MaterialPageRoute(builder: (_) => OnBoardingPage());*/
       case '/Intro':
         return MaterialPageRoute(builder: (_) => OnBoardingPage2());
-      /*case '/prelogin':
-        return MaterialPageRoute(builder: (_) => Prelogin());*/
       case '/Prelogin':
         return MaterialPageRoute(builder: (_) => Prelogin2());
       case '/Track_orders':
@@ -146,11 +141,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Takehome());
       case '/home':
         return MaterialPageRoute(builder: (_) => HomeWidget());
-
- 
       case '/Marketplace':
         return MaterialPageRoute(builder: (_) => MarketPlaceWidget());
-
+      case '/Take_Suwintawong':
+        return MaterialPageRoute(builder: (_) => TAKESuwintawong());
       default:
 
         // If there is no such named route in the switch statement, e.g. /third

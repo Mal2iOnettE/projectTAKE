@@ -8,7 +8,7 @@ import 'package:markets/src/elements/promotionsCarouselWidget.dart';
 import 'package:markets/src/models/market.dart';
 import 'package:markets/src/models/media.dart';
 import 'package:markets/src/models/review.dart';
-import 'package:markets/src/pages/TAKE01.dart';
+import 'package:markets/src/pages/Take_suwintawong.dart';
 import 'package:markets/src/pages/TAKE02.dart';
 import 'package:markets/src/pages/selectionPage.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
@@ -29,8 +29,8 @@ import '../elements/FilterWidget.dart';
 
 class MarketPlaceWidget extends StatefulWidget {
   final GlobalKey<ScaffoldState> parentScaffoldKey;
-  List<Market> marketsList;
-  List<Review> reviewList;
+  final List<Market> marketsList;
+  final List<Review> reviewList;
 
   MarketPlaceWidget({Key key, this.parentScaffoldKey, this.marketsList, this.reviewList}) : super(key: key);
 

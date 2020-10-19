@@ -33,16 +33,30 @@ class UserController extends ControllerMVC {
     FocusScope.of(context).unfocus();
     if (loginFormKey.currentState.validate()) {
       loginFormKey.currentState.save();
+
       Overlay.of(context).insert(loader);
       repository.login(user).then((value) {
-        if (value != null && value.apiToken != null) {
+        if (value != null && value.apiToken != null && value.role != null) {
+          switch (value.role) {
+            case 1:
+              print('user');
+              break;
+            case 2:
+              print('Admin');
+              break;
+            case 3:
+              print("Vender");
+              break;
+            case 4:
+              print("Driver");
+              break;
+            default:
+          }
           Navigator.of(scaffoldKey.currentContext).pushReplacementNamed('/Pages', arguments: 0);
         } else {
-         scaffoldKey?.currentState?.showSnackBar(
-            SnackBar(
+          scaffoldKey?.currentState?.showSnackBar(SnackBar(
             content: Text(S.of(context).wrong_email_or_password),
-          )
-        );
+          ));
         }
       }).catchError((e) {
         loader.remove();
