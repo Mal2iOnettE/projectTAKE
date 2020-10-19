@@ -70,7 +70,7 @@ class _PagesWidgetState extends State<PagesWidget> {
           widget.currentPage = ScanQRPage();
           break;
         case 3:
-          currentUser.value.role != "Vender" ? widget.currentPage = OtherPage() : widget.currentPage = ScanQRPage();
+          currentUser.value.role != 3 ? widget.currentPage = OtherPage() : widget.currentPage = ScanQRPage();
 
           break;
         /*case 4:
