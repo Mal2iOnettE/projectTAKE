@@ -8,25 +8,22 @@ import '../../generated/l10n.dart';
 import '../controllers/filter_controller.dart';
 
 class Dietary extends StatefulWidget {
-   final ValueChanged<Filter> onFilter;
- Dietary({Key key, this.onFilter}) : super(key: key);
+  final ValueChanged<Filter> onFilter;
+  Dietary({Key key, this.onFilter}) : super(key: key);
 
-@override
+  @override
   _DietaryState createState() => _DietaryState();
 }
 
-
-
 class _DietaryState extends StateMVC<Dietary> {
   DietaryController _con;
-   _DietaryState() : super(DietaryController()) {
+  _DietaryState() : super(DietaryController()) {
     _con = controller;
   }
-  
-   @override
+
+  @override
   Widget build(BuildContext context) {
-    return  MyStatefulWidget();
-  
+    return MyStatefulWidget();
   }
 }
 
@@ -52,15 +49,15 @@ class LabeledCheckbox extends StatelessWidget {
       child: Padding(
         padding: padding,
         child: ListView(
-           primary: true,
-                shrinkWrap: true,
+          primary: true,
+          shrinkWrap: true,
           children: <Widget>[
             Expanded(child: Text(label)),
             Checkbox(
               value: value,
               onChanged: (bool newValue) {
                 onChanged(newValue);
-              }, 
+              },
             ),
           ],
         ),
@@ -78,45 +75,74 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   bool _vegetarian = false;
-  bool  _vegan = false;
+  bool _vegan = false;
   bool _gluten = false;
-  
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-           CheckboxListTile(
-           title: Text("Vegetarian"),
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0),
+          child: CheckboxListTile(
+            title: Text("Vegetarian"),
             value: _vegetarian ?? false,
             onChanged: (bool newvalue) {
-            setState(() {
-              _vegetarian = newvalue;
-            });
-          },
-         ),
-         CheckboxListTile(
-           title: Text("Vegan"),
+              setState(() {
+                _vegetarian = newvalue;
+              });
+            },
+          ),
+        ),
+        Divider(
+          color: Colors.grey[203],
+          height: 20,
+          thickness: 2,
+          indent: 20,
+          endIndent: 20,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0),
+          child: CheckboxListTile(
+            title: Text("Vegan"),
             value: _vegan ?? false,
             onChanged: (bool newValue) {
-            setState(() {
-              _vegan = newValue;
-            });
-          },
-         ),
-         CheckboxListTile(
-           title: Text("Gluten-free"),
+              setState(() {
+                _vegan = newValue;
+              });
+            },
+          ),
+        ),
+        Divider(
+          color: Colors.grey[203],
+          height: 20,
+          thickness: 2,
+          indent: 20,
+          endIndent: 20,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0),
+          child: CheckboxListTile(
+            title: Text("Gluten-free"),
             value: _gluten ?? false,
             onChanged: (bool newValue) {
-            setState(() {
-              _gluten = newValue;
-            });
-          },
-         ),
+              setState(() {
+                _gluten = newValue;
+              });
+            },
+          ),
+        ),
+        Divider(
+          color: Colors.grey[203],
+          height: 20,
+          thickness: 2,
+          indent: 20,
+          endIndent: 20,
+        ),
+        Padding(
+          padding: EdgeInsets.only(bottom: 10),
+        ),
       ],
     );
- 
-    
   }
-
 }

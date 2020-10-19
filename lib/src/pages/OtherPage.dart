@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:markets/generated/l10n.dart';
 import 'package:markets/generated/l10n.dart';
@@ -23,7 +25,9 @@ class _OtherPageState extends StateMVC<OtherPage> {
     return ListView(children: <Widget>[
       GestureDetector(
         onTap: () {
-          currentUser.value.apiToken != null ? Navigator.of(context).pushNamed('/Profile') : Navigator.of(context).pushNamed('/Login');
+          currentUser.value.apiToken != null
+              ? Navigator.of(context).pushNamed('/Profile')
+              : Navigator.of(context).pushNamed('/Login');
         },
         child: currentUser.value.apiToken != null
             ? Column(
@@ -45,7 +49,8 @@ class _OtherPageState extends StateMVC<OtherPage> {
                     ),
                     CircleAvatar(
                       radius: 50.0,
-                      backgroundImage: NetworkImage("https://via.placeholder.com/150"),
+                      backgroundImage:
+                          NetworkImage("https://via.placeholder.com/150"),
                     ),
                     /*Icon(
                           Icons.person,
@@ -213,7 +218,9 @@ class _OtherPageState extends StateMVC<OtherPage> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () => logout().then(
-                    (value) => Navigator.of(context).pushNamed('/Pages', arguments: 0),
+                    (value) => Future.delayed(Duration.zero, () {
+                      Navigator.of(context).pushNamed('/Pages', arguments: 0);
+                    }),
                   ),
                   color: Theme.of(context).accentColor,
                 ),
@@ -233,7 +240,9 @@ class _OtherPageState extends StateMVC<OtherPage> {
           }
         },
         title: Text(
-          currentUser.value.apiToken != null ? S.of(context).log_out : S.of(context).login,
+          currentUser.value.apiToken != null
+              ? S.of(context).log_out
+              : S.of(context).login,
           style: Theme.of(context).textTheme.subtitle1,
         ),
         trailing: Icon(Icons.arrow_forward_ios),

@@ -22,7 +22,8 @@ class _OnBoardingPage2State extends State<OnBoardingPage2> {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 250.0,
-      child: Image.network("https://cdn.shopify.com/s/files/1/2727/4674/products/thai_cookery_class_eastbourne_1920x.jpg?v=1594513808",
+      child: Image.network(
+          "https://cdn.shopify.com/s/files/1/2727/4674/products/thai_cookery_class_eastbourne_1920x.jpg?v=1594513808",
           fit: BoxFit.cover),
       //child: Image.asset('assets/img/loading_card.png', width: 1500,height: 2000.0,
     );
@@ -50,7 +51,11 @@ class _OnBoardingPage2State extends State<OnBoardingPage2> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text("Search and choose your favourite foods",
-                    style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center),
               ],
             ),
           ),
@@ -105,7 +110,11 @@ class _OnBoardingPage2State extends State<OnBoardingPage2> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text("Fast delivery to your place",
-                    style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center),
               ],
             ),
           ),
@@ -161,7 +170,11 @@ class _OnBoardingPage2State extends State<OnBoardingPage2> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text("Track order real time",
-                    style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center),
               ],
             ),
           ),
@@ -187,7 +200,6 @@ class _OnBoardingPage2State extends State<OnBoardingPage2> {
             padding: const EdgeInsets.only(top: 83.0),
             child: RaisedButton(
               onPressed: () {
-                
                 Navigator.pushReplacementNamed(context, '/Prelogin');
               },
               child: Container(

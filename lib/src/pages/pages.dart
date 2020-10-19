@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:markets/src/pages/scanQR.dart';
+import 'package:markets/src/repository/user_repository.dart';
 
 import '../elements/DrawerWidget.dart';
 import '../elements/FilterWidget.dart';
@@ -59,15 +61,17 @@ class _PagesWidgetState extends State<PagesWidget> {
           //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
           break;
         case 1:
-          //widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
-          widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
-          break;
-        case 2:
-          widget.currentPage = FavoritesWidget(parentScaffoldKey: widget.scaffoldKey);
+          widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
           //widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
           break;
+        case 2:
+          //widget.currentPage = FavoritesWidget(parentScaffoldKey: widget.scaffoldKey);
+          //widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
+          widget.currentPage = ScanQRPage();
+          break;
         case 3:
-          widget.currentPage = OtherPage();
+          currentUser.value.role != 3 ? widget.currentPage = OtherPage() : widget.currentPage = ScanQRPage();
+
           break;
         /*case 4:
           widget.currentPage = FavoritesWidget(parentScaffoldKey: widget.scaffoldKey);
@@ -103,19 +107,16 @@ class _PagesWidgetState extends State<PagesWidget> {
           },
           // this will be set when a new tab is tapped
           items: [
+            BottomNavigationBarItem(title: new Container(height: 5.0), icon: new Icon(Icons.home)),
             BottomNavigationBarItem(
-              title: new Container(height: 5.0), 
-              icon: new Icon(Icons.home)),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.map),
+              icon: Icon(Icons.notifications),
               title: new Container(height: 0.0),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.location_on),
+              icon: Icon(Icons.qr_code_scanner),
               title: new Container(height: 0.0),
             ),
             BottomNavigationBarItem(
-              
               icon: new Icon(Icons.person),
               title: new Container(height: 0.0),
             ),

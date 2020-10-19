@@ -4,6 +4,8 @@ import '../../generated/l10n.dart';
 import '../models/address.dart' as model;
 import '../models/payment_method.dart';
 
+import '../repository/settings_repository.dart' as settingsRepo;
+
 // ignore: must_be_immutable
 class DeliveryAddressesItemWidget extends StatelessWidget {
   String heroTag;
@@ -14,6 +16,7 @@ class DeliveryAddressesItemWidget extends StatelessWidget {
   ValueChanged<model.Address> onDismissed;
 
   DeliveryAddressesItemWidget({Key key, this.address, this.onPressed, this.onLongPress, this.onDismissed, this.paymentMethod}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {

@@ -19,60 +19,70 @@ class CategoriesCarouselItemWidget extends StatelessWidget {
       onTap: () {
         Navigator.of(context).pushNamed('/Category', arguments: RouteArgument(id: category.id));
       },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Hero(
-            tag: category.id,
-            child: Container(
-              margin: EdgeInsetsDirectional.only(start: this.marginLeft, end: 20),
-              width: 80,
-              height: 80,
-              decoration: BoxDecoration(
-                  color: Theme.of(context).accentColor,
-                  //borderRadius: BorderRadius.all(Radius.circular(5)),
-                  shape: BoxShape.circle,
-                  boxShadow: [BoxShadow(color: Theme.of(context).focusColor.withOpacity(0.2), offset: Offset(0, 2), blurRadius: 7.0)]),
-              child: Padding(
-                padding: const EdgeInsets.all(0.0),
-                child: CircleAvatar(
-                  backgroundImage: NetworkImage(category.image.url),
-                  backgroundColor: Theme.of(context).accentColor,
-                  /*child: category.image.url.toLowerCase().endsWith('.svg')
-                      ? SvgPicture.network(
-                          category.image.url,
-                          
-                          color: Theme.of(context).accentColor,
-                          fit: BoxFit.fill,
-                        )
-                      : CachedNetworkImage(
-                          fit: BoxFit.cover,
-                          imageUrl: category.image.icon,
-                          placeholder: (context, url) => Image.asset(
-                            'assets/img/loading.gif',
+      child: Container(
+        height: 150.0,
+        
+        child: Column(
+          children: <Widget>[
+            Hero(
+              tag: category.id,
+              child: Container(
+                margin: EdgeInsetsDirectional.only(start: this.marginLeft, end: 10.0, bottom: 10.0),
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                    color: Theme.of(context).accentColor,
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    shape: BoxShape.rectangle,
+                    boxShadow: [BoxShadow(color: Theme.of(context).focusColor.withOpacity(0.2), offset: Offset(0, 2), blurRadius: 7.0)]),
+                child: Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        category.image.url,
+                        height: 150.0,
+                        width: 100.0,
+                      ),
+                    )
+
+                    //  child: CircleAvatar(
+                    //  backgroundImage: NetworkImage(category.image.url),
+                    // backgroundColor: Theme.of(context).accentColor,
+                    /*child: category.image.url.toLowerCase().endsWith('.svg')
+                        ? SvgPicture.network(
+                            category.image.url,
+                            
+                            color: Theme.of(context).accentColor,
+                            fit: BoxFit.fill,
+                          )
+                        : CachedNetworkImage(
                             fit: BoxFit.cover,
-                          ),
-                          errorWidget: (context, url, error) => Icon(Icons.error),
-                        ),*/
-                ),
+                            imageUrl: category.image.icon,
+                            placeholder: (context, url) => Image.asset(
+                              'assets/img/loading.gif',
+                              fit: BoxFit.cover,
+                            ),
+                            errorWidget: (context, url, error) => Icon(Icons.error),
+                          ),*/
+                    //  ),
+                    ),
               ),
             ),
-          ),
-          SizedBox(height: 5),
-          Container(
-            width: 80.0,
-            margin: EdgeInsetsDirectional.only(start: this.marginLeft, end: 20),
-            child: Text(
-              category.name,
-              overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.bodyText2,
-              textAlign: TextAlign.center,
+            SizedBox(height: 5),
+            Container(
+              width: 80.0,
+              margin: EdgeInsetsDirectional.only(start: this.marginLeft, end: 0.0),
+              child: Text(
+                category.name,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.bodyText2,
+                textAlign: TextAlign.center,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
-
-  
 }

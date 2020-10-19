@@ -11,6 +11,7 @@ class User {
   String address;
   String bio;
   Media image;
+  int role;
 
   // used for indicate if client logged in or not
   bool auth;
@@ -26,6 +27,7 @@ class User {
       email = jsonMap['email'] != null ? jsonMap['email'] : '';
       apiToken = jsonMap['api_token'];
       deviceToken = jsonMap['device_token'];
+      role = jsonMap['role'];
       try {
         phone = jsonMap['custom_fields']['phone']['view'];
       } catch (e) {
@@ -52,6 +54,7 @@ class User {
     map["id"] = id;
     map["email"] = email;
     map["name"] = name;
+    map["role"] = role;
     map["password"] = password;
     map["api_token"] = apiToken;
     if (deviceToken != null) {

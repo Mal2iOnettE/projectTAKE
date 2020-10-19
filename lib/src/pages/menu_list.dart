@@ -93,7 +93,6 @@ class _MenuWidgetState extends StateMVC<MenuWidget> {
                 style: Theme.of(context).textTheme.caption,
               ),
             ),
-            
             ProductsCarouselWidget(heroTag: 'menu_trending_product', productsList: _con.trendingProducts),
             ListTile(
               dense: true,
@@ -175,16 +174,12 @@ class _MenuWidgetState extends StateMVC<MenuWidget> {
                   ),
             _con.products.isEmpty
                 ? Center(
-                  child: Container(
-                    height: 250.0,
-                    width: 200.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/img/not_found.png')
-                      )
+                    child: Container(
+                      height: 250.0,
+                      width: 200.0,
+                      decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/img/not_found.png'))),
                     ),
-                  ),
-                )
+                  )
                 : ListView.separated(
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
